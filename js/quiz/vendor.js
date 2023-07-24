@@ -53,7 +53,7 @@ questionnaireData.questions.forEach(function(question, index) {
             radio.name = 'question_' + index;
             radio.value = answer[i];
 
-            var label = document.createElement('div');
+            var label = document.createElement('label');
             label.classList.add('chubs-quiz-answer-label-text');
             label.textContent = answer[i];
 

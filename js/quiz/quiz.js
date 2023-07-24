@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     nextButton.addEventListener('click', function() {
 
         if (currentStep < steps.length - 1) {
-            console.log(steps[currentStep]);
 
             if (!checkFieldsFilled( steps[currentStep] )) {
                 /* write error tool */
@@ -47,12 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
             var selectedAnswer = getSelectedAnswer(steps[currentStep]);
             var nextStep = getNextStep(selectedAnswer);
 
-
             showStep(currentStep);
             updateStepInfo();
             toggleButtonVisibility(currentStep);
-
-            console.log('lastAnsweredStep in next = ' + lastAnsweredStep);
 
         }
 
@@ -62,8 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentStep > 0) {
             hideStep(currentStep);
 
-            console.log('lastAnsweredStep in prev = ' + lastAnsweredStep);
-
             if (lastAnsweredStep > 0) {
                 currentStep = lastAnsweredStep;
                 lastAnsweredStep = 0;
@@ -71,11 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentStep--;
             }
 
-
             showStep(currentStep);
             updateStepInfo();
             toggleButtonVisibility(currentStep);
-
 
         }
     });
@@ -161,7 +153,7 @@ function getNextStep(selectedAnswer) {
     } else {
         currentStep = nextStep;
     }
-    console.log('currentStep = %s, selectedAnswer = %s, nextStep = %s', JSON.stringify(currentStepSave+1), selectedAnswer, JSON.stringify(currentStep+1));
+    //console.log('currentStep = %s, selectedAnswer = %s, nextStep = %s', JSON.stringify(currentStepSave+1), selectedAnswer, JSON.stringify(currentStep+1));
 }
 
 

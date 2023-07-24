@@ -497,6 +497,45 @@ form .inputs-wrapper input {
     color: #a6cd46!important;
 }
 
+
+
+
+.chubs-step .chubs-quiz-answers-type-checkbox .answer-btn {
+    border: none;
+}
+
+.chubs-step .chubs-quiz-answers-type-checkbox label {
+    color: #B7B7B7;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.chubs-step .chubs-quiz-answers-type-checkbox .radio-input:not(:disabled):not(:checked)+label:before {
+    border-color: #B7B7B7;
+}
+
+.chubs-step .chubs-quiz-answers-type-checkbox .radio-input:not(:disabled):not(:checked)+label:hover {
+    color: #A6CD46;
+    transition: 0.3s;
+}
+
+.chubs-step .chubs-quiz-answers-type-checkbox .radio-input:checked+label:before {
+    background-image: url("../img/icons/checkbox-radio.svg");
+    background-color: #A6CD46;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
