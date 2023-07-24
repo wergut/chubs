@@ -1,9 +1,15 @@
 var questionnaireContainer = document.getElementById('questionnaire-container');
 
-questionnaireData.questions.forEach(function(question, index) {
+newQuestionnaireData.questions.forEach(function(question, index) {
     var answerCount = question.answers.length;
     var questionHtml = document.createElement('div');
     questionHtml.classList.add('chubs-step');
+    questionHtml.classList.add('chubs-step-index-' + index);
+    questionHtml.classList.add('chubs-step-step-' + question.step);
+    if (question.is_subquestion) {
+        questionHtml.classList.add('chubs-step-is_subquestion');
+    } else {
+    }
     questionHtml.style.display = 'none';
     var fieldset = document.createElement('fieldset');
     fieldset.classList.add('inner');
@@ -22,6 +28,7 @@ questionnaireData.questions.forEach(function(question, index) {
     var answerLabel = document.createElement('div');
     answerLabel.classList.add('chubs-quiz-answer-label');
     answerLabel.classList.add('answer-btn');
+
 
     if (question.type === 'radio') {
 
@@ -74,6 +81,7 @@ questionnaireData.questions.forEach(function(question, index) {
         textarea.cols = '30';
         textarea.rows = '10';
         textarea.placeholder = 'Type something';
+        textarea.value = 'Type something';
 
         answerLabel.appendChild(textarea);
         answersDiv.appendChild(answerLabel);
@@ -137,6 +145,7 @@ questionnaireData.questions.forEach(function(question, index) {
         input.type = 'text';
         input.name = 'date_' + index;
         input.placeholder = 'MM/DD/YY';
+        input.value = '11/11/2012';
         input.inputmode = 'text';
         input.classList.add('date');
 
@@ -151,6 +160,7 @@ questionnaireData.questions.forEach(function(question, index) {
 
         var emailInput = document.createElement('input');
         emailInput.type = 'email';
+        emailInput.value = 'email@gmail.com';
         emailInput.name = 'email_' + index;
         emailInput.placeholder = 'Email';
         emailInput.classList.add('email');

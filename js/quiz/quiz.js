@@ -21,7 +21,13 @@ var lastAnsweredStep = 0;
 
 toggleButtonVisibility(currentStep);
 showStep(currentStep);
-totalStepElement.textContent = steps.length;
+
+var filteredQuestions = questionnaireData.questions.filter(function(question) {
+    return !('is_subquestion' in question);
+});
+var numberOfQuestionsWithoutSubquestion = filteredQuestions.length;
+totalStepElement.textContent = numberOfQuestionsWithoutSubquestion;
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -114,9 +120,22 @@ function showStep(stepIndex) {
     steps[stepIndex].style.display = 'block';
 }
 
+
 function updateStepInfo() {
-    currentStepElement.textContent = currentStep + 1;
+
+    var currentQuestion = newQuestionnaireData.questions[currentStep];
+    var subquestionEl = document.getElementById('subquestion');
+
+    if (currentQuestion && currentQuestion.is_subquestion === true) {
+        subquestionEl.innerText = 'subquestion ' + currentQuestion.subquestion;
+    } else {
+        subquestionEl.innerText = '';
+        //currentStepElement.textContent = currentStep + 1;
+    }
+    currentStepElement.textContent = currentQuestion.step;
 }
+
+
 
 function toggleButtonVisibility(currentStep) {
     if (currentStep === 0) {
@@ -148,8 +167,13 @@ function getNextStep(selectedAnswer) {
     var nextStep = null;
     nextStep = questionnaireData.questions[currentStep].next_answer[selectedAnswer];
     var currentStepSave = currentStep;
+
     if ((nextStep === null) || (nextStep === undefined)) {
-        currentStep++;
+        if (questionnaireData.questions[currentStep].next_answer[0]) {
+            currentStep = questionnaireData.questions[currentStep].next_answer[0];
+        } else {
+            currentStep++;
+        }
     } else {
         currentStep = nextStep;
     }
@@ -165,6 +189,15 @@ function getNextStep(selectedAnswer) {
 
 function getPrevStep () {
 }
+
+
+
+function subquestionTools(currentStep) {
+
+
+}
+
+
 
 
 var savedData = [];

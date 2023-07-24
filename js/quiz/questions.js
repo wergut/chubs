@@ -4,7 +4,7 @@ var questionnaireData = {
             "index": 0,
             "title": "How often do you have trouble getting or keeping an erection during sex?",
             "type": "slider",
-            "subquestion": "b",
+            "subquestion": "a",
             "answers": [
                 { "0": "Always" },
                 { "1": "More than half the time" },
@@ -19,7 +19,7 @@ var questionnaireData = {
         {
             "index": 1,
             "title": "What do you expect from treatment?",
-            "type": "checkbox",
+            "type": "radio",
             "subquestion": "a",
             "answers": [
                 { "0": "Being able to get and keep an erection during sex" },
@@ -196,7 +196,7 @@ var questionnaireData = {
             "index": 13,
             "title": "Were you happy with your treatment with sildenafil?",
             "type": "radio",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [
                 { "0": "Yes" },
@@ -210,10 +210,10 @@ var questionnaireData = {
             "index": 14,
             "title": "Please tell us more about your sildenafil usage. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "b",
             "answers": [],
-            "next_answer": [ 16 ],
+            "next_answer": [ 30 ],
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -221,7 +221,7 @@ var questionnaireData = {
             "index": 15,
             "title": "Why were you not happy with your treatment with Sildenafil (Viagra or generic)?",
             "type": "radio",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "b",
             "answers": [
                 { "0": "It didn't work" },
@@ -236,7 +236,7 @@ var questionnaireData = {
             "index": 16,
             "title": "Please tell us more about your sildenafil usage. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "c",
             "answers": [],
             "next_answer": [ 30 ],  // on start question
@@ -249,7 +249,7 @@ var questionnaireData = {
             "index": 17,
             "title": "Were you happy with your treatment with tadalafil?",
             "type": "radio",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [
                 { "0": "Yes" },
@@ -263,7 +263,7 @@ var questionnaireData = {
             "index": 18,
             "title": "Please tell us more about your tadalafil usage. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "b",
             "answers": [],
             "next_answer": [ 20 ],
@@ -274,7 +274,7 @@ var questionnaireData = {
             "index": 19,
             "title": "Why were you not happy with your treatment with tadalafil (Cialis or generic)?",
             "type": "radio",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "b",
             "answers": [
                 { "0": "It didn't work" },
@@ -287,9 +287,9 @@ var questionnaireData = {
         },
         {
             "index": 20,
-            "title": "Please tell us more about your sildenafil usage. Which dosages did you try? Were they effective?",
+            "title": "Please tell us more about your tadalafil usage. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "c",
             "answers": [],
             "next_answer": [ 30 ],  // on start question
@@ -302,7 +302,7 @@ var questionnaireData = {
             "index": 21,
             "title": "Were you happy with your treatment with vardenafil?",
             "type": "radio",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [
                 { "0": "Yes" },
@@ -316,7 +316,7 @@ var questionnaireData = {
             "index": 22,
             "title": "Please tell us more about your vardenafil usage. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "b",
             "answers": [],
             "next_answer": [ 24 ],
@@ -327,7 +327,7 @@ var questionnaireData = {
             "index": 23,
             "title": "Why were you not happy with your treatment with Vardenafil (Levitra or generic)?",
             "type": "radio",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "b",
             "answers": [
                 { "0": "It didn't work" },
@@ -340,9 +340,9 @@ var questionnaireData = {
         },
         {
             "index": 24,
-            "title": "Please tell us more about your sildenafil usage. Which dosages did you try? Were they effective?",
+            "title": "Please tell us more about your vardenafil usage. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "c",
             "answers": [],
             "next_answer": [ 30 ],  // on start question
@@ -355,7 +355,7 @@ var questionnaireData = {
             "index": 25,
             "title": "Were you happy with your treatment with avanafil?",
             "type": "radio",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [
                 { "0": "Yes" },
@@ -369,7 +369,7 @@ var questionnaireData = {
             "index": 26,
             "title": "Please tell us more about your avanafil usage. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "b",
             "answers": [],
             "next_answer": [ 28 ],
@@ -380,7 +380,7 @@ var questionnaireData = {
             "index": 27,
             "title": "Why were you not happy with your treatment with Avanafil (Stendra)?",
             "type": "radio",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "b",
             "answers": [
                 { "0": "It didn't work" },
@@ -395,7 +395,7 @@ var questionnaireData = {
             "index": 28,
             "title": "Please tell us more about your avanafil usage. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "c",
             "answers": [],
             "next_answer": [ 30 ],  // on start question
@@ -403,19 +403,17 @@ var questionnaireData = {
             "hint": "Please include all the details you consider important"
         },
 
-
         {
             "index": 29,
             "title": "Please tell us more about your usage of other ED treatments. Which dosages did you try? Were they effective?",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [],
             "next_answer": [ 28 ],
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
-
 
 
         {
@@ -435,15 +433,13 @@ var questionnaireData = {
             "index": 31,
             "title": "Please list what you are allergic to.",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [],
             "next_answer": [ 32 ],
             "attention_required": [],
             "hint": "Please list all the allergic agents and reactions you have"
         },
-
-
 
         {
             "index": 32,
@@ -462,7 +458,7 @@ var questionnaireData = {
             "index": 33,
             "title": "Please tell us the dates and reasons for your surgeries or hospitalizations.",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [],
             "next_answer": [ 34 ],
@@ -549,7 +545,7 @@ var questionnaireData = {
             "index": 38,
             "title": "Please tell us the dates and reasons for your surgeries or hospitalizations.",
             "type": "textarea",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [],
             "next_answer": [ 39 ],
@@ -575,7 +571,7 @@ var questionnaireData = {
             "index": 40,
             "title": "Do you take any of the following medications?",
             "type": "checkbox",
-            "is_subquestion" : "true",
+            "is_subquestion" : true,
             "subquestion": "a",
             "answers": [
                 { "0": "Nitroglycerin spray, ointment, patches or tablets " },
@@ -602,7 +598,6 @@ var questionnaireData = {
             "hint": "Include exact names of any medicines (e.g. Lipitor, Zyrtec, Ibuprofen)"
         },
 
-
         {
             "index": 42,
             "title": "When was the last time you or a healthcare provider checked your blood pressure?",
@@ -617,8 +612,34 @@ var questionnaireData = {
             "hint": "Please select one option"
         }
 
-
-
-
     ]
 }
+
+
+
+function generateNewQuestionnaireData() {
+    var newQuestionnaireData = { "questions": [] };
+    var stepCounter = 1;
+
+    for (var i = 0; i < questionnaireData.questions.length; i++) {
+        var question = questionnaireData.questions[i];
+        var newQuestion = { ...question };
+
+        if (!question.is_subquestion) {
+            newQuestion.step = stepCounter;
+            stepCounter++;
+        } else {
+            newQuestion.step = stepCounter-1;
+        }
+
+        newQuestionnaireData.questions.push(newQuestion);
+    }
+
+    return newQuestionnaireData;
+}
+
+
+var newQuestionnaireData = generateNewQuestionnaireData();
+
+console.log(newQuestionnaireData);
+console.log(questionnaireData);
