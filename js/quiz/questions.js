@@ -12,7 +12,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_answer": [ 1, 1, 1, 1, 1 ],
+            "next_answer": [ 1 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -26,7 +26,7 @@ var questionnaireData = {
                 { "1": "Increasing my libido" },
                 { "2": "Both" }
             ],
-            "next_answer": [ 2, 2, 2 ],
+            "next_answer": [ 2 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -475,7 +475,7 @@ var questionnaireData = {
                 { "1": "Chest pain with sexual activity" },
                 { "2": "Unexplained fainting or dizziness" },
                 { "3": "Abnormal heart beats or rhythms" },
-                { "4lf ": "None of these apply to me" }
+                { "4 ": "None of these apply to me" }
             ],
             "next_answer": [ 35 ],
             "attention_required": [],

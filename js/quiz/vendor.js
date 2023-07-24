@@ -6,10 +6,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
     questionHtml.classList.add('chubs-step');
     questionHtml.classList.add('chubs-step-index-' + index);
     questionHtml.classList.add('chubs-step-step-' + question.step);
-    if (question.is_subquestion) {
-        questionHtml.classList.add('chubs-step-is_subquestion');
-    } else {
-    }
+
     questionHtml.style.display = 'none';
     var fieldset = document.createElement('fieldset');
     fieldset.classList.add('inner');
