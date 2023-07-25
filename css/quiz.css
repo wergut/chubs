@@ -93,6 +93,7 @@ a.back-to-main:focus,
 }
 
 .chubs-step {
+    position: relative;
     min-height: 410px;
     display: none;
 }
