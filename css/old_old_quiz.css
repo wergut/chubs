@@ -593,38 +593,8 @@ form .inputs-wrapper input {
     margin-top: 5px;
 }
 
-.chubs-step .chubs-quiz-answers-type-checkbox {
-    max-width: 1100px;
-    margin: 60px auto 0;
-}
 
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-2,
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-3,
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-4,
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-5,
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-6 {
-    max-width: 600px;
-}
 
-.chubs-step .chubs-quiz-answers-type-checkbox .answer-btn {
-    width: 100%;
-    max-width: 48%;
-    display: inline-flex;
-}
-
-.chubs-step .chubs-quiz-answers-type-checkbox .answer-btn+.answer-btn {
-    margin-left: 0;
-}
-
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-2 .answer-btn,
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-3 .answer-btn,
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-4 .answer-btn,
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-5 .answer-btn,
-.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-6 .answer-btn {
-    max-width: 100%;
-    width: 100%;
-    display: flex;
-}
 
 
 
