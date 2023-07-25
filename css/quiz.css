@@ -935,4 +935,8 @@ form .inputs-wrapper input {
         width: 100%;
         display: flex;
     }
+    .chubs-step input[type="text"]:focus,
+    .chubs-step textarea:focus {
+        border-color: #a6cd46;
+    }
 }
