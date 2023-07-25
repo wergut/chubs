@@ -778,6 +778,9 @@ form .inputs-wrapper input {
     min-height: 530px;
 }
 
+.chubs-steps .chubs-step .answer-btn-hidden-pc {
+    display: none;
+}
 
 @media (min-width: 1780px) {
     .chubs-label-for-range {
