@@ -487,7 +487,7 @@ var questionnaireData = {
                 { "1": "Chest pain with sexual activity" },
                 { "2": "Unexplained fainting or dizziness" },
                 { "3": "Abnormal heart beats or rhythms" },
-                { "4 ": "None of these apply to me" }
+                { "4": "None of these apply to me" }
             ],
             "next_answer": [ 35 ],
             "attention_required": [],

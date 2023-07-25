@@ -224,6 +224,24 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 
         answersDiv.appendChild(bottomContainerDiv);
 
+        var rememberContainerDiv = document.createElement('div');
+        rememberContainerDiv.classList.add('chubs-quiz-answer-label');
+        rememberContainerDiv.classList.add('answer-btn');
+
+        var rememberInput = document.createElement('input');
+        rememberInput.type = 'radio';
+        rememberInput.value = 'I don`t remember';
+
+        var rememberLabel = document.createElement('div');
+        rememberLabel.classList.add('chubs-quiz-answer-label-text');
+        rememberLabel.textContent = 'I don`t remember';
+
+        rememberContainerDiv.appendChild(rememberInput);
+        rememberContainerDiv.appendChild(rememberLabel);
+
+        answersDiv.appendChild(rememberContainerDiv);
+
+
 
 
         /*

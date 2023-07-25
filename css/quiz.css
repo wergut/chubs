@@ -635,6 +635,81 @@ form .inputs-wrapper input {
     background: #FDFDFD;
     padding: 52px 75px;
 }
+
+.chubs-step .chubs-quiz-answers-type-number {
+    border-radius: 20px;
+    border: 1px solid #EFEFEF;
+    max-width: 500px;
+    margin: 60px auto 0;
+    background: #FDFDFD;
+    padding: 52px 75px;
+}
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label input {
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    width: calc(50% + 40px);
+    margin: 0 20px;
+    max-width: 172px;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label p {
+    color: #141414;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label p:nth-of-type(1) {
+    width: 26%;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label p:nth-of-type(2) {
+    color: #B7B7B7;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    width: 24%;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .answer-btn:hover, .chubs-step .chubs-quiz-answers-type-number {
+    justify-content: flex-start;
+}
+
+.chubs-steps .chubs-step .answer-btn+.answer-btn {
+    margin-left: 0;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .answer-btn:hover, .chubs-step .chubs-quiz-answers-type-number .answer-btn {
+    border: none;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .answer-btn:hover, .chubs-step .chubs-quiz-answers-type-number .answer-btn.active {
+    background: transparent;
+}
+.chubs-step .chubs-quiz-answers-type-number input::-webkit-outer-spin-button,
+.chubs-step .chubs-quiz-answers-type-number input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.chubs-step .chubs-quiz-answers-type-number input[type='number'] {
+    -moz-appearance: textfield;
+    display: block;
+}
+
 .chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label {
     width: 100%;
     display: flex;
