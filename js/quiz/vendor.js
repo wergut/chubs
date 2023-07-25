@@ -178,6 +178,76 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         phoneContainer.appendChild(phoneInput);
         answersDiv.appendChild(phoneContainer);
 
+    } else if (question.type === 'number') {
+
+        var topContainerDiv = document.createElement('div');
+        topContainerDiv.classList.add('chubs-quiz-answer-label');
+        topContainerDiv.classList.add('answer-btn');
+
+        var topLabel = document.createElement('p');
+        topLabel.textContent = 'Top #';
+
+        var topInput = document.createElement('input');
+        topInput.type = 'number';
+        topInput.name = 'date_' + index;
+        topInput.placeholder = 'minHg';
+        topInput.classList.add('inputmode', 'numeric');
+
+        var topUnitLabel = document.createElement('p');
+        topUnitLabel.textContent = '(Systolic)';
+
+        topContainerDiv.appendChild(topLabel);
+        topContainerDiv.appendChild(topInput);
+        topContainerDiv.appendChild(topUnitLabel);
+
+        answersDiv.appendChild(topContainerDiv);
+
+        var bottomContainerDiv = document.createElement('div');
+        bottomContainerDiv.classList.add('chubs-quiz-answer-label');
+        bottomContainerDiv.classList.add('answer-btn');
+
+        var bottomLabel = document.createElement('p');
+        bottomLabel.textContent = 'Bottom #';
+
+        var bottomInput = document.createElement('input');
+        bottomInput.type = 'number';
+        bottomInput.name = 'date_' + index;
+        bottomInput.placeholder = 'mmHg';
+        bottomInput.classList.add('inputmode', 'numeric');
+
+        var bottomUnitLabel = document.createElement('p');
+        bottomUnitLabel.textContent = '(Diastolic)';
+
+        bottomContainerDiv.appendChild(bottomLabel);
+        bottomContainerDiv.appendChild(bottomInput);
+        bottomContainerDiv.appendChild(bottomUnitLabel);
+
+        answersDiv.appendChild(bottomContainerDiv);
+
+
+
+        /*
+         <div class="chubs-step chubs-step-index-3 chubs-step-step-4" style="display: block;">
+        <fieldset class="inner">
+            <div class="chubs-quiz-answers chubs-quiz-answers-type-number chubs-quiz-answers-0">
+                <div class="chubs-quiz-answer-label answer-btn">
+                    <p>
+                        Top #
+                    </p>
+                    <input type="number" name="date_3" placeholder="minHg" class="" inputmode="numeric">
+                    <p>(Systolic)</p>
+                </div>
+                <div class="chubs-quiz-answer-label answer-btn">
+                    <p>
+                        Bottom #
+                    </p>
+                    <input type="number" name="date_3" placeholder="mmHg" class="" inputmode="numeric">
+                    <p>(Diastolic)</p>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+         */
     }
 
     fieldset.appendChild(legend);

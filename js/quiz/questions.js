@@ -2,6 +2,17 @@ var questionnaireData = {
     "questions": [
         {
             "index": 0,
+            "title": "What was your last blood pressure reading? (top and bottom numbers)",
+            "type": "number",
+            "subquestion": "a",
+            "hint": "Select the frequency of the problem",
+            "next_answer": [ 1 ],
+            "attention_required": [],
+            "answers": [],
+        },
+        /*
+        {
+            "index": 0,
             "title": "How often do you have trouble getting or keeping an erection during sex?",
             "type": "slider",
             "subquestion": "a",
@@ -16,6 +27,7 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
+        */
         {
             "index": 1,
             "title": "What do you expect from treatment?",
@@ -641,5 +653,3 @@ function generateNewQuestionnaireData() {
 
 var newQuestionnaireData = generateNewQuestionnaireData();
 
-console.log(newQuestionnaireData);
-console.log(questionnaireData);

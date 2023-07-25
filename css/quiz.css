@@ -627,8 +627,66 @@ form .inputs-wrapper input {
 }
 
 
+.chubs-step .chubs-quiz-answers-type-number {
+    border-radius: 20px;
+    border: 1px solid #EFEFEF;
+    max-width: 500px;
+    margin: 60px auto 0;
+    background: #FDFDFD;
+    padding: 52px 75px;
+}
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label input {
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    width: calc(50% + 40px);
+    margin: 0 20px;
+    max-width: 172px;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label p {
+    color: #141414;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label p:nth-of-type(1) {
+    width: 26%;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label p:nth-of-type(2) {
+    color: #B7B7B7;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    width: 24%;
+}
 
 
+.chubs-step .chubs-quiz-answers-type-number .answer-btn:hover, .chubs-step .chubs-quiz-answers-type-number .answer-btn.active {
+    background: transparent;
+}
+.chubs-step .chubs-quiz-answers-type-number input::-webkit-outer-spin-button,
+.chubs-step .chubs-quiz-answers-type-number input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.chubs-step .chubs-quiz-answers-type-number input[type='number'] {
+    -moz-appearance: textfield;
+}
 
 
 
@@ -647,6 +705,87 @@ form .inputs-wrapper input {
     }
     .chubs-step .noUi-target {
         width: 1160px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .chubs-quiz .question {
+        max-width: 742px;
+        margin: 0 auto 80px;
+        padding: 0 24px;
+    }
+    .banner {
+        margin-bottom: 80px;
+        padding-top: 30px;
+    }
+    .chubs-step .noUi-target {
+        max-width: 649px;
+    }
+    .chubs-step .chubs-quiz-answers {
+        margin-top: 40px;
+    }
+    .chubs-label-for-range li:nth-child(2) {
+        margin-left: -40px;
+        max-width: 20%;
+        text-align: center;
+    }
+    .chubs-label-for-range li:nth-child(3) {
+        margin-left: -65px;
+    }
+    .chubs-step .inner .chubs-quiz-answers-type-contacts, .chubs-step .chubs-quiz-answers-2, .chubs-step .chubs-quiz-answers-3 {
+        max-width: 488px;
+    }
+    .chubs-step .chubs-quiz-answers .chubs-quiz-answer-label {
+        max-width: 336px;
+    }
+    .chubs-step .chubs-quiz-answers-2 .chubs-quiz-answer-label,
+    .chubs-step .chubs-quiz-answers-3 .chubs-quiz-answer-label,
+    .chubs-step .chubs-quiz-answers-4 .chubs-quiz-answer-label {
+        max-width: 488px;
+    }
+    .chubs-step .inner .chubs-quiz-answers-type-contacts,
+    .chubs-step .chubs-quiz-answers-2,
+    .chubs-step .chubs-quiz-answers-3,
+    .chubs-step .chubs-quiz-answers-4 {
+        max-width: 488px;
+        justify-content: center;
+    }
+
+    .chubs-step .chubs-quiz-answers-type-slider .chubs-quiz-answer-label {
+        max-width: 699px;
+    }
+    .chubs-step .chubs-quiz-answers-type-slider {
+        margin-top: 120px;
+    }
+    .chubs-step {
+        min-height: 370px;
+    }
+    .chubs-step:has(.chubs-quiz-answers-type-slider) {
+        min-height: 450px;
+    }
+    .chubs-quiz-answer-label-text {
+        padding: 0 25px;
+    }
+    .chubs-step .chubs-quiz-answers-5, .chubs-step .chubs-quiz-answers-6 {
+        justify-content: space-around;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-2,
+    .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-3,
+    .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-4,
+    .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-5,
+    .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-6 {
+        max-width: 522px;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox label {
+        padding: 0;
+        align-items: center;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox {
+        justify-content: space-between;
+    }
+    .chubs-step .chubs-quiz-answers-type-textarea .chubs-quiz-answer-label {
+        max-width: 453px;
     }
 }
 
