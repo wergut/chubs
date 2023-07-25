@@ -935,8 +935,9 @@ form .inputs-wrapper input {
         width: 100%;
         display: flex;
     }
-    .chubs-step input[type="text"]:focus,
-    .chubs-step textarea:focus {
+    .chubs-step .inner .chubs-quiz-answers-type-birth .chubs-quiz-answer-label .date:focus,
+    .chubs-step .inner .chubs-quiz-answers-type-contacts .chubs-quiz-answer-label input:focus,
+    .question .inner .answer-btn textarea:focus {
         border-color: #a6cd46;
     }
 }
