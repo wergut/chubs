@@ -110,6 +110,26 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answerLabel.appendChild(hiddenInput);
         answersDiv.appendChild(answerLabel);
 
+
+        question.answers.forEach(function(answer, i) {
+            var radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = 'question_' + index;
+            radio.value = answer[i];
+
+            var label = document.createElement('div');
+            label.classList.add('chubs-quiz-answer-label-text');
+            label.textContent = answer[i];
+
+            var answerContainer = document.createElement('div');
+            answerContainer.classList.add('chubs-quiz-answer-label');
+            answerContainer.classList.add('answer-btn');
+            answerContainer.classList.add('answer-btn-hidden-pc');
+            answerContainer.appendChild(radio);
+            answerContainer.appendChild(label);
+            answersDiv.appendChild(answerContainer);
+        });
+
     } else if (question.type === 'select') {
 
         var select = document.createElement('select');
@@ -242,30 +262,6 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answersDiv.appendChild(rememberContainerDiv);
 
 
-
-
-        /*
-         <div class="chubs-step chubs-step-index-3 chubs-step-step-4" style="display: block;">
-        <fieldset class="inner">
-            <div class="chubs-quiz-answers chubs-quiz-answers-type-number chubs-quiz-answers-0">
-                <div class="chubs-quiz-answer-label answer-btn">
-                    <p>
-                        Top #
-                    </p>
-                    <input type="number" name="date_3" placeholder="minHg" class="" inputmode="numeric">
-                    <p>(Systolic)</p>
-                </div>
-                <div class="chubs-quiz-answer-label answer-btn">
-                    <p>
-                        Bottom #
-                    </p>
-                    <input type="number" name="date_3" placeholder="mmHg" class="" inputmode="numeric">
-                    <p>(Diastolic)</p>
-                </div>
-            </div>
-        </fieldset>
-    </div>
-         */
     }
 
     fieldset.appendChild(legend);
