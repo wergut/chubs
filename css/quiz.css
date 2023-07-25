@@ -635,15 +635,6 @@ form .inputs-wrapper input {
     background: #FDFDFD;
     padding: 52px 75px;
 }
-
-.chubs-step .chubs-quiz-answers-type-number {
-    border-radius: 20px;
-    border: 1px solid #EFEFEF;
-    max-width: 500px;
-    margin: 60px auto 0;
-    background: #FDFDFD;
-    padding: 52px 75px;
-}
 .chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label {
     width: 100%;
     display: flex;
@@ -763,6 +754,28 @@ form .inputs-wrapper input {
     -moz-appearance: textfield;
 }
 
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label:nth-of-type(3) {
+    border: 1px solid #dedede;
+    position: absolute;
+    bottom: 35px;
+    left: calc(50% - 200px);
+    max-width: 400px;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label:nth-of-type(3):hover {
+    color: #a6cd46;
+    justify-content: center;
+    border-color: #a6cd46;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label:nth-of-type(3).active {
+    background: #a6cd46;
+    color: #fff;
+}
+
+.chubs-step:has(.chubs-quiz-answers-type-number) {
+    min-height: 530px;
+}
 
 
 @media (min-width: 1780px) {
