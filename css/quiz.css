@@ -923,4 +923,14 @@ form .inputs-wrapper input {
     .chubs-step .chubs-quiz-answers-type-checkbox input+label::before {
         top: 0;
     }
+    .chubs-step .chubs-quiz-answers-type-slider .chubs-quiz-answer-label {
+        display: none;
+    }
+    .chubs-step .chubs-quiz-answers-type-slider .answer-btn-hidden-pc {
+        display: block;
+        border: 1px solid #dedede;
+        max-width: 280px;
+        height: 50px;
+        width: 100%;
+    }
 }
