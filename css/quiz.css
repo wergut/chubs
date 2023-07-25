@@ -878,3 +878,46 @@ form .inputs-wrapper input {
     }
 }
 
+@media (max-width: 600px) {
+    .banner {
+        margin-bottom: 25px;
+        padding-top: 10px;
+    }
+    .chubs-step legend, .chubs-step p {
+        text-align: start;
+        width: 100%;
+        margin: 0;
+    }
+    .chubs-step legend {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .chubs-step .chubs-quiz-answers {
+        margin-top: 25px;
+    }
+    .chubs-step .chubs-quiz-answers .chubs-quiz-answer-label {
+        margin-bottom: 10px;
+    }
+    .chubs-step .chubs-quiz-answers-type-textarea .chubs-quiz-answer-label {
+        width: 100%;
+    }
+    
+    .chubs-step .inner .chubs-quiz-answers-type-contacts,
+    .chubs-step .chubs-quiz-answers-2,
+    .chubs-step .chubs-quiz-answers-3,
+    .chubs-step .chubs-quiz-answers-4 {
+        margin-top: 25px;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn {
+        border-radius: 10px;
+        border: 1px solid #DEDEDE;
+        background: #FFF;
+        padding: 15px 16px;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn.active {
+        border-color: #a6cd46;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox input+label::before {
+        top: 0;
+    }
+}
