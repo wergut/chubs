@@ -147,6 +147,24 @@
         return selectedAnswer;
     }
 
+    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
+    answerBtns.forEach(function(btn, index) {
+        if (index > 0) {
+            btn.addEventListener('click', function() {
+                var currentStep = this.closest('.chubs-step');
+                var allAnswerBtns = currentStep.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
+
+                allAnswerBtns.forEach(function(btn) {
+                    btn.classList.remove('active');
+                    btn.querySelector('input').checked = false;
+                });
+
+                this.classList.add('active');
+                this.querySelector('input').checked = true;
+            });
+        }
+    });
+
     var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
     answerBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
