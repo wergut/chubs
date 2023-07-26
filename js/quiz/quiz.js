@@ -196,11 +196,15 @@
         });
     });
 
+
     var savedData = [];
     function saveQuestionData(questionIndex) {
         var question = questionnaireData.questions[questionIndex];
         var questionText = question.title;
         var answers = [];
+
+
+
 
         if (question.type === 'radio' || question.type === 'checkbox') {
             var answerInputs = document.querySelectorAll('input[name="question_' + questionIndex + '"]:checked');
@@ -212,6 +216,15 @@
                     text: answerText
                 });
             });
+
+        } else if (question.type === 'slider') {
+            var answerInput = document.querySelector('input[name="question_' + questionIndex + '"]');
+            var answerValue = answerInput.value;
+            answers.push({
+                index: 0,
+                text: answerValue
+            });
+
         } else {
             var answerInput = document.querySelector('input[name="question_' + questionIndex + '"]');
             var answerIndex = 0;
@@ -221,6 +234,11 @@
                 text: answerText
             });
         }
+
+
+        console.log(answerInputs);
+
+        
 
         var existingDataIndex = savedData.findIndex(function(data) {
             return data.questionIndex === questionIndex;
@@ -236,5 +254,5 @@
                 answers: answers
             });
         }
-        //console.log(savedData);
+        console.log(savedData);
     }
