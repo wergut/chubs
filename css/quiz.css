@@ -879,6 +879,9 @@ form .inputs-wrapper input {
     .chubs-step .chubs-quiz-answers-type-textarea .chubs-quiz-answer-label {
         max-width: 453px;
     }
+    .question .inner .answer-btn textarea {
+        height: 192px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -939,5 +942,8 @@ form .inputs-wrapper input {
     .chubs-step .inner .chubs-quiz-answers-type-contacts .chubs-quiz-answer-label input:focus,
     .question .inner .answer-btn textarea:focus {
         border-color: #a6cd46;
+    }
+    .question .inner .answer-btn textarea {
+        height: 180px;
     }
 }
