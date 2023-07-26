@@ -889,6 +889,9 @@ form .inputs-wrapper input {
 }
 
 @media (max-width: 600px) {
+    .chubs-quiz {
+        padding-top: 10px;
+    }
     .banner {
         margin-bottom: 0;
         padding-top: 10px;
