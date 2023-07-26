@@ -782,6 +782,10 @@ form .inputs-wrapper input {
     display: none;
 }
 
+.banner .quiz-button, .banner .logo-mobile {
+    display: none;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
@@ -879,12 +883,24 @@ form .inputs-wrapper input {
     .chubs-step .chubs-quiz-answers-type-textarea .chubs-quiz-answer-label {
         max-width: 453px;
     }
+    .question .inner .answer-btn textarea {
+        height: 192px;
+    }
 }
 
 @media (max-width: 600px) {
+    .chubs-quiz {
+        padding-top: 115px;
+    }
     .banner {
-        margin-bottom: 25px;
+        margin-bottom: 0;
         padding-top: 10px;
+        padding-bottom: 55px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 999999;
     }
     .chubs-step legend, .chubs-step p {
         text-align: start;
@@ -939,5 +955,59 @@ form .inputs-wrapper input {
     .chubs-step .inner .chubs-quiz-answers-type-contacts .chubs-quiz-answer-label input:focus,
     .question .inner .answer-btn textarea:focus {
         border-color: #a6cd46;
+    }
+    .question .inner .answer-btn textarea {
+        height: 180px;
+    }
+    .chubs-step .chubs-quiz-answers-type-number {
+        padding: 32px 24px;
+    }
+    .chubs-step:has(.chubs-quiz-answers-type-number) {
+        min-height: 450px;
+    }
+    .banner .quiz-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 16px;
+    }
+    .quiz-button-back {
+        background-image: url("../img/icons/undo__348.svg");
+    }
+    .quiz-button-close {
+        background-image: url("../img/icons/close__1.svg");
+    }
+    .banner .logo {
+        display: none;
+    }
+    .back-to-main {
+        display: none!important;
+    }
+    .banner .logo-mobile {
+        display: block;
+    }
+    .quiz-header {
+        align-items: flex-end;
+    }
+    .quiz-progress {
+        position: absolute;
+        top: 58px;
+    }
+    .chubs-step .chubs-quiz-answers-type-select .chubs-quiz-answer-label,
+    .chubs-step .chubs-quiz-answers-type-birth .chubs-quiz-answer-label,
+    .chubs-step .chubs-quiz-answers-type-contacts .chubs-quiz-answer-label {
+        width: 100%;
+    }
+    .subquestion {
+        position: absolute;
+        left: 45%;
+        width: initial;
+        top: 75px;
     }
 }
