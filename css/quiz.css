@@ -946,4 +946,10 @@ form .inputs-wrapper input {
     .question .inner .answer-btn textarea {
         height: 180px;
     }
+    .chubs-step .chubs-quiz-answers-type-number {
+        padding: 32px 24px;
+    }
+    .chubs-step:has(.chubs-quiz-answers-type-number) {
+        min-height: 450px;
+    }
 }
