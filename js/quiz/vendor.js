@@ -133,7 +133,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
     } else if (question.type === 'select') {
 
         var select = document.createElement('select');
-        select.name = 'state'; /* + index;*/
+        select.name = 'question_' + index;
         select.classList.add('select_states');
         select.required = true;
 

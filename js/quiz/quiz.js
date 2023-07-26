@@ -200,59 +200,128 @@
     var savedData = [];
     function saveQuestionData(questionIndex) {
         var question = questionnaireData.questions[questionIndex];
-        var questionText = question.title;
+        var questionTitle = question.title;
         var answers = [];
 
-
-
-
         if (question.type === 'radio' || question.type === 'checkbox') {
-            var answerInputs = document.querySelectorAll('input[name="question_' + questionIndex + '"]:checked');
+            var answerInputs = document.querySelectorAll('input[name="question_' + questionIndex + '"]');
             answerInputs.forEach(function(input, index) {
-                var answerIndex = index;
-                var answerText = question.answers[answerIndex];
+                if (input.checked) {
+                    var answerIndex = index;
+                    var answerText = question.answers[answerIndex];
+                    console.log(answerText);
+                    answers.push({
+                        text: answerText
+                    });
+                }
+            });
+
+        } else if (question.type === 'slider') {
+            var answerInputs = document.querySelector('input[name="question_' + questionIndex + '"]');
+            var answerValue = answerInputs.value;
+            console.log(answerInputs.value);
+            answers.push({
+                text: answerValue
+            });
+
+        } else if (question.type === 'select') {
+            var answerSelects = document.querySelectorAll('select[name="question_' + questionIndex + '"]');
+            answerSelects.forEach(function(input, index) {
+                var answerText = input.value;
+                console.log(answerText);
                 answers.push({
-                    index: answerIndex,
                     text: answerText
                 });
             });
 
-        } else if (question.type === 'slider') {
-            var answerInput = document.querySelector('input[name="question_' + questionIndex + '"]');
-            var answerValue = answerInput.value;
-            answers.push({
-                index: 0,
-                text: answerValue
+        } else if (question.type === 'birth') {
+            var answerInputs = document.querySelectorAll('input[name="date_' + questionIndex + '"]');
+            console.log('date_' + questionIndex);
+            console.log(answerInputs);
+            answerInputs.forEach(function(input, index) {
+                var answerIndex = index;
+                var answerText = input.value;
+                console.log(answerText);
+                answers.push({
+                    text: answerText
+                });
             });
 
-        } else {
-            var answerInput = document.querySelector('input[name="question_' + questionIndex + '"]');
-            var answerIndex = 0;
-            var answerText = question.answers[answerIndex];
-            answers.push({
-                index: answerIndex,
-                text: answerText
-            });
-        }
+        } else if (question.type === 'contacts') {
+            var phoneInput = document.querySelector('input[name="phone_' + questionIndex + '"]');
+            var emailInput = document.querySelector('input[name="email_' + questionIndex + '"]');
+
+            var phoneValue = phoneInput.value;
+            var emailValue = emailInput.value;
+
+            if (phoneValue.trim() !== '') {
+                answers.push({
+                    phone: phoneValue
+                });
+            }
+
+            if (emailValue.trim() !== '') {
+                answers.push({
+                    email: emailValue
+                });
+            }
 
 
-        console.log(answerInputs);
+            } else if (question.type === 'textarea') {
+                var answerTextarea = document.querySelector('textarea[name="question_' + questionIndex + '"]');
+                var textareaValue = answerTextarea.value;
 
-        
+                console.log(answerTextarea);
+                console.log(textareaValue);
+
+                if (textareaValue.trim() !== '') {
+                    answers.push({
+                        text: textareaValue
+                    });
+                }
+            }
+
 
         var existingDataIndex = savedData.findIndex(function(data) {
             return data.questionIndex === questionIndex;
         });
 
         if (existingDataIndex !== -1) {
-            savedData[existingDataIndex].questionText = questionText;
+            savedData[existingDataIndex].questionTitle = questionTitle;
             savedData[existingDataIndex].answers = answers;
         } else {
             savedData.push({
                 questionIndex: questionIndex,
-                questionText: questionText,
+                questionTitle: questionTitle,
                 answers: answers
             });
         }
         console.log(savedData);
+    }
+
+
+
+    document.getElementById('saveButton').addEventListener('click', function () {
+        console.log(savedData);
+        //sendDataToServer(savedData);
+    });
+
+    function sendDataToServer(data) {
+        var url = 'https://example.com/api/submit';
+        var requestData = JSON.stringify(data);
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: requestData
+        })
+        .then(response => response.json())
+        .then(data => {
+                console.log('Response from the server:', data);
+        })
+        .catch(error => {
+            console.error('Error while sending data to the server:', error);
+        })
     }
