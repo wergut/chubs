@@ -900,7 +900,7 @@ form .inputs-wrapper input {
         top: 0;
         width: 100%;
         background: #fff;
-        z-index: 4;
+        z-index: 999999;
     }
     .chubs-step legend, .chubs-step p {
         text-align: start;
