@@ -879,7 +879,7 @@ form .inputs-wrapper input {
 
 @media (max-width: 600px) {
     .chubs-quiz {
-        padding-top: 115px;
+        padding-top: 109px;
     }
     .banner {
         margin-bottom: 0;
@@ -930,6 +930,8 @@ form .inputs-wrapper input {
     }
     .chubs-steps .chubs-step .answer-btn {
         max-width: 100%;
+        min-height: 50px;
+        height: initial;
     }
     .chubs-step .chubs-quiz-answers-type-slider .chubs-quiz-answer-label {
         display: none;
@@ -995,9 +997,10 @@ form .inputs-wrapper input {
     }
     .subquestion {
         position: absolute;
-        left: 45%;
+        left: 140px;
         width: initial;
-        top: 75px;
+        top: 77px;
+        margin-top: 0;
     }
     .chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label p:nth-of-type(1) {
         width: 100%;
@@ -1039,9 +1042,43 @@ form .inputs-wrapper input {
         z-index: 1;
     }
     .question .inner.fixed {
-        padding-top: 40px;
+        padding-top: 85px;
     }
     .btn-quiz-prev {
         display: none!important;
+    }
+    .chubs-step .inner .chubs-quiz-answers-type-contacts, .chubs-step .chubs-quiz-answers-2, .chubs-step .chubs-quiz-answers-3, .chubs-step .chubs-quiz-answers-4 {
+        max-width: 100%;
+    }
+    .chubs-step .inner .chubs-quiz-answers-type-contacts .chubs-quiz-answer-label {
+        max-width: 100%;
+    }
+    span.step-info {
+        font-size: 16px;
+    }
+    .footer .footer-contacts .contact-link {
+        font-size: 13px;
+    }
+    .footer .footer-contacts .mail:before, .footer .footer-contacts .phone:before {
+        margin-right: 10px;
+    }
+    .footer .footer-contacts .mail:before, .footer .footer-contacts .phone:before {
+        width: 17px;
+        height: 17px;
+    }
+    .footer .footer-info .footer-copy, .footer .footer-info .footer-policy, .footer .footer-info .footer-policy a {
+        font-size: 9px;
+    }
+    .footer .footer-logo img {
+        max-width: 98px;
+    }
+    .chubs-quiz-answer-label-text {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 382px) {
+    .chubs-step:has(.chubs-quiz-answers-type-checkbox.chubs-quiz-answers-9) .inner.fixed {
+        padding-top: 105px;
     }
 }
