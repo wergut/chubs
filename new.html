@@ -25,6 +25,16 @@
             <div id="loader"></div>
         </div>
 
+        <script>
+            $(document).ready(function() {
+                const numberOfItems = $('.chubs-quiz-answers').children('.chubs-quiz-answer-label').length;
+
+                if (numberOfItems > 7) {
+                    $('fieldset.inner .chubs-quiz-answers-14 legend').css('position', 'fixed');
+                }
+            });
+        </script>
+
         <section class="banner question-logo">
             <div class="container">
                 <div class="row">

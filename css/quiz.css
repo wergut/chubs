@@ -500,6 +500,7 @@ form .inputs-wrapper input {
 
 .chubs-step .chubs-quiz-answers-type-checkbox {
     max-width: 512px;
+    justify-content: flex-start;
 }
 
 .chubs-step .chubs-quiz-answers-type-checkbox input+label::before {
