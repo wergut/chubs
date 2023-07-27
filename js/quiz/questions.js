@@ -12,7 +12,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_answer": [ 1 ],
+            "next_answer": [ 44 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -190,8 +190,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Please select one option"
         },
-
-
         {
             "index": 13,
             "title": "Were you happy with your treatment with sildenafil?",
@@ -243,8 +241,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
-
-
         {
             "index": 17,
             "title": "Were you happy with your treatment with tadalafil?",
@@ -296,8 +292,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
-
-
         {
             "index": 21,
             "title": "Were you happy with your treatment with vardenafil?",
@@ -349,8 +343,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
-
-
         {
             "index": 25,
             "title": "Were you happy with your treatment with avanafil?",
@@ -402,7 +394,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
-
         {
             "index": 29,
             "title": "Please tell us more about your usage of other ED treatments. Which dosages did you try? Were they effective?",
@@ -414,8 +405,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
-
-
         {
             "index": 30,
             "title": "Do you have any allergies or medication reactions?",
@@ -440,7 +429,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Please list all the allergic agents and reactions you have"
         },
-
         {
             "index": 32,
             "title": "Have you had any surgeries or hospitalizations?",
@@ -526,7 +514,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Please select all the options that apply"
         },
-
         {
             "index": 37,
             "title": "Are there any other medical conditions you haven't shared with us already?",
@@ -551,7 +538,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": ""
         },
-
         {
             "index": 39,
             "title": "Do you take any medications, vitamins, or supplements regularly?",
@@ -595,7 +581,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": "Include exact names of any medicines (e.g. Lipitor, Zyrtec, Ibuprofen)"
         },
-
         {
             "index": 42,
             "title": "When was the last time you or a healthcare provider checked your blood pressure?",
@@ -626,22 +611,21 @@ var questionnaireData = {
             "multiply": true,
             "subquestion": "a",
             "answers": [
-                { "0": "Poppers or Rush (Amyl Nitrate or Butyl Nitrate)" },
-                { "1": "Cannabis" },
-                { "2": "Cocaine" },
-                { "3": "Other" },
-                { "4": "Methamphetamine (crystal meth)" },
-                { "5": "No, I have not used any recreational drugs in the past 3 months" },
-                { "6": "Cigarettes" }
+                { "0": "Poppers or Rush (Amyl Nitrate or Butyl Nitrate) 45" },
+                { "1": "Cannabis 51" },
+                { "2": "Cocaine 46" },
+                { "3": "Other 50" },
+                { "4": "Methamphetamine (crystal meth) 49" },
+                { "5": "No, I have not used any recreational drugs in the past 3 months 51" },
+                { "6": "Cigarettes 51" }
             ],
-            "next_answer": [ 45, 50, 46, 48, 50 ,50 ], //this multyplay questions
+            "next_answer": [ 45, 51, 46, 50, 49, 51 ,51 ], //this multyplay questions
             "attention_required": [],
             "hint": "Please select all the options that apply"
         },
-
         {
             "index": 45,
-            "title": "Within the past 3 months, have you used poppers or rush more than you meant to, or felt like you needed to cut down?",
+            "title": "Within the past 3 months, have you used poppers or rush more than you meant to, or felt like you needed to cut down? 45",
             "type": "radio",
             "subquestion": "a",
             "is_subquestion" : true,
@@ -649,13 +633,14 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 50 ],
+            "next_answer": [ 51 ],
+            "parent_question": 44,
             "attention_required": [],
             "hint": "Please select one option"
         },
         {
             "index": 46,
-            "title": "Within the past 3 months, have you used cocaine more than you meant to, or felt like you needed to cut down on cocaine?",
+            "title": "Within the past 3 months, have you used cocaine more than you meant to, or felt like you needed to cut down on cocaine? 46",
             "type": "radio",
             "subquestion": "a",
             "is_subquestion" : true,
@@ -663,26 +648,46 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 50, 47 ],
+            "next_answer": [ 51, 47 ],
+            "parent_question": 44,
             "attention_required": [],
             "hint": "Please select one option"
         },
         {
             "index": 47,
-            "title": "The combination of cocaine with oral medications for ED can cause serious life and health threatening emergencies. Some of the emergencies that can occur when cocaine and ED medications are combined include the following: priapism (an erection that doesn't go away and can cause permanent damage to your penis), stroke (which can cause permanent disability), cardiac arrest (your heart stops beating), muscle rigidity, very high fever, death.",
+            "title": "On average, how frequently do you use cocaine? 47",
+            "type": "radio",
+            "subquestion": "a",
+            "is_subquestion" : true,
+            "answers": [
+                { "0": "At least once per month, or more" },
+                { "1": "Less than once per month" }
+            ],
+            "next_answer": [ 48, 51 ],
+            "parent_question": 44,
+            "attention_required": [],
+            "hint": "Please select one option"
+        },
+        {
+            "index": 48,
+            "title": "The combination of cocaine with oral medications for ED can cause serious life and health threatening emergencies. " +
+            "Some of the emergencies that can occur when cocaine and ED medications are combined include the following: " +
+            "priapism (an erection that doesn't go away and can cause permanent damage to your penis), stroke (which can cause permanent disability), " +
+            "cardiac arrest (your heart stops beating), muscle rigidity, very high fever, death. 48",
             "type": "checkbox",
             "subquestion": "b",
             "is_subquestion" : true,
             "answers": [
                 { "0": "I have read the provided warning about the risks of serious medical harm and/or death if I use cocaine and ED medications together"}
             ],
-            "next_answer": [ 50 ],
+            "next_answer": [ 51 ],
+            "parent_question": 44,
             "attention_required": [],
             "hint": ""
         },
         {
-            "index": 48,
-            "title": "Within the past 3 months, have you used methamphetamine (crystal meth) more than you meant to, or felt like you needed to cut down on?",
+            "index": 49,
+            "title": "Within the past 3 months, have you used methamphetamine (crystal meth) more than you meant to, or felt like you needed to cut down on? 49",
             "type": "radio",
             "subquestion": "a",
             "is_subquestion" : true,
@@ -690,25 +695,37 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 50 ],
+            "next_answer": [ 51 ],
+            "parent_question": 44,
             "attention_required": [],
             "hint": "Please select one option"
         },
         {
-            "index": 49,
-            "title": "Please explain your choice of \"other,\" and detail any other recreational drugs you use (how frequently, and when was the last time?).",
+            "index": 50,
+            "title": "Please explain your choice of \"other,\" and detail any other recreational drugs you use (how frequently, and when was the last time?). 50",
             "type": "textarea",
             "subquestion": "a",
             "is_subquestion" : true,
             "answers": [],
-            "next_answer": [ 50 ],
+            "next_answer": [ 51 ],
+            "parent_question": 44,
             "attention_required": [],
             "hint": ""
         },
-
         {
-            "index": 50,
-            "title": "Here's your first message to your clinician. Please introduce yourself and ask the clinician any questions you have about the treatment. Feel free to include anything else you want them to know about your condition",
+            "index": 51,
+            "title": "Here's your first message to your clinician. Please introduce yourself and ask the clinician any questions you have about the treatment. " +
+            "Feel free to include anything else you want them to know about your condition 51",
+            "type": "textarea",
+            "subquestion": "a",
+            "answers": [],
+            "next_answer": [ 52 ], //what next question
+            "attention_required": [],
+            "hint": ""
+        },
+        {
+            "index": 52,
+            "title": "ended quiz",
             "type": "textarea",
             "subquestion": "a",
             "answers": [],
@@ -744,5 +761,125 @@ function generateNewQuestionnaireData() {
     return newQuestionnaireData;
 }
 
+
+
+
+var savedData = [];
+function saveQuestionData(questionIndex) {
+    var question = questionnaireData.questions[questionIndex];
+    var questionTitle = question.title;
+    var answers = [];
+
+    if (question.type === 'radio' || question.type === 'checkbox') {
+        var answerInputs = document.querySelectorAll('input[name="question_' + questionIndex + '"]');
+        answerInputs.forEach(function(input, index) {
+            if (input.checked) {
+                var answerIndex = index;
+                var answerText = question.answers[answerIndex];
+                answers.push({
+                    text: answerText
+                });
+            }
+        });
+
+    } else if (question.type === 'slider') {
+        var answerInputs = document.querySelector('input[name="question_' + questionIndex + '"]');
+        var answerValue = answerInputs.value;
+        answers.push({
+            text: answerValue
+        });
+
+    } else if (question.type === 'select') {
+        var answerSelects = document.querySelectorAll('select[name="question_' + questionIndex + '"]');
+        answerSelects.forEach(function(input, index) {
+            var answerText = input.value;
+            answers.push({
+                text: answerText
+            });
+        });
+
+    } else if (question.type === 'birth') {
+        var answerInputs = document.querySelectorAll('input[name="date_' + questionIndex + '"]');
+        answerInputs.forEach(function(input, index) {
+            var answerIndex = index;
+            var answerText = input.value;
+            answers.push({
+                text: answerText
+            });
+        });
+
+    } else if (question.type === 'contacts') {
+        var phoneInput = document.querySelector('input[name="phone_' + questionIndex + '"]');
+        var emailInput = document.querySelector('input[name="email_' + questionIndex + '"]');
+
+        var phoneValue = phoneInput.value;
+        var emailValue = emailInput.value;
+
+        if (phoneValue.trim() !== '') {
+            answers.push({
+                phone: phoneValue
+            });
+        }
+
+        if (emailValue.trim() !== '') {
+            answers.push({
+                email: emailValue
+            });
+        }
+
+    } else if (question.type === 'textarea') {
+        var answerTextarea = document.querySelector('textarea[name="question_' + questionIndex + '"]');
+        var textareaValue = answerTextarea.value;
+
+        if (textareaValue.trim() !== '') {
+            answers.push({
+                text: textareaValue
+            });
+        }
+    }
+
+
+    var existingDataIndex = savedData.findIndex(function(data) {
+        return data.questionIndex === questionIndex;
+    });
+
+    if (existingDataIndex !== -1) {
+        savedData[existingDataIndex].questionTitle = questionTitle;
+        savedData[existingDataIndex].answers = answers;
+    } else {
+        savedData.push({
+            questionIndex: questionIndex,
+            questionTitle: questionTitle,
+            answers: answers
+        });
+    }
+}
+
+
+
+document.getElementById('saveButton').addEventListener('click', function () {
+    console.log(savedData);
+    //sendDataToServer(savedData);
+});
+
+function sendDataToServer(data) {
+    var url = 'https://example.com/api/submit';
+    var requestData = JSON.stringify(data);
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: requestData
+    })
+        .then(response => response.json())
+.then(data => {
+        console.log('Response from the server:', data);
+})
+.catch(error => {
+        console.error('Error while sending data to the server:', error);
+})
+}
 
 
