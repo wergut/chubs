@@ -1039,7 +1039,7 @@ form .inputs-wrapper input {
         z-index: 1;
     }
     .question .inner.fixed {
-        padding-top: 40px;
+        padding-top: 75px;
     }
     .btn-quiz-prev {
         display: none!important;
