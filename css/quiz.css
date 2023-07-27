@@ -1030,4 +1030,18 @@ form .inputs-wrapper input {
         left: 0;
         justify-content: center;
     }
+    legend.fixed {
+        position: fixed;
+        left: 0;
+        padding: 0 24px 10px;
+        background: #fff;
+        top: 109px;
+        z-index: 1;
+    }
+    .question .inner.fixed {
+        padding-top: 40px;
+    }
+    .btn-quiz-prev {
+        display: none!important;
+    }
 }
