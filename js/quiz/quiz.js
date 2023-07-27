@@ -44,10 +44,10 @@
                 hideStep(currentStep);
                 saveQuestionData(currentStep);
 
-                if (newQuestionnaireData.questions[currentStep].multiply) {
+
+                if (steps[currentStep].multiply) {
                     var selectedAnswers = getSelectedAnswer(steps[currentStep]);
                     var nextSteps = getNextStep(selectedAnswers);
-                    console.log(nextSteps);
                     console.log(selectedAnswers);
 
                     nextSteps.forEach(function (nextStep) {
@@ -68,6 +68,7 @@
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
                 }
+
 
                 window.newQuestionnaireData = newQuestionnaireData;
 
@@ -99,7 +100,7 @@
     });
 
     function getNextStep(selectedAnswer) {
-        var nextStep = [];
+        var nextStep = null;
         nextStep = questionnaireData.questions[currentStep].next_answer[selectedAnswer];
         var currentStepSave = currentStep;
 
@@ -113,48 +114,6 @@
             currentStep = nextStep;
         }
     }
-
-    /*function getNextStep(selectedAnswers) {
-        var question = questionnaireData.questions[currentStep];
-
-        if (!question || !question.next_answer) {
-            return [];
-        }
-
-        // Если у вопроса нет поля "multiply" или оно равно false, обрабатываем как обычно
-        if (!question.multiply) {
-            var nextSteps = null;
-            console.log('return 1');
-            var nextStep = questionnaireData.questions[currentStep].next_answer[selectedAnswers[0]];
-            if (nextStep === null || nextStep === undefined) {
-                if (NewQuestionnaireData.questions[currentStep].next_answer[0]) {
-                    nextSteps.push(questionnaireData.questions[currentStep].next_answer[0]);
-                } else {
-                    nextSteps.push(currentStep + 1);
-                }
-            } else {
-                nextSteps.push(nextStep);
-            }
-        } else {
-            console.log('return 2');
-            var nextSteps = [];
-            // Если у вопроса есть поле "multiply" и оно равно true, обрабатываем несколько ответов
-            selectedAnswers.forEach(function (selectedAnswer) {
-                var nextStep = NewQuestionnaireData.questions[currentStep].next_answer[selectedAnswer];
-                if (nextStep === null || nextStep === undefined) {
-                    if (questionnaireData.questions[currentStep].next_answer[0]) {
-                        nextSteps.push(questionnaireData.questions[currentStep].next_answer[0]);
-                    } else {
-                        nextSteps.push(currentStep + 1);
-                    }
-                } else {
-                    nextSteps.push(nextStep);
-                }
-            });
-        }
-
-        return nextSteps;
-    }*/
 
 
 
@@ -190,19 +149,17 @@
     }
 
     function getSelectedAnswer(step) {
-        var selectedAnswers = [];
+        var selectedAnswer = null;
         var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
         if (inputs.length === 0) {
             return null;
         }
-        console.log(inputs);
         inputs.forEach(function(input, index) {
             if (input.checked) {
-                console.log(index);
-                selectedAnswers.push(index);
+                selectedAnswer = index;
             }
         });
-        return selectedAnswers;
+        return selectedAnswer;
     }
 
     var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');

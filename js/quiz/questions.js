@@ -12,7 +12,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_answer": [ 44 ],
+            "next_answer": [ 1 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -720,6 +720,7 @@ var questionnaireData = {
     ]
 }
 
+var newQuestionnaireData = generateNewQuestionnaireData();
 
 
 function generateNewQuestionnaireData() {
@@ -744,5 +745,4 @@ function generateNewQuestionnaireData() {
 }
 
 
-var newQuestionnaireData = generateNewQuestionnaireData();
 
