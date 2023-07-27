@@ -26,12 +26,28 @@
         </div>
 
         <script>
-            $(document).ready(function() {
-                const numberOfItems = $('.chubs-quiz-answers').children('.chubs-quiz-answer-label').length;
+            document.addEventListener('DOMContentLoaded', function() {
+                const chubsQuizAnswers = document.querySelectorAll('.chubs-quiz-answers');
 
-                if (numberOfItems > 7) {
-                    $('fieldset.inner .chubs-quiz-answers-14 legend').css('position', 'fixed');
-                }
+                chubsQuizAnswers.forEach(answers => {
+                    const classNames = answers.className.split(' ');
+                    const numberRegex = /\d+/;
+
+                    classNames.forEach(className => {
+                        const matches = className.match(numberRegex);
+
+                        if (matches && matches[0] >= 7) {
+                            const legend = answers.closest('.chubs-step').querySelector('legend');
+                            legend.classList.add('fixed');
+                        }
+                    });
+                });
+                const legendsWithFixedClass = document.querySelectorAll('.chubs-step legend.fixed');
+
+                legendsWithFixedClass.forEach(legend => {
+                    const chubsQuizAnswers = legend.closest('.chubs-step').querySelector('.chubs-quiz-answers');
+                    chubsQuizAnswers.classList.add('fixed');
+                });
             });
         </script>
 

@@ -1030,4 +1030,18 @@ form .inputs-wrapper input {
         left: 0;
         justify-content: center;
     }
+    legend.fixed {
+        position: fixed;
+        left: 0;
+        padding: 0 24px 10px;
+        background: #fff;
+        top: 110px;
+        z-index: 1;
+    }
+    .chubs-step .chubs-quiz-answers.fixed {
+        padding-top: 40px;
+    }
+    .btn-quiz-prev {
+        display: none!important;
+    }
 }
