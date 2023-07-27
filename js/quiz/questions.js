@@ -623,6 +623,7 @@ var questionnaireData = {
             "index": 44,
             "title": "Have you smoked, ingested or used any of the following within the past 3 months?",
             "type": "checkbox",
+            "multiply": true,
             "subquestion": "a",
             "answers": [
                 { "0": "Poppers or Rush (Amyl Nitrate or Butyl Nitrate)" },

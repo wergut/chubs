@@ -42,16 +42,33 @@
                 lastStep = currentStep;
 
                 hideStep(currentStep);
-
                 saveQuestionData(currentStep);
-                var selectedAnswer = getSelectedAnswer(steps[currentStep]);
-                getNextStep(selectedAnswer);
 
-                newQuestionnaireData.questions[currentStep].prev_question = lastStep;
 
-                showStep(currentStep);
-                updateStepInfo();
-                toggleButtonVisibility(currentStep);
+                if (steps[currentStep].multiply) {
+                    var selectedAnswers = getSelectedAnswer(steps[currentStep]);
+                    var nextSteps = getNextStep(selectedAnswers);
+                    console.log(selectedAnswers);
+
+                    nextSteps.forEach(function (nextStep) {
+                        currentStep = nextStep;
+                        hideStep(lastStep);
+                        showStep(currentStep);
+                        updateStepInfo();
+                        toggleButtonVisibility(currentStep);
+                    });
+
+                } else {
+                    var selectedAnswer = getSelectedAnswer(steps[currentStep]);
+                    console.log(selectedAnswer);
+
+                    getNextStep(selectedAnswer);
+                    newQuestionnaireData.questions[currentStep].prev_question = lastStep;
+                    showStep(currentStep);
+                    updateStepInfo();
+                    toggleButtonVisibility(currentStep);
+                }
+
 
                 window.newQuestionnaireData = newQuestionnaireData;
 
@@ -132,17 +149,19 @@
     }
 
     function getSelectedAnswer(step) {
-        var selectedAnswer = null;
+        var selectedAnswers = null;
         var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
         if (inputs.length === 0) {
             return null;
         }
+        console.log(inputs);
         inputs.forEach(function(input, index) {
+            console.log(index);
             if (input.checked) {
-                selectedAnswer = index;
+                selectedAnswers.push(index);
             }
         });
-        return selectedAnswer;
+        return selectedAnswers;
     }
 
     var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
