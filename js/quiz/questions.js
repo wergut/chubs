@@ -12,7 +12,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_answer": [ 1 ],
+            "next_answer": [ 44 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -146,7 +146,7 @@ var questionnaireData = {
         },
         {
             "index": 10,
-            "title": "Rate the typical stiffness or quality of your spontaneous erections in the middle of the night or the morning.",
+            "title": "Rate the typical stiffness or quality of your erections with a sexual partner.",
             "type": "radio",
             "subquestion": "a",
             "answers": [
@@ -527,7 +527,6 @@ var questionnaireData = {
             "hint": "Please select all the options that apply"
         },
 
-
         {
             "index": 37,
             "title": "Are there any other medical conditions you haven't shared with us already?",
@@ -552,7 +551,6 @@ var questionnaireData = {
             "attention_required": [],
             "hint": ""
         },
-
 
         {
             "index": 39,
@@ -607,7 +605,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 43 ],
+            "next_answer": [ 43, 44 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -621,6 +619,102 @@ var questionnaireData = {
             "attention_required": [],
             "answers": [],
         },
+        {
+            "index": 44,
+            "title": "Have you smoked, ingested or used any of the following within the past 3 months?",
+            "type": "checkbox",
+            "subquestion": "a",
+            "answers": [
+                { "0": "Poppers or Rush (Amyl Nitrate or Butyl Nitrate)" },
+                { "1": "Cannabis" },
+                { "2": "Cocaine" },
+                { "3": "Other" },
+                { "4": "Methamphetamine (crystal meth)" },
+                { "5": "No, I have not used any recreational drugs in the past 3 months" },
+                { "6": "Cigarettes" }
+            ],
+            "next_answer": [ 45, 50, 46, 48, 50 ,50 ], //this multyplay questions
+            "attention_required": [],
+            "hint": "Please select all the options that apply"
+        },
+
+        {
+            "index": 45,
+            "title": "Within the past 3 months, have you used poppers or rush more than you meant to, or felt like you needed to cut down?",
+            "type": "radio",
+            "subquestion": "a",
+            "is_subquestion" : true,
+            "answers": [
+                { "0": "Yes" },
+                { "1": "No" }
+            ],
+            "next_answer": [ 50 ],
+            "attention_required": [],
+            "hint": "Please select one option"
+        },
+        {
+            "index": 46,
+            "title": "Within the past 3 months, have you used cocaine more than you meant to, or felt like you needed to cut down on cocaine?",
+            "type": "radio",
+            "subquestion": "a",
+            "is_subquestion" : true,
+            "answers": [
+                { "0": "Yes" },
+                { "1": "No" }
+            ],
+            "next_answer": [ 50, 47 ],
+            "attention_required": [],
+            "hint": "Please select one option"
+        },
+        {
+            "index": 47,
+            "title": "The combination of cocaine with oral medications for ED can cause serious life and health threatening emergencies. Some of the emergencies that can occur when cocaine and ED medications are combined include the following: priapism (an erection that doesn't go away and can cause permanent damage to your penis), stroke (which can cause permanent disability), cardiac arrest (your heart stops beating), muscle rigidity, very high fever, death.",
+            "type": "checkbox",
+            "subquestion": "b",
+            "is_subquestion" : true,
+            "answers": [
+                { "0": "I have read the provided warning about the risks of serious medical harm and/or death if I use cocaine and ED medications together"}
+            ],
+            "next_answer": [ 50 ],
+            "attention_required": [],
+            "hint": ""
+        },
+        {
+            "index": 48,
+            "title": "Within the past 3 months, have you used methamphetamine (crystal meth) more than you meant to, or felt like you needed to cut down on?",
+            "type": "radio",
+            "subquestion": "a",
+            "is_subquestion" : true,
+            "answers": [
+                { "0": "Yes" },
+                { "1": "No" }
+            ],
+            "next_answer": [ 50 ],
+            "attention_required": [],
+            "hint": "Please select one option"
+        },
+        {
+            "index": 49,
+            "title": "Please explain your choice of \"other,\" and detail any other recreational drugs you use (how frequently, and when was the last time?).",
+            "type": "textarea",
+            "subquestion": "a",
+            "is_subquestion" : true,
+            "answers": [],
+            "next_answer": [ 50 ],
+            "attention_required": [],
+            "hint": ""
+        },
+
+        {
+            "index": 50,
+            "title": "Here's your first message to your clinician. Please introduce yourself and ask the clinician any questions you have about the treatment. Feel free to include anything else you want them to know about your condition",
+            "type": "textarea",
+            "subquestion": "a",
+            "answers": [],
+            "next_answer": [ 00 ], //what next question
+            "attention_required": [],
+            "hint": ""
+        }
 
     ]
 }
