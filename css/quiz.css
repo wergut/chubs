@@ -999,7 +999,8 @@ form .inputs-wrapper input {
         position: absolute;
         left: 140px;
         width: initial;
-        top: 73px;
+        top: 77px;
+        margin-top: 0;
     }
     .chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label p:nth-of-type(1) {
         width: 100%;
@@ -1073,5 +1074,11 @@ form .inputs-wrapper input {
     }
     .chubs-quiz-answer-label-text {
         padding: 10px 15px;
+    }
+}
+
+@media (max-width: 382px) {
+    .chubs-step:has(.chubs-quiz-answers-type-checkbox.chubs-quiz-answers-9) .inner.fixed {
+        padding-top: 105px;
     }
 }
