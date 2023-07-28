@@ -771,6 +771,10 @@ form .inputs-wrapper input {
     display: none;
 }
 
+.chubs-step:has(.chubs-quiz-answers-type-checkbox) legend {
+    max-width: 1100px;
+}
+
 .banner .quiz-button, .banner .logo-mobile {
     display: none;
 }
