@@ -103,9 +103,6 @@
         });
 
 
-
-
-
         prevButton.addEventListener('click', function() {
             if (currentStep > 0) {
                 hideStep(currentStep);
@@ -128,6 +125,30 @@
         });
 
     });
+    
+    function getNextStepMulti(selectedAnswers) {
+        const question = questionnaireData.questions[currentStep];
+        const nextAnswers = question.next_answer;
+
+
+        if (nextAnswers && Array.isArray(nextAnswers)) {
+            const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
+                const answerNextSteps = nextAnswers[selectedAnswer];
+            if (Array.isArray(answerNextSteps)) {
+                return [...steps, ...answerNextSteps];
+            } else if (typeof answerNextSteps === 'number') {
+                return [...steps, answerNextSteps];
+            }
+            return steps;
+        }, []);
+
+            const uniqueSortedSteps = [...new Set(nextSteps)].sort((a, b) => a - b);
+            return uniqueSortedSteps;
+        } else {
+            return [];
+        }
+    }
+
 
     function getAnswerForQuestion(question) {
         var selectedAnswer = null;
@@ -147,9 +168,6 @@
         }
         return selectedAnswer;
     }
-
-
-
 
     function getNextStep(selectedAnswer) {
         var question = questionnaireData.questions[currentStep];
@@ -175,32 +193,6 @@
         }
     }
 
-
-
-    function getNextStepMulti(selectedAnswers) {
-        const question = questionnaireData.questions[currentStep];
-        const nextAnswers = question.next_answer;
-
-
-        if (nextAnswers && Array.isArray(nextAnswers)) {
-            const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
-                const answerNextSteps = nextAnswers[selectedAnswer];
-            if (Array.isArray(answerNextSteps)) {
-                return [...steps, ...answerNextSteps];
-            } else if (typeof answerNextSteps === 'number') {
-                return [...steps, answerNextSteps];
-            }
-            return steps;
-        }, []);
-
-            const uniqueSortedSteps = [...new Set(nextSteps)].sort((a, b) => a - b);
-            return uniqueSortedSteps;
-        } else {
-            return [];
-        }
-    }
-
-
     function updateStepInfo() {
         var currentQuestion = newQuestionnaireData.questions[currentStep];
         var subquestionEl = document.getElementById('subquestion');
@@ -213,13 +205,6 @@
         currentStepElement.textContent = currentQuestion.step;
     }
 
-    function toggleButtonVisibility(currentStep) {
-        if (currentStep === 0) {
-            prevButton.style.display = 'none';
-        } else {
-            prevButton.style.display = 'block';
-        }
-    }
 
     function getSelectedAnswer(step) {
         var selectedAnswer = null;
@@ -255,6 +240,14 @@
 
     function showStep(stepIndex) {
         steps[stepIndex].style.display = 'block';
+    }
+
+    function toggleButtonVisibility(currentStep) {
+        if (currentStep === 0) {
+            prevButton.style.display = 'none';
+        } else {
+            prevButton.style.display = 'block';
+        }
     }
 
     function getUniqueSortedSteps(selectedAnswers) {
