@@ -12,7 +12,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_answer": [ 44 ],
+            "next_questions": [ 44 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -26,7 +26,7 @@ var questionnaireData = {
                 { "1": "Increasing my libido" },
                 { "2": "Both" }
             ],
-            "next_answer": [ 2 ],
+            "next_questions": [ 2 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -36,7 +36,7 @@ var questionnaireData = {
             "type": "select",
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 3 ],
+            "next_questions": [ 3 ],
             "attention_required": [
                 {
                     "consent": {
@@ -56,7 +56,7 @@ var questionnaireData = {
             "type": "birth",
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 4 ],
+            "next_questions": [ 4 ],
             "hint": "Please note the birth date is to be verified by ID"
         },
         {
@@ -65,7 +65,7 @@ var questionnaireData = {
             "type": "contacts",
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 5 ],
+            "next_questions": [ 5 ],
             "addition_someone_field": [],
             "hint": "Leave your details so we can contact you"
         },
@@ -81,7 +81,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_answer": [ 6, 6, 6, 6, 6 ],
+            "next_questions": [ 6, 6, 6, 6, 6 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -95,7 +95,7 @@ var questionnaireData = {
                 { "1": "Difficulty sustaining erections" },
                 { "2": "Both" }
             ],
-            "next_answer": [ 7, 7, 7 ],
+            "next_questions": [ 7, 7, 7 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -108,7 +108,7 @@ var questionnaireData = {
                 { "0": "Suddenly" },
                 { "1": "Gradually worsened over time" }
             ],
-            "next_answer": [ 8, 8 ],
+            "next_questions": [ 8, 8 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -124,7 +124,7 @@ var questionnaireData = {
                 { "3": "Penis is completely hard and fully rigid" },
                 { "4": "Penis is hard, but not hard enough for penetration" }
             ],
-            "next_answer": [ 9, 9, 9, 9, 9 ],
+            "next_questions": [ 9, 9, 9, 9, 9 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -140,7 +140,7 @@ var questionnaireData = {
                 { "3": "Penis is completely hard and fully rigid" },
                 { "4": "Penis is hard, but not hard enough for penetration" }
             ],
-            "next_answer": [ 10 ],
+            "next_questions": [ 10 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -156,7 +156,7 @@ var questionnaireData = {
                 { "3": "Penis is completely hard and fully rigid" },
                 { "4": "Penis is hard, but not hard enough for penetration" }
             ],
-            "next_answer": [ 11 ],
+            "next_questions": [ 11 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -169,7 +169,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 12 ],
+            "next_questions": [ 12 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -186,7 +186,7 @@ var questionnaireData = {
                 { "4": "Other" },
                 { "5": "None" }
             ],
-            "next_answer": [ 13, 17, 21, 25, 29, 30 ], // this branching ????????
+            "next_questions": [ 13, 17, 21, 25, 29, 30 ], // this branching ????????
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -200,7 +200,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 14, 15 ],
+            "next_questions": [ 14, 15 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -211,7 +211,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "b",
             "answers": [],
-            "next_answer": [ 30 ],
+            "next_questions": [ 30 ],
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -226,7 +226,7 @@ var questionnaireData = {
                 { "1": "I had side effects" },
                 { "2": "Both" }
             ],
-            "next_answer": [ 16 ],
+            "next_questions": [ 16 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -237,7 +237,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "c",
             "answers": [],
-            "next_answer": [ 30 ],  // on start question
+            "next_questions": [ 30 ],  // on start question
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -251,7 +251,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 18, 19 ],
+            "next_questions": [ 18, 19 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -262,7 +262,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "b",
             "answers": [],
-            "next_answer": [ 20 ],
+            "next_questions": [ 20 ],
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -277,7 +277,7 @@ var questionnaireData = {
                 { "1": "I had side effects" },
                 { "2": "Both" }
             ],
-            "next_answer": [ 20 ],
+            "next_questions": [ 20 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -288,7 +288,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "c",
             "answers": [],
-            "next_answer": [ 30 ],  // on start question
+            "next_questions": [ 30 ],  // on start question
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -302,7 +302,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 22, 23 ],
+            "next_questions": [ 22, 23 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -313,7 +313,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "b",
             "answers": [],
-            "next_answer": [ 24 ],
+            "next_questions": [ 24 ],
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -328,7 +328,7 @@ var questionnaireData = {
                 { "1": "I had side effects" },
                 { "2": "Both" }
             ],
-            "next_answer": [ 24 ],
+            "next_questions": [ 24 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -339,7 +339,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "c",
             "answers": [],
-            "next_answer": [ 30 ],  // on start question
+            "next_questions": [ 30 ],  // on start question
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -353,7 +353,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 26, 27 ],
+            "next_questions": [ 26, 27 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -364,7 +364,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "b",
             "answers": [],
-            "next_answer": [ 28 ],
+            "next_questions": [ 28 ],
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -379,7 +379,7 @@ var questionnaireData = {
                 { "1": "I had side effects" },
                 { "2": "Both" }
             ],
-            "next_answer": [ 28 ],
+            "next_questions": [ 28 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -390,7 +390,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "c",
             "answers": [],
-            "next_answer": [ 30 ],  // on start question
+            "next_questions": [ 30 ],  // on start question
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -401,7 +401,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 28 ],
+            "next_questions": [ 28 ],
             "attention_required": [],
             "hint": "Please include all the details you consider important"
         },
@@ -414,7 +414,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 31, 32 ],
+            "next_questions": [ 31, 32 ],
             "attention_required": [],
             "hint": "Include any allergies to food, dyes, prescriptions, or over-the-counter medicines (e.g. antibiotics, allergy medications), herbs, vitamins, supplements, or anything else."
         },
@@ -425,7 +425,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 32 ],
+            "next_questions": [ 32 ],
             "attention_required": [],
             "hint": "Please list all the allergic agents and reactions you have"
         },
@@ -438,7 +438,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 33, 34 ],
+            "next_questions": [ 33, 34 ],
             "attention_required": [],
             "hint": "Include any allergies to food, dyes, prescriptions, or over-the-counter medicines (e.g. antibiotics, allergy medications), herbs, vitamins, supplements, or anything else."
         },
@@ -449,7 +449,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 34 ],
+            "next_questions": [ 34 ],
             "attention_required": [],
             "hint": "Please list all the allergic agents and reactions you have"
         },
@@ -465,7 +465,7 @@ var questionnaireData = {
                 { "3": "Abnormal heart beats or rhythms" },
                 { "4": "None of these apply to me" }
             ],
-            "next_answer": [ 35 ],
+            "next_questions": [ 35 ],
             "attention_required": [],
             "hint": "Please select all the options that apply"
         },
@@ -490,7 +490,7 @@ var questionnaireData = {
                 { "12": "Blood conditions or diseases" },
                 { "13": "Stroke, mini stroke or TIA" }
             ],
-            "next_answer": [ 36 ],
+            "next_questions": [ 36 ],
             "attention_required": [],
             "hint": "Please select all the options that apply"
         },
@@ -510,7 +510,7 @@ var questionnaireData = {
                 { "7": "None of these apply to me" },
                 { "8": "Heart attack" }
             ],
-            "next_answer": [ 37],
+            "next_questions": [ 37],
             "attention_required": [],
             "hint": "Please select all the options that apply"
         },
@@ -523,7 +523,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 38, 39 ],
+            "next_questions": [ 38, 39 ],
             "attention_required": [],
             "hint": "Be sure to include any medical conditions that you treat with medications."
         },
@@ -534,7 +534,7 @@ var questionnaireData = {
             "is_subquestion" : true,
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 39 ],
+            "next_questions": [ 39 ],
             "attention_required": [],
             "hint": ""
         },
@@ -547,7 +547,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 40, 42 ],
+            "next_questions": [ 40, 42 ],
             "attention_required": [],
             "hint": "Be sure to select yes if you take prescription medication for any chronic medical condition (such as high blood pressure, high cholesterol or diabetes)."
         },
@@ -567,7 +567,7 @@ var questionnaireData = {
                 { "6": "Non-uroselective alpha blockers " },
                 { "7": "None apply" }
             ],
-            "next_answer": [ 41 ],
+            "next_questions": [ 41 ],
             "attention_required": [],
             "hint": "Please select all the options that apply"
         },
@@ -577,7 +577,7 @@ var questionnaireData = {
             "type": "textarea",
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 42 ],
+            "next_questions": [ 42 ],
             "attention_required": [],
             "hint": "Include exact names of any medicines (e.g. Lipitor, Zyrtec, Ibuprofen)"
         },
@@ -590,7 +590,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 43, 44 ],
+            "next_questions": [ 43, 44 ],
             "attention_required": [],
             "hint": "Please select one option"
         },
@@ -600,7 +600,7 @@ var questionnaireData = {
             "type": "number",
             "subquestion": "a",
             "hint": "Select the frequency of the problem",
-            "next_answer": [ 44 ],
+            "next_questions": [ 44 ],
             "attention_required": [],
             "answers": [],
         },
@@ -619,7 +619,7 @@ var questionnaireData = {
                 { "5": "No, I have not used any recreational drugs in the past 3 months 51" },
                 { "6": "Cigarettes 51" }
             ],
-            "next_answer": [ 45, 51, 46, 50, 49, 51 ,51 ], //this multyplay questions
+            "next_questions": [ 45, 51, 46, 50, 49, 51 ,51 ], //this multyplay questions
             "attention_required": [],
             "hint": "Please select all the options that apply"
         },
@@ -633,7 +633,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 51 ],
+            "next_questions": [ 51 ],
             "parent_question": 44,
             "attention_required": [],
             "hint": "Please select one option"
@@ -648,7 +648,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 51, 47 ],
+            "next_questions": [ 51, 47 ],
             "parent_question": 44,
             "attention_required": [],
             "hint": "Please select one option"
@@ -663,7 +663,7 @@ var questionnaireData = {
                 { "0": "At least once per month, or more" },
                 { "1": "Less than once per month" }
             ],
-            "next_answer": [ 48, 51 ],
+            "next_questions": [ 48, 51 ],
             "parent_question": 44,
             "attention_required": [],
             "hint": "Please select one option"
@@ -680,7 +680,7 @@ var questionnaireData = {
             "answers": [
                 { "0": "I have read the provided warning about the risks of serious medical harm and/or death if I use cocaine and ED medications together"}
             ],
-            "next_answer": [ 51 ],
+            "next_questions": [ 51 ],
             "parent_question": 44,
             "attention_required": [],
             "hint": ""
@@ -695,7 +695,7 @@ var questionnaireData = {
                 { "0": "Yes" },
                 { "1": "No" }
             ],
-            "next_answer": [ 51 ],
+            "next_questions": [ 51 ],
             "parent_question": 44,
             "attention_required": [],
             "hint": "Please select one option"
@@ -707,7 +707,7 @@ var questionnaireData = {
             "subquestion": "a",
             "is_subquestion" : true,
             "answers": [],
-            "next_answer": [ 51 ],
+            "next_questions": [ 51 ],
             "parent_question": 44,
             "attention_required": [],
             "hint": ""
@@ -719,7 +719,7 @@ var questionnaireData = {
             "type": "textarea",
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 52 ], //what next question
+            "next_questions": [ 52 ], //what next question
             "attention_required": [],
             "hint": ""
         },
@@ -729,7 +729,7 @@ var questionnaireData = {
             "type": "textarea",
             "subquestion": "a",
             "answers": [],
-            "next_answer": [ 00 ], //what next question
+            "next_questions": [ 00 ], //what next question
             "attention_required": [],
             "hint": ""
         }

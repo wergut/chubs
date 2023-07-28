@@ -42,7 +42,6 @@
                 hideStep(currentStep);
                 saveQuestionData(currentStep);
 
-                console.log(newQuestionnaireData.questions[currentStep]);
                 if ((newQuestionnaireData.questions[currentStep].parent_question) || (newQuestionnaireData.questions[currentStep].multiply)) {
 
                     console.log('is multiplay');
@@ -98,6 +97,7 @@
                 }
                 window.newQuestionnaireData = newQuestionnaireData;
                 window.questionnaireData = questionnaireData;
+                console.log(newQuestionnaireData.questions[currentStep]);
             }
 
         });
@@ -125,10 +125,10 @@
         });
 
     });
-    
+
     function getNextStepMulti(selectedAnswers) {
         const question = questionnaireData.questions[currentStep];
-        const nextAnswers = question.next_answer;
+        const nextAnswers = question.next_questions;
 
 
         if (nextAnswers && Array.isArray(nextAnswers)) {
@@ -171,7 +171,7 @@
 
     function getNextStep(selectedAnswer) {
         var question = questionnaireData.questions[currentStep];
-        var nextSteps = question.next_answer;
+        var nextSteps = question.next_questions;
         var parentQuestion = question.parent_question;
 
         if (parentQuestion !== undefined) {
@@ -251,7 +251,7 @@
     }
 
     function getUniqueSortedSteps(selectedAnswers) {
-        const nextAnswers = questionnaireData.questions[currentStep].next_answer;
+        const nextAnswers = questionnaireData.questions[currentStep].next_questions;
         const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
             const answerNextSteps = nextAnswers[selectedAnswer];
             if (Array.isArray(answerNextSteps)) {
