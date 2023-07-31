@@ -788,6 +788,14 @@ form .inputs-wrapper input {
     margin-top: 160px;
 }
 
+.chubs-step:has(.chubs-quiz-answers-type-checkbox.chubs-quiz-answers-1) legend {
+    max-width: 660px;
+}
+
+.question .inner:has(.chubs-quiz-answers-type-checkbox.chubs-quiz-answers-1) {
+    margin-bottom: 35px;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
