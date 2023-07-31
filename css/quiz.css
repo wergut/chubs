@@ -779,6 +779,15 @@ form .inputs-wrapper input {
     display: none;
 }
 
+.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-1 .answer-btn {
+    margin: 0 auto;
+    max-width: 42%;
+}
+
+.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-1 {
+    margin-top: 160px;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
@@ -878,6 +887,12 @@ form .inputs-wrapper input {
     }
     .question .inner .answer-btn textarea {
         height: 192px;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-1 {
+        margin-top: 100px;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-1 .answer-btn {
+        max-width: 58%;
     }
 }
 
@@ -1078,6 +1093,9 @@ form .inputs-wrapper input {
     }
     .chubs-quiz-answer-label-text {
         padding: 10px 15px;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-1 .answer-btn {
+        max-width: 100%;
     }
 }
 
