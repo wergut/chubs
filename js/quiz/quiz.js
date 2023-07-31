@@ -8,7 +8,10 @@
     var totalStepElement = document.querySelector('.total-step');
     var currentStep = 0;
     var uniqueSortedSteps = [];
+
+    /* testing work*/
     var test = [];
+    var testIndex = 0;
 
     toggleButtonVisibility(currentStep);
     showStep(currentStep);
@@ -44,7 +47,6 @@
 
                 if ((newQuestionnaireData.questions[currentStep].parent_question) || (newQuestionnaireData.questions[currentStep].multiply)) {
 
-                    console.log('is multiplay');
                     var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
                     var nextSteps = getNextStepMulti(selectedAnswers); // is true
                     let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
@@ -52,13 +54,40 @@
                     // save branch   test need rename
                     if (test.length == 0) {
                         test = uniqueSrotedSteps;
-                        console.log('test in if  ' + test);
                     }
+                    console.log('currentStep ' + currentStep);
                     console.log('test ' + test);
                     console.log('start steps ' + uniqueSrotedSteps);
 
+
+                    if (testIndex < test.length) {
+                        console.log('length ' + test.length);
+
+                        currentStep = test[testIndex]; // Берем текущий вопрос по индексу testIndex
+                        console.log('currentStep ' + currentStep);
+
+                        // Увеличиваем индекс, чтобы перейти к следующему вопросу при следующем клике на кнопке "Next"
+                        testIndex++;
+
+                        showStep(currentStep);
+                        updateStepInfo();
+                        toggleButtonVisibility(currentStep);
+                        window.newQuestionnaireData = newQuestionnaireData;
+                        console.log('currentStep lost ' + currentStep);
+
+                    } else {
+                        currentStep = 51;
+                        showStep(currentStep);
+                        updateStepInfo();
+                        toggleButtonVisibility(currentStep);
+                        window.newQuestionnaireData = newQuestionnaireData;
+                    }
+                    /*
                     if (test.length > 0) {
                         console.log('length ' + test.length);
+
+                        // this need take subquestion example on 47 answer index
+
                         currentStep = test.shift();
                         console.log('shifting test ' + test);
                         console.log('currentStep ' + currentStep);
@@ -66,7 +95,7 @@
                      /*   if (uniqueSrotedSteps[0]) {
                            currentStep = currentStep;
                             console.log(uniqueSrotedSteps[0]);
-                        }*/
+                        }
 
                         showStep(currentStep);
                         updateStepInfo();
@@ -80,10 +109,9 @@
                         updateStepInfo();
                         toggleButtonVisibility(currentStep);
                         window.newQuestionnaireData = newQuestionnaireData;
-                    }
+                    }*/
 
                 } else {
-                    console.log('isn\'t multiplay');
                     var selectedAnswer = getSelectedAnswer(steps[currentStep]);
                     getNextStep(selectedAnswer);
                     showStep(currentStep);
