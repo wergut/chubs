@@ -49,8 +49,7 @@
                     var nextSteps = getNextStepMulti(selectedAnswers); // is true
                     let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
 
-
-
+                    // save branch   test need rename
                     if (test.length == 0) {
                         test = uniqueSrotedSteps;
                         console.log('test in if  ' + test);
@@ -58,8 +57,8 @@
                     console.log('test ' + test);
                     console.log('start steps ' + uniqueSrotedSteps);
 
-                    if (uniqueSrotedSteps.length > 0) {
-                        console.log('length ' + uniqueSrotedSteps.length);
+                    if (test.length > 0) {
+                        console.log('length ' + test.length);
                         currentStep = test.shift();
                         console.log('shifting test ' + test);
                         console.log('currentStep ' + currentStep);
@@ -83,18 +82,16 @@
                         window.newQuestionnaireData = newQuestionnaireData;
                     }
 
-
-
-
                 } else {
                     console.log('isn\'t multiplay');
                     var selectedAnswer = getSelectedAnswer(steps[currentStep]);
                     getNextStep(selectedAnswer);
-                    newQuestionnaireData.questions[currentStep].prev_question = lastStep;
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
                 }
+
+                newQuestionnaireData.questions[currentStep].prev_question = lastStep;
                 window.newQuestionnaireData = newQuestionnaireData;
                 window.questionnaireData = questionnaireData;
                 console.log(newQuestionnaireData.questions[currentStep]);
@@ -112,7 +109,6 @@
                 } else {
                     currentStep = prevStep;
                 }
-
                 if (steps[currentStep]) {
                     showStep(currentStep);
                     updateStepInfo();
@@ -301,6 +297,21 @@
     });
 
     var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-checkbox .answer-btn');
+    answerBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var currentStep = this.closest('.chubs-step');
+
+            if (this.querySelector('input').checked) {
+                this.querySelector('input').checked = false;
+                this.classList.remove('active');
+            } else {
+                this.querySelector('input').checked = true;
+                this.classList.add('active');
+            }
+        });
+    });
+
+    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-number .answer-btn');
     answerBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
             var currentStep = this.closest('.chubs-step');

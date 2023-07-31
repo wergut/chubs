@@ -209,7 +209,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 
         var topInput = document.createElement('input');
         topInput.type = 'number';
-        topInput.name = 'date_' + index;
+        topInput.name = 'min_' + index;
         topInput.placeholder = 'minHg';
         topInput.classList.add('inputmode', 'numeric');
 
@@ -231,7 +231,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 
         var bottomInput = document.createElement('input');
         bottomInput.type = 'number';
-        bottomInput.name = 'date_' + index;
+        bottomInput.name = 'max_' + index;
         bottomInput.placeholder = 'mmHg';
         bottomInput.classList.add('inputmode', 'numeric');
 
@@ -250,6 +250,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 
         var rememberInput = document.createElement('input');
         rememberInput.type = 'radio';
+        rememberInput.name = 'remember_' + index;
         rememberInput.value = 'I don`t remember';
 
         var rememberLabel = document.createElement('div');

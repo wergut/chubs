@@ -12,7 +12,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_questions": [ 44 ],
+            "next_questions": [ 42 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -836,6 +836,33 @@ function saveQuestionData(questionIndex) {
                 text: textareaValue
             });
         }
+
+    } else if (question.type === 'number') {
+        var answerNumberMin = document.querySelector('input[name="min_' + questionIndex + '"]');
+        var answerNumberMax = document.querySelector('input[name="max_' + questionIndex + '"]');
+
+        var numberMinValue = answerNumberMin.value;
+        var numberMaxValue = answerNumberMax.value;
+
+        if (numberMinValue.trim() !== '') {
+            answers.push({
+                min: numberMinValue
+            });
+        }
+
+        if (numberMaxValue.trim() !== '') {
+            answers.push({
+                max: numberMaxValue
+            });
+        }
+
+        var iDontRememberInput = document.querySelector('input[name="remember_' + questionIndex + '"]');
+        if (iDontRememberInput.checked) {
+            answers.push({
+                dontRemember: true
+            });
+        }
+
     }
 
 
