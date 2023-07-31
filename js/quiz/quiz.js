@@ -63,10 +63,9 @@
                     if (testIndex < test.length) {
                         console.log('length ' + test.length);
 
-                        currentStep = test[testIndex]; // Берем текущий вопрос по индексу testIndex
+                        currentStep = test[testIndex];
                         console.log('currentStep ' + currentStep);
 
-                        // Увеличиваем индекс, чтобы перейти к следующему вопросу при следующем клике на кнопке "Next"
                         testIndex++;
 
                         showStep(currentStep);
@@ -141,6 +140,8 @@
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
+
+                    testIndex--;
                 } else {
                     console.log('Element at currentStep ' + currentStep + ' does not exist.');
                 }

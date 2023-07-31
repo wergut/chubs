@@ -211,6 +211,9 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         topInput.type = 'number';
         topInput.name = 'min_' + index;
         topInput.placeholder = 'minHg';
+
+        topInput.min = '0';
+        topInput.max = '300';
         topInput.classList.add('inputmode', 'numeric');
 
         var topUnitLabel = document.createElement('p');
@@ -233,6 +236,8 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         bottomInput.type = 'number';
         bottomInput.name = 'max_' + index;
         bottomInput.placeholder = 'mmHg';
+        bottomInput.min = '0';
+        bottomInput.max = '300';
         bottomInput.classList.add('inputmode', 'numeric');
 
         var bottomUnitLabel = document.createElement('p');

@@ -54,6 +54,28 @@ function checkFieldsValid(currentStep) {
             console.log('Invalid date: ' + input.value);
             input.classList.remove('success');
             input.classList.add('error');
+
+        } else if (input.type === 'number') {
+            var minValue = input.getAttribute('min');
+            console.log(minValue);
+            var maxValue = input.getAttribute('max');
+            console.log(maxValue);
+            var inputValue = input.value;
+
+            if (minValue !== null && parseFloat(inputValue) < parseFloat(minValue)) {
+                isValid = false;
+                console.log('Value is less than min: ' + inputValue);
+                input.classList.remove('success');
+                input.classList.add('error');
+            } else if (maxValue !== null && parseFloat(inputValue) > parseFloat(maxValue)) {
+                isValid = false;
+                console.log('Value is greater than max: ' + inputValue);
+                input.classList.remove('success');
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+                input.classList.add('success');
+            }
         } else {
             input.classList.remove('error');
             input.classList.add('success');
