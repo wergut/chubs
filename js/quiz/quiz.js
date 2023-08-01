@@ -41,7 +41,6 @@
 
                 newQuestionnaireData.questions[currentStep].answered = true;
                 lastStep = currentStep;
-
                 hideStep(currentStep);
                 saveQuestionData(currentStep);
 
@@ -52,28 +51,18 @@
                     let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
 
                     // save branch   test need rename
-                    if (test.length == 0) {
-                    }
-
                     if (currentStep == 44) {
                         test = uniqueSrotedSteps;
                         console.log(test);
                     }
 
                     if (testIndex < test.length) {
-                        console.log('length ' + test.length);
-
                         currentStep = test[testIndex];
-                        console.log('currentStep ' + currentStep);
-
                         testIndex++;
-
                         showStep(currentStep);
                         updateStepInfo();
                         toggleButtonVisibility(currentStep);
                         window.newQuestionnaireData = newQuestionnaireData;
-                        console.log('currentStep lost ' + currentStep);
-
                     } else {
                         currentStep = 51;
                         showStep(currentStep);
@@ -84,10 +73,12 @@
 
                 } else {
                     var selectedAnswer = getSelectedAnswer(steps[currentStep]);
+                    console.log(selectedAnswer);
                     getNextStep(selectedAnswer);
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
+                    console.log(currentStep);
                 }
 
                 newQuestionnaireData.questions[currentStep].prev_question = lastStep;
@@ -97,6 +88,7 @@
             }
 
         });
+
 
 
         prevButton.addEventListener('click', function() {
@@ -112,16 +104,13 @@
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
-
                     if (testIndex < test.length) {
                         testIndex--;
                     }
-                   
                 } else {
                     console.log('Element at currentStep ' + currentStep + ' does not exist.');
                 }
             }
-
         });
 
     });

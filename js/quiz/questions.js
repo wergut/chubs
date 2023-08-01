@@ -12,7 +12,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_questions": [ 42 ],
+            "next_questions": [ 44 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -720,16 +720,6 @@ var questionnaireData = {
             "subquestion": "a",
             "answers": [],
             "next_questions": [ 52 ], //what next question
-            "attention_required": [],
-            "hint": ""
-        },
-        {
-            "index": 52,
-            "title": "ended quiz",
-            "type": "textarea",
-            "subquestion": "a",
-            "answers": [],
-            "next_questions": [ 00 ], //what next question
             "attention_required": [],
             "hint": ""
         }

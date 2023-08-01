@@ -7,6 +7,11 @@
     var currentStepElement = document.querySelector('.current-step');
     var totalStepElement = document.querySelector('.total-step');
     var currentStep = 0;
+    var uniqueSortedSteps = [];
+
+    /* testing work*/
+    var test = [];
+    var testIndex = 0;
 
     toggleButtonVisibility(currentStep);
     showStep(currentStep);
@@ -42,38 +47,33 @@
 
                 if ((newQuestionnaireData.questions[currentStep].parent_question) || (newQuestionnaireData.questions[currentStep].multiply)) {
 
-                    console.log('is multiplay');
                     var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
-                    console.log('selectedAnswers ' + selectedAnswers);
                     var nextSteps = getNextStepMulti(selectedAnswers); // is true
-                    console.log('start nextSteps ' + nextSteps);
-                    var uniqueSrotedSteps = [...new Set(nextSteps)].sort();
+                    let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
 
-                    console.log('start steps ' + uniqueSrotedSteps);
+                    // save branch   test need rename
 
-                    if (uniqueSrotedSteps.length > 0) {
-                        console.log(uniqueSrotedSteps);
-                        currentStep = uniqueSrotedSteps.shift();
-                        console.log('shifting steps ' + uniqueSrotedSteps);
+                    if (currentStep == 44) {
+                        test = uniqueSrotedSteps;
+                        console.log(test);
+                    }
 
+                    if (testIndex < test.length) {
+                        console.log('length ' + test.length);
 
-                        if (uniqueSrotedSteps[0]) {
-                            newQuestionnaireData.questions[currentStep+1].next_answer[0] == uniqueSrotedSteps[0];
-                        }
-                        if (currentStep == 51) {
-                            //var newCurrentStep =
+                        currentStep = test[testIndex];
+                        console.log('currentStep ' + currentStep);
 
-                            currentStep = 44;  // подставлять нужный следущий вопрос
-                        }
-
+                        testIndex++;
 
                         showStep(currentStep);
                         updateStepInfo();
                         toggleButtonVisibility(currentStep);
                         window.newQuestionnaireData = newQuestionnaireData;
                         console.log('currentStep lost ' + currentStep);
+
                     } else {
-                        currentStep == 51;
+                        currentStep = 51;
                         showStep(currentStep);
                         updateStepInfo();
                         toggleButtonVisibility(currentStep);
@@ -81,23 +81,23 @@
                     }
 
                 } else {
-                    console.log('isn\'t multiplay');
+
                     var selectedAnswer = getSelectedAnswer(steps[currentStep]);
                     getNextStep(selectedAnswer);
-                    newQuestionnaireData.questions[currentStep].prev_question = lastStep;
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
+
                 }
+
+                newQuestionnaireData.questions[currentStep].prev_question = lastStep;
                 window.newQuestionnaireData = newQuestionnaireData;
-
-
-                updatePreTag();
-
-
+                window.questionnaireData = questionnaireData;
+                console.log(newQuestionnaireData.questions[currentStep]);
             }
 
         });
+
 
         prevButton.addEventListener('click', function() {
             if (currentStep > 0) {
@@ -108,11 +108,15 @@
                 } else {
                     currentStep = prevStep;
                 }
-
                 if (steps[currentStep]) {
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
+
+                    if (testIndex < test.length) {
+                        testIndex--;
+                    }
+
                 } else {
                     console.log('Element at currentStep ' + currentStep + ' does not exist.');
                 }
@@ -122,91 +126,26 @@
 
     });
 
-    function getNextStep(selectedAnswer) {
-        var question = questionnaireData.questions[currentStep];
-        var nextSteps = question.next_answer;
-        var parentQuestion = question.parent_question;
-
-        if (parentQuestion !== undefined) {
-            currentStep = parentQuestion;
-            return;
-        }
-
-        if (Array.isArray(selectedAnswer)) {
-            var uniqueNextSteps = nextSteps.filter(step => selectedAnswer.includes(step));
-            if (uniqueNextSteps.length > 0) {
-                currentStep = uniqueNextSteps[0];
-            } else {
-                currentStep++;
-            }
-        } else if (nextSteps !== undefined && nextSteps.length > 0) {
-            currentStep = nextSteps[0];
-        } else {
-            currentStep++;
-        }
-    }
-
-
-
     function getNextStepMulti(selectedAnswers) {
-        var question = questionnaireData.questions[currentStep];
-        var nextSteps = question.next_answer;
-        var parentQuestion = question.parent_question;
+        const question = questionnaireData.questions[currentStep];
+        const nextAnswers = question.next_questions;
 
-        if (parentQuestion !== undefined) {
-            currentStep = parentQuestion;
-            return;
-        }
 
-        var nextStep = getNextAnswerForMultiQuestion(question, selectedAnswers);
-        if (nextStep !== undefined) {
-            currentStep = nextStep;
-        } else {
-            // Проверяем, есть ли еще варианты ответов у текущего вопроса
-            var uniqueSortedSteps = getUniqueSortedSteps(selectedAnswers);
-            if (uniqueSortedSteps.length > 0) {
-                currentStep = uniqueSortedSteps.shift();
-            } else {
-                currentStep++;
+        if (nextAnswers && Array.isArray(nextAnswers)) {
+            const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
+                const answerNextSteps = nextAnswers[selectedAnswer];
+            if (Array.isArray(answerNextSteps)) {
+                return [...steps, ...answerNextSteps];
+            } else if (typeof answerNextSteps === 'number') {
+                return [...steps, answerNextSteps];
             }
-        }
+            return steps;
+        }, []);
 
-        if (currentStep < steps.length - 1) {
-            var newSelectedAnswers = getSelectedAnswer(steps[currentStep]);
-            if (Array.isArray(newSelectedAnswers) && newSelectedAnswers.length > 0) {
-                selectedAnswers = [...new Set([...selectedAnswers, ...newSelectedAnswers])];
-                getNextStepMulti(selectedAnswers);
-            }
-        }
-    }
-
-
-    function getUniqueSortedSteps(selectedAnswers) {
-        const nextAnswers = questionnaireData.questions[currentStep].next_answer;
-        const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
-            const answerNextSteps = nextAnswers[selectedAnswer];
-        if (Array.isArray(answerNextSteps)) {
-            return [...steps, ...answerNextSteps];
-        } else if (typeof answerNextSteps === 'number') {
-            return [...steps, answerNextSteps];
-        }
-        return steps;
-    }, []);
-
-        const uniqueSortedSteps = [...new Set(nextSteps)].sort();
-        return uniqueSortedSteps;
-    }
-
-
-
-
-    function getNextAnswerForMultiQuestion(question, selectedAnswers) {
-        var nextSteps = question.next_answer;
-        var uniqueNextSteps = nextSteps.filter(step => !selectedAnswers.includes(step));
-        if (uniqueNextSteps.length > 0) {
-            return uniqueNextSteps[0];
+            const uniqueSortedSteps = [...new Set(nextSteps)].sort((a, b) => a - b);
+            return uniqueSortedSteps;
         } else {
-            return undefined;
+            return [];
         }
     }
 
@@ -230,31 +169,29 @@
         return selectedAnswer;
     }
 
-    function updatePreTag(questions = [44, 45, 46, 47, 48, 49, 50]) {
-        var preTag = document.getElementById('question-output');
-        var savedQuestions = [];
+    function getNextStep(selectedAnswer) {
+        var question = questionnaireData.questions[currentStep];
+        var nextSteps = question.next_questions;
+        var parentQuestion = question.parent_question;
 
-        questions.forEach(function (index) {
-            var question = newQuestionnaireData.questions.find(function (q) {
-                return q.index === index;
-            });
+        if (parentQuestion !== undefined) {
+            currentStep = parentQuestion;
+            return;
+        }
 
-            if (question) {
-                // Копируем исходный объект вопроса, убирая поля "hint" и "title"
-                var { hint, title, type, subquestion, is_subquestion, attention_required, answers, multiply, parent_question, step, ...questionWithoutHintTitle } = question;
-
-                var answer = getAnswerForQuestion(question);
-                savedQuestions.push({ question: questionWithoutHintTitle, answer: answer });
+        if (Array.isArray(selectedAnswer)) {
+            var uniqueNextSteps = nextSteps.filter(step => selectedAnswer.includes(step));
+            if (uniqueNextSteps.length > 0) {
+                currentStep = uniqueNextSteps[0];
+            } else {
+                currentStep++;
             }
-        });
-
-        preTag.textContent = JSON.stringify(savedQuestions, null, 2);
+        } else if (nextSteps !== undefined && nextSteps.length > 0) {
+            currentStep = nextSteps[0];
+        } else {
+            currentStep++;
+        }
     }
-
-
-
-
-
 
     function updateStepInfo() {
         var currentQuestion = newQuestionnaireData.questions[currentStep];
@@ -268,13 +205,6 @@
         currentStepElement.textContent = currentQuestion.step;
     }
 
-    function toggleButtonVisibility(currentStep) {
-        if (currentStep === 0) {
-            prevButton.style.display = 'none';
-        } else {
-            prevButton.style.display = 'block';
-        }
-    }
 
     function getSelectedAnswer(step) {
         var selectedAnswer = null;
@@ -312,8 +242,16 @@
         steps[stepIndex].style.display = 'block';
     }
 
+    function toggleButtonVisibility(currentStep) {
+        if (currentStep === 0) {
+            prevButton.style.display = 'none';
+        } else {
+            prevButton.style.display = 'block';
+        }
+    }
+
     function getUniqueSortedSteps(selectedAnswers) {
-        const nextAnswers = questionnaireData.questions[currentStep].next_answer;
+        const nextAnswers = questionnaireData.questions[currentStep].next_questions;
         const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
             const answerNextSteps = nextAnswers[selectedAnswer];
             if (Array.isArray(answerNextSteps)) {
@@ -363,6 +301,21 @@
     });
 
     var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-checkbox .answer-btn');
+    answerBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var currentStep = this.closest('.chubs-step');
+
+            if (this.querySelector('input').checked) {
+                this.querySelector('input').checked = false;
+                this.classList.remove('active');
+            } else {
+                this.querySelector('input').checked = true;
+                this.classList.add('active');
+            }
+        });
+    });
+
+    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-number .answer-btn');
     answerBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
             var currentStep = this.closest('.chubs-step');
