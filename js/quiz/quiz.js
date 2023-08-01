@@ -19,7 +19,7 @@
     var filteredQuestions = questionnaireData.questions.filter(function(question) {
         return !('is_subquestion' in question);
     });
-    
+
     var numberOfQuestionsWithoutSubquestion = filteredQuestions.length;
     totalStepElement.textContent = numberOfQuestionsWithoutSubquestion;
 

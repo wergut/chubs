@@ -267,8 +267,17 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 
         answersDiv.appendChild(rememberContainerDiv);
 
-
     }
+
+    if (question.attention_required && question.attention_required.length > 0) {
+        var attentionRequired = question.attention_required[0];
+
+        if (attentionRequired.consent && attentionRequired.consent.value === true) {
+            var description = attentionRequired.consent.description || '';
+            addConsentCheckboxToQuestion(answersDiv, description);
+        }
+    }
+
 
     fieldset.appendChild(legend);
     fieldset.appendChild(p);
@@ -308,4 +317,25 @@ function activateSlider(id,index) {
         let val = parseInt(values[0]);
         input.value = valueLabels[val];
     });
+}
+
+
+function addConsentCheckboxToQuestion(answersDiv, description) {
+    var checkboxContainer = document.createElement('div');
+    checkboxContainer.classList.add('chubs-quiz-answer-label');
+    checkboxContainer.classList.add('answer-btn');
+    checkboxContainer.classList.add('answer-btn-consert');
+
+    var checkboxInput = document.createElement('input');
+    checkboxInput.type = 'checkbox';
+    checkboxInput.name = 'attention_required_checkbox';
+    checkboxInput.value = description;
+
+    var checkboxLabel = document.createElement('label');
+    checkboxLabel.classList.add('chubs-quiz-answer-label-text');
+    checkboxLabel.textContent = description;
+
+    checkboxContainer.appendChild(checkboxInput);
+    checkboxContainer.appendChild(checkboxLabel);
+    answersDiv.appendChild(checkboxContainer);
 }
