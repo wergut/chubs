@@ -807,6 +807,7 @@ form .inputs-wrapper input {
 
 .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert {
     position: absolute;
+    width: 100%;
     top: 430px;
 }
 
@@ -964,6 +965,13 @@ form .inputs-wrapper input {
     }
     .chubs-step:has(.chubs-quiz-answers-type-checkbox.chubs-quiz-answers-9) legend {
         max-width: 95%;
+    }
+    .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert label {
+        padding: 0 15px;
+    }
+    .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert {
+        top: 300px;
+        max-width: 60%;
     }
 }
 
@@ -1167,6 +1175,20 @@ form .inputs-wrapper input {
     }
     .chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-1 .answer-btn {
         max-width: 100%;
+    }
+    .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert {
+        border-radius: 10px;
+        border: 1px solid #DEDEDE;
+        background: #FFF;
+        padding: 15px 16px;
+        top: 280px;
+    }
+    .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert.active {
+        border-color: #a6cd46;
+    }
+    .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert label {
+        padding: 0;
+        align-items: center;
     }
 }
 
