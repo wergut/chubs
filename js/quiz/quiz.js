@@ -50,6 +50,10 @@
                     var nextSteps = getNextStepMulti(selectedAnswers); // is true
                     let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
 
+
+                    console.log('inner multiply');
+
+
                     // save branch   branchesIndex
                     if (currentStep == 44) {
                         branches = uniqueSrotedSteps;
@@ -57,18 +61,18 @@
                     }
 
                     if (branchesIndex < branches.length) {
+
                         currentStep = branches[branchesIndex];
                         branchesIndex++;
                         showStep(currentStep);
                         updateStepInfo();
                         toggleButtonVisibility(currentStep);
-                        window.newQuestionnaireData = newQuestionnaireData;
+
                     } else {
                         currentStep = 51;
                         showStep(currentStep);
                         updateStepInfo();
                         toggleButtonVisibility(currentStep);
-                        window.newQuestionnaireData = newQuestionnaireData;
                     }
 
                 } else {
@@ -93,6 +97,7 @@
 
         prevButton.addEventListener('click', function() {
             if (currentStep > 0) {
+                newQuestionnaireData.questions[currentStep].answered = false;
                 hideStep(currentStep);
                 var prevStep = newQuestionnaireData.questions[currentStep].prev_question;
                 if (prevStep === undefined) {
@@ -104,9 +109,9 @@
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
-                    if (branchesIndex < branches.length) {
+                    //if (branchesIndex < branches.length) {
                         branchesIndex--;
-                    }
+                    //}
                 } else {
                     console.log('Element at currentStep ' + currentStep + ' does not exist.');
                 }
@@ -121,6 +126,7 @@
 
 
         if (nextAnswers && Array.isArray(nextAnswers)) {
+            console.log(selectedAnswers);
             const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
                 const answerNextSteps = nextAnswers[selectedAnswer];
             if (Array.isArray(answerNextSteps)) {
