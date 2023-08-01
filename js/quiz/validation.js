@@ -125,9 +125,17 @@ function checkAttentionRequired(currentQuestion) {
 
         if (isAnyChecked) {
             console.log("Some attention_required_checkbox are checked.");
+            inputs.forEach(function(checkbox) {
+                checkbox.classList.remove('error');
+                checkbox.classList.add('success');
+            });
             return true;
         } else {
             console.log("Attention required but not checked.");
+            inputs.forEach(function(checkbox) {
+                checkbox.classList.remove('success');
+                checkbox.classList.add('error');
+            });
             return false;
         }
     } else {
