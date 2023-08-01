@@ -329,7 +329,7 @@ function addConsentCheckboxToQuestion(answersDiv, description) {
     var checkboxInput = document.createElement('input');
     checkboxInput.type = 'checkbox';
     checkboxInput.name = 'attention_required_checkbox';
-    checkboxInput.value = description;
+    checkboxInput.value = "yes";
 
     var checkboxLabel = document.createElement('label');
     checkboxLabel.classList.add('chubs-quiz-answer-label-text');

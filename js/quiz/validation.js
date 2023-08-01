@@ -111,65 +111,33 @@ function validateDate(date) {
 }
 
 
+function checkAttentionRequired(currentQuestion) {
 
+    var inputs = currentQuestion.querySelectorAll('input[name="attention_required_checkbox"]');
+    console.log(inputs);
 
-/*
-var phoneInputs = document.querySelectorAll('.phone');
-phoneInputs.forEach(function(input) {
-    input.addEventListener('input', function() {
-        var phone = input.inputmask.unmaskedvalue();
-        if (phone.length > 0) {
-            if (validatePhone(phone)) {
-                this.classList.remove('error');
-                this.classList.add('success');
-            } else {
-                this.classList.remove('success');
-                this.classList.add('error');
-            }
+    if (inputs.length > 0) {
+        console.log('inputs.length');
+        console.log(inputs.length);
+        var isAnyChecked = Array.from(inputs).some(function(checkbox) {
+            return checkbox.checked;
+        });
+
+        if (isAnyChecked) {
+            console.log("Some attention_required_checkbox are checked.");
+            return true;
         } else {
-            this.classList.remove('error');
-            this.classList.remove('success');
-        }
-    });
-});
-
-
-var emailInputs = document.querySelectorAll('.email');
-emailInputs.forEach(function(input) {
-    input.addEventListener('input', function() {
-        var phone = input.inputmask.unmaskedvalue();
-        if (email.length > 0) {
-            if (validateEmail(email)) {
-                this.classList.remove('error');
-                this.classList.add('success');
-            } else {
-                this.classList.remove('success');
-                this.classList.add('error');
-            }
-        } else {
-            this.classList.remove('error');
-            this.classList.remove('success');
-        }
-    });
-});
-
-var dateInput = document.querySelector('.date');
-dateInput.addEventListener('input', function() {
-    var phone = input.inputmask.unmaskedvalue();
-    if (date.length > 0) {
-        if (validateDate(date)) {
-            this.classList.remove('error');
-            this.classList.add('success');
-        } else {
-            this.classList.remove('success');
-            this.classList.add('error');
+            console.log("Attention required but not checked.");
+            return false;
         }
     } else {
-        this.classList.remove('error');
-        this.classList.remove('success');
+        return true;
     }
-});
-*/
+
+}
+
+
+
 
 
 $(document).ready(function() {

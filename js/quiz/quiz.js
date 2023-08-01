@@ -29,15 +29,8 @@
 
             if (currentStep < steps.length - 1) {
 
-                if (!checkFieldsFilled( steps[currentStep] )) {
-                    /* write error tool */
-                    console.log('not filled');
-                    return;
-                }
-                if (!checkFieldsValid( steps[currentStep] )) {
-                    /* write error tool */
-                    console.log('not valid');
-                    return;
+                if (!validateCurrentStep(steps[currentStep])) {
+                    return
                 }
 
                 newQuestionnaireData.questions[currentStep].answered = true;
@@ -253,6 +246,19 @@
         return uniqueSortedSteps;
     }
 
+    function validateCurrentStep(currentStep) {
+        if (checkFieldsFilled(currentStep) && checkFieldsValid(currentStep) && checkAttentionRequired(currentStep)) {
+
+            return true;
+        } else {
+
+            console.log('Validation failed');
+            return false;
+        }
+
+    }
+
+
     var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
     answerBtns.forEach(function(btn, index) {
         if (index > 0) {
@@ -312,6 +318,21 @@
                 this.classList.remove('active');
             } else {
                 this.querySelector('input').checked = true;
+                this.classList.add('active');
+            }
+        });
+    });
+
+    var answerBtnsConsert = document.querySelectorAll('.answer-btn-consert');
+    answerBtnsConsert.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var checkbox = this.querySelector('input[type="checkbox"]');
+
+            if (checkbox.checked) {
+                checkbox.checked = false;
+                this.classList.remove('active');
+            } else {
+                checkbox.checked = true;
                 this.classList.add('active');
             }
         });
