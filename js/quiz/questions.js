@@ -12,7 +12,7 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_questions": [ 1 ],
+            "next_questions": [ 44 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
