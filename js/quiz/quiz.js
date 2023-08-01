@@ -53,12 +53,12 @@
 
                     // save branch   test need rename
                     if (test.length == 0) {
-                        test = uniqueSrotedSteps;
                     }
-                    console.log('currentStep ' + currentStep);
-                    console.log('test ' + test);
-                    console.log('start steps ' + uniqueSrotedSteps);
 
+                    if (currentStep == 44) {
+                        test = uniqueSrotedSteps;
+                        console.log(test);
+                    }
 
                     if (testIndex < test.length) {
                         console.log('length ' + test.length);
@@ -81,34 +81,6 @@
                         toggleButtonVisibility(currentStep);
                         window.newQuestionnaireData = newQuestionnaireData;
                     }
-                    /*
-                    if (test.length > 0) {
-                        console.log('length ' + test.length);
-
-                        // this need take subquestion example on 47 answer index
-
-                        currentStep = test.shift();
-                        console.log('shifting test ' + test);
-                        console.log('currentStep ' + currentStep);
-
-                     /*   if (uniqueSrotedSteps[0]) {
-                           currentStep = currentStep;
-                            console.log(uniqueSrotedSteps[0]);
-                        }
-
-                        showStep(currentStep);
-                        updateStepInfo();
-                        toggleButtonVisibility(currentStep);
-                        window.newQuestionnaireData = newQuestionnaireData;
-                        console.log('currentStep lost ' + currentStep);
-
-                    } else {
-                        currentStep == 51;
-                        showStep(currentStep);
-                        updateStepInfo();
-                        toggleButtonVisibility(currentStep);
-                        window.newQuestionnaireData = newQuestionnaireData;
-                    }*/
 
                 } else {
                     var selectedAnswer = getSelectedAnswer(steps[currentStep]);
@@ -141,7 +113,10 @@
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
 
-                    testIndex--;
+                    if (testIndex < test.length) {
+                        testIndex--;
+                    }
+                   
                 } else {
                     console.log('Element at currentStep ' + currentStep + ' does not exist.');
                 }

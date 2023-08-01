@@ -57,9 +57,7 @@ function checkFieldsValid(currentStep) {
 
         } else if (input.type === 'number') {
             var minValue = input.getAttribute('min');
-            console.log(minValue);
             var maxValue = input.getAttribute('max');
-            console.log(maxValue);
             var inputValue = input.value;
 
             if (minValue !== null && parseFloat(inputValue) < parseFloat(minValue)) {
