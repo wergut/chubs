@@ -10,8 +10,8 @@
     var uniqueSortedSteps = [];
 
     /* testing work*/
-    var test = [];
-    var testIndex = 0;
+    var branches = [];
+    var branchesIndex = 0;
 
     toggleButtonVisibility(currentStep);
     showStep(currentStep);
@@ -50,15 +50,15 @@
                     var nextSteps = getNextStepMulti(selectedAnswers); // is true
                     let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
 
-                    // save branch   test need rename
+                    // save branch   branchesIndex
                     if (currentStep == 44) {
-                        test = uniqueSrotedSteps;
-                        console.log(test);
+                        branches = uniqueSrotedSteps;
+                        console.log(branches);
                     }
 
-                    if (testIndex < test.length) {
-                        currentStep = test[testIndex];
-                        testIndex++;
+                    if (branchesIndex < branches.length) {
+                        currentStep = branches[branchesIndex];
+                        branchesIndex++;
                         showStep(currentStep);
                         updateStepInfo();
                         toggleButtonVisibility(currentStep);
@@ -104,8 +104,8 @@
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
-                    if (testIndex < test.length) {
-                        testIndex--;
+                    if (branchesIndex < branches.length) {
+                        branchesIndex--;
                     }
                 } else {
                     console.log('Element at currentStep ' + currentStep + ' does not exist.');
