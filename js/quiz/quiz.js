@@ -19,6 +19,7 @@
     var filteredQuestions = questionnaireData.questions.filter(function(question) {
         return !('is_subquestion' in question);
     });
+    
     var numberOfQuestionsWithoutSubquestion = filteredQuestions.length;
     totalStepElement.textContent = numberOfQuestionsWithoutSubquestion;
 
@@ -50,9 +51,7 @@
                     var nextSteps = getNextStepMulti(selectedAnswers); // is true
                     let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
 
-
                     console.log('inner multiply');
-
 
                     // save branch   branchesIndex
                     if (currentStep == 44) {
@@ -90,10 +89,7 @@
                 window.questionnaireData = questionnaireData;
                 console.log(newQuestionnaireData.questions[currentStep]);
             }
-
         });
-
-
 
         prevButton.addEventListener('click', function() {
             if (currentStep > 0) {
@@ -109,9 +105,7 @@
                     showStep(currentStep);
                     updateStepInfo();
                     toggleButtonVisibility(currentStep);
-                    //if (branchesIndex < branches.length) {
-                        branchesIndex--;
-                    //}
+                    branchesIndex--;
                 } else {
                     console.log('Element at currentStep ' + currentStep + ' does not exist.');
                 }
@@ -123,7 +117,6 @@
     function getNextStepMulti(selectedAnswers) {
         const question = questionnaireData.questions[currentStep];
         const nextAnswers = question.next_questions;
-
 
         if (nextAnswers && Array.isArray(nextAnswers)) {
             console.log(selectedAnswers);
@@ -143,7 +136,6 @@
             return [];
         }
     }
-
 
     function getAnswerForQuestion(question) {
         var selectedAnswer = null;
@@ -324,4 +316,3 @@
             }
         });
     });
-
