@@ -1254,6 +1254,12 @@ form .inputs-wrapper input {
     }
 }
 
+@media (max-width: 414px) {
+    .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert {
+        top: 260px;
+    }
+}
+
 @media (max-width: 382px) {
     .chubs-step:has(.chubs-quiz-answers-type-checkbox.chubs-quiz-answers-9) .inner.fixed {
         padding-top: 105px;
