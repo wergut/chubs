@@ -397,7 +397,6 @@ a.back-to-main:focus,
 }
 
 .tooltip {
-    position: relative;
     margin-left: 5px;
     transition: 0.3s;
 }
@@ -612,6 +611,7 @@ form .inputs-wrapper input {
     width: 100%;
     max-width: 48%;
     display: inline-flex;
+    align-items: flex-start;
 }
 
 .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn+.answer-btn {
@@ -868,7 +868,34 @@ form .inputs-wrapper input {
     border-color: #e44040!important;
 }
 
+.chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) {
+    flex-wrap: wrap;
+    position: relative;
+}
 
+.tooltip-text {
+    border-radius: 10px;
+    border: 1px solid #865480;
+    color: #865480;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 15px;
+    letter-spacing: 0.4px;
+    position: absolute;
+    left: 30px;
+    z-index: 2;
+    background: #F8F5F8;
+    transition: 0.3s;
+    display: none;
+    top: -60px;
+}
+
+.tooltip:hover .tooltip-text {
+    display: block;
+}
 
 @media (min-width: 1780px) {
     .chubs-label-for-range {
@@ -1027,14 +1054,32 @@ form .inputs-wrapper input {
     .chubs-step .chubs-quiz-answers-4 {
         margin-top: 25px;
     }
-    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn {
+    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn label {
         border-radius: 10px;
         border: 1px solid #DEDEDE;
         background: #FFF;
         padding: 15px 16px;
+        width: 100%;
     }
-    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn.active {
+    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn.active label {
         border-color: #a6cd46;
+    }
+    .tooltip {
+        width: 100%;
+        margin-left: 0;
+    }
+    .tooltip svg {
+        position: absolute;
+        right: 15px;
+        top: 20px;
+    }
+    .tooltip-text {
+        width: 100%;
+        position: static;
+        margin-top: 10px;
+        display: none;
+        min-height: 50px;
+        padding: 15px 15px 15px 46px;
     }
     .chubs-step .chubs-quiz-answers-type-checkbox input+label::before {
         top: 0;
@@ -1201,6 +1246,10 @@ form .inputs-wrapper input {
     }
     .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert label {
         padding: 0;
+        align-items: center;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) {
+        justify-content: space-between;
         align-items: center;
     }
 }
