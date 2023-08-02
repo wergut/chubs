@@ -4,8 +4,6 @@ var icoQuestion = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" x
     '</svg>';
 
 
-
-
 var questionnaireContainer = document.getElementById('questionnaire-container');
 
 newQuestionnaireData.questions.forEach(function(question, index) {
@@ -374,4 +372,45 @@ function createTooltipText(text) {
     tooltip.classList.add('tooltip-text');
     tooltip.innerHTML = text;
     return tooltip;
+}
+
+
+function externalStep() {
+    var currentQuestion = document.querySelector('.chubs-step-index-' + currentStep);
+    if (currentQuestion) {
+        console.log(currentQuestion);
+        var legend = currentQuestion.querySelector('legend');
+        var p = currentQuestion.querySelector('p');
+        var pagiContainer = currentQuestion.querySelector('.pagination-chubs-quiz');
+        var prevBtn = document.getElementById('prevStep');
+        var nextBtn = document.getElementById('nextStep');
+        var select = currentQuestion.querySelector('select + span');
+        var consert = currentQuestion.querySelector('.answer-btn-consert');
+
+        legend.textContent = 'Sorry...';
+        p.textContent = 'Ordering from your state is not available yet. Please enter your mail so we can contact you.';
+
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        select.style.display = 'none';
+        consert.style.display = 'none';
+
+
+        var newButton = document.createElement('button');
+        newButton.id = 'sender';
+        newButton.type = 'button';
+        newButton.classList.add('btn-green');
+        newButton.textContent = 'Send';
+        pagiContainer.appendChild(newButton);
+
+
+
+
+        // 1 скрыть кнопку +
+        // 2 поменять кнопку следущи шаг +
+        // 3 показать новое поле
+        // 4 спрятать селект +
+        // 5 сменить надписи +
+
+    }
 }

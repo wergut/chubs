@@ -12,10 +12,8 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "tooltip": [
-                {"0": "aka. hypertrophic obstructive cardiomyopathy"},
-            ],
-            "next_questions": [ 35 ],
+            "tooltip": [],
+            "next_questions": [ 1 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -741,7 +739,6 @@ var questionnaireData = {
 
 var newQuestionnaireData = generateNewQuestionnaireData();
 
-
 function generateNewQuestionnaireData() {
     var newQuestionnaireData = { "questions": [] };
     var stepCounter = 1;
@@ -902,13 +899,13 @@ function sendDataToServer(data) {
         },
         body: requestData
     })
-        .then(response => response.json())
-.then(data => {
-        console.log('Response from the server:', data);
-})
-.catch(error => {
-        console.error('Error while sending data to the server:', error);
-})
+    .then(response => response.json())
+    .then(data => {
+            console.log('Response from the server:', data);
+    })
+    .catch(error => {
+            console.error('Error while sending data to the server:', error);
+    })
 }
 
 
