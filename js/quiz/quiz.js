@@ -334,6 +334,7 @@
             } else {
                 checkbox.checked = true;
                 this.classList.add('active');
+                checkbox.classList.remove('error');
             }
         });
     });
