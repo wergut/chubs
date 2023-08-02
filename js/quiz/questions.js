@@ -12,7 +12,10 @@ var questionnaireData = {
                 { "3": "Rarely" },
                 { "4": "Never" }
             ],
-            "next_questions": [ 1 ],
+            "tooltip": [
+                {"0": "aka. hypertrophic obstructive cardiomyopathy"},
+            ],
+            "next_questions": [ 35 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -510,6 +513,9 @@ var questionnaireData = {
                 { "7": "None of these apply to me" },
                 { "8": "Heart attack" }
             ],
+            "tooltip": [
+                {"1": "aka. hypertrophic obstructive cardiomyopathy"},
+            ],
             "next_questions": [ 37],
             "attention_required": [],
             "hint": "Please select all the options that apply"
@@ -566,6 +572,12 @@ var questionnaireData = {
                 { "5": "Any of the following heart medications" },
                 { "6": "Non-uroselective alpha blockers " },
                 { "7": "None apply" }
+            ],
+            "tooltip": [
+                {"0": "Nitro-Dur, Nitrolingual, Nitrostat, Nitromist, Nitro-Bid, Transderm-Nitro, Nitro-Time, Deponit, Minitran, Nitrek, Nitrodisc, Nitrogard, Nitroglycn, Nitrol ointment, Nitrong, Nitro-Par"},
+                {"2": "e.g. Isordil, Dilatrate, Sorbitrate, Imdur, Ismo, Monoket"},
+                {"5": "amiodarone (Cordarone, Pacerone), sotalol (Betapace, Sorine, Sotylize), dofetilide (Tikosyn), ibutilide (Corvert), Dronedarone (Multaq), quinidine (Quinaglute, Quinidex), procainamide (Pronestyl, Procan, Procanbid), disopyramide (Norpace, Rythmodan)"},
+                {"6": "e.g. doxazosin (Cardura), prazosin (Minipress), terazosin (Hytrin)"},
             ],
             "next_questions": [ 41 ],
             "attention_required": [],

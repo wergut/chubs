@@ -1,3 +1,11 @@
+var icoQuestion = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+    '<path fill-rule="evenodd" clip-rule="evenodd" ' +
+    'd="M8 0C12.415 0 16 3.585 16 8C16 12.415 12.415 16 8 16C3.585 16 0 12.415 0 8C0 3.585 3.585 0 8 0ZM8 2C11.312 2 14 4.688 14 8C14 11.312 11.312 14 8 14C4.688 14 2 11.312 2 8C2 4.688 4.688 2 8 2ZM7 11.0005C7 11.5516 7.44836 12 7.99951 12C8.55066 12 9 11.5516 9 11.0005C9 10.4493 8.55066 10 7.99951 10C7.44836 10 7 10.4493 7 11.0005ZM7.83518 4.00432C5.64167 4.10264 5 5.72745 5 6.42961C5 6.74146 5 7.33934 5.72046 7.41581C6.39945 7.48831 6.65757 7.05033 6.79233 6.67492C6.88666 6.41372 7.19039 5.69368 8.09952 5.69368C8.75052 5.69368 9.13614 6.06512 9.13614 6.61135C9.13614 7.70382 6.91983 7.70581 6.91983 9.3187C6.91983 9.86493 7.434 10 7.7481 10C7.96683 10 8.32446 9.99305 8.5235 9.61168C8.94748 8.79729 11 8.47451 11 6.46337C11 5.16929 9.78922 3.91692 7.83518 4.00432Z" fill="#B7B7B7"/>\n' +
+    '</svg>';
+
+
+
+
 var questionnaireContainer = document.getElementById('questionnaire-container');
 
 newQuestionnaireData.questions.forEach(function(question, index) {
@@ -67,7 +75,24 @@ newQuestionnaireData.questions.forEach(function(question, index) {
             answerContainer.appendChild(radio);
             answerContainer.appendChild(label);
             answersDiv.appendChild(answerContainer);
+
+            if (question.tooltip && Array.isArray(question.tooltip)) {
+                    var tooltipObject = question.tooltip[i];
+                    if (tooltipObject) {
+                        var tooltipText = Object.values(tooltipObject)[0];
+                        tooltipText = createTooltipText(tooltipText);
+                        var tooltip = createTooltipElement(index);
+                        if (answerContainer && tooltipText !== undefined) {
+                            answerContainer.appendChild(tooltip);
+                            answerContainer.appendChild(tooltipText);
+                        }
+                    }
+            }
+
+
         });
+
+
 
         answerLabel.appendChild(answersDiv);
 
@@ -109,7 +134,6 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answerLabel.appendChild(sliderDiv);
         answerLabel.appendChild(hiddenInput);
         answersDiv.appendChild(answerLabel);
-
 
         question.answers.forEach(function(answer, i) {
             var radio = document.createElement('input');
@@ -338,4 +362,19 @@ function addConsentCheckboxToQuestion(answersDiv, description) {
     checkboxContainer.appendChild(checkboxInput);
     checkboxContainer.appendChild(checkboxLabel);
     answersDiv.appendChild(checkboxContainer);
+}
+
+function createTooltipElement(questionIndex) {
+    var tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip');
+    tooltip.setAttribute('data-question', questionIndex);
+    tooltip.innerHTML = icoQuestion;
+    return tooltip;
+}
+
+function createTooltipText(text) {
+    var tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip-text');
+    tooltip.innerHTML = text;
+    return tooltip;
 }
