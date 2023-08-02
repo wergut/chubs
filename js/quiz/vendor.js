@@ -77,22 +77,19 @@ newQuestionnaireData.questions.forEach(function(question, index) {
             answersDiv.appendChild(answerContainer);
 
             if (question.tooltip && Array.isArray(question.tooltip)) {
-                    var tooltipObject = question.tooltip[i];
-                    if (tooltipObject) {
-                        var tooltipText = Object.values(tooltipObject)[0];
-                        tooltipText = createTooltipText(tooltipText);
-                        var tooltip = createTooltipElement(index);
-                        if (answerContainer && tooltipText !== undefined) {
-                            answerContainer.appendChild(tooltip);
-                            answersDiv.appendChild(tooltipText);
-                        }
+                var tooltipObject = question.tooltip[i];
+                if (tooltipObject) {
+                    var tooltipText = Object.values(tooltipObject)[0];
+                    tooltipText = createTooltipText(tooltipText);
+                    var tooltip = createTooltipElement(index);
+                    if (answerContainer && tooltipText !== undefined) {
+                        answerContainer.appendChild(tooltip);
+                        answerContainer.appendChild(tooltipText);
                     }
+                }
             }
 
-
         });
-
-
 
         answerLabel.appendChild(answersDiv);
 
