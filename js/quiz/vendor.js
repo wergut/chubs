@@ -84,7 +84,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
                         var tooltip = createTooltipElement(index);
                         if (answerContainer && tooltipText !== undefined) {
                             answerContainer.appendChild(tooltip);
-                            answerContainer.appendChild(tooltipText);
+                            answersDiv.appendChild(tooltipText);
                         }
                     }
             }

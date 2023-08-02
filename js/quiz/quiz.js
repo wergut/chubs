@@ -338,3 +338,20 @@
             }
         });
     });
+
+
+    var tooltipButtons = document.querySelectorAll('.tooltip-btn');
+
+    tooltipButtons.forEach(function (button) {
+        event.stopPropagation();
+        button.addEventListener('click', function () {
+            var questionIndex = button.getAttribute('data-question');
+            var tooltipText = document.querySelector('.tooltip-text-' + questionIndex);
+
+            if (tooltipText.style.display === 'block') {
+                tooltipText.style.display = 'none';
+            } else {
+                tooltipText.style.display = 'block';
+            }
+        });
+    });
