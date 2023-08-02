@@ -836,6 +836,7 @@ form .inputs-wrapper input {
     border: 1px solid #d9d9d9;
     position: relative;
     top: -2px;
+    background-repeat: no-repeat;
 }
 
 .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert label:hover {
@@ -857,6 +858,14 @@ form .inputs-wrapper input {
 
 .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert.active {
     background: transparent;
+}
+
+.chubs-step .chubs-quiz-answers-type-select .answer-btn-consert:has(input.error) label {
+    color: #e44040!important;
+}
+
+.chubs-step .chubs-quiz-answers-type-select .answer-btn-consert:has(input.error) label:before {
+    border-color: #e44040!important;
 }
 
 
