@@ -78,11 +78,11 @@ newQuestionnaireData.questions.forEach(function(question, index) {
                 var tooltipObject = question.tooltip[i];
                 if (tooltipObject) {
                     var tooltipText = Object.values(tooltipObject)[0];
-                    tooltipText = createTooltipText(tooltipText);
+                    tooltipText = createTooltipText(tooltipText, index);
                     var tooltip = createTooltipElement(index);
                     if (answerContainer && tooltipText !== undefined) {
                         answerContainer.appendChild(tooltip);
-                        answerContainer.appendChild(tooltipText);
+                        tooltip.appendChild(tooltipText);
                     }
                 }
             }
@@ -367,9 +367,10 @@ function createTooltipElement(questionIndex) {
     return tooltip;
 }
 
-function createTooltipText(text) {
+function createTooltipText(text, questionIndex) {
     var tooltip = document.createElement('div');
     tooltip.classList.add('tooltip-text');
+    tooltip.classList.add('tooltip-text-'+questionIndex);
     tooltip.innerHTML = text;
     return tooltip;
 }

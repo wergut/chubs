@@ -4,6 +4,8 @@
     var steps = document.querySelectorAll('.chubs-step');
     var nextButton = document.getElementById('nextStep');
     var prevButton = document.getElementById('prevStep');
+    var prevButtonMobile = document.getElementById('prevBtnMobile');
+
     var currentStepElement = document.querySelector('.current-step');
     var totalStepElement = document.querySelector('.total-step');
     var currentStep = 0;
@@ -24,88 +26,88 @@
     totalStepElement.textContent = numberOfQuestionsWithoutSubquestion;
 
     document.addEventListener('DOMContentLoaded', function() {
-
-        nextButton.addEventListener('click', function() {
-
-            if (currentStep < steps.length - 1) {
-
-                if (!validateCurrentStep(steps[currentStep])) {
-                    return
-                }
-
-                newQuestionnaireData.questions[currentStep].answered = true;
-                lastStep = currentStep;
-                hideStep(currentStep);
-                saveQuestionData(currentStep);
-
-                if ((newQuestionnaireData.questions[currentStep].parent_question) || (newQuestionnaireData.questions[currentStep].multiply)) {
-
-                    var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
-                    var nextSteps = getNextStepMulti(selectedAnswers); // is true
-                    let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
-
-                    console.log('inner multiply');
-
-                    // save branch   branchesIndex
-                    if (currentStep == 44) {
-                        branches = uniqueSrotedSteps;
-                        console.log(branches);
-                    }
-
-                    if (branchesIndex < branches.length) {
-
-                        currentStep = branches[branchesIndex];
-                        branchesIndex++;
-                        showStep(currentStep);
-                        updateStepInfo();
-                        toggleButtonVisibility(currentStep);
-
-                    } else {
-                        currentStep = 51;
-                        showStep(currentStep);
-                        updateStepInfo();
-                        toggleButtonVisibility(currentStep);
-                    }
-
-                } else {
-                    var selectedAnswer = getSelectedAnswer(steps[currentStep]);
-                    console.log(selectedAnswer);
-                    getNextStep(selectedAnswer);
-                    showStep(currentStep);
-                    updateStepInfo();
-                    toggleButtonVisibility(currentStep);
-                    console.log(currentStep);
-                }
-
-                newQuestionnaireData.questions[currentStep].prev_question = lastStep;
-                window.newQuestionnaireData = newQuestionnaireData;
-                window.questionnaireData = questionnaireData;
-                console.log(newQuestionnaireData.questions[currentStep]);
-            }
-        });
-
-        prevButton.addEventListener('click', function() {
-            if (currentStep > 0) {
-                newQuestionnaireData.questions[currentStep].answered = false;
-                hideStep(currentStep);
-                var prevStep = newQuestionnaireData.questions[currentStep].prev_question;
-                if (prevStep === undefined) {
-                    currentStep--;
-                } else {
-                    currentStep = prevStep;
-                }
-                if (steps[currentStep]) {
-                    showStep(currentStep);
-                    updateStepInfo();
-                    toggleButtonVisibility(currentStep);
-                    branchesIndex--;
-                } else {
-                    console.log('Element at currentStep ' + currentStep + ' does not exist.');
-                }
-            }
-        });
-
+        nextButton.addEventListener('click', nextStepHandler);
+        prevButton.addEventListener('click', prevStepHandler);
+        prevButtonMobile.addEventListener('click', prevStepHandler);
     });
+
+    function prevStepHandler() {
+        if (currentStep > 0) {
+            newQuestionnaireData.questions[currentStep].answered = false;
+            hideStep(currentStep);
+            var prevStep = newQuestionnaireData.questions[currentStep].prev_question;
+            if (prevStep === undefined) {
+                currentStep--;
+            } else {
+                currentStep = prevStep;
+            }
+            if (steps[currentStep]) {
+                showStep(currentStep);
+                updateStepInfo();
+                toggleButtonVisibility(currentStep);
+                branchesIndex--;
+            } else {
+                console.log('Element at currentStep ' + currentStep + ' does not exist.');
+            }
+        }
+    }
+
+    function nextStepHandler() {
+        if (currentStep < steps.length - 1) {
+
+            if (!validateCurrentStep(steps[currentStep])) {
+                return
+            }
+
+            newQuestionnaireData.questions[currentStep].answered = true;
+            lastStep = currentStep;
+            hideStep(currentStep);
+            saveQuestionData(currentStep);
+
+            if ((newQuestionnaireData.questions[currentStep].parent_question) || (newQuestionnaireData.questions[currentStep].multiply)) {
+
+                var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
+                var nextSteps = getNextStepMulti(selectedAnswers); // is true
+                let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
+
+                console.log('inner multiply');
+
+                // save branch   branchesIndex
+                if (currentStep == 44) {
+                    branches = uniqueSrotedSteps;
+                    console.log(branches);
+                }
+
+                if (branchesIndex < branches.length) {
+                    currentStep = branches[branchesIndex];
+                    branchesIndex++;
+                    showStep(currentStep);
+                    updateStepInfo();
+                    toggleButtonVisibility(currentStep);
+                } else {
+                    currentStep = 51;
+                    showStep(currentStep);
+                    updateStepInfo();
+                    toggleButtonVisibility(currentStep);
+                }
+
+            } else {
+                var selectedAnswer = getSelectedAnswer(steps[currentStep]);
+                console.log(selectedAnswer);
+                getNextStep(selectedAnswer);
+                showStep(currentStep);
+                updateStepInfo();
+                toggleButtonVisibility(currentStep);
+                console.log(currentStep);
+            }
+
+            newQuestionnaireData.questions[currentStep].prev_question = lastStep;
+            window.newQuestionnaireData = newQuestionnaireData;
+            window.questionnaireData = questionnaireData;
+            console.log(newQuestionnaireData.questions[currentStep]);
+        }
+
+    }
 
     function getNextStepMulti(selectedAnswers) {
         const question = questionnaireData.questions[currentStep];
@@ -185,7 +187,6 @@
         currentStepElement.textContent = currentQuestion.step;
     }
 
-
     function getSelectedAnswer(step) {
         var selectedAnswer = null;
         var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
@@ -248,16 +249,12 @@
 
     function validateCurrentStep(currentStep) {
         if (checkFieldsFilled(currentStep) && checkFieldsValid(currentStep) && checkAttentionRequired(currentStep)) {
-
             return true;
         } else {
-
             console.log('Validation failed');
             return false;
         }
-
     }
-
 
     var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
     answerBtns.forEach(function(btn, index) {
@@ -339,9 +336,7 @@
         });
     });
 
-
     var tooltipButtons = document.querySelectorAll('.tooltip-btn');
-
     tooltipButtons.forEach(function (button) {
         event.stopPropagation();
         button.addEventListener('click', function () {
