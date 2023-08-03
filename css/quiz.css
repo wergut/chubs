@@ -1252,6 +1252,9 @@ form .inputs-wrapper input {
         justify-content: space-between;
         align-items: center;
     }
+    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) label {
+        padding-right: 25px;
+    }
 }
 
 @media (max-width: 414px) {
