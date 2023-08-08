@@ -14,7 +14,10 @@ var uniqueSortedSteps = [];
 /* testing work*/
 var branches = [];
 var branchesIndex = 0;
+
+////////////////////////////RBS///////////////////////////////
 let queue_questions = [];
+////////////////////////////RBS///////////////////////////////
 
 toggleButtonVisibility(currentStep);
 showStep(currentStep);
@@ -50,6 +53,7 @@ function prevStepHandler() {
         } else {
             console.log('Element at currentStep ' + currentStep + ' does not exist.');
         }
+        updateQuestionQueueForPrevStep()
     }
 }
 
@@ -95,7 +99,7 @@ function nextStepHandler() {
                     let currentQuestionIdx = queue_questions[branchesIndex - 1]['index']
                     let nextQuestionIdx = queue_questions[branchesIndex - 1]['next']['index']
 
-                    updateQuestionQueue(currentQuestionIdx, nextQuestionIdx)
+                    updateQuestionQueueForNextStep(currentQuestionIdx, nextQuestionIdx)
 
                     currentStep = queue_questions[branchesIndex]['index'];
                     branchesIndex++;
@@ -161,7 +165,7 @@ function generateQuestionQueue(selectedQuestionsIdx) {
     queue_questions = result
 }
 
-function updateQuestionQueue(currentQuestionIdx, nextQuestionIdx) {
+function updateQuestionQueueForNextStep(currentQuestionIdx, nextQuestionIdx) {
     let next_question = questionnaireData.questions.find(el => el.index === nextQuestionIdx)
     let new_value = {
         index: nextQuestionIdx,
@@ -170,6 +174,24 @@ function updateQuestionQueue(currentQuestionIdx, nextQuestionIdx) {
             : null
     }
     queue_questions.splice(queue_questions.findIndex(el => el.index === currentQuestionIdx) + 1, 0, new_value);
+}
+
+function updateQuestionQueueForPrevStep() {
+    if (branchesIndex > 0) {
+        let current_question = queue_questions[branchesIndex - 1]
+        if (current_question?.next) {
+            if (queue_questions[branchesIndex]) {
+                queue_questions.splice(branchesIndex, 1)
+            }
+        }
+    } else {
+        clearQuestionQueue()
+    }
+}
+
+function clearQuestionQueue() {
+    queue_questions = []
+    branchesIndex = 0
 }
 
 function getSelectedQuestionsIdx(currentStep, selectedAnswers) {
