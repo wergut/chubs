@@ -1,238 +1,199 @@
-    setTimeout(hidePreloader, 1500);
+setTimeout(hidePreloader, 0);
 
-    var selectorx = $('.select_states').select2();
-    var steps = document.querySelectorAll('.chubs-step');
-    var nextButton = document.getElementById('nextStep');
-    var prevButton = document.getElementById('prevStep');
-    var prevButtonMobile = document.getElementById('prevBtnMobile');
+var selectorx = $('.select_states').select2();
+var steps = document.querySelectorAll('.chubs-step');
+var nextButton = document.getElementById('nextStep');
+var prevButton = document.getElementById('prevStep');
+var prevButtonMobile = document.getElementById('prevBtnMobile');
 
-    var currentStepElement = document.querySelector('.current-step');
-    var totalStepElement = document.querySelector('.total-step');
-    var currentStep = 0;
-    var uniqueSortedSteps = [];
+var currentStepElement = document.querySelector('.current-step');
+var totalStepElement = document.querySelector('.total-step');
+var currentStep = 0;
+var uniqueSortedSteps = [];
 
-    /* testing work*/
-    var branches = [];
-    var branchesIndex = 0;
+/* testing work*/
+var branches = [];
+var branchesIndex = 0;
+let queue_questions = [];
 
-    toggleButtonVisibility(currentStep);
-    showStep(currentStep);
+toggleButtonVisibility(currentStep);
+showStep(currentStep);
 
-    var filteredQuestions = questionnaireData.questions.filter(function(question) {
-        return !('is_subquestion' in question);
-    });
+var filteredQuestions = questionnaireData.questions.filter(function (question) {
+    return !('is_subquestion' in question);
+});
 
-    var numberOfQuestionsWithoutSubquestion = filteredQuestions.length;
-    totalStepElement.textContent = numberOfQuestionsWithoutSubquestion;
+var numberOfQuestionsWithoutSubquestion = filteredQuestions.length;
+totalStepElement.textContent = numberOfQuestionsWithoutSubquestion;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        nextButton.addEventListener('click', nextStepHandler);
-        prevButton.addEventListener('click', prevStepHandler);
-        prevButtonMobile.addEventListener('click', prevStepHandler);
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    nextButton.addEventListener('click', nextStepHandler);
+    prevButton.addEventListener('click', prevStepHandler);
+    prevButtonMobile.addEventListener('click', prevStepHandler);
+});
 
-    function prevStepHandler() {
-        if (currentStep > 0) {
-            newQuestionnaireData.questions[currentStep].answered = false;
-            hideStep(currentStep);
-            var prevStep = newQuestionnaireData.questions[currentStep].prev_question;
-            if (prevStep === undefined) {
-                currentStep--;
-            } else {
-                currentStep = prevStep;
-            }
-            if (steps[currentStep]) {
-                showStep(currentStep);
-                updateStepInfo();
-                toggleButtonVisibility(currentStep);
-                branchesIndex--;
-            } else {
-                console.log('Element at currentStep ' + currentStep + ' does not exist.');
-            }
+function prevStepHandler() {
+    if (currentStep > 0) {
+        newQuestionnaireData.questions[currentStep].answered = false;
+        hideStep(currentStep);
+        var prevStep = newQuestionnaireData.questions[currentStep].prev_question;
+        if (prevStep === undefined) {
+            currentStep--;
+        } else {
+            currentStep = prevStep;
+        }
+        if (steps[currentStep]) {
+            showStep(currentStep);
+            updateStepInfo();
+            toggleButtonVisibility(currentStep);
+            branchesIndex--;
+        } else {
+            console.log('Element at currentStep ' + currentStep + ' does not exist.');
         }
     }
+}
 
-    function nextStepHandler() {
-        if (currentStep < steps.length - 1) {
+function nextStepHandler() {
+    if (currentStep < steps.length - 1) {
 
-            if (!validateCurrentStep(steps[currentStep])) {
-                return
+        if (!validateCurrentStep(steps[currentStep])) {
+            return
+        }
+
+        newQuestionnaireData.questions[currentStep].answered = true;
+        lastStep = currentStep;
+        hideStep(currentStep);
+        saveQuestionData(currentStep);
+
+        if ((newQuestionnaireData.questions[currentStep].parent_question) || (newQuestionnaireData.questions[currentStep].multiply)) {
+
+            var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
+            var nextSteps = getNextStepMulti(selectedAnswers); // is true
+            let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
+
+
+            ////////////////////////////RBS///////////////////////////////
+            if (!queue_questions.length) {
+                let selectedQuestionsIdx = getSelectedQuestionsIdx(currentStep, selectedAnswers);
+                generateQuestionQueue(selectedQuestionsIdx)
+            }
+            ////////////////////////////RBS///////////////////////////////
+
+            console.log('inner multiply');
+
+            // save branch   branchesIndex
+            if (currentStep == 44) {
+                branches = uniqueSrotedSteps;
+                console.log(branches);
             }
 
-            newQuestionnaireData.questions[currentStep].answered = true;
-            lastStep = currentStep;
-            hideStep(currentStep);
-            saveQuestionData(currentStep);
+            if (branchesIndex <= queue_questions.length) {
 
-            if ((newQuestionnaireData.questions[currentStep].parent_question) || (newQuestionnaireData.questions[currentStep].multiply)) {
+                ////////////////////////////RBS///////////////////////////////
 
-                var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
-                var nextSteps = getNextStepMulti(selectedAnswers); // is true
-                let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
+                if (selectedAnswers[0] === 0 && queue_questions[branchesIndex - 1]?.next) {
+                    let currentQuestionIdx = queue_questions[branchesIndex - 1]['index']
+                    let nextQuestionIdx = queue_questions[branchesIndex - 1]['next']['index']
 
-                console.log('inner multiply');
+                    updateQuestionQueue(currentQuestionIdx, nextQuestionIdx)
 
-                // save branch   branchesIndex
-                if (currentStep == 44) {
-                    branches = uniqueSrotedSteps;
-                    console.log(branches);
-                }
-
-                if (branchesIndex < branches.length) {
-                    currentStep = branches[branchesIndex];
+                    currentStep = queue_questions[branchesIndex]['index'];
                     branchesIndex++;
-                    showStep(currentStep);
-                    updateStepInfo();
-                    toggleButtonVisibility(currentStep);
                 } else {
-                    currentStep = 51;
-                    showStep(currentStep);
-                    updateStepInfo();
-                    toggleButtonVisibility(currentStep);
+                    if (queue_questions[branchesIndex]) {
+                        currentStep = queue_questions[branchesIndex]['index'];
+                        branchesIndex++;
+                    } else {
+                        currentStep = 51;
+                    }
                 }
 
-            } else {
-                var selectedAnswer = getSelectedAnswer(steps[currentStep]);
-                console.log(selectedAnswer);
-                getNextStep(selectedAnswer);
                 showStep(currentStep);
                 updateStepInfo();
                 toggleButtonVisibility(currentStep);
-                console.log(currentStep);
-            }
+                window.newQuestionnaireData = newQuestionnaireData;
 
-            newQuestionnaireData.questions[currentStep].prev_question = lastStep;
-            window.newQuestionnaireData = newQuestionnaireData;
-            window.questionnaireData = questionnaireData;
-            console.log(newQuestionnaireData.questions[currentStep]);
-        }
+                ////////////////////////////RBS///////////////////////////////
 
-    }
+                // console.log('currentStep lost ' + currentStep);
 
-    function getNextStepMulti(selectedAnswers) {
-        const question = questionnaireData.questions[currentStep];
-        const nextAnswers = question.next_questions;
-
-        if (nextAnswers && Array.isArray(nextAnswers)) {
-            console.log(selectedAnswers);
-            const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
-                const answerNextSteps = nextAnswers[selectedAnswer];
-            if (Array.isArray(answerNextSteps)) {
-                return [...steps, ...answerNextSteps];
-            } else if (typeof answerNextSteps === 'number') {
-                return [...steps, answerNextSteps];
-            }
-            return steps;
-        }, []);
-
-            const uniqueSortedSteps = [...new Set(nextSteps)].sort((a, b) => a - b);
-            return uniqueSortedSteps;
-        } else {
-            return [];
-        }
-    }
-
-    function getAnswerForQuestion(question) {
-        var selectedAnswer = null;
-        var inputs = document.querySelectorAll('input[name="question_' + question.index + '"]:checked');
-        if (inputs.length === 0) {
-            return null;
-        }
-        if (question.type === 'checkbox') {
-            selectedAnswer = [];
-            inputs.forEach(function (input) {
-                selectedAnswer.push(Number(input.value));
-            });
-        } else if (question.type === 'select') {
-            selectedAnswer = Number(inputs[0].value);
-        } else {
-            selectedAnswer = Number(inputs[0].getAttribute('data-answer-index'));
-        }
-        return selectedAnswer;
-    }
-
-    function getNextStep(selectedAnswer) {
-        var question = questionnaireData.questions[currentStep];
-        var nextSteps = question.next_questions;
-        var parentQuestion = question.parent_question;
-
-        if (parentQuestion !== undefined) {
-            currentStep = parentQuestion;
-            return;
-        }
-
-        if (Array.isArray(selectedAnswer)) {
-            var uniqueNextSteps = nextSteps.filter(step => selectedAnswer.includes(step));
-            if (uniqueNextSteps.length > 0) {
-                currentStep = uniqueNextSteps[0];
             } else {
-                currentStep++;
+                currentStep = 51;
+                showStep(currentStep);
+                updateStepInfo();
+                toggleButtonVisibility(currentStep);
             }
-        } else if (nextSteps !== undefined && nextSteps.length > 0) {
-            currentStep = nextSteps[0];
+
         } else {
-            currentStep++;
+            var selectedAnswer = getSelectedAnswer(steps[currentStep]);
+            console.log(selectedAnswer);
+            getNextStep(selectedAnswer);
+            showStep(currentStep);
+            updateStepInfo();
+            toggleButtonVisibility(currentStep);
+            console.log(currentStep);
         }
+
+        newQuestionnaireData.questions[currentStep].prev_question = lastStep;
+        window.newQuestionnaireData = newQuestionnaireData;
+        window.questionnaireData = questionnaireData;
+        console.log(newQuestionnaireData.questions[currentStep]);
     }
 
-    function updateStepInfo() {
-        var currentQuestion = newQuestionnaireData.questions[currentStep];
-        var subquestionEl = document.getElementById('subquestion');
+}
 
-        if (currentQuestion && currentQuestion.is_subquestion === true) {
-            subquestionEl.innerText = 'subquestion ' + currentQuestion.subquestion;
-        } else {
-            subquestionEl.innerText = '';
-        }
-        currentStepElement.textContent = currentQuestion.step;
+////////////////////////////RBS///////////////////////////////
+
+function generateQuestionQueue(selectedQuestionsIdx) {
+    let result = []
+    if (selectedQuestionsIdx.length) {
+        selectedQuestionsIdx.sort().forEach((idx => {
+            let current_question = questionnaireData.questions.find(el => el.index === idx)
+            result.push(
+                {
+                    index: idx,
+                    next: current_question.next_questions.length > 1
+                        ? {index: current_question.next_questions.sort()[0]}
+                        : null
+                })
+        }))
     }
+    queue_questions = result
+}
 
-    function getSelectedAnswer(step) {
-        var selectedAnswer = null;
-        var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
-        if (inputs.length === 0) {
-            return null;
-        }
-        inputs.forEach(function(input, index) {
-            if (input.checked) {
-                selectedAnswer = index;
+function updateQuestionQueue(currentQuestionIdx, nextQuestionIdx) {
+    let next_question = questionnaireData.questions.find(el => el.index === nextQuestionIdx)
+    let new_value = {
+        index: nextQuestionIdx,
+        next: next_question.next_questions.length > 1
+            ? {index: next_question.next_questions[0]}
+            : null
+    }
+    queue_questions.splice(queue_questions.findIndex(el => el.index === currentQuestionIdx) + 1, 0, new_value);
+}
+
+function getSelectedQuestionsIdx(currentStep, selectedAnswers) {
+    let parent_question = questionnaireData.questions.find(el => el.index === currentStep)
+    let nextQuestionsIndexes = []
+    if (selectedAnswers.length) {
+        selectedAnswers.forEach(el => {
+            let question_index = parent_question['next_questions'][el]
+            if (!nextQuestionsIndexes.some(idx => idx === question_index)) {
+                nextQuestionsIndexes.push(question_index)
             }
-        });
-        return selectedAnswer;
+        })
     }
+    return nextQuestionsIndexes
+}
 
-    function grtSeletcedAnswerMulti(step) {
-        var selectedAnswers = [];
-        var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
-        if (inputs.length === 0) {
-            return null;
-        }
-        inputs.forEach(function(input, index) {
-            if (input.checked) {
-                selectedAnswers.push(index);
-            }
-        });
-        return selectedAnswers;
-    }
+////////////////////////////RBS///////////////////////////////
 
-    function hideStep(stepIndex) {
-        steps[stepIndex].style.display = 'none';
-    }
+function getNextStepMulti(selectedAnswers) {
+    const question = questionnaireData.questions[currentStep];
+    const nextAnswers = question.next_questions;
 
-    function showStep(stepIndex) {
-        steps[stepIndex].style.display = 'block';
-    }
-
-    function toggleButtonVisibility(currentStep) {
-        if (currentStep === 0) {
-            prevButton.style.display = 'none';
-        } else {
-            prevButton.style.display = 'block';
-        }
-    }
-
-    function getUniqueSortedSteps(selectedAnswers) {
-        const nextAnswers = questionnaireData.questions[currentStep].next_questions;
+    if (nextAnswers && Array.isArray(nextAnswers)) {
+        console.log(selectedAnswers);
         const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
             const answerNextSteps = nextAnswers[selectedAnswer];
             if (Array.isArray(answerNextSteps)) {
@@ -243,44 +204,145 @@
             return steps;
         }, []);
 
-        const uniqueSortedSteps = [...new Set(nextSteps)].sort();
+        const uniqueSortedSteps = [...new Set(nextSteps)].sort((a, b) => a - b);
         return uniqueSortedSteps;
+    } else {
+        return [];
+    }
+}
+
+function getAnswerForQuestion(question) {
+    var selectedAnswer = null;
+    var inputs = document.querySelectorAll('input[name="question_' + question.index + '"]:checked');
+    if (inputs.length === 0) {
+        return null;
+    }
+    if (question.type === 'checkbox') {
+        selectedAnswer = [];
+        inputs.forEach(function (input) {
+            selectedAnswer.push(Number(input.value));
+        });
+    } else if (question.type === 'select') {
+        selectedAnswer = Number(inputs[0].value);
+    } else {
+        selectedAnswer = Number(inputs[0].getAttribute('data-answer-index'));
+    }
+    return selectedAnswer;
+}
+
+function getNextStep(selectedAnswer) {
+    var question = questionnaireData.questions[currentStep];
+    var nextSteps = question.next_questions;
+    var parentQuestion = question.parent_question;
+
+    if (parentQuestion !== undefined) {
+        currentStep = parentQuestion;
+        return;
     }
 
-    function validateCurrentStep(currentStep) {
-        if (checkFieldsFilled(currentStep) && checkFieldsValid(currentStep) && checkAttentionRequired(currentStep)) {
-            return true;
+    if (Array.isArray(selectedAnswer)) {
+        var uniqueNextSteps = nextSteps.filter(step => selectedAnswer.includes(step));
+        if (uniqueNextSteps.length > 0) {
+            currentStep = uniqueNextSteps[0];
         } else {
-            console.log('Validation failed');
-            return false;
+            currentStep++;
         }
+    } else if (nextSteps !== undefined && nextSteps.length > 0) {
+        currentStep = nextSteps[0];
+    } else {
+        currentStep++;
     }
+}
 
-    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
-    answerBtns.forEach(function(btn, index) {
-        if (index > 0) {
-            btn.addEventListener('click', function() {
-                var currentStep = this.closest('.chubs-step');
-                var allAnswerBtns = currentStep.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
+function updateStepInfo() {
+    var currentQuestion = newQuestionnaireData.questions[currentStep];
+    var subquestionEl = document.getElementById('subquestion');
 
-                allAnswerBtns.forEach(function(btn) {
-                    btn.classList.remove('active');
-                    btn.querySelector('input').checked = false;
-                });
+    if (currentQuestion && currentQuestion.is_subquestion === true) {
+        subquestionEl.innerText = 'subquestion ' + currentQuestion.subquestion;
+    } else {
+        subquestionEl.innerText = '';
+    }
+    currentStepElement.textContent = currentQuestion.step;
+}
 
-                this.classList.add('active');
-                this.querySelector('input').checked = true;
-            });
+function getSelectedAnswer(step) {
+    var selectedAnswer = null;
+    var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+    if (inputs.length === 0) {
+        return null;
+    }
+    inputs.forEach(function (input, index) {
+        if (input.checked) {
+            selectedAnswer = index;
         }
     });
+    return selectedAnswer;
+}
 
-    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
-    answerBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
+function grtSeletcedAnswerMulti(step) {
+    var selectedAnswers = [];
+    var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+    if (inputs.length === 0) {
+        return null;
+    }
+    inputs.forEach(function (input, index) {
+        if (input.checked) {
+            selectedAnswers.push(index);
+        }
+    });
+    return selectedAnswers;
+}
+
+function hideStep(stepIndex) {
+    steps[stepIndex].style.display = 'none';
+}
+
+function showStep(stepIndex) {
+    steps[stepIndex].style.display = 'block';
+}
+
+function toggleButtonVisibility(currentStep) {
+    if (currentStep === 0) {
+        prevButton.style.display = 'none';
+    } else {
+        prevButton.style.display = 'block';
+    }
+}
+
+function getUniqueSortedSteps(selectedAnswers) {
+    const nextAnswers = questionnaireData.questions[currentStep].next_questions;
+    const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
+        const answerNextSteps = nextAnswers[selectedAnswer];
+        if (Array.isArray(answerNextSteps)) {
+            return [...steps, ...answerNextSteps];
+        } else if (typeof answerNextSteps === 'number') {
+            return [...steps, answerNextSteps];
+        }
+        return steps;
+    }, []);
+
+    const uniqueSortedSteps = [...new Set(nextSteps)].sort();
+    return uniqueSortedSteps;
+}
+
+function validateCurrentStep(currentStep) {
+    if (checkFieldsFilled(currentStep) && checkFieldsValid(currentStep) && checkAttentionRequired(currentStep)) {
+        return true;
+    } else {
+        console.log('Validation failed');
+        return false;
+    }
+}
+
+var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
+answerBtns.forEach(function (btn, index) {
+    if (index > 0) {
+        btn.addEventListener('click', function () {
             var currentStep = this.closest('.chubs-step');
-            var allAnswerBtns = currentStep.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
+            var allAnswerBtns = currentStep.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
 
-            allAnswerBtns.forEach(function(btn) {
+            allAnswerBtns.forEach(function (btn) {
                 btn.classList.remove('active');
                 btn.querySelector('input').checked = false;
             });
@@ -288,65 +350,82 @@
             this.classList.add('active');
             this.querySelector('input').checked = true;
         });
-    });
+    }
+});
 
-    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-checkbox .answer-btn');
-    answerBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var currentStep = this.closest('.chubs-step');
+var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
+answerBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var currentStep = this.closest('.chubs-step');
+        var allAnswerBtns = currentStep.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
 
-            if (this.querySelector('input').checked) {
-                this.querySelector('input').checked = false;
-                this.classList.remove('active');
-            } else {
-                this.querySelector('input').checked = true;
-                this.classList.add('active');
-            }
+        allAnswerBtns.forEach(function (btn) {
+            btn.classList.remove('active');
+            btn.querySelector('input').checked = false;
         });
+
+        this.classList.add('active');
+        this.querySelector('input').checked = true;
     });
+});
 
-    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-number .answer-btn');
-    answerBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var currentStep = this.closest('.chubs-step');
+var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-checkbox .answer-btn');
+answerBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var currentStep = this.closest('.chubs-step');
 
-            if (this.querySelector('input').checked) {
-                this.querySelector('input').checked = false;
-                this.classList.remove('active');
-            } else {
-                this.querySelector('input').checked = true;
-                this.classList.add('active');
-            }
-        });
+        if (this.querySelector('input').checked) {
+            this.querySelector('input').checked = false;
+            this.classList.remove('active');
+        } else {
+            this.querySelector('input').checked = true;
+            this.classList.add('active');
+        }
     });
+});
 
-    var answerBtnsConsert = document.querySelectorAll('.answer-btn-consert');
-    answerBtnsConsert.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var checkbox = this.querySelector('input[type="checkbox"]');
+var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-number .answer-btn');
+answerBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var currentStep = this.closest('.chubs-step');
 
-            if (checkbox.checked) {
-                checkbox.checked = false;
-                this.classList.remove('active');
-            } else {
-                checkbox.checked = true;
-                this.classList.add('active');
-                checkbox.classList.remove('error');
-            }
-        });
+        if (this.querySelector('input').checked) {
+            this.querySelector('input').checked = false;
+            this.classList.remove('active');
+        } else {
+            this.querySelector('input').checked = true;
+            this.classList.add('active');
+        }
     });
+});
 
-    var tooltipButtons = document.querySelectorAll('.tooltip-btn');
-    tooltipButtons.forEach(function (button) {
-        event.stopPropagation();
-        button.addEventListener('click', function () {
-            var questionIndex = button.getAttribute('data-question');
-            var tooltipText = document.querySelector('.tooltip-text-' + questionIndex);
+var answerBtnsConsert = document.querySelectorAll('.answer-btn-consert');
+answerBtnsConsert.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var checkbox = this.querySelector('input[type="checkbox"]');
 
-            if (tooltipText.style.display === 'block') {
-                tooltipText.style.display = 'none';
-            } else {
-                tooltipText.style.display = 'block';
-            }
-        });
+        if (checkbox.checked) {
+            checkbox.checked = false;
+            this.classList.remove('active');
+        } else {
+            checkbox.checked = true;
+            this.classList.add('active');
+            checkbox.classList.remove('error');
+        }
     });
+});
+
+var tooltipButtons = document.querySelectorAll('.tooltip-btn');
+tooltipButtons.forEach(function (button) {
+    event.stopPropagation();
+    button.addEventListener('click', function () {
+        var questionIndex = button.getAttribute('data-question');
+        var tooltipText = document.querySelector('.tooltip-text-' + questionIndex);
+
+        if (tooltipText.style.display === 'block') {
+            tooltipText.style.display = 'none';
+        } else {
+            tooltipText.style.display = 'block';
+        }
+    });
+});
