@@ -1271,13 +1271,17 @@ main {
         align-items: center;
     }
     .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) label {
-        padding-right: 30px;
+        padding-right: 35px;
     }
     .tooltip {
         position: initial;
     }
     .tooltip:hover svg {
         top: 14%;
+    }
+    main {
+        height: initial;
+        max-height: initial;
     }
 }
 
