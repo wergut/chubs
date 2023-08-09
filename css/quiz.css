@@ -545,6 +545,7 @@ form .inputs-wrapper input {
     text-align: start;
     color: #858585;
     transition: 0.3s;
+    height: 30px;
 }
 .chubs-step .chubs-quiz-answers-type-checkbox label:hover:before {
     border-color: #A6CD46;
@@ -991,7 +992,7 @@ main {
     }
     .chubs-step .chubs-quiz-answers-type-checkbox label {
         padding: 0;
-        align-items: center;
+        align-items: flex-start;
     }
     .chubs-step .chubs-quiz-answers-type-checkbox {
         justify-content: space-between;
@@ -1017,6 +1018,15 @@ main {
     .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert {
         top: 300px;
         max-width: 60%;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox input+label::before {
+        top: 0;
+        align-self: center;
+    }
+    .tooltip {
+        position: absolute;
+        right: -10px;
+        top: 0;
     }
 }
 
@@ -1092,6 +1102,9 @@ main {
     .chubs-steps .chubs-step .answer-btn {
         max-width: 100%;
         min-height: 50px;
+        height: initial;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn label {
         height: initial;
     }
     .chubs-step .chubs-quiz-answers-type-slider .chubs-quiz-answer-label {
@@ -1259,6 +1272,9 @@ main {
     }
     .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) label {
         padding-right: 25px;
+    }
+    .tooltip {
+        position: initial;
     }
 }
 
