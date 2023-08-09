@@ -897,6 +897,11 @@ form .inputs-wrapper input {
     display: block;
 }
 
+main {
+    max-height: 100vh;
+    height: 100vh;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
