@@ -1277,7 +1277,7 @@ main {
         position: initial;
     }
     .tooltip:hover svg {
-        top: 16%;
+        top: 14%;
     }
 }
 
