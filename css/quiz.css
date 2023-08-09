@@ -1085,7 +1085,7 @@ main {
     .tooltip svg {
         position: absolute;
         right: 15px;
-        top: 20px;
+        top: 35%;
     }
     .tooltip-text {
         width: 100%;
@@ -1105,6 +1105,7 @@ main {
     }
     .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn label {
         height: initial;
+        align-items: center;
     }
     .chubs-step .chubs-quiz-answers-type-slider .chubs-quiz-answer-label {
         display: none;
