@@ -513,7 +513,6 @@ form .inputs-wrapper input {
     margin-right: 10px;
     border: 1px solid #d9d9d9;
     position: relative;
-    top: -2px;
 }
 
 .chubs-step .chubs-quiz-answers-type-checkbox input:checked+label {
