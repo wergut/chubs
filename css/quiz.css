@@ -1276,6 +1276,9 @@ main {
     .tooltip {
         position: initial;
     }
+    .tooltip:hover svg {
+        top: 16%;
+    }
 }
 
 @media (max-width: 414px) {
