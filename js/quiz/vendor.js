@@ -154,6 +154,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         var select = document.createElement('select');
         select.name = 'question_' + index;
         select.classList.add('select_states');
+        select.id = 'state_select';
         select.required = true;
 
         var defaultOption = document.createElement('option');
@@ -173,7 +174,12 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         selectContainer.classList.add('answer-btn');
         selectContainer.appendChild(select);
 
+        var ContactsUsLink = document.createElement('a');
+        ContactsUsLink.classList.add('chubs-quiz-link');
+        ContactsUsLink.innerText = 'Contact Us';
+
         answersDiv.appendChild(selectContainer);
+        answersDiv.appendChild(ContactsUsLink);
 
     } else if (question.type === 'birth') {
 

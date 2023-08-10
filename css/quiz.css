@@ -513,6 +513,7 @@ form .inputs-wrapper input {
     margin-right: 10px;
     border: 1px solid #d9d9d9;
     position: relative;
+    top: -2px;
 }
 
 .chubs-step .chubs-quiz-answers-type-checkbox input:checked+label {
@@ -544,7 +545,6 @@ form .inputs-wrapper input {
     text-align: start;
     color: #858585;
     transition: 0.3s;
-    height: 30px;
 }
 .chubs-step .chubs-quiz-answers-type-checkbox label:hover:before {
     border-color: #A6CD46;
@@ -897,11 +897,6 @@ form .inputs-wrapper input {
     display: block;
 }
 
-main {
-    max-height: 100vh;
-    height: 100vh;
-}
-
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
@@ -991,7 +986,7 @@ main {
     }
     .chubs-step .chubs-quiz-answers-type-checkbox label {
         padding: 0;
-        align-items: flex-start;
+        align-items: center;
     }
     .chubs-step .chubs-quiz-answers-type-checkbox {
         justify-content: space-between;
@@ -1017,15 +1012,6 @@ main {
     .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert {
         top: 300px;
         max-width: 60%;
-    }
-    .chubs-step .chubs-quiz-answers-type-checkbox input+label::before {
-        top: 0;
-        align-self: center;
-    }
-    .tooltip {
-        position: absolute;
-        right: -10px;
-        top: 0;
     }
 }
 
@@ -1085,7 +1071,7 @@ main {
     .tooltip svg {
         position: absolute;
         right: 15px;
-        top: 35%;
+        top: 20px;
     }
     .tooltip-text {
         width: 100%;
@@ -1102,10 +1088,6 @@ main {
         max-width: 100%;
         min-height: 50px;
         height: initial;
-    }
-    .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn label {
-        height: initial;
-        align-items: center;
     }
     .chubs-step .chubs-quiz-answers-type-slider .chubs-quiz-answer-label {
         display: none;
@@ -1271,17 +1253,7 @@ main {
         align-items: center;
     }
     .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) label {
-        padding-right: 35px;
-    }
-    .tooltip {
-        position: initial;
-    }
-    .tooltip:hover svg {
-        top: 14%;
-    }
-    main {
-        height: initial;
-        max-height: initial;
+        padding-right: 25px;
     }
 }
 
