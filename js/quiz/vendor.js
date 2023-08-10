@@ -178,6 +178,11 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         ContactsUsLink.classList.add('chubs-quiz-link');
         ContactsUsLink.innerText = 'Contact Us';
 
+        ContactsUsLink.addEventListener('click', function() {
+            externalStep();
+            this.style.display = 'none';
+        });
+
         answersDiv.appendChild(selectContainer);
         answersDiv.appendChild(ContactsUsLink);
 
