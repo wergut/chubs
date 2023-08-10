@@ -904,10 +904,9 @@ form .inputs-wrapper input {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin-top: 27px;
     transition: 0.3s;
     position: absolute;
-    bottom: 90px;
+    top: 160px;
 }
 
 .chubs-quiz-link:hover {
@@ -1273,7 +1272,7 @@ form .inputs-wrapper input {
         padding-right: 25px;
     }
     .chubs-quiz-link {
-        bottom: 120px;
+        top: 140px;
     }
 }
 
