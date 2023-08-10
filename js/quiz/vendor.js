@@ -177,14 +177,14 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         var ContactsUsLink = document.createElement('a');
         ContactsUsLink.classList.add('chubs-quiz-link');
         ContactsUsLink.innerText = 'Contact Us';
+        ContactsUsLink.setAttribute('href', '#');
 
-        ContactsUsLink.addEventListener('click', function() {
-            externalStep();
-            this.style.display = 'none';
-        });
+        ContactsUsLink.setAttribute('onclick', 'externalStep()');
 
         answersDiv.appendChild(selectContainer);
         answersDiv.appendChild(ContactsUsLink);
+
+
 
     } else if (question.type === 'birth') {
 
@@ -386,18 +386,20 @@ function createTooltipText(text, questionIndex) {
     return tooltip;
 }
 
-
 function externalStep() {
     var currentQuestion = document.querySelector('.chubs-step-index-' + currentStep);
     if (currentQuestion) {
         console.log(currentQuestion);
+        var fieldset = currentQuestion.querySelector('fieldset');
         var legend = currentQuestion.querySelector('legend');
         var p = currentQuestion.querySelector('p');
-        var pagiContainer = currentQuestion.querySelector('.pagination-chubs-quiz');
+        var pagiContainer = document.querySelector('.pagination-chubs-quiz');
         var prevBtn = document.getElementById('prevStep');
         var nextBtn = document.getElementById('nextStep');
         var select = currentQuestion.querySelector('select + span');
         var consert = currentQuestion.querySelector('.answer-btn-consert');
+        var contactBtn = currentQuestion.querySelector('.chubs-quiz-link');
+        var firstAnswer = currentQuestion.querySelector('.chubs-quiz-answers-0');
 
         legend.textContent = 'Sorry...';
         p.textContent = 'Ordering from your state is not available yet. Please enter your mail so we can contact you.';
@@ -406,23 +408,40 @@ function externalStep() {
         nextBtn.style.display = 'none';
         select.style.display = 'none';
         consert.style.display = 'none';
-
+        contactBtn.style.display = 'none';
+        firstAnswer.remove();
 
         var newButton = document.createElement('button');
         newButton.id = 'sender';
         newButton.type = 'button';
         newButton.classList.add('btn-green');
         newButton.textContent = 'Send';
+
+        console.log(pagiContainer);
+
         pagiContainer.appendChild(newButton);
 
 
+        var emailContainer = document.createElement('div');
+        emailContainer.classList.add('chubs-quiz-answer-label');
+        emailContainer.classList.add('answer-btn');
+        emailContainer.classList.add('chubs-quiz-external-answers');
 
+
+        var emailInput = document.createElement('input');
+        emailInput.type = 'email';
+        emailInput.placeholder = 'Enter your email';
+        emailInput.classList.add('chubs-quiz-input');
+
+        fieldset.appendChild(emailContainer);
+        emailContainer.appendChild(emailInput);
 
         // 1 скрыть кнопку +
         // 2 поменять кнопку следущи шаг +
         // 3 показать новое поле
         // 4 спрятать селект +
         // 5 сменить надписи +
+
 
     }
 }
