@@ -897,6 +897,23 @@ form .inputs-wrapper input {
     display: block;
 }
 
+.chubs-quiz-link {
+    color: #858585;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 27px;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 90px;
+}
+
+.chubs-quiz-link:hover {
+    color: #A6CD46;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
