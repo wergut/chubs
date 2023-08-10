@@ -415,6 +415,7 @@ function externalStep() {
         newButton.id = 'sender';
         newButton.type = 'button';
         newButton.classList.add('btn-green');
+        newButton.setAttribute('onclick', 'console.log(savedData)');
         newButton.textContent = 'Send';
 
         console.log(pagiContainer);
