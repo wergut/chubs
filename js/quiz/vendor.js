@@ -415,11 +415,8 @@ function externalStep() {
         newButton.id = 'sender';
         newButton.type = 'button';
         newButton.classList.add('btn-green');
-        newButton.setAttribute('onclick', 'console.log(savedData)');
+        newButton.setAttribute('onclick', 'sendBtnHundler()');
         newButton.textContent = 'Send';
-
-        console.log(pagiContainer);
-
         pagiContainer.appendChild(newButton);
 
 
@@ -433,16 +430,33 @@ function externalStep() {
         emailInput.type = 'email';
         emailInput.placeholder = 'Enter your email';
         emailInput.classList.add('chubs-quiz-input');
+        emailInput.classList.add('chubs-quiz-input-email-external');
 
         fieldset.appendChild(emailContainer);
         emailContainer.appendChild(emailInput);
 
-        // 1 скрыть кнопку +
-        // 2 поменять кнопку следущи шаг +
-        // 3 показать новое поле
-        // 4 спрятать селект +
-        // 5 сменить надписи +
+        $(emailInput).inputmask({
+            alias: 'email',
+        });
 
+
+        var inputEvent = new Event('input', { bubbles: true });
+        emailInput.dispatchEvent(inputEvent);
 
     }
+}
+
+function sendBtnHundler() {
+    var currentQuestion = document.querySelector('.chubs-step-index-' + currentStep);
+    var externalEmail = document.querySelector('.chubs-quiz-input-email-external');
+    var externalEmailValue = externalEmail.value;
+    savedData = [];
+    savedData.push({
+        questionIndex: 0,
+        questionTitle: 'User sending email',
+        email: externalEmailValue
+    });
+
+    sendDataToServer(savedData);
+    validateCurrentStep(currentQuestion);
 }
