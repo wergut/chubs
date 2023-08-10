@@ -1272,6 +1272,9 @@ form .inputs-wrapper input {
     .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) label {
         padding-right: 25px;
     }
+    .chubs-quiz-link {
+        bottom: 120px;
+    }
 }
 
 @media (max-width: 414px) {
