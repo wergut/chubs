@@ -74,8 +74,6 @@ function nextStepHandler() {
 
             var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
             var nextSteps = getNextStepMulti(selectedAnswers); // is true
-            let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
-
 
             ////////////////////////////RBS///////////////////////////////
             if (!queue_questions.length) {
@@ -84,15 +82,8 @@ function nextStepHandler() {
             }
             ////////////////////////////RBS///////////////////////////////
 
-            console.log('inner multiply');
 
-            // save branch   branchesIndex
-            if (currentStep == 44) {
-                branches = uniqueSrotedSteps;
-                console.log(branches);
-            }
-
-            if (branchesIndex <= queue_questions.length) {
+            if (branchesIndex <= queue_questions.length && selectedAnswers?.length) {
 
                 ////////////////////////////RBS///////////////////////////////
 
@@ -216,8 +207,7 @@ function getNextStepMulti(selectedAnswers) {
     const question = questionnaireData.questions[currentStep];
     const nextAnswers = question.next_questions;
 
-    if (nextAnswers && Array.isArray(nextAnswers)) {
-        console.log(selectedAnswers);
+    if (nextAnswers && nextAnswers?.length && selectedAnswers?.length) {
         const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
             const answerNextSteps = nextAnswers[selectedAnswer];
             if (Array.isArray(answerNextSteps)) {
@@ -228,8 +218,7 @@ function getNextStepMulti(selectedAnswers) {
             return steps;
         }, []);
 
-        const uniqueSortedSteps = [...new Set(nextSteps)].sort((a, b) => a - b);
-        return uniqueSortedSteps;
+        return  [...new Set(nextSteps)].sort((a, b) => a - b);
     } else {
         return [];
     }
