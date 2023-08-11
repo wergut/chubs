@@ -13,7 +13,7 @@ var questionnaireData = {
                 { "4": "Never" }
             ],
             "tooltip": [],
-            "next_questions": [ 35 ],
+            "next_questions": [ 2 ],
             "attention_required": [],
             "hint": "Select the frequency of the problem"
         },
@@ -884,11 +884,12 @@ function saveQuestionData(questionIndex) {
 
 
 document.getElementById('saveButton').addEventListener('click', function () {
-    console.log(savedData);
-    //sendDataToServer(savedData);
+    sendDataToServer(savedData);
 });
 
 function sendDataToServer(data) {
+    console.log(data);
+    /*
     var url = 'https://example.com/api/submit';
     var requestData = JSON.stringify(data);
 
@@ -905,7 +906,7 @@ function sendDataToServer(data) {
     })
     .catch(error => {
             console.error('Error while sending data to the server:', error);
-    })
+    })*/
 }
 
 

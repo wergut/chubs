@@ -897,6 +897,56 @@ form .inputs-wrapper input {
     display: block;
 }
 
+.chubs-quiz-link {
+    color: #858585;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: 0.3s;
+    position: absolute;
+    top: 180px;
+}
+
+.chubs-quiz-link:hover {
+    color: #A6CD46;
+}
+
+.question .inner .chubs-quiz-external-answers {
+    margin: 40px auto 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #858585;
+    border: none;
+    max-width: 400px;
+}
+
+.question .inner .chubs-quiz-external-answers input {
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #858585;
+    display: block;
+    width: 100%;
+}
+
+.question .inner .chubs-quiz-external-answers:hover {
+    background: transparent;
+}
+
+.question .inner .chubs-quiz-external-answers::placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: #858585;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
@@ -1254,6 +1304,9 @@ form .inputs-wrapper input {
     }
     .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) label {
         padding-right: 25px;
+    }
+    .chubs-quiz-link {
+        top: 160px;
     }
 }
 

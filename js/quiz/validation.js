@@ -114,11 +114,11 @@ function validateDate(date) {
 function checkAttentionRequired(currentQuestion) {
 
     var inputs = currentQuestion.querySelectorAll('input[name="attention_required_checkbox"]');
-    console.log(inputs);
+    //console.log(inputs);
 
     if (inputs.length > 0) {
-        console.log('inputs.length');
-        console.log(inputs.length);
+        //console.log('inputs.length');
+        //console.log(inputs.length);
         var isAnyChecked = Array.from(inputs).some(function(checkbox) {
             return checkbox.checked;
         });

@@ -54,6 +54,7 @@ function prevStepHandler() {
             console.log('Element at currentStep ' + currentStep + ' does not exist.');
         }
         updateQuestionQueueForPrevStep()
+
     }
 }
 
@@ -73,6 +74,8 @@ function nextStepHandler() {
 
             var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
             var nextSteps = getNextStepMulti(selectedAnswers); // is true
+            let uniqueSrotedSteps = [...new Set(nextSteps)].sort();
+
 
             ////////////////////////////RBS///////////////////////////////
             if (!queue_questions.length) {
@@ -81,7 +84,15 @@ function nextStepHandler() {
             }
             ////////////////////////////RBS///////////////////////////////
 
-            if (branchesIndex <= queue_questions.length && selectedAnswers?.length) {
+            console.log('inner multiply');
+
+            // save branch   branchesIndex
+            if (currentStep == 44) {
+                branches = uniqueSrotedSteps;
+                console.log(branches);
+            }
+
+            if (branchesIndex <= queue_questions.length) {
 
                 ////////////////////////////RBS///////////////////////////////
 
@@ -109,6 +120,8 @@ function nextStepHandler() {
 
                 ////////////////////////////RBS///////////////////////////////
 
+                // console.log('currentStep lost ' + currentStep);
+
             } else {
                 currentStep = 51;
                 showStep(currentStep);
@@ -118,18 +131,19 @@ function nextStepHandler() {
 
         } else {
             var selectedAnswer = getSelectedAnswer(steps[currentStep]);
-            console.log(selectedAnswer);
+            //console.log(selectedAnswer);
             getNextStep(selectedAnswer);
             showStep(currentStep);
             updateStepInfo();
             toggleButtonVisibility(currentStep);
-            console.log(currentStep);
+            //console.log(currentStep);
         }
 
         newQuestionnaireData.questions[currentStep].prev_question = lastStep;
         window.newQuestionnaireData = newQuestionnaireData;
         window.questionnaireData = questionnaireData;
-        console.log(newQuestionnaireData.questions[currentStep]);
+        //console.log(newQuestionnaireData.questions[currentStep]);
+
     }
 
 }
@@ -202,7 +216,8 @@ function getNextStepMulti(selectedAnswers) {
     const question = questionnaireData.questions[currentStep];
     const nextAnswers = question.next_questions;
 
-    if (nextAnswers && nextAnswers?.length && selectedAnswers?.length) {
+    if (nextAnswers && Array.isArray(nextAnswers)) {
+        console.log(selectedAnswers);
         const nextSteps = selectedAnswers.reduce((steps, selectedAnswer) => {
             const answerNextSteps = nextAnswers[selectedAnswer];
             if (Array.isArray(answerNextSteps)) {
@@ -213,7 +228,8 @@ function getNextStepMulti(selectedAnswers) {
             return steps;
         }, []);
 
-        return [...new Set(nextSteps)].sort((a, b) => a - b);
+        const uniqueSortedSteps = [...new Set(nextSteps)].sort((a, b) => a - b);
+        return uniqueSortedSteps;
     } else {
         return [];
     }
@@ -437,3 +453,22 @@ tooltipButtons.forEach(function (button) {
         }
     });
 });
+
+
+
+$('#state_select').on("select2:select", function(e) {
+    var selectedState = e.params.data.text;
+    var currentQuestion = steps[currentStep];
+    var isAttention = checkAttentionRequired(currentQuestion);
+    var isActualState = checkStateInActualStates(selectedState);
+
+    if (isActualState && isAttention) {
+
+    }
+    console.log(isAttention);
+    console.log(isActualState);
+});
+
+function checkStateInActualStates(selectedState) {
+    return ActualStates.includes(selectedState);
+}
