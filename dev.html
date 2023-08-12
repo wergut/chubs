@@ -22,93 +22,44 @@
 <body>
 <main>
 
-    <div id="preloader">
-        <div id="loader"></div>
+    <div class="input-wrapper">
+        <label>Phone number</label>
+        <div class="input-js">
+            <p class="input-text">+1 234 567 89 01</p>
+            <button class="edit-button"></button>
+            <div class="edit-form" style="display: none;">
+                <input class="edited-text">
+            </div>
+        </div>
     </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const chubsQuizAnswers = document.querySelectorAll('.chubs-quiz-answers');
+            const infoBlocks = document.querySelectorAll('.input-js');
 
-            chubsQuizAnswers.forEach(answers => {
-                const classNames = answers.className.split(' ');
-                const numberRegex = /\d+/;
+            infoBlocks.forEach(function (infoBlock) {
+                const infoText = infoBlock.querySelector('.input-text');
+                const editButton = infoBlock.querySelector('.edit-button');
+                const editForm = infoBlock.querySelector('.edit-form');
+                const editedText = infoBlock.querySelector('.edited-text');
 
-                classNames.forEach(className => {
-                    const matches = className.match(numberRegex);
-
-                    if (matches && matches[0] >= 7) {
-                        const legend = answers.closest('.chubs-step').querySelector('legend');
-                        legend.classList.add('fixed');
+                editButton.addEventListener('click', function () {
+                    if (editForm.style.display === 'none' || editForm.style.display === '') {
+                        editForm.style.display = 'block';
+                        editedText.value = infoText.textContent;
+                    } else {
+                        infoText.textContent = editedText.value;
+                        editForm.style.display = 'none';
+                        // Здесь вы можете добавить логику для сохранения текста (например, отправка на сервер).
                     }
                 });
-            });
-            const legendsWithFixedClass = document.querySelectorAll('.question .inner legend.fixed');
-
-            legendsWithFixedClass.forEach(legend => {
-                const questionInner = legend.closest('.question .inner');
-                questionInner.classList.add('fixed');
             });
         });
     </script>
 
-    <pre id="question-output"
-         style="position: absolute; right: 10px; font-size: 10px; width: 200px; z-index: 9999; background: #fff;"></pre>
-
-    <section class="banner question-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex quiz-header">
-
-                    <a href="/" class="logo">
-                        <img src="./img/logo.svg" alt=""/>
-                    </a>
-                    <div class="quiz-progress">
-                            <span class="step-info">
-                                Step
-                                <span class="current-step"> 1 </span>
-                                of
-                                <span class="total-step"> 20 </span>
-                            </span>
-                    </div>
-                    <a href="/" class="back-to-main">Back to main page</a>
-
-                    <a href="/" class="quiz-button quiz-button-close"></a>
-                    <a href="/" class="logo logo-mobile">
-                        <img src="./img/logo.svg" alt=""/>
-                    </a>
-                    <div id="prevBtnMobile" class="quiz-button quiz-button-back"></div>
-
-                </div>
 
 
-                <div class="col-12">
-                    <div id="subquestion" class="subquestion"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="chubs-quiz">
-        <form class="question" action="" style="background: #fff;">
-            <div class="chubs-steps">
-                <div id="questionnaire-container"></div>
-            </div>
-            <div class="pagination-chubs-quiz">
-                <button id="nextStep" type="button" class="btn-green btn-quiz-next" data-step="1">Next step</button>
-                <button id="prevStep" type="button" class="btn-quiz-prev" data-step="1">Previous question</button>
-            </div>
-        </form>
-    </section>
-</main>
-
-<pre>
-        <button id="saveButton">console and send</button>
-    </pre>
-
-
-<footer class="footer">
+    <footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-4 col-m-6">
@@ -144,9 +95,13 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="js/inputMusk.js"></script>
 <script src="js/quiz/states.js"></script>
-<script src="js/quiz/questions.js"></script>
 <script src="js/quiz/vendor.js"></script>
 <script src="js/quiz/validation.js"></script>
 <script src="js/quiz/quiz.js"></script>
 </body>
 </html>
+
+
+
+
+

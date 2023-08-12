@@ -22,56 +22,16 @@
 <body>
 <main>
 
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const chubsQuizAnswers = document.querySelectorAll('.chubs-quiz-answers');
-
-            chubsQuizAnswers.forEach(answers => {
-                const classNames = answers.className.split(' ');
-                const numberRegex = /\d+/;
-
-                classNames.forEach(className => {
-                    const matches = className.match(numberRegex);
-
-                    if (matches && matches[0] >= 7) {
-                        const legend = answers.closest('.chubs-step').querySelector('legend');
-                        legend.classList.add('fixed');
-                    }
-                });
-            });
-            const legendsWithFixedClass = document.querySelectorAll('.question .inner legend.fixed');
-
-            legendsWithFixedClass.forEach(legend => {
-                const questionInner = legend.closest('.question .inner');
-                questionInner.classList.add('fixed');
-            });
-        });
-    </script>
-
-    <pre id="question-output"
-         style="position: absolute; right: 10px; font-size: 10px; width: 200px; z-index: 9999; background: #fff;"></pre>
 
     <section class="banner question-logo">
         <div class="container">
             <div class="row">
-                <div class="col-12 d-flex quiz-header">
+                <div class="col-12 d-flex quiz-header align-end">
 
                     <a href="/" class="logo">
                         <img src="./img/logo.svg" alt=""/>
                     </a>
-                    <div class="quiz-progress">
-                            <span class="step-info">
-                                Step
-                                <span class="current-step"> 1 </span>
-                                of
-                                <span class="total-step"> 20 </span>
-                            </span>
-                    </div>
+                    <div class="quiz-banner-title">Treatment options</div>
                     <a href="/" class="back-to-main">Back to main page</a>
 
                     <a href="/" class="quiz-button quiz-button-close"></a>
@@ -82,9 +42,42 @@
 
                 </div>
 
+            </div>
+        </div>
+    </section>
 
-                <div class="col-12">
-                    <div id="subquestion" class="subquestion"></div>
+    <section class="chub-order-section">
+        <div class="container">
+            <div class="chub-title-block">
+                <div class="title">When do you want to take your medication?</div>
+                <p>Please select the preferable medication regimen</p>
+            </div>
+            <div class="chub-quiz-cards">
+                <div class="chub-quiz-card">
+                    <div class="info">
+                        <div class="title">Before sex</div>
+                        <p>Take as needed on your own schedule</p>
+                    </div>
+                    <div class="payment-description">
+                        <p>
+                            from $
+                            <span>4</span>
+                            /use
+                        </p>
+                    </div>
+                </div>
+                <div class="chub-quiz-card">
+                    <div class="info">
+                        <div class="title">Daily</div>
+                        <p>Take once a day and always be ready</p>
+                    </div>
+                    <div class="payment-description">
+                        <p>
+                            from $
+                            <span>1.33</span>
+                            /use
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,21 +85,11 @@
 
     <section class="chubs-quiz">
         <form class="question" action="" style="background: #fff;">
-            <div class="chubs-steps">
-                <div id="questionnaire-container"></div>
-            </div>
             <div class="pagination-chubs-quiz">
-                <button id="nextStep" type="button" class="btn-green btn-quiz-next" data-step="1">Next step</button>
-                <button id="prevStep" type="button" class="btn-quiz-prev" data-step="1">Previous question</button>
+                <button type="button" class="btn-green btn-quiz-next">Next</button>
             </div>
         </form>
     </section>
-</main>
-
-<pre>
-        <button id="saveButton">console and send</button>
-    </pre>
-
 
 <footer class="footer">
     <div class="container">
@@ -144,7 +127,6 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="js/inputMusk.js"></script>
 <script src="js/quiz/states.js"></script>
-<script src="js/quiz/questions.js"></script>
 <script src="js/quiz/vendor.js"></script>
 <script src="js/quiz/validation.js"></script>
 <script src="js/quiz/quiz.js"></script>

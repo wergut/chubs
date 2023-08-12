@@ -26,6 +26,10 @@
     user-select: none;
 }
 
+.align-end {
+    align-items: flex-end;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -941,10 +945,413 @@ form .inputs-wrapper input {
     background: transparent;
 }
 
+.chub-order-section {
+    margin-bottom: 110px;
+}
+
 .question .inner .chubs-quiz-external-answers::placeholder {
     font-size: 16px;
     line-height: 19px;
     color: #858585;
+}
+
+.banner .quiz-banner-title {
+    color: #A6CD46;
+    text-align: center;
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.chub-quiz-cards {
+    max-width: 569px;
+    width: 100%;
+    margin: 75px auto 0;
+}
+
+.chub-quiz-card {
+    border-radius: 20px;
+    background: #F5F5F5;
+    padding: 25px 30px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.chub-quiz-card:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+
+.chub-quiz-card p {
+    color: #858585;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.chub-quiz-card .info .title {
+    margin-bottom: 4px;
+    color: #141414;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.chub-quiz-card .payment-description p span {
+    color: #141414;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.chub-quiz-cards-payment .info {
+    display: flex;
+    align-items: flex-end;
+}
+
+.chub-quiz-cards-payment .chub-quiz-card {
+    padding: 30px;
+    min-height: 100px;
+    align-items: center;
+}
+
+.chub-quiz-cards-payment .info .title {
+    margin-bottom: 0;
+    line-height: 27px;
+    margin-right: 10px;
+}
+
+.chub-title-block {
+    width: 100%;
+    text-align: center;
+}
+
+.chub-title-block .title {
+    color: #141414;
+    font-size: 23px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.chub-title-block p {
+    color: #858585;
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 572px;
+    margin: 0 auto;
+}
+
+.chub-upload-block {
+    max-width: 660px;
+    margin: 60px auto 0;
+    width: 100%;
+}
+
+.chub-upload-block form {
+    background: #fff;
+    width: 100%;
+    padding: 0;
+}
+
+.chub-upload-block .input-file {
+    border-radius: 10px;
+    border: 1px solid #DEDEDE;
+    background: #FFF;
+    height: 50px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 40px;
+    cursor: pointer;
+}
+
+.chub-upload-block .input-file span {
+    color: #858585;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+}
+
+.chub-upload-block .input-file span:after {
+    content: "";
+    display: inline-flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    background-image: url("../img/icons/download-ico-green.svg");
+    margin-left: 10px;
+}
+
+.chub-upload-block .input-file input[type=file]{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.input-file-list {
+   display: flex;
+    justify-content: center;
+}
+.input-file-list-item {
+    display: inline-block;
+    width: 400px;
+    height: 200px;
+    vertical-align: top;
+    position: relative;
+    margin: 0 auto;
+}
+.input-file-list-item img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.input-file-list-name {
+    text-align: center;
+    display: block;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.input-file-list-remove {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    border-radius: 50%;
+}
+
+.input-file-list-remove:after, .input-file-list-remove:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    display: block;
+    width: 12px;
+    height: 2px;
+    background: #F5F5F5;
+}
+
+.input-file-list-remove:before {
+    transform: rotate(45deg);
+}
+
+.input-file-list-remove:after {
+    transform: rotate(-45deg);
+}
+
+.chub-upload-block-selfi .input-file-list-item {
+    width: 200px;
+    height: 200px;
+}
+
+.chub-order-section .inputs-wrapper label {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: normal;
+    color: #858585;
+    display: block;
+}
+
+.chub-order-section .inputs-wrapper .input-item {
+    max-width: 370px;
+}
+
+.chub-order-section .two-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.chub-order-section form {
+    padding: 0 0 0 10px;
+    background: transparent;
+}
+
+.chub-order-section .two-items .input-item {
+    width: 100%;
+    max-width: 370px;
+}
+
+.chub-order-section .two-items input {
+    max-width: 100%;
+}
+
+.chub-order-section .two-items .small-item {
+    max-width: 145px;
+    margin-right: auto;
+    margin-left: 30px;
+}
+
+.chub-order-section .callback-final-block {
+    display: flex;
+    width: 100%;
+    max-width: 660px;
+    margin: 60px auto 0;
+    flex-wrap: wrap;
+}
+
+.chub-order-section .callback-final-block .author {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chub-order-section .callback-final-block .author .name {
+    color: #141414;
+    font-family: Inter;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.chub-order-section .callback-final-block textarea {
+    width: 660px;
+    height: 183px;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    padding: 15px 25px;
+}
+
+.chub-order-section .callback-final-block .author .author-avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.chub-order-section .callback-final-block .author .author-avatar img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.thank-you-section {
+    min-height: 270px;
+    display: flex;
+}
+
+.thank-you-section h4 {
+    color: #A6CD46;
+    margin-bottom: 10px;
+}
+
+.thank-you-section h4, .thank-you-section p {
+    text-align: center;
+    width: 100%;
+}
+
+.thank-you-section p {
+    color: #858585;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.input-js {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 370px;
+    width: 100%;
+}
+
+.input-js .edit-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.input-js .input-text {
+    color: #141414;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: absolute;
+    left: 0;
+    max-width: 340px;
+    overflow: hidden;
+    top: 0;
+}
+
+.input-js .edit-form .edited-text {
+    border: none;
+    background: #fff;
+    height: 20px;
+    padding-left: 0;
+    color: #141414;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 0;
+    width: 340px;
+}
+
+.input-js .edit-form .edited-text::placeholder {
+    color: #141414;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.input-js .edit-button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("../img/icons/btn-edit-text.svg");
+    background-color: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.chub-order-section form .btn-green {
+    margin-top: 60px;
+    max-width: 100%;
 }
 
 @media (min-width: 1780px) {
