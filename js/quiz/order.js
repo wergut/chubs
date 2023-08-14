@@ -55,7 +55,7 @@ function removeFilesItem(target) {
     var filesList = input.closest('.input-file-row').querySelector('.input-file-list');
     var listItems = filesList.getElementsByClassName('input-file-list-item');
 
-    var dt = new DataTransfer(); // Объявляем переменную dt здесь
+    var dt = new DataTransfer();
 
     for (var i = 0; i < dt.items.length; i++) {
         if (name === dt.items[i].getAsFile().name) {
@@ -73,3 +73,12 @@ function removeFilesItem(target) {
 
     input.files = dt.files;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const addButton = document.querySelector('.btn-add-address');
+    const addAddressForm = document.querySelector('.add-address-form');
+
+    addButton.addEventListener('click', function () {
+        addAddressForm.style.display = 'block';
+    });
+});
