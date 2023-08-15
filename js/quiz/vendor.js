@@ -192,7 +192,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         input.type = 'text';
         input.name = 'date_' + index;
         input.placeholder = 'MM/DD/YY';
-        input.value = '11/11/2012';
+        input.value = '01/01/2023';
         input.inputmode = 'text';
         input.classList.add('date');
 
