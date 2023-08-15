@@ -272,7 +272,7 @@ function updateStepInfo() {
     var subquestionEl = document.getElementById('subquestion');
 
     if (currentQuestion && currentQuestion.is_subquestion === true) {
-        subquestionEl.innerText = 'subquestion ' + currentQuestion.subquestion;
+        subquestionEl.innerText = 'Question ' + currentQuestion.subquestion;
     } else {
         subquestionEl.innerText = '';
     }
