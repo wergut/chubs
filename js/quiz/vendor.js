@@ -86,7 +86,6 @@ newQuestionnaireData.questions.forEach(function(question, index) {
                     }
                 }
             }
-
         });
 
         answerLabel.appendChild(answersDiv);
