@@ -2029,7 +2029,7 @@ form .inputs-wrapper input {
 }
 
 
-.subscriptions-section .payments-options p {
+.subscriptions-section .payments-options li {
     color: #141414;
     font-family: Inter;
     font-size: 16px;
@@ -2043,21 +2043,20 @@ form .inputs-wrapper input {
     margin-bottom: 10px;
 }
 
-.subscriptions-section .payments-options p span:after {
-    content: "";
-    display: inline-flex;
-    background-position: center;
-    background-size: auto;
-    height: 1px;
-    width: 100%;
+.subscriptions-section .payments-options li:before {
+    content: '';
+    flex-grow: 1;
+    order: 2;
+    margin: 0 5px;
+    background-position: 0 80%;
+    background-repeat: repeat-x;
     background-image: url("../img/icons/dotted.svg");
-    position: absolute;
-    top: 0;
-    right: 0;
+    background-size: 100%;
 }
 
-.subscriptions-section .payments-options p span {
+.subscriptions-section .payments-options li span {
     color: #A6CD46;
+    order: 3;
 }
 
 .subscriptions-section .payments-total {
