@@ -82,3 +82,12 @@ document.addEventListener('DOMContentLoaded', function () {
         addAddressForm.style.display = 'block';
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const paymentTypeBtn = document.querySelector('.payment-type-btn');
+    const hiddenDesc = document.querySelector('.subscriptions-section .payment-hidden-desc');
+
+    paymentTypeBtn.addEventListener('click', function () {
+        hiddenDesc.style.display = 'block';
+    });
+});
