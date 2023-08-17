@@ -2113,6 +2113,310 @@ form .inputs-wrapper input {
     max-width: 100%;
 }
 
+.pay-card-section {
+    margin-bottom: 160px;
+}
+
+.pay-card-section .btn-green {
+    max-width: 570px;
+    margin: 0 auto;
+}
+
+.pay-card-section .payment-inner {
+    background: transparent;
+    padding: 0;
+    margin-top: 94px;
+    margin-bottom: 80px;
+}
+
+.pay-card-section .payment-inner .col-6 {
+    padding: 0 25px;
+}
+
+.pay-card-section .payment-inner .card-block {
+    max-width: 335px;
+    height: 185px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 24px 25px 15px;
+    transition: 0.3s;
+    margin-left: auto;
+}
+
+.pay-card-section .payment-inner .card-block input:focus::placeholder {
+    opacity: 0!important;
+}
+
+.pay-card-section .payment-inner .card-block-reverse {
+    margin-right: auto;
+    margin-left: 0;
+    position: relative;
+    padding-top: 89px;
+}
+
+.pay-card-section .payment-inner .card-block-reverse:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 31px;
+    background-color: #141414;
+    top: 24px;
+    left: 0;
+}
+
+.pay-card-section .payment-inner .card-block-reverse .secret-code {
+    color: #858585;
+    font-family: Inter;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 20px;
+    max-width: 44px;
+}
+
+.pay-card-section .payment-inner .card-block-reverse label {
+    color: #858585;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+
+.pay-card-section .payment-inner .card-block-reverse .toggle-code-btn {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("../img/icons/show-on-ico.svg");
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+.pay-card-section .payment-inner .card-block-reverse .toggle-code-btn.active {
+    background-image: url("../img/icons/show-off-ico.svg");
+}
+
+.pay-card-section .payment-inner .card-block-reverse:hover .toggle-code-btn,
+.pay-card-section .payment-inner .card-block-reverse:focus .toggle-code-btn {
+    display: block;
+}
+
+.pay-card-section .payment-inner .card-block-reverse .secret-code::placeholder {
+    color: #858585;
+    font-family: Inter;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.pay-card-section .payment-inner .card-block-reverse .input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.pay-card-section .payment-inner .card-block .card-logo {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.pay-card-section .payment-inner .card-block input {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+}
+
+.pay-card-section .payment-inner .card-block input::-webkit-outer-spin-button,
+.pay-card-section .payment-inner .card-block input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.pay-card-section .payment-inner .card-block .card-num {
+    height: 28px;
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+.pay-card-section .payment-inner .card-block .date {
+    font-size: 14px;
+}
+
+.pay-card-section .payment-inner .card-block .name {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.pay-card-section .payment-inner .card-block .card-num::placeholder {
+    font-size: 23px;
+}
+
+.pay-card-section .payment-inner .card-block .name::placeholder {
+    font-size: 16px;
+}
+
+.pay-card-section .payment-inner .card-block .date::placeholder {
+    font-size: 14px;
+}
+
+.pay-card-section .payment-inner .card-block input::placeholder {
+    color: #858585;
+    transition: 0.3s;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.pay-card-section .payment-inner .card-block:hover,
+.pay-card-section .payment-inner .card-block:focus {
+    background-color: #A6CD46;
+}
+
+.pay-card-section .payment-inner .card-block:hover .secret-code,
+.pay-card-section .payment-inner .card-block:focus .secret-code::placeholder,
+.pay-card-section .payment-inner .card-block:focus .secret-code,
+.pay-card-section .payment-inner .card-block:hover .secret-code::placeholder,
+.pay-card-section .payment-inner .card-block:focus label,
+.pay-card-section .payment-inner .card-block:hover label {
+    color: #fff;
+}
+
+.pay-card-section .payment-inner .card-block:hover .card-logo svg path ,
+.pay-card-section .payment-inner .card-block:focus .card-logo svg path {
+    transition: 0.3s;
+}
+
+.pay-card-section .payment-inner .card-block:hover .card-logo svg path ,
+.pay-card-section .payment-inner .card-block:focus .card-logo svg path {
+    fill: #fff;
+}
+
+.pay-card-section .payment-inner .card-block:hover input::placeholder,
+.pay-card-section .payment-inner .card-block:focus input::placeholder{
+    color: #fff;
+}
+
+.modal-dialog {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background: #0000007a;
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+.modal-open {
+    overflow: hidden;
+}
+@keyframes fadeIn_v2 {
+    0% {transform: translate(0, -50%);}
+    50% { transform: translate(0, -25%); }
+    100% { transform: translate(0, 0%); }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    0.1% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.modal-opening {
+    opacity: 1;
+    display: block;
+    animation: fadeIn 0.5s linear forwards;
+}
+.modal-opening .modal-content {
+    animation: fadeIn_v2 0.3s linear forwards;
+}
+.modal-close {
+    position: absolute;
+    right: 60px;
+    top: 60px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.modal-close span {
+    font-size: 32px;
+    color: #B5C6D7;
+}
+.modal-dialog .modal-content {
+    height: 332px;
+    max-width: 519px;
+    margin: auto;
+    position: relative;
+    top: 20%;
+    align-items: flex-start;
+}
+.modal-dialog.modal-video .modal-content {
+    border-radius: 40px;
+}
+.modal-dialog.modal-video .modal-content .modal-close {
+    right: 0;
+    top: 50px;
+}
+.modal-dialog.modal-video .modal-content iframe {
+    border-radius: 40px;
+}
+.modal-dialog .modal-content .modal-body {
+    margin: 0;
+    height: 100%;
+    border-radius: 30px;
+    background: #F5F5F5;
+}
+
+.modal-dialog .modal-content .modal-body {
+    justify-content: center;
+    padding: 60px 88px;
+}
+
+.modal-dialog .title {
+    text-align: center;
+    font-family: Inter;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 25px;
+}
+
+.modal-dialog-pay-access .title {
+    color: #A6CD46;
+}
+
+.modal-dialog p {
+    color: #141414;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 50px;
+}
+
+.modal-dialog .btn-green {
+    max-width: 344px;
+}
+
+.modal-dialog-pay-failed .title {
+    color: #865480;
+}
+
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
