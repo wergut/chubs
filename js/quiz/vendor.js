@@ -324,6 +324,8 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 function activateSlider(id,index) {
     var slider = document.getElementById(id);
     var input = document.querySelector('.chubs-value-for-range_'+ index);
+    var labelList = document.querySelectorAll('.chubs-label-for-range li');
+
     var valueLabels = {
         1: "Always",
         2: "More than half the time",
