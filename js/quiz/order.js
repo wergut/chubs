@@ -118,32 +118,23 @@ document.addEventListener('DOMContentLoaded', function () {
     submitButton.addEventListener('click', function (event) {
         event.preventDefault();
 
-        // Проверка на валидность номера карты (проверка на число и длину)
-        const cardNumValue = cardNumInput.value.replace(/\s/g, ''); // Убираем пробелы
-        if (!/^\d{16}$/.test(cardNumValue)) {
-            errorMessage.textContent = 'Please enter a valid card number (16 digits).';
-            return;
-        }
 
-        // Проверка на заполнение имени
+
         if (nameInput.value.trim() === '') {
             errorMessage.textContent = 'Please enter your name.';
             return;
         }
 
-        // Проверка на валидность даты (проверка на формат)
         if (!/^\d{2}\/\d{2}$/.test(dateInput.value)) {
             errorMessage.textContent = 'Please enter a valid date (MM/YY).';
             return;
         }
 
-        // Проверка на валидность кода безопасности (проверка на число и длину)
         if (!/^\d{3}$/.test(secretCodeInput.value)) {
             errorMessage.textContent = 'Please enter a valid security code (3 digits).';
             return;
         }
 
-        // Все поля заполнены корректно, можно отправить данные на сервер или выполнить другую логику
         errorMessage.textContent = '';
         alert('Payment successful!');
     });
@@ -188,3 +179,4 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     });
 });
+

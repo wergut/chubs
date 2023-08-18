@@ -2416,6 +2416,9 @@ form .inputs-wrapper input {
     color: #865480;
 }
 
+.chub-order-section .select2-container--default .select2-selection--single .select2-selection__arrow {
+    right: 25px;
+}
 
 @media (min-width: 1780px) {
     .chubs-label-for-range {
