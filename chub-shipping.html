@@ -57,18 +57,11 @@
                         <div class="inputs-wrapper two-items">
                             <div class="input-item">
                                 <label>First Name (legal)</label>
-                                <input type="text" placeholder="Your Name">
+                                <input type="text" placeholder="Your Name" name="firstname">
                             </div>
                             <div class="input-item">
                                 <label>Last Name (legal)</label>
-                                <input type="text" placeholder="Your Last Name">
-                            </div>
-                        </div>
-                        <div class="inputs-wrapper custom-input">
-                            <div class="input-item">
-                                <label>Phone number</label>
-                                <input type="text" placeholder="Your Name">
-                                <div class="btn-edit"></div>
+                                <input type="text" placeholder="Your Last Name" name="lastname">
                             </div>
                         </div>
                         <div class="inputs-wrapper custom-input">
@@ -78,7 +71,7 @@
                                     <p class="input-text">+1 234 567 89 01</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input type="tel" class="edited-text phone">
+                                        <input type="tel" class="edited-text phone" name="phone">
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +83,7 @@
                                     <p class="input-text">email@mail.com</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input type="email" class="edited-text email">
+                                        <input type="email" class="edited-text email" name="email">
                                     </div>
                                 </div>
                             </div>
@@ -104,17 +97,17 @@
                         <div class="inputs-wrapper">
                             <div class="input-item">
                                 <label>Apt/Suite</label>
-                                <input type="text" placeholder="123">
+                                <input type="text" placeholder="123" name="street">
                             </div>
                         </div>
                         <div class="inputs-wrapper two-items">
                             <div class="input-item">
                                 <label>City</label>
-                                <input type="text" placeholder="New York">
+                                <input type="text" placeholder="New York" name="city">
                             </div>
                             <div class="input-item small-item">
                                 <label>Zip/Postal Code</label>
-                                <input type="text" placeholder="12345-6789">
+                                <input type="text" placeholder="12345-6789" name="zipcode">
                             </div>
                         </div>
                         <div class="inputs-wrapper two-items custom-input">
@@ -124,7 +117,62 @@
                                     <p class="input-text">Arizona</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input type="text" class="edited-text">
+                                        <div class="custom-select">
+                                            <select id="state" state" name="state" class="select_states" required>
+                                            <option value="">Select state</option>
+                                            <option value="Alabama">Alabama</option>
+                                            <option value="Alaska">Alaska</option>
+                                            <option value="Arizona">Arizona</option>
+                                            <option value="Arkansas">Arkansas</option>
+                                            <option value="California">California</option>
+                                            <option value="Colorado">Colorado</option>
+                                            <option value="Connecticut">Connecticut</option>
+                                            <option value="Delaware">Delaware</option>
+                                            <option value="District of Columbia">District of Columbia</option>
+                                            <option value="Florida">Florida</option>
+                                            <option value="Georgia">Georgia</option>
+                                            <option value="Hawaii">Hawaii</option>
+                                            <option value="Idaho">Idaho</option>
+                                            <option value="Illinois">Illinois</option>
+                                            <option value="Indiana">Indiana</option>
+                                            <option value="Iowa">Iowa</option>
+                                            <option value="Kansas">Kansas</option>
+                                            <option value="Kentucky">Kentucky</option>
+                                            <option value="Louisiana">Louisiana</option>
+                                            <option value="Maine">Maine</option>
+                                            <option value="Maryland">Maryland</option>
+                                            <option value="Massachusetts">Massachusetts</option>
+                                            <option value="Michigan">Michigan</option>
+                                            <option value="Minnesota">Minnesota</option>
+                                            <option value="Mississippi">Mississippi</option>
+                                            <option value="Missouri">Missouri</option>
+                                            <option value="Montana">Montana</option>
+                                            <option value="Nebraska">Nebraska</option>
+                                            <option value="Nevada">Nevada</option>
+                                            <option value="New Hampshire">New Hampshire</option>
+                                            <option value="New Jersey">New Jersey</option>
+                                            <option value="New Mexico">New Mexico</option>
+                                            <option value="New York">New York</option>
+                                            <option value="North Carolina">North Carolina</option>
+                                            <option value="North Dakota">North Dakota</option>
+                                            <option value="Ohio">Ohio</option>
+                                            <option value="Oklahoma">Oklahoma</option>
+                                            <option value="Oregon">Oregon</option>
+                                            <option value="Pennsylvania">Pennsylvania</option>
+                                            <option value="Rhode Island">Rhode Island</option>
+                                            <option value="South Carolina">South Carolina</option>
+                                            <option value="South Dakota">South Dakota</option>
+                                            <option value="Tennessee">Tennessee</option>
+                                            <option value="Texas">Texas</option>
+                                            <option value="Utah">Utah</option>
+                                            <option value="Vermont">Vermont</option>
+                                            <option value="Virginia">Virginia</option>
+                                            <option value="Washington">Washington</option>
+                                            <option value="West Virginia">West Virginia</option>
+                                            <option value="Wisconsin">Wisconsin</option>
+                                            <option value="Wyoming">Wyoming</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +183,7 @@
                                         <p class="input-text">United States</p>
                                         <button class="edit-button"></button>
                                         <div class="edit-form" style="display: none;">
-                                            <input type="text" class="edited-text">
+                                            <input type="text" class="edited-text" name="country">
                                         </div>
                                     </div>
                                 </div>

@@ -258,3 +258,24 @@ for (var i = 0; i < localStorage.length; i++) {
 }
 
 console.log(allLocalStorageData);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const zipCodeInput = document.querySelector('.zip-code');
+    const submitButton = document.querySelector('.submit-button');
+
+    submitButton.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const zipCodeValue = zipCodeInput.value;
+
+        if (!isValidZipCode(zipCodeValue)) {
+            zipCodeInput.classList.add('error');
+        } else {
+            zipCodeInput.classList.remove('error');
+        }
+    });
+
+    function isValidZipCode(zipCode) {
+        return /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
+    }
+});

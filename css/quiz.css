@@ -1233,6 +1233,18 @@ form .inputs-wrapper input {
     max-width: 370px;
 }
 
+.chub-order-section .inputs-wrapper .input-item-fixed .edit-form {
+    position: absolute;
+    left: 0;
+}
+
+.input-js .edit-form:has(.select2-selection--single) {
+    position: absolute;
+    left: 0;
+    width: 370px;
+}
+
+
 .chub-order-section .two-items {
     display: flex;
     justify-content: space-between;
@@ -1307,7 +1319,7 @@ form .inputs-wrapper input {
 }
 
 .thank-you-section {
-    min-height: 270px;
+    min-height: 70vh;
     display: flex;
 }
 
@@ -1333,14 +1345,14 @@ form .inputs-wrapper input {
 .input-js {
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     max-width: 370px;
     width: 100%;
 }
 
 .input-js .edit-form {
-    position: absolute;
-    left: 0;
+    position: relative;
+    left: -35px;
     top: 0;
 }
 
@@ -1351,25 +1363,19 @@ form .inputs-wrapper input {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    position: absolute;
-    left: 0;
     max-width: 340px;
     overflow: hidden;
-    top: 0;
+    max-height: 20px;
 }
 
 .input-js .edit-form .edited-text {
-    border: none;
     background: #fff;
-    height: 20px;
-    padding-left: 0;
     color: #141414;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    border-radius: 0;
     width: 340px;
 }
 
@@ -1394,6 +1400,8 @@ form .inputs-wrapper input {
     width: 16px;
     height: 16px;
     cursor: pointer;
+    position: absolute;
+    right: 0;
 }
 
 .chub-order-section .btn-full-width {
@@ -1773,6 +1781,11 @@ form .inputs-wrapper input {
     font-weight: 500;
     line-height: normal;
     margin-left: 25px;
+    transition: 0.3s;
+}
+
+.chub-similar-options .option-card-big .link-description a:hover {
+    color: #688b13;
 }
 
 .options-section {
@@ -2418,6 +2431,61 @@ form .inputs-wrapper input {
 
 .chub-order-section .select2-container--default .select2-selection--single .select2-selection__arrow {
     right: 25px;
+}
+
+.chub-order-section form .btn-green {
+    max-width: 100%;
+    margin-top: 60px;
+}
+
+.thank-you-section form .btn-green {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.thank-you-section form {
+    width: 100%;
+    margin-top: 260px;
+}
+
+.chub-upload-section {
+    min-height: 70vh;
+}
+
+.chub-upload-section form {
+    width: 100%;
+}
+
+.chub-upload-section .btn-green {
+    max-width: 400px;
+    margin: 100px auto 0;
+}
+
+.chub-upload-section .chub-upload-inner {
+    max-width: 660px;
+    margin: 60px auto 0;
+    width: 100%;
+}
+
+.chub-upload-section .chub-title-block {
+    margin-bottom: 60px;
+}
+
+.chub-order-message {
+    min-height: 70vh;
+}
+
+.chub-order-message .btn-green {
+    max-width: 400px;
+    margin: 130px auto 0;
+}
+
+.chub-order-list {
+    min-height: 70vh;
+}
+
+select.error~.select2-container--default .select2-selection--single {
+    background-image: none!important;
 }
 
 @media (min-width: 1780px) {
