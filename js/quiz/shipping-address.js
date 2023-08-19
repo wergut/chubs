@@ -1,6 +1,0 @@
-function addAdress() {
-
-}
-function removeAdress() {
-
-}

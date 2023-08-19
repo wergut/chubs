@@ -22,7 +22,6 @@
 <body>
 <main>
 
-
     <section class="banner question-logo">
         <div class="container">
             <div class="row">
@@ -53,17 +52,22 @@
                     <h3>Shipping address</h3>
                 </div>
                 <div class="col-8 col-m-12">
-                    <div class="shipping-card">
-                        <h5>14 Se 4th Ste 24, Northwest 24th Street</h5>
-                        <p>Boca Raton, FL</p>
-                        <p>33432-6104</p>
-                        <p>FL, United States</p>
-                        <div class="checkbox-address">
-                            <input id="address1" type="checkbox">
-                            <label for="address1"></label>
+                    <div id="shippingCardsContainer">
+                        <div class="shipping-card">
+                            <h5>14 Se 4th Ste 24, Northwest 24th Street</h5>
+                            <p>Boca Raton, FL</p>
+                            <p>33432-6104</p>
+                            <p>FL, United States</p>
+                            <div class="checkbox-address">
+                                <input id="address1" type="checkbox">
+                                <label for="address1"></label>
+                            </div>
                         </div>
+                        <div class="btn-add-address">Enter new Address</div>
+
                     </div>
-                    <div class="btn-add-address">Enter new Address</div>
+
+
                     <form class="add-address-form" action="" style="display: none">
                         <h3>Enter New Address</h3>
                         <div class="inputs-wrapper custom-input two-items">
@@ -73,7 +77,7 @@
                                     <p class="input-text">Alex</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input type="text" class="edited-text">
+                                        <input id="first-name" type="text" class="edited-text" name="firstname">
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +87,7 @@
                                     <p class="input-text">Garan</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input type="text" class="edited-text">
+                                        <input id="last-name" type="text" class="edited-text" name="lastname">
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +99,7 @@
                                     <p class="input-text">+1 234 567 89 01</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input type="tel" class="edited-text phone">
+                                        <input id="phone" type="tel" class="edited-text phone" name="phone">
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +111,7 @@
                                     <p class="input-text">email@mail.com</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input type="email" class="edited-text email">
+                                        <input id="email" type="email" class="edited-text email" name="email">
                                     </div>
                                 </div>
                             </div>
@@ -115,30 +119,30 @@
                         <div class="inputs-wrapper">
                             <div class="input-item">
                                 <label>Street</label>
-                                <input type="text" placeholder="St. 123">
+                                <input id="street" type="text" placeholder="St. 123" name="street">
                             </div>
                         </div>
                         <div class="inputs-wrapper">
                             <div class="input-item">
                                 <label>Apt/Suite</label>
-                                <input type="text" placeholder="123">
+                                <input id="suite" type="text" placeholder="123" name="suite">
                             </div>
                         </div>
                         <div class="inputs-wrapper two-items">
                             <div class="input-item">
                                 <label>City</label>
-                                <input type="text" placeholder="New York">
+                                <input id="city" type="text" placeholder="New York" name="city">
                             </div>
                             <div class="input-item small-item">
                                 <label>Zip/Postal Code</label>
-                                <input type="text" placeholder="12345-6789">
+                                <input id="zip-code" type="text" placeholder="12345-6789" name="zipcode">
                             </div>
                         </div>
                         <div class="inputs-wrapper two-items custom-input">
                             <div class="input-item select-item">
                                 <label>State</label>
                                 <div class="custom-select">
-                                    <select name="state" class="select_states" required>
+                                    <select id="state" state" name="state" class="select_states" required>
                                         <option value="">Select state</option>
                                         <option value="Alabama">Alabama</option>
                                         <option value="Alaska">Alaska</option>
@@ -196,13 +200,13 @@
                             </div>
                             <div class="input-item">
                                 <div class="input-item">
-                                    <label>City</label>
-                                    <input type="text" placeholder="New York">
+                                    <label>Country</label>
+                                    <input id="country" type="text" placeholder="United States">
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <button type="button" class="btn-green btn-full-width">Add new and continue</button>
+                    <button id="addNewAddress" type="button" class="btn-green btn-full-width">Add new and continue</button>
                 </div>
             </div>
         </div>
@@ -244,9 +248,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="js/inputMusk.js"></script>
     <script src="js/quiz/states.js"></script>
-    <script src="js/quiz/vendor.js"></script>
     <script src="js/quiz/validation.js"></script>
-    <script src="js/quiz/quiz.js"></script>
     <script src="js/quiz/order.js"></script>
 </body>
 </html>

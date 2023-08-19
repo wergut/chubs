@@ -761,8 +761,6 @@ function generateNewQuestionnaireData() {
 }
 
 
-
-
 var savedData = [];
 function saveQuestionData(questionIndex) {
     var question = questionnaireData.questions[questionIndex];
@@ -795,6 +793,7 @@ function saveQuestionData(questionIndex) {
             answers.push({
                 text: answerText
             });
+            localStorage.setItem("userState", answerText);
         });
 
     } else if (question.type === 'birth') {
@@ -805,6 +804,8 @@ function saveQuestionData(questionIndex) {
             answers.push({
                 text: answerText
             });
+
+            localStorage.setItem("userBirth", answerText);
         });
 
     } else if (question.type === 'contacts') {
@@ -824,6 +825,9 @@ function saveQuestionData(questionIndex) {
             answers.push({
                 email: emailValue
             });
+
+            localStorage.setItem("userEmail", emailValue);
+            localStorage.setItem("userPhone", phoneValue);
         }
 
     } else if (question.type === 'textarea') {
@@ -861,9 +865,7 @@ function saveQuestionData(questionIndex) {
                 dontRemember: true
             });
         }
-
     }
-
 
     var existingDataIndex = savedData.findIndex(function(data) {
         return data.questionIndex === questionIndex;
@@ -879,6 +881,7 @@ function saveQuestionData(questionIndex) {
             answers: answers
         });
     }
+
 }
 
 
@@ -908,5 +911,3 @@ function sendDataToServer(data) {
             console.error('Error while sending data to the server:', error);
     })*/
 }
-
-

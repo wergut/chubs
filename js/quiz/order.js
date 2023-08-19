@@ -1,3 +1,5 @@
+var selectorx = $('.select_states').select2();
+
 document.addEventListener('DOMContentLoaded', function () {
     const infoBlocks = document.querySelectorAll('.input-js');
 
@@ -75,36 +77,36 @@ function removeFilesItem(target) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+
     const addButton = document.querySelector('.btn-add-address');
     const addAddressForm = document.querySelector('.add-address-form');
 
     addButton.addEventListener('click', function () {
         addAddressForm.style.display = 'block';
     });
-});
 
-document.addEventListener('DOMContentLoaded', function () {
+
     const paymentTypeBtn = document.querySelector('.payment-type-btn');
     const hiddenDesc = document.querySelector('.subscriptions-section .payment-hidden-desc');
+    if (paymentTypeBtn) {
+        paymentTypeBtn.addEventListener('click', function () {
+            hiddenDesc.style.display = 'block';
+        });
+    }
 
-    paymentTypeBtn.addEventListener('click', function () {
-        hiddenDesc.style.display = 'block';
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
     const secretCodeInput = document.querySelector('.secret-code');
     const toggleCodeBtn = document.querySelector('.toggle-code-btn');
-
-    toggleCodeBtn.addEventListener('click', function () {
-        if (secretCodeInput.type === 'password') {
-            secretCodeInput.type = 'text';
-            toggleCodeBtn.classList.add('active');
-        } else {
-            secretCodeInput.type = 'password';
-            toggleCodeBtn.classList.remove('active');
-        }
-    });
+    if (toggleCodeBtn) {
+        toggleCodeBtn.addEventListener('click', function () {
+            if (secretCodeInput.type === 'password') {
+                secretCodeInput.type = 'text';
+                toggleCodeBtn.classList.add('active');
+            } else {
+                secretCodeInput.type = 'password';
+                toggleCodeBtn.classList.remove('active');
+            }
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -115,29 +117,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.querySelector('.submit-button');
     const errorMessage = document.querySelector('.error-message');
 
-    submitButton.addEventListener('click', function (event) {
-        event.preventDefault();
+    if (submitButton) {
+        submitButton.addEventListener('click', function (event) {
+            event.preventDefault();
 
+            if (nameInput.value.trim() === '') {
+                errorMessage.textContent = 'Please enter your name.';
+                return;
+            }
 
+            if (!/^\d{2}\/\d{2}$/.test(dateInput.value)) {
+                errorMessage.textContent = 'Please enter a valid date (MM/YY).';
+                return;
+            }
 
-        if (nameInput.value.trim() === '') {
-            errorMessage.textContent = 'Please enter your name.';
-            return;
-        }
+            if (!/^\d{3}$/.test(secretCodeInput.value)) {
+                errorMessage.textContent = 'Please enter a valid security code (3 digits).';
+                return;
+            }
 
-        if (!/^\d{2}\/\d{2}$/.test(dateInput.value)) {
-            errorMessage.textContent = 'Please enter a valid date (MM/YY).';
-            return;
-        }
+            errorMessage.textContent = '';
+            alert('Payment successful!');
+        });
+    }
 
-        if (!/^\d{3}$/.test(secretCodeInput.value)) {
-            errorMessage.textContent = 'Please enter a valid security code (3 digits).';
-            return;
-        }
-
-        errorMessage.textContent = '';
-        alert('Payment successful!');
-    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -157,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
             modalElem.classList.add('modal-opening');
         }); // end click
     }); // end foreach
-
 
     /* close modal */
     closeButtons.forEach(function(closeBtn) {
@@ -180,3 +182,79 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function addAdress() {
+    var form = document.querySelector('.add-address-form');
+
+    var firstNameInput = form.querySelector('#first-name');
+    var lastNameInput = form.querySelector('#last-name');
+    var phoneInput = form.querySelector('#phone');
+    var emailInput = form.querySelector('#email');
+    var streetInput = form.querySelector('#street');
+    var suiteInput = form.querySelector('#suite');
+    var cityInput = form.querySelector('#city');
+    var stateInput = form.querySelector('#state');
+    var zipCodeInput = form.querySelector('#zip-code');
+    var countryInput = form.querySelector('#country');
+
+    var fieldsToCheck = [firstNameInput, lastNameInput, phoneInput, emailInput, streetInput, suiteInput, cityInput, stateInput, zipCodeInput, countryInput];
+    console.log(fieldsToCheck);
+
+    var isValid = validateFields(fieldsToCheck);
+
+    if (isValid) {
+        var newCard = document.createElement('div');
+        newCard.className = 'shipping-card';
+        newCard.innerHTML = `
+                    <h5>${newAddress}</h5>
+                    <p>${newCity}, ${newState}</p>
+                    <p>${newZip}</p>
+                    <p>FL, United States</p>
+                    <div class="checkbox-address">
+                        <input type="checkbox">
+                        <label for="address1"></label>
+                    </div>
+                `;
+        shippingCardsContainer.appendChild(newCard);
+
+        form.reset();
+        form.style.display = 'none';
+    }
+}
+function removeAdress() {
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var addNewAddressButton = document.getElementById('addNewAddress');
+    var shippingCardsContainer = document.getElementById('shippingCardsContainer');
+
+    addNewAddressButton.addEventListener('click', function() {
+        addAdress();
+    });
+});
+
+function validateFields(fields) {
+    var isValid = true;
+    console.log(fields);
+    fields.forEach(function(field) {
+        if (field.value === '') {
+            field.classList.add('error');
+            isValid = false;
+        } else {
+            field.classList.remove('error');
+        }
+    });
+
+    return isValid;
+}
+
+var allLocalStorageData = {};
+
+for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    var value = localStorage.getItem(key);
+    allLocalStorageData[key] = value;
+}
+
+console.log(allLocalStorageData);
