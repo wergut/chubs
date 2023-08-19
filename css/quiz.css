@@ -1245,6 +1245,13 @@ form .inputs-wrapper input {
 }
 
 
+.zip-code::-webkit-outer-spin-button,
+.zip-code::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+}
+
+
 .chub-order-section .two-items {
     display: flex;
     justify-content: space-between;

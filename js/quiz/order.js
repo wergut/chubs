@@ -266,16 +266,17 @@ document.addEventListener('DOMContentLoaded', function () {
     submitButton.addEventListener('click', function (event) {
         event.preventDefault();
 
-        const zipCodeValue = zipCodeInput.value;
-
-        if (!isValidZipCode(zipCodeValue)) {
+        if (!allnumeric(zipCodeInput)) {
             zipCodeInput.classList.add('error');
         } else {
             zipCodeInput.classList.remove('error');
+            // Все поля заполнены корректно, можно отправить данные на сервер или выполнить другую логику
+            alert('Data submitted successfully!');
         }
     });
 
-    function isValidZipCode(zipCode) {
-        return /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
+    function allnumeric(uzip) {
+        const numbers = /^[0-9]+$/;
+        return uzip.value.match(numbers);
     }
 });
