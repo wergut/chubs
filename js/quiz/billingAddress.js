@@ -1,5 +1,5 @@
 
-function addAdress() {
+function addAddress() {
     var form = document.querySelector('.add-address-form');
 
     var firstNameInput = form.querySelector('#first-name');
@@ -45,6 +45,6 @@ function addAdress() {
         form.style.display = 'none';
     }
 }
-function removeAdress() {
+function removeAddress() {
 
 }
