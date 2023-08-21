@@ -2484,7 +2484,9 @@ form .inputs-wrapper input {
 
 .chub-upload-section .btn-green {
     max-width: 400px;
-    margin: 100px auto 0;
+    position: absolute;
+    right: calc(50% - 200px);
+    bottom: 20%;
 }
 
 .chub-upload-section .chub-upload-inner {
