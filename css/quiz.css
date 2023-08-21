@@ -1390,16 +1390,12 @@ form .inputs-wrapper input {
     width: 340px;
 }
 
-.input-js .edit-form .edited-text::placeholder {
-    color: #858585;
-}
-
 .input-js .edit-form .edited-text:focus::placeholder {
     color: transparent;
 }
 
 .input-js .edit-form .edited-text::placeholder {
-    color: #141414;
+    color: #858585;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
