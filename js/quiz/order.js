@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('click', function () {
         addAddressForm.style.display = 'block';
+        addButton.style.display = 'none';
     });
 
 

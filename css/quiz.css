@@ -1363,6 +1363,10 @@ form .inputs-wrapper input {
     top: 0;
 }
 
+.input-js input:focus::placeholder {
+    color: transparent;
+}
+
 .input-js .input-text {
     color: #141414;
     font-family: Inter;
