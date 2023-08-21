@@ -53,21 +53,20 @@
                 </div>
                 <div class="col-8 col-m-12">
                     <div id="shippingCardsContainer">
-                    <div class="shipping-cards-wrapper">
-                        <div class="shipping-card">
-                            <h5>14 Se 4th Ste 24, Northwest 24th Street</h5>
-                            <p>Boca Raton, FL</p>
-                            <p>33432-6104</p>
-                            <p>FL, United States</p>
-                            <div class="checkbox-address">
-                                <input id="address1" type="checkbox">
-                                <label for="address1"></label>
+                        <div class="shipping-cards-wrapper">
+                            <div class="shipping-card">
+                                <h5>14 Se 4th Ste 24, Northwest 24th Street</h5>
+                                <p>Boca Raton, FL</p>
+                                <p>33432-6104</p>
+                                <p>FL, United States</p>
+                                <div class="checkbox-address">
+                                    <input id="address1" type="checkbox">
+                                    <label for="address1"></label>
+                                </div>
                             </div>
                         </div>
-                        <div class="btn-add-address">Enter new Address</div>
-
                     </div>
-
+                    <div class="btn-add-address">Enter new Address</div>
                     <form class="add-address-form" action="" style="display: none">
                         <h3>Enter New Address</h3>
                         <div class="inputs-wrapper custom-input two-items">
@@ -77,7 +76,7 @@
                                     <p class="input-text">Alex</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input id="first-name" type="text" class="edited-text" name="firstname">
+                                        <input id="first-name" type="text" class="edited-text" name="firstname" placeholder="Your Name">
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +86,7 @@
                                     <p class="input-text">Garan</p>
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
-                                        <input id="last-name" type="text" class="edited-text" name="lastname">
+                                        <input id="last-name" type="text" class="edited-text" name="lastname" placeholder="Your Last Name">
                                     </div>
                                 </div>
                             </div>
@@ -142,73 +141,22 @@
                             <div class="input-item select-item">
                                 <label>State</label>
                                 <div class="custom-select">
-                                    <select id="state" state" name="state" class="select_states" required>
+                                    <select id="state" name="state" class="select_states" required>
                                         <option value="">Select state</option>
-                                        <option value="Alabama">Alabama</option>
-                                        <option value="Alaska">Alaska</option>
-                                        <option value="Arizona">Arizona</option>
-                                        <option value="Arkansas">Arkansas</option>
-                                        <option value="California">California</option>
-                                        <option value="Colorado">Colorado</option>
-                                        <option value="Connecticut">Connecticut</option>
-                                        <option value="Delaware">Delaware</option>
-                                        <option value="District of Columbia">District of Columbia</option>
-                                        <option value="Florida">Florida</option>
-                                        <option value="Georgia">Georgia</option>
-                                        <option value="Hawaii">Hawaii</option>
-                                        <option value="Idaho">Idaho</option>
-                                        <option value="Illinois">Illinois</option>
-                                        <option value="Indiana">Indiana</option>
-                                        <option value="Iowa">Iowa</option>
-                                        <option value="Kansas">Kansas</option>
-                                        <option value="Kentucky">Kentucky</option>
-                                        <option value="Louisiana">Louisiana</option>
-                                        <option value="Maine">Maine</option>
-                                        <option value="Maryland">Maryland</option>
-                                        <option value="Massachusetts">Massachusetts</option>
-                                        <option value="Michigan">Michigan</option>
-                                        <option value="Minnesota">Minnesota</option>
-                                        <option value="Mississippi">Mississippi</option>
-                                        <option value="Missouri">Missouri</option>
-                                        <option value="Montana">Montana</option>
-                                        <option value="Nebraska">Nebraska</option>
-                                        <option value="Nevada">Nevada</option>
-                                        <option value="New Hampshire">New Hampshire</option>
-                                        <option value="New Jersey">New Jersey</option>
-                                        <option value="New Mexico">New Mexico</option>
-                                        <option value="New York">New York</option>
-                                        <option value="North Carolina">North Carolina</option>
-                                        <option value="North Dakota">North Dakota</option>
-                                        <option value="Ohio">Ohio</option>
-                                        <option value="Oklahoma">Oklahoma</option>
-                                        <option value="Oregon">Oregon</option>
-                                        <option value="Pennsylvania">Pennsylvania</option>
-                                        <option value="Rhode Island">Rhode Island</option>
-                                        <option value="South Carolina">South Carolina</option>
-                                        <option value="South Dakota">South Dakota</option>
-                                        <option value="Tennessee">Tennessee</option>
-                                        <option value="Texas">Texas</option>
-                                        <option value="Utah">Utah</option>
-                                        <option value="Vermont">Vermont</option>
-                                        <option value="Virginia">Virginia</option>
-                                        <option value="Washington">Washington</option>
-                                        <option value="West Virginia">West Virginia</option>
-                                        <option value="Wisconsin">Wisconsin</option>
-                                        <option value="Wyoming">Wyoming</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="input-item">
                                 <div class="input-item">
                                     <label>Country</label>
-                                    <input id="country" type="text" placeholder="United States">
+                                    <input id="country" type="text" placeholder="United States" disabled value="United States">
                                 </div>
                             </div>
                         </div>
                     </form>
                     <button id="addNewAddress" type="button" class="btn-green btn-full-width">Add new and continue</button>
                 </div>
-            </div>
+
         </div>
     </section>
 

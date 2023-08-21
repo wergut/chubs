@@ -1,8 +1,21 @@
 var selectorx = $('.select_states').select2();
 
-document.addEventListener('DOMContentLoaded', function () {
-    const infoBlocks = document.querySelectorAll('.input-js');
 
+var stateSelect = document.getElementById("state");
+
+statesData.forEach(function(state) {
+    console.log(state);
+    var option = document.createElement("option");
+    option.value = state.abbreviation;
+    option.textContent = state.name;
+    stateSelect.appendChild(option);
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    /* enable disable editable fields*/
+    const infoBlocks = document.querySelectorAll('.input-js');
     infoBlocks.forEach(function (infoBlock) {
         const infoText = infoBlock.querySelector('.input-text');
         const editButton = infoBlock.querySelector('.edit-button');
@@ -21,11 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});
 
-document.addEventListener('DOMContentLoaded', function () {
+    /* image field*/
     var dt = new DataTransfer();
-
     var fileInputs = document.querySelectorAll('.input-file input[type=file]');
     fileInputs.forEach(function (input) {
         input.addEventListener('change', function () {
@@ -56,23 +67,19 @@ function removeFilesItem(target) {
     var input = target.closest('.input-file-row').querySelector('input[type=file]');
     var filesList = input.closest('.input-file-row').querySelector('.input-file-list');
     var listItems = filesList.getElementsByClassName('input-file-list-item');
-
     var dt = new DataTransfer();
-
     for (var i = 0; i < dt.items.length; i++) {
         if (name === dt.items[i].getAsFile().name) {
             dt.items.remove(i);
             break;
         }
     }
-
     for (var j = 0; j < listItems.length; j++) {
         if (listItems[j].querySelector('.input-file-list-remove').getAttribute('data-filename') === name) {
             listItems[j].remove();
             break;
         }
     }
-
     input.files = dt.files;
 }
 
@@ -84,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
     addButton.addEventListener('click', function () {
         addAddressForm.style.display = 'block';
     });
-
 
     const paymentTypeBtn = document.querySelector('.payment-type-btn');
     const hiddenDesc = document.querySelector('.subscriptions-section .payment-hidden-desc');
@@ -109,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+/* payment page*/
 document.addEventListener('DOMContentLoaded', function () {
     const cardNumInput = document.querySelector('.card-num');
     const nameInput = document.querySelector('.name');
@@ -140,8 +147,8 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Payment successful!');
         });
     }
-
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -200,15 +207,23 @@ function addAdress() {
     console.log(fieldsToCheck);
 
     var isValid = validateFields(fieldsToCheck);
-
+    console.log(isValid);
     if (isValid) {
+//Apt/Suite + Street, State (сокращенно) + City + ZIP + United States
+        var fullAddress = (suiteInput.value ? 'Apt/Suite ' + suiteInput.value + ',' : '') +
+            ' ' + streetInput.value + ', ' +
+            stateInput.value + ' ' +
+            cityInput.value + ' ' +
+            zipCodeInput.value + ' United States';
+
+
         var newCard = document.createElement('div');
         newCard.className = 'shipping-card';
         newCard.innerHTML = `
-                    <h5>${newAddress}</h5>
-                    <p>${newCity}, ${newState}</p>
-                    <p>${newZip}</p>
-                    <p>FL, United States</p>
+                    <h5 data-street="${streetInput.value}" data-suite="${suiteInput.value}" data-sity="${cityInput.value}">${fullAddress}</h5>
+                    <p>${cityInput.value}, ${stateInput.value}</p>
+                    <p>${zipCodeInput.value}</p>
+                    <p>${countryInput.value}</p>
                     <div class="checkbox-address">
                         <input type="checkbox">
                         <label for="address1"></label>
@@ -241,6 +256,7 @@ function validateFields(fields) {
         if (field.value === '') {
             field.classList.add('error');
             isValid = false;
+            console.log(field);
         } else {
             field.classList.remove('error');
         }
@@ -250,33 +266,63 @@ function validateFields(fields) {
 }
 
 var allLocalStorageData = {};
-
 for (var i = 0; i < localStorage.length; i++) {
     var key = localStorage.key(i);
     var value = localStorage.getItem(key);
     allLocalStorageData[key] = value;
 }
-
 console.log(allLocalStorageData);
 
 document.addEventListener('DOMContentLoaded', function () {
-    const zipCodeInput = document.querySelector('.zip-code');
-    const submitButton = document.querySelector('.submit-button');
+
+    var form = document.querySelector('.add-address-form');
+    var phoneInput = form.querySelector('#phone');
+    var emailInput = form.querySelector('#email');
+    console.log(localStorage.getItem("userPhone"));
+    phoneInput.value = localStorage.getItem("userPhone");
+    emailInput.value = localStorage.getItem("userEmail");
+
+
+
+    //const zipCodeInput = document.querySelector('.zip-code');
+    const submitButton = document.querySelector('#addNewAddress');
 
     submitButton.addEventListener('click', function (event) {
         event.preventDefault();
-
+/*
         if (!allnumeric(zipCodeInput)) {
             zipCodeInput.classList.add('error');
         } else {
             zipCodeInput.classList.remove('error');
-            // Все поля заполнены корректно, можно отправить данные на сервер или выполнить другую логику
-            alert('Data submitted successfully!');
-        }
+            console.log('Data submitted successfully!');
+        }*/
+
+        addAdress();
     });
 
     function allnumeric(uzip) {
         const numbers = /^[0-9]+$/;
         return uzip.value.match(numbers);
     }
+});
+
+
+/* change edit form state*/
+document.addEventListener('DOMContentLoaded', function () {
+    var inputBlocks = document.querySelectorAll('.input-js');
+
+    inputBlocks.forEach(function (inputBlock) {
+        var input = inputBlock.querySelector('.edited-text');
+        var inputText = inputBlock.querySelector('.input-text');
+        var editForm = inputBlock.querySelector('.edit-form');
+
+        inputText.textContent = input.value;
+        if (input.value === '') {
+            editForm.style.display = 'block';
+        }
+
+        input.addEventListener('input', function () {
+            inputText.textContent = input.value;
+        });
+    });
 });
