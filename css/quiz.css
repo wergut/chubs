@@ -1444,6 +1444,7 @@ form .inputs-wrapper input {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    cursor: pointer;
     margin-top: 20px;
 }
 
