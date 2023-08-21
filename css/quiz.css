@@ -1436,6 +1436,7 @@ form .inputs-wrapper input {
     margin-bottom: 15px;
     text-align: start;
     max-width: 90%;
+    cursor: pointer;
 }
 
 .chub-order-section .shipping-card .delete-address-btn {
