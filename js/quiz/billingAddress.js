@@ -72,6 +72,8 @@ addressCards.forEach(card => {
         document.getElementById('zip-code').value = zip;
 
         const editForm = document.querySelector('.add-address-form');
+
+        getLocalStorageData();
         editForm.style.display = 'block';
     });
 });
@@ -88,6 +90,7 @@ function addEditHandler(card) {
         const addButton = document.querySelector('.btn-add-address');
         const addAddressForm = document.querySelector('.add-address-form');
         addButton.addEventListener('click', function () {
+            getLocalStorageData();
             addAddressForm.style.display = 'block';
         });
 
@@ -166,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 /* delete card with address */
 var deleteButtons = document.querySelectorAll('.delete-address-btn');
 deleteButtons.forEach(function(button) {
@@ -192,4 +194,30 @@ inputElements.forEach(function(element) {
 var addressRadios = document.querySelectorAll('input[type="radio"][name="address"]');
 if (addressRadios.length > 0) {
     addressRadios[0].checked = true;
+}
+
+
+function getLocalStorageData() {
+    var firstNameInput = document.querySelector('#first-name');
+    var lastNameInput = document.querySelector('#last-name');
+    firstNameInput.value = localStorage.getItem("userFirstName");
+    lastNameInput.value = localStorage.getItem("userLastName");
+    firstNameInput.classList.remove('error');
+    lastNameInput.classList.remove('error');
+
+
+    if (firstNameInput.value) {
+        var inputJsParent = firstNameInput.closest('.edit-form');
+        if (inputJsParent) {
+            inputJsParent.style.display = 'none';
+        }
+    }
+
+    if (lastNameInput.value) {
+        var inputJsParent = lastNameInput.closest('.edit-form');
+        if (inputJsParent) {
+            inputJsParent.style.display = 'none';
+        }
+    }
+    changeAndSaveField();
 }

@@ -1,47 +1,18 @@
 var selectorx = $('.select_states').select2();
 
-
 var stateSelect = document.getElementById("state");
 
 statesData.forEach(function(state) {
-    console.log(state);
     var option = document.createElement("option");
     option.value = state.abbreviation;
     option.textContent = state.name;
     stateSelect.appendChild(option);
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
 
     /* enable disable editable fields*/
-    const infoBlocks = document.querySelectorAll('.input-js');
-
-    infoBlocks.forEach(function (infoBlock) {
-        const infoText = infoBlock.querySelector('.input-text');
-        const editButton = infoBlock.querySelector('.edit-button');
-        const editForm = infoBlock.querySelector('.edit-form');
-        const editedText = infoBlock.querySelector('.edited-text');
-
-        editButton.addEventListener('click', function (event) {
-            if (!editedText.value && !editedText.classList.contains('error')) {
-                return; // Если поле пустое или есть класс error, не разрешаем редактирование
-            }
-
-            if (editForm.style.display === 'none' || editForm.style.display === '') {
-                editForm.style.display = 'block';
-                editedText.value = infoText.textContent;
-                editedText.focus();
-                event.preventDefault();
-
-                // Убрать значение из editedText при клике на кнопку "edit"
-                editedText.value = '';
-            } else {
-                infoText.textContent = editedText.value;
-                editForm.style.display = 'none';
-            }
-        });
-    });
+    changeAndSaveField();
 
     /* image field*/
     var dt = new DataTransfer();
@@ -97,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const addAddressForm = document.querySelector('.add-address-form');
 
     addButton.addEventListener('click', function () {
+        getLocalStorageData();
         addAddressForm.style.display = 'block';
     });
 
@@ -212,14 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     submitButton.addEventListener('click', function (event) {
         event.preventDefault();
-/*
-        if (!allnumeric(zipCodeInput)) {
-            zipCodeInput.classList.add('error');
-        } else {
-            zipCodeInput.classList.remove('error');
-            console.log('Data submitted successfully!');
-        }*/
-
         addAddress();
     });
 
@@ -249,3 +213,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+function changeAndSaveField() {
+    const infoBlocks = document.querySelectorAll('.input-js');
+
+    infoBlocks.forEach(function (infoBlock) {
+        const infoText = infoBlock.querySelector('.input-text');
+        const editButton = infoBlock.querySelector('.edit-button');
+        const editForm = infoBlock.querySelector('.edit-form');
+        const editedText = infoBlock.querySelector('.edited-text');
+
+        editButton.addEventListener('click', function (event) {
+            if (!editedText.value && !editedText.classList.contains('error')) {
+                return;
+            }
+
+            if (editForm.style.display === 'none' || editForm.style.display === '') {
+                editForm.style.display = 'block';
+                editedText.value = infoText.textContent;
+                editedText.focus();
+                event.preventDefault();
+
+                editedText.value = '';
+            } else {
+                infoText.textContent = editedText.value;
+                editForm.style.display = 'none';
+            }
+        });
+    });
+}
