@@ -1359,7 +1359,7 @@ form .inputs-wrapper input {
 
 .input-js .edit-form {
     position: relative;
-    left: -35px;
+    left: -30px;
     top: 0;
 }
 
@@ -1381,7 +1381,7 @@ form .inputs-wrapper input {
 
 .input-js .edit-form .edited-text {
     background: #fff;
-    color: #141414;
+    color: #858585;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -1435,6 +1435,17 @@ form .inputs-wrapper input {
 .chub-order-section .shipping-card h5 {
     margin-bottom: 15px;
     text-align: start;
+    max-width: 90%;
+}
+
+.chub-order-section .shipping-card .delete-address-btn {
+    color: #B7B7B7;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
 .chub-order-section .shipping-card p {

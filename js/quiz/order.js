@@ -193,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
     var addNewAddressButton = document.getElementById('addNewAddress');
     var shippingCardsContainer = document.getElementById('shippingCardsContainer');
