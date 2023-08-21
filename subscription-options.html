@@ -77,14 +77,14 @@
                     <div class="col-6 col-m-12">
                         <div class="payments-type">
                             <div class="payment-block">
-                                <div class="payment-type-btn active">
+                                <div class="payment-type-btn">
                                     <p>Every 3 month</p>
                                     <div class="payment-price">
                                         <p class="regular-price">$44</p>
                                         <p class="sale-price">$26/mo</p>
                                     </div>
                                 </div>
-                                <div class="payment-hidden-desc" style="display: block">
+                                <div class="payment-hidden-desc">
                                     Pay for and receive a 3x supply for $78 every month.
                                     <br>
                                     Cancel anytime.
@@ -182,11 +182,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/jquery.rateit.min.js"></script>
-    <script src="js/inputMusk.js"></script>
-    <script src="js/quiz/states.js"></script>
-    <script src="js/quiz/vendor.js"></script>
-    <script src="js/quiz/validation.js"></script>
-    <script src="js/quiz/quiz.js"></script>
     <script src="js/quiz/order.js"></script>
+    <script>
+        const paymentBlocks = document.querySelectorAll('.payment-block');
+
+        paymentBlocks.forEach(function (block) {
+            const button = block.querySelector('.payment-type-btn');
+            const paymentHiddenDesc = block.querySelector('.payment-hidden-desc');
+
+            button.addEventListener('click', function () {
+                paymentBlocks.forEach(function (otherBlock) {
+                    otherBlock.querySelector('.payment-type-btn').classList.remove('active');
+                    otherBlock.querySelector('.payment-hidden-desc').style.display = 'none';
+                });
+
+                button.classList.add('active');
+                paymentHiddenDesc.style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
