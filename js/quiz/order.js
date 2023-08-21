@@ -193,8 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-<<<<<<< Updated upstream
-=======
 function addAddress() {
     var form = document.querySelector('.add-address-form');
 
@@ -245,7 +243,6 @@ function removeAdress() {
 
 }
 
->>>>>>> Stashed changes
 
 document.addEventListener("DOMContentLoaded", function() {
     var addNewAddressButton = document.getElementById('addNewAddress');
