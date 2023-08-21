@@ -1,5 +1,11 @@
 
 function addAddress() {
+
+    var shippingCardsContainer = document.getElementById('shippingCardsContainer');
+    var shippingCards = shippingCardsContainer.querySelectorAll('.shipping-card');
+    var shippingCardsCount = shippingCards.length;
+    console.log(shippingCardsCount);
+
     var form = document.querySelector('.add-address-form');
 
     var firstNameInput = form.querySelector('#first-name');
@@ -30,13 +36,19 @@ function addAddress() {
         var newCard = document.createElement('div');
         newCard.className = 'shipping-card';
         newCard.innerHTML = `
-                    <h5 data-street="${streetInput.value}" data-suite="${suiteInput.value}" data-sity="${cityInput.value}">${fullAddress}</h5>
+                    <h5 
+                    data-suite="${suiteInput.value}"
+                    data-street="${streetInput.value}" 
+                    data-state="${stateInput.value}" 
+                    data-sity="${cityInput.value}"
+                    data-zip="${zipCodeInput.value}"
+                    >${fullAddress}</h5>
                     <p>${cityInput.value}, ${stateInput.value}</p>
                     <p>${zipCodeInput.value}</p>
                     <p>${countryInput.value}</p>
                     <div class="checkbox-address">
-                        <input type="checkbox">
-                        <label for="address1"></label>
+                        <input id="address_${shippingCardsCount}" name="address" type="radio">
+                        <label for="address_${shippingCardsCount}"></label>
                     </div>
                 `;
         shippingCardsContainer.appendChild(newCard);
@@ -48,3 +60,15 @@ function addAddress() {
 function removeAddress() {
 
 }
+
+
+var inputElements = document.querySelectorAll('input, select');
+
+inputElements.forEach(function(element) {
+    element.addEventListener('input', function() {
+
+        if (element.classList.contains('error') && element.value.trim() !== '') {
+            element.classList.remove('error');
+        }
+    });
+});
