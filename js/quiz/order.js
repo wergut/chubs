@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const editedText = infoBlock.querySelector('.edited-text');
 
         editButton.addEventListener('click', function (event) {
+            if (!editedText.value && !editedText.classList.contains('error')) {
+                return; // Если поле пустое или есть класс error, не разрешаем редактирование
+            }
+
             if (editForm.style.display === 'none' || editForm.style.display === '') {
                 editForm.style.display = 'block';
                 editedText.value = infoText.textContent;
