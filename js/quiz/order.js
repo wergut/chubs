@@ -16,18 +16,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* enable disable editable fields*/
     const infoBlocks = document.querySelectorAll('.input-js');
+
     infoBlocks.forEach(function (infoBlock) {
         const infoText = infoBlock.querySelector('.input-text');
         const editButton = infoBlock.querySelector('.edit-button');
         const editForm = infoBlock.querySelector('.edit-form');
         const editedText = infoBlock.querySelector('.edited-text');
 
-        editButton.addEventListener('click', function () {
+        editButton.addEventListener('click', function (event) {
             if (editForm.style.display === 'none' || editForm.style.display === '') {
                 editForm.style.display = 'block';
                 editedText.value = infoText.textContent;
                 editedText.focus();
                 event.preventDefault();
+
+                // Убрать значение из editedText при клике на кнопку "edit"
+                editedText.value = '';
             } else {
                 infoText.textContent = editedText.value;
                 editForm.style.display = 'none';
@@ -90,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('click', function () {
         addAddressForm.style.display = 'block';
-        addButton.style.display = 'none';
     });
 
     const paymentTypeBtn = document.querySelector('.payment-type-btn');
@@ -190,13 +193,66 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+<<<<<<< Updated upstream
+=======
+function addAddress() {
+    var form = document.querySelector('.add-address-form');
+
+    var firstNameInput = form.querySelector('#first-name');
+    var lastNameInput = form.querySelector('#last-name');
+    var phoneInput = form.querySelector('#phone');
+    var emailInput = form.querySelector('#email');
+    var streetInput = form.querySelector('#street');
+    var suiteInput = form.querySelector('#suite');
+    var cityInput = form.querySelector('#city');
+    var stateInput = form.querySelector('#state');
+    var zipCodeInput = form.querySelector('#zip-code');
+    var countryInput = form.querySelector('#country');
+
+    var fieldsToCheck = [firstNameInput, lastNameInput, phoneInput, emailInput, streetInput, suiteInput, cityInput, stateInput, zipCodeInput, countryInput];
+    console.log(fieldsToCheck);
+
+    var isValid = validateFields(fieldsToCheck);
+    console.log(isValid);
+    if (isValid) {
+//Apt/Suite + Street, State (сокращенно) + City + ZIP + United States
+        var fullAddress = (suiteInput.value ? 'Apt/Suite ' + suiteInput.value + ',' : '') +
+            ' ' + streetInput.value + ', ' +
+            stateInput.value + ' ' +
+            cityInput.value + ' ' +
+            zipCodeInput.value + ' United States';
+
+
+        var newCard = document.createElement('div');
+        newCard.className = 'shipping-card';
+        newCard.innerHTML = `
+                    <h5 data-street="${streetInput.value}" data-suite="${suiteInput.value}" data-sity="${cityInput.value}">${fullAddress}</h5>
+                    <p>${cityInput.value}, ${stateInput.value}</p>
+                    <p>${zipCodeInput.value}</p>
+                    <p>${countryInput.value}</p>
+                    <div class="checkbox-address">
+                        <input type="checkbox">
+                        <label for="address1"></label>
+                    </div>
+                `;
+        shippingCardsContainer.appendChild(newCard);
+
+        form.reset();
+        form.style.display = 'none';
+    }
+}
+function removeAdress() {
+
+}
+
+>>>>>>> Stashed changes
 
 document.addEventListener("DOMContentLoaded", function() {
     var addNewAddressButton = document.getElementById('addNewAddress');
     var shippingCardsContainer = document.getElementById('shippingCardsContainer');
 
     addNewAddressButton.addEventListener('click', function() {
-        addAdress();
+        addAddress();
     });
 });
 
@@ -247,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Data submitted successfully!');
         }*/
 
-        addAdress();
+        addAddress();
     });
 
     function allnumeric(uzip) {
