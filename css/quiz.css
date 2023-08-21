@@ -1395,7 +1395,7 @@ form .inputs-wrapper input {
 }
 
 .input-js .edit-form .edited-text::placeholder {
-    color: #141414;
+    color: #858585;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -1436,6 +1436,7 @@ form .inputs-wrapper input {
     margin-bottom: 15px;
     text-align: start;
     max-width: 90%;
+    cursor: pointer;
 }
 
 .chub-order-section .shipping-card .delete-address-btn {
@@ -2484,7 +2485,9 @@ form .inputs-wrapper input {
 
 .chub-upload-section .btn-green {
     max-width: 400px;
-    margin: 100px auto 0;
+    position: absolute;
+    right: calc(50% - 200px);
+    bottom: 20%;
 }
 
 .chub-upload-section .chub-upload-inner {
