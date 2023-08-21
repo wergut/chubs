@@ -1439,6 +1439,18 @@ form .inputs-wrapper input {
     cursor: pointer;
 }
 
+.pagination-order {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 110px;
+}
+
+.pagination-order .btn-green {
+
+}
+
+
 .chub-order-section .shipping-card .delete-address-btn {
     color: #B7B7B7;
     font-size: 14px;

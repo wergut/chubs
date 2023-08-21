@@ -29,4 +29,18 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.textContent = '';
         });
     }
+
+    const toggleCodeBtn = document.querySelector('.toggle-code-btn');
+    if (toggleCodeBtn) {
+        toggleCodeBtn.addEventListener('click', function () {
+            if (secretCodeInput.type === 'password') {
+                secretCodeInput.type = 'text';
+                toggleCodeBtn.classList.add('active');
+            } else {
+                secretCodeInput.type = 'password';
+                toggleCodeBtn.classList.remove('active');
+            }
+        });
+    }
+
 });
