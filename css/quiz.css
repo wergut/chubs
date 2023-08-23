@@ -1902,6 +1902,7 @@ form .inputs-wrapper input {
 
 .options-section .option-card .option-card-content .product-description {
     font-size: 16px;
+    font-weight: 300;
 }
 
 .options-section .option-card .option-card-content .timing-info > div span {
@@ -2529,6 +2530,10 @@ select.error~.select2-container--default .select2-selection--single {
     background-image: none!important;
 }
 
+.chub-options-section .tablet-btn {
+    display: none;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
@@ -2697,6 +2702,125 @@ select.error~.select2-container--default .select2-selection--single {
     }
     .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) {
         flex-wrap: nowrap;
+    }
+    .pagination-order {
+        margin-top: 80px;
+    }
+    .chub-options-section .option-content .option-square .option-name {
+        font-size: 23px;
+    }
+    .chub-options-section .option-content .option-square:nth-of-type(1) {
+        margin-right: 12px;
+    }
+    .chub-options-section .option-content .option-square:nth-of-type(2) {
+        margin-left: 12px;
+    }
+    .chub-options-section .option-content {
+        margin-left: 12px;
+    }
+    .chub-options-section .option-card {
+        margin-right: 12px;
+        background-size: contain;
+    }
+    .option-card .option-card-content h3 {
+        max-width: 80%;
+    }
+    .chub-options-section .option-content .option-square {
+        max-width: 46%;
+        padding: 19px 20px;
+        margin-bottom: 24px;
+    }
+    .option-card {
+        height: 276px;
+    }
+    .chub-options-section .pc-btn {
+        display: none;
+    }
+    .chub-options-section .tablet-btn {
+        display: flex;
+        max-width: 100%;
+        margin-top: 24px;
+    }
+    .chub-options-section .option-description {
+        margin-bottom: 0;
+    }
+    .chub-options-section {
+        margin-bottom: 80px;
+    }
+    .col-sm-6 {
+        width: 50%;
+    }
+    .col-sm-12 {
+        width: 100%;
+    }
+    .chub-similar-options .option-card {
+        margin-right: 12px;
+    }
+    .chub-similar-options .option-card-big {
+        margin-left: 12px;
+        background-image: url("../img/pills-img-tablet.png");
+    }
+    .chub-similar-options .option-card {
+        height: 326px;
+        background-position: 90% 10%;
+        padding: 30px 20px;
+    }
+    .chub-similar-options {
+        margin-bottom: 80px;
+    }
+    .options-section .option-card {
+        padding: 30px 20px;
+        background-position: 90% 5%;
+    }
+    .options-section .option-card .option-card-content h3 {
+        max-width: 90%;
+    }
+    .options-section .options-grid {
+        margin: 0 -12px 50px;
+    }
+    .options-section .col-4 {
+        padding: 0 12px;
+    }
+    .chub-order-section .inputs-wrapper .input-item {
+        max-width: 331px;
+    }
+    .chub-order-section .two-items .input-item {
+        max-width: calc(50% - 12px);
+    }
+    .chub-order-section .two-items .small-item {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    form .inputs-wrapper {
+        margin-bottom: 24px;
+    }
+    .chub-order-section {
+        margin-bottom: 80px;
+    }
+    .chub-upload-section .btn-green {
+        position: initial;
+        margin: 50px auto 0;
+    }
+    .chub-upload-block .input-file {
+        margin-bottom: 30px;
+    }
+    .subscriptions-section .option-card {
+        height: 286px;
+        background-size: contain;
+    }
+    .chub-order-section .callback-final-block .textarea-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .chub-order-section .callback-final-block textarea {
+        width: 570px;
+    }
+    .chub-order-message .btn-green {
+        margin: 100px auto 0;
+    }
+    .chub-order-message {
+        min-height: 50vh;
     }
 }
 
