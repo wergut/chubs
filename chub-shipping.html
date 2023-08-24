@@ -23,7 +23,7 @@
 <main>
 
 
-    <section class="banner question-logo">
+    <section class="banner question-logo banner-order">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex quiz-header align-end">
@@ -31,7 +31,7 @@
                     <a href="/" class="logo">
                         <img src="./img/logo.svg" alt=""/>
                     </a>
-                    <div class="quiz-banner-title">Shipping details</div>
+                    <div class="quiz-banner-title quiz-banner-title-hidden">Shipping details</div>
                     <a href="/" class="back-to-main">Back to main page</a>
 
                     <a href="/" class="quiz-button quiz-button-close"></a>
@@ -46,10 +46,13 @@
         </div>
     </section>
 
-    <section class="chub-order-section">
+    <section class="chub-order-section chub-order-form-section">
         <div class="container">
             <div class="row">
                 <div class="col-4 col-sm-12 col-m-12">
+                    <div class="title-mobile title-mobile-green">
+                        Shipping details
+                    </div>
                     <h3>Shipping address</h3>
                 </div>
                 <div class="col-8 col-sm-12 col-m-12">
@@ -118,7 +121,7 @@
                                     <button class="edit-button"></button>
                                     <div class="edit-form" style="display: none;">
                                         <div class="custom-select">
-                                            <select id="state" state" name="state" class="select_states" required>
+                                            <select id="state" name="state" class="select_states" required>
                                             <option value="">Select state</option>
                                             <option value="Alabama">Alabama</option>
                                             <option value="Alaska">Alaska</option>

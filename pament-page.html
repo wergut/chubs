@@ -24,7 +24,7 @@
 <main>
 
 
-    <section class="banner question-logo">
+    <section class="banner question-logo banner-order">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex quiz-header align-end">
@@ -32,7 +32,7 @@
                     <a href="/" class="logo">
                         <img src="./img/logo.svg" alt=""/>
                     </a>
-                    <div class="quiz-banner-title">Payment</div>
+                    <div class="quiz-banner-title quiz-banner-title-hidden">Payment</div>
                     <a href="/" class="back-to-main">Back to main page</a>
 
                     <a href="/" class="quiz-button quiz-button-close"></a>
@@ -49,12 +49,15 @@
 
     <section class="pay-card-section">
         <div class="container">
+            <div class="title-mobile title-mobile-green">
+                Payment
+            </div>
             <div class="chub-title-block">
                 <div class="title">Credit card details</div>
                 <p>Please enter you credit card details to proceed.</p>
             </div>
             <form class="payment-inner row">
-                <div class="col-6">
+                <div class="col-6 col-m-12">
                     <div class="card-block">
                         <div class="card-logo">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -68,7 +71,7 @@
                         <input class="date" type="number" placeholder="Date">
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 col-m-12">
                     <div class="card-block card-block-reverse">
                         <div class="input-wrapper">
                             <label>CVV/CVC</label>
@@ -83,7 +86,7 @@
     </section>
 
 
-    <div class="modal-dialog modal-dialog-centered modal-dialog-process" style="display: none">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-process" style="display: block">
         <div class="modal-content">
             <div class="modal-body container-fluid">
                 <div class="pay-process">

@@ -1086,6 +1086,7 @@ form .inputs-wrapper input {
     font-size: 23px;
     font-weight: 400;
     margin-bottom: 10px;
+    line-height: normal;
 }
 
 .chub-title-block p {
@@ -1094,6 +1095,7 @@ form .inputs-wrapper input {
     font-weight: 300;
     max-width: 572px;
     margin: 0 auto;
+    line-height: normal;
 }
 
 .chub-upload-block {
@@ -1326,7 +1328,7 @@ form .inputs-wrapper input {
 }
 
 .thank-you-section {
-    min-height: 70vh;
+    min-height: 50vh;
     display: flex;
 }
 
@@ -1632,7 +1634,7 @@ form .inputs-wrapper input {
 }
 
 .option-card .rateit-font .rateit-range {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .option-card .option-card-content > p {
@@ -1801,6 +1803,10 @@ form .inputs-wrapper input {
 
 .chub-similar-options .option-card-big h3 {
     margin-bottom: 0;
+}
+
+.chub-similar-options .option-card-big h3:after {
+    display: none;
 }
 
 .chub-similar-options .option-card-big .link-description {
@@ -2534,6 +2540,87 @@ select.error~.select2-container--default .select2-selection--single {
     display: none;
 }
 
+.payment-description-mobile {
+    display: none;
+}
+
+.title-mobile {
+    display: none;
+}
+
+.mobile-span {
+    display: none;
+}
+
+.chub-similar-options .option-card-big .btn-mobile {
+    display: none;
+}
+
+.chub-order-section form .textarea-wrapper textarea {
+    color: #141414;
+    font-size: 16px;
+}
+
+.chub-order-section form .textarea-wrapper textarea::placeholder {
+    color: #141414;
+    font-size: 16px;
+}
+
+.chub-order-section .callback-final-block .textarea-wrapper {
+    margin-bottom: 0;
+}
+
+.pagination-order {
+    margin-bottom: 140px;
+}
+
+.modal-dialog-error .modal-content {
+    max-width: 678px;
+    height: 458px;
+    position: relative;
+}
+
+.modal-dialog-error .modal-content .modal-body {
+    padding: 204px 94px 130px;
+    justify-content: flex-start;
+    background-image: url("../img/error-popup-img.png");
+    background-repeat: no-repeat;
+    background-position: 85%;
+    background-size: auto;
+}
+
+.modal-dialog-error .title {
+    margin-bottom: 10px;
+    font-size: 23px;
+    text-align: start;
+}
+
+.modal-dialog-error p {
+    color: #858585;
+}
+
+.modal-dialog-error .popup-link {
+    color: #A6CD46;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.modal-dialog-error .modal-close {
+    background-image: url("../img/icons/modal-close-ico.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    top: 48px;
+    right: 94px;
+}
+
+.modal-dialog-error .modal-close span {
+    font-size: 0;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
@@ -2822,6 +2909,27 @@ select.error~.select2-container--default .select2-selection--single {
     .chub-order-message {
         min-height: 50vh;
     }
+    .pagination-order {
+        margin-bottom: 80px;
+    }
+    .thank-you-section {
+        min-height: 55vh;
+    }
+    .pay-card-section {
+        margin-bottom: 80px;
+        min-height: 60vh;
+    }
+    .modal-dialog-pay-failed p {
+        margin-bottom: 30px;
+    }
+    .modal-dialog-error .modal-content {
+        height: 479px;
+        max-width: 744px;
+        padding: 0 24px;
+    }
+    .input-js .edit-form {
+        left: 0;
+    }
 }
 
 @media (max-width: 600px) {
@@ -3070,11 +3178,388 @@ select.error~.select2-container--default .select2-selection--single {
     .chubs-step .chubs-quiz-answers-type-checkbox .answer-btn:has(.tooltip) {
         flex-wrap: wrap;
     }
+    .quiz-banner-title-hidden {
+        display: none;
+    }
+    .banner-order {
+        position: static;
+        padding-bottom: 25px;
+    }
+    .chub-quiz-cards {
+        margin-top: 30px;
+    }
+    .chub-quiz-card:not(:last-of-type) {
+        margin-bottom: 24px;
+    }
+    .pagination-order {
+        margin-top: 100px;
+    }
+    .chub-order-section {
+        margin-bottom: 60px;
+    }
+    .payment-description-pc {
+        display: none;
+    }
+    .payment-description-mobile {
+        display: block;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    .chub-quiz-card {
+        flex-wrap: wrap;
+        padding: 25px 15px;
+        align-items: center;
+    }
+    .chub-quiz-card .info .title {
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+    .chub-quiz-card p {
+        font-size: 16px;
+    }
+    .chub-quiz-card .payment-description p span {
+        font-size: 26px;
+    }
+    .chub-title-block {
+        text-align: start;
+    }
+    .title-mobile {
+        display: block;
+        color: #141414;
+        font-family: Inter;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 30px;
+    }
+    .option-card {
+        height: 177px;
+    }
+    .chub-options-section .option-content {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    .chub-options-section .option-content .option-square {
+        padding: 19px 15px;
+    }
+    .chub-options-section .tablet-btn {
+        margin-top: 20px;
+    }
+    .chub-options-section .option-content .option-square:nth-of-type(2) {
+        margin-left: 7.5px;
+    }
+    .chub-options-section .option-content .option-square:nth-of-type(1) {
+        margin-right: 7.5px;
+    }
+    .chub-options-section .option-content .option-square {
+        max-width: 47%;
+        margin-bottom: 15px;
+    }
+    .chub-similar-options .title-block {
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    .chub-similar-options .title-block h3 {
+        margin-bottom: 10px;
+    }
+    .chub-options-section {
+        margin-bottom: 40px;
+    }
+    .chub-similar-options .title-block p {
+        margin-left: 0;
+    }
+    .col-m-12 {
+        width: 100%;
+    }
+    .chub-similar-options .option-card {
+        height: 247px;
+        margin: 0 0 24px;
+        background-position: 115% -15%;
+    }
+
+    .chub-similar-options {
+        margin-bottom: 60px;
+    }
+
+    .chub-similar-options .option-card-big {
+        margin: 0 0 24px;
+        height: 247px;
+        padding: 25px 15px;
+        background-position: 119% -30%;
+        background-image: url("../img/pills-mobie.png");
+    }
+    .chub-similar-options .option-card-big .link-description {
+        display: none;
+    }
+    .chub-similar-options .option-card-big .btn-mobile {
+        display: flex;
+    }
+    .mobile-span {
+        display: initial;
+        color: #858585;
+        font-family: Inter;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .option-card .option-card-content h3 {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .options-section .option-card {
+        height: 447px;
+        padding: 25px 15px;
+        background-position: 115% -10%;
+        margin-bottom: 24px;
+    }
+    .options-section .option-card hr {
+        margin: 10px 0 15px;
+    }
+    .option-card .option-card-content h3 {
+        margin-bottom: 10px;
+    }
+    .options-section .option-card .option-card-content .timing-info {
+        padding: 0 10px;
+    }
+    .options-section .option-card .option-card-content .product-description {
+        padding: 0 10px;
+    }
+    .options-section .btn-back {
+        display: none;
+    }
+    .options-section {
+        margin-bottom: 60px;
+    }
+    .options-section .options-grid {
+        margin-bottom: 0;
+    }
+    .title-mobile-green {
+        color: #A6CD46;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+    .chub-order-section .two-items {
+        flex-wrap: wrap;
+    }
+    .chub-order-section .two-items .input-item {
+        max-width: 100%;
+    }
+    .chub-order-section .two-items .input-item:not(:last-of-type) {
+        margin-bottom: 24px;
+    }
+    .chub-order-section form {
+        padding: 0;
+    }
+    .chub-order-section form .btn-green {
+        margin-top: 40px;
+    }
+    .chub-order-form-section h3 {
+        margin-bottom: 30px;
+    }
+    .chub-order-section .btn-add-address {
+        border-radius: 50px;
+        border: 1px solid #B7B7B7;
+        height: 50px;
+        justify-content: center;
+        color: #858585;
+        line-height: unset;
+    }
+    .chub-order-section .btn-add-address:before {
+        background-image: url("../img/icons/add-ico-grey.svg");
+    }
+    .chub-order-section .shipping-card {
+        margin-bottom: 24px;
+        padding: 50px 15px 25px 50px;
+    }
+    .chub-order-section .shipping-card .checkbox-address {
+        right: initial;
+        top: 50px;
+        left: 15px;
+    }
+    .chub-order-section .btn-full-width {
+        margin-top: 24px;
+    }
+    .chub-quiz-cards-payment .chub-quiz-card {
+        min-height: 90px;
+    }
+    .chub-quiz-cards-payment .chub-quiz-card:not(:last-of-type) {
+        margin-bottom: 20px;
+    }
+    .chub-order-pay-options .pagination-order{
+        margin-top: 80px;
+    }
+    .chub-upload-section .btn-green {
+        max-width: 100%;
+    }
+    .chub-upload-section .chub-upload-inner {
+        margin-top: 0;
+    }
+    .chub-upload-section {
+        min-height: 80vh;
+        position: relative;
+    }
+    .chub-upload-section-selfie {
+        min-height: 75vh;
+    }
+    .chub-upload-section .btn-green {
+        position: absolute;
+        bottom: 0;
+        max-width: calc(100% - 48px);
+        left: 0;
+        margin: 45px auto 0;
+    }
+    .subscriptions-section .title-block {
+        margin-bottom: 30px;
+    }
+    .subscriptions-section .title-block p,.subscriptions-section .title-block h5 {
+        text-align: start;
+    }
+    .subscriptions-section .title-block p {
+        max-width: 90%;
+    }
+    .subscriptions-section .option-card {
+        height: 177px;
+        padding: 25px 15px;
+        background-size: 30%;
+        margin-bottom: 30px;
+    }
+    .subscriptions-section .payments-type .payment-block {
+        margin-bottom: 24px;
+    }
+    .subscriptions-section .payment-hidden-desc {
+        margin: 10px 0 14px;
+    }
+    .subscriptions-section .payments-options li:before {
+        background-size: 400px;
+    }
+    .subscriptions-section .payments-total {
+        margin: 24px 0 30px;
+    }
+    .pay-card-section .payment-inner {
+        margin: 24px 0 50px;
+    }
+    .pay-card-section {
+        margin-bottom: 60px;
+    }
+    .pay-card-section .payment-inner .col-6 {
+        padding: 0;
+    }
+    .pay-card-section .payment-inner .card-block {
+        margin-left: 0;
+    }
+    .pay-card-section .payment-inner .card-block-reverse {
+        margin-right: 0;
+        margin-top: 24px;
+    }
+    .chub-order-section .callback-final-block {
+        margin-top: 30px;
+    }
+    .chub-order-section .callback-final-block textarea {
+        height: 361px;
+        width: 100%;
+    }
+    .thank-you-section {
+        min-height: 50vh;
+    }
+
+    .thank-you-section h4 {
+        font-size: 26px;
+        line-height: normal;
+    }
+    .thanks-pagination-order {
+        margin-bottom: 60px;
+    }
+
+    .thanks-pagination-order .btn-green {
+        margin: 0 24px;
+    }
+    .modal-dialog .modal-content .modal-body {
+        padding: 48px 25px;
+        height: 293px;
+    }
+    .modal-dialog .modal-content {
+        margin: 0 24px;
+    }
+    .modal-dialog .title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .modal-dialog p {
+        margin-bottom: 20px;
+    }
+    .chub-order-section .add-address-form {
+        margin-top: 50px;
+    }
+    .chub-order-section .add-address-form h3 {
+        margin-bottom: 30px;
+    }
+    #zip-code {
+        text-align: center;
+        padding: 0;
+    }
+    .input-js .edit-form {
+         left: 0;
+    }
+    .input-js {
+        max-width: 100%;
+    }
+    /*.chub-order-section .add-address-form .inputs-wrapper .input-item-fixed .edit-form {*/
+    /*    position: static;*/
+    /*}*/
+    .chub-order-section form .inputs-wrapper input {
+        max-width: 100%;
+    }
+    .chub-order-section .inputs-wrapper .input-item {
+        max-width: 100%;
+    }
+    .chub-order-section form .inputs-wrapper {
+        width: 100%;
+    }
+    .modal-dialog-error .modal-content .modal-body {
+        padding: 77px 20px;
+        background-position: 90%;
+        background-size: 35%;
+    }
+    .modal-dialog-error .modal-content {
+        height: 292px;
+        max-width: 100%;
+        padding: 0;
+    }
+    .modal-dialog-error .title {
+        margin-bottom: 15px;
+    }
+    .modal-dialog-error p {
+        margin-bottom: 40px;
+        max-width: 80%;
+        text-align: start;
+    }
+    .modal-dialog-error .modal-close {
+        top: 32px;
+        right: 20px;
+        width: 18px;
+        height: 18px;
+    }
+    .chub-order-list h3 {
+        margin-bottom: 30px;
+    }
 }
 
 @media (max-width: 414px) {
     .chubs-step .chubs-quiz-answers-type-select .answer-btn-consert {
         top: 260px;
+    }
+}
+
+@media (max-width: 390px) {
+    .modal-dialog-error .modal-content .modal-body {
+        background-position: 97%;
     }
 }
 
