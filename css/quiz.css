@@ -2621,6 +2621,10 @@ select.error~.select2-container--default .select2-selection--single {
     font-size: 0;
 }
 
+.chub-similar-options-tablet-mobile {
+    display: none;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
@@ -2929,6 +2933,9 @@ select.error~.select2-container--default .select2-selection--single {
     }
     .input-js .edit-form {
         left: 0;
+    }
+    .chub-similar-options-tablet-mobile {
+        display: block;
     }
 }
 
