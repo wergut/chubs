@@ -1026,6 +1026,8 @@ form .inputs-wrapper input {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .chub-quiz-card:not(:last-of-type) {
@@ -1039,6 +1041,7 @@ form .inputs-wrapper input {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    transition: 0.3s;
 }
 
 .chub-quiz-card .info .title {
@@ -1048,8 +1051,8 @@ form .inputs-wrapper input {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    transition: 0.3s;
 }
-
 
 .chub-quiz-card .payment-description p span {
     color: #141414;
@@ -1057,6 +1060,22 @@ form .inputs-wrapper input {
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
+}
+
+.chub-quiz-card.active {
+    background: #a6cd46;
+}
+
+.chub-quiz-card.active .info .title {
+    color: #ffff;
+}
+
+.chub-quiz-card.active p {
+    color: #fff;
+}
+
+.chub-quiz-card.active .payment-description p span {
+    color: #fff;
 }
 
 .chub-quiz-cards-payment .info {
@@ -2624,6 +2643,8 @@ select.error~.select2-container--default .select2-selection--single {
 .chub-similar-options-tablet-mobile {
     display: none;
 }
+
+
 
 @media (min-width: 1780px) {
     .chubs-label-for-range {

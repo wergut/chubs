@@ -2,13 +2,14 @@ var selectorx = $('.select_states').select2();
 
 var stateSelect = document.getElementById("state");
 
-
-statesData.forEach(function(state) {
-    var option = document.createElement("option");
-    option.value = state.abbreviation;
-    option.textContent = state.name;
-    stateSelect.appendChild(option);
-});
+if (statesData) {
+    statesData.forEach(function(state) {
+        var option = document.createElement("option");
+        option.value = state.abbreviation;
+        option.textContent = state.name;
+        stateSelect.appendChild(option);
+    });
+}
 
 if (stateSelect) {
     statesData.forEach(function(state) {

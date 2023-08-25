@@ -115,7 +115,6 @@
         </div>
     </section>
 
-
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -147,14 +146,25 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizCards = document.querySelectorAll('.chub-quiz-card');
+
+            quizCards.forEach(function (quizCard) {
+                quizCard.addEventListener('click', function () {
+                    quizCards.forEach(function (otherCard) {
+                        otherCard.classList.remove('active');
+                    });
+
+                    quizCard.classList.add('active');
+                });
+            });
+        });
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="js/inputMusk.js"></script>
-    <script src="js/quiz/states.js"></script>
-    <script src="js/quiz/vendor.js"></script>
-    <script src="js/quiz/validation.js"></script>
-    <script src="js/quiz/quiz.js"></script>
-    <script src="js/quiz/order.js"></script>
 </body>
 </html>
