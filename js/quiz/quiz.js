@@ -61,6 +61,10 @@ function prevStepHandler() {
 function nextStepHandler() {
     if (currentStep < steps.length - 1) {
 
+        if (currentStep == 52 ){
+            location.href= 'treatment-regimen.html';
+        }
+
         if (!validateCurrentStep(steps[currentStep])) {
             return
         }
