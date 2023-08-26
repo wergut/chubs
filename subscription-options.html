@@ -11,18 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"/>
     <link type="image/x-icon" href="img/icons/favicon.svg" rel="shortcut icon">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/rateit.min.css">
     <link rel="stylesheet" href="css/style.bundle.css"/>
     <link rel="stylesheet" href="css/quiz.css"/>
     <title>Chubs - Don’t put your love life on hold</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
 </head>
 <body>
-<main>
-
 
     <section class="banner question-logo banner-order">
         <div class="container">
@@ -140,9 +134,9 @@
                                 <p class="sale-price">$78</p>
                             </div>
                         </div>
-                        <a href="pament-page.html" class="btn-green">pay</a>
                     </div>
                 </form>
+                <button disabled id="nextButton" class="btn-green btn-quiz-next" type="submit" onClick="location.href='payment-page.html'">pay</button>
             </div>
         </div>
     </section>
@@ -217,25 +211,30 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/jquery.rateit.min.js"></script>
-    <script src="js/quiz/order.js"></script>
     <script>
-        const paymentBlocks = document.querySelectorAll('.payment-block');
+        document.addEventListener('DOMContentLoaded', function () {
+            const paymentBlocks = document.querySelectorAll('.payment-block');
+            const nextButton = document.getElementById('nextButton');
 
-        paymentBlocks.forEach(function (block) {
-            const button = block.querySelector('.payment-type-btn');
-            const paymentHiddenDesc = block.querySelector('.payment-hidden-desc');
+            paymentBlocks.forEach(function (block) {
+                const button = block.querySelector('.payment-type-btn');
 
-            button.addEventListener('click', function () {
-                paymentBlocks.forEach(function (otherBlock) {
-                    otherBlock.querySelector('.payment-type-btn').classList.remove('active');
-                    otherBlock.querySelector('.payment-hidden-desc').style.display = 'none';
+                button.addEventListener('click', function () {
+                    paymentBlocks.forEach(function (otherBlock) {
+                        otherBlock.querySelector('.payment-type-btn').classList.remove('active');
+                        otherBlock.querySelector('.payment-hidden-desc').style.display = 'none';
+                    });
+
+                    button.classList.add('active');
+                    block.querySelector('.payment-hidden-desc').style.display = 'block';
+
+                    if (button.classList.contains('active')) {
+                        nextButton.removeAttribute('disabled');
+                    } else {
+                        nextButton.setAttribute('disabled', 'disabled');
+                    }
                 });
-
-                button.classList.add('active');
-                paymentHiddenDesc.style.display = 'block';
             });
         });
     </script>

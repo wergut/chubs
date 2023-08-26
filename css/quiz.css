@@ -313,6 +313,10 @@ a.back-to-main:focus,
     max-width: 400px;
 }
 
+.btn-quiz-next:disabled {
+    background: #B7B7B7;
+}
+
 .btn-quiz-prev {
     color: #858585;
     text-align: center;
@@ -1060,6 +1064,7 @@ form .inputs-wrapper input {
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
+    transition: 0.3s;
 }
 
 .chub-quiz-card.active {
@@ -2187,8 +2192,9 @@ form .inputs-wrapper input {
     margin-left: 10px;
 }
 
-.subscriptions-section form .btn-green {
-    max-width: 100%;
+.subscriptions-section .btn-green {
+    margin: 0 0 0 auto;
+    max-width: calc(50% - 15px);
 }
 
 .pay-card-section {
@@ -2251,7 +2257,7 @@ form .inputs-wrapper input {
     font-weight: 400;
     line-height: normal;
     margin-left: 20px;
-    max-width: 44px;
+    max-width: 50px;
 }
 
 .pay-card-section .payment-inner .card-block-reverse label {
@@ -3481,6 +3487,7 @@ select.error~.select2-container--default .select2-selection--single {
     }
     .pay-card-section .payment-inner .card-block {
         margin-left: 0;
+        max-width: 100%;
     }
     .pay-card-section .payment-inner .card-block-reverse {
         margin-right: 0;
@@ -3576,6 +3583,10 @@ select.error~.select2-container--default .select2-selection--single {
     }
     .chub-order-list h3 {
         margin-bottom: 30px;
+    }
+    .subscriptions-section .btn-green {
+        max-width: 100%;
+        margin: 0;
     }
 }
 

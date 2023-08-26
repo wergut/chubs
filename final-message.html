@@ -11,18 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"/>
     <link type="image/x-icon" href="img/icons/favicon.svg" rel="shortcut icon">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.bundle.css"/>
     <link rel="stylesheet" href="css/quiz.css"/>
     <title>Chubs - Don’t put your love life on hold</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
 </head>
 <body>
-<main>
-
-
     <section class="banner question-logo banner-order">
         <div class="container">
             <div class="row">
@@ -60,11 +53,11 @@
                         <div class="name">Alex Garan</div>
                     </div>
                     <div class="textarea-wrapper">
-                    <textarea cols="10" rows="30">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</textarea>
+                    <textarea required cols="10" rows="30"></textarea>
                     </div>
                 </div>
             </form>
-            <a href="thanks.html" class="btn-green">Send</a>
+            <button disabled id="nextButton" class="btn-green btn-quiz-next" type="submit" onClick="location.href='thanks.html'">Send</button>
         </div>
     </section>
 
@@ -100,14 +93,35 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="js/inputMusk.js"></script>
-    <script src="js/quiz/states.js"></script>
-    <script src="js/quiz/vendor.js"></script>
-    <script src="js/quiz/validation.js"></script>
-    <script src="js/quiz/quiz.js"></script>
-    <script src="js/quiz/order.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const textareaInput = document.querySelector('textarea');
+            const submitButton = document.querySelector('.btn-quiz-next');
+
+            function updateSubmitButtonState() {
+                if (textareaInput.value.trim() !== '') {
+                    submitButton.removeAttribute('disabled');
+                } else {
+                    submitButton.setAttribute('disabled', 'disabled');
+                }
+            }
+
+            if (submitButton) {
+                submitButton.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    if (textareaInput.value.trim() === '') {
+                        errorMessage.textContent = 'Please fill in the textarea.';
+                        return;
+                    }
+
+                    errorMessage.textContent = '';
+                });
+
+                textareaInput.addEventListener('input', updateSubmitButtonState);
+            }
+        });
+    </script>
 </body>
 </html>

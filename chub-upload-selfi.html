@@ -15,12 +15,8 @@
     <link rel="stylesheet" href="css/style.bundle.css"/>
     <link rel="stylesheet" href="css/quiz.css"/>
     <title>Chubs - Don’t put your love life on hold</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
 </head>
 <body>
-<main>
 
 
     <section class="banner question-logo banner-order">
@@ -66,7 +62,7 @@
                             <div class="input-file-list"></div>
                         </div>
                     </form>
-                    <a href="subscription-options.html" type="button" class="btn-green">Next</a>
+                    <button disabled id="nextButton" class="btn-green btn-quiz-next" type="submit" onClick="location.href='subscription-options.html'">Next</button>
                 </div>
             </div>
         </div>
@@ -107,6 +103,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fileInputs = document.querySelectorAll('input[type="file"]');
+            const nextButton = document.getElementById('nextButton');
+
+            fileInputs.forEach(function (input) {
+                input.addEventListener('change', function () {
+                    if (this.files.length > 0) {
+                        nextButton.removeAttribute('disabled');
+                    } else {
+                        nextButton.setAttribute('disabled', 'disabled');
+                    }
+                });
+            });
+        });
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
