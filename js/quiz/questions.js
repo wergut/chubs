@@ -621,13 +621,13 @@ var questionnaireData = {
             "multiply": true,
             "subquestion": "a",
             "answers": [
-                { "0": "Poppers or Rush (Amyl Nitrate or Butyl Nitrate) 45" },
-                { "1": "Cannabis 51" },
-                { "2": "Cocaine 46" },
-                { "3": "Other 50" },
-                { "4": "Methamphetamine (crystal meth) 49" },
-                { "5": "No, I have not used any recreational drugs in the past 3 months 51" },
-                { "6": "Cigarettes 51" }
+                { "0": "Poppers or Rush (Amyl Nitrate or Butyl Nitrate) " },
+                { "1": "Cannabis" },
+                { "2": "Cocaine" },
+                { "3": "Other" },
+                { "4": "Methamphetamine (crystal meth)" },
+                { "5": "No, I have not used any recreational drugs in the past 3 months" },
+                { "6": "Cigarettes" }
             ],
             "next_questions": [ 45, 51, 46, 50, 49, 51 ,51 ], //this multyplay questions
             "attention_required": [],
@@ -635,7 +635,7 @@ var questionnaireData = {
         },
         {
             "index": 45,
-            "title": "Within the past 3 months, have you used poppers or rush more than you meant to, or felt like you needed to cut down? 45",
+            "title": "Within the past 3 months, have you used poppers or rush more than you meant to, or felt like you needed to cut down?",
             "type": "radio",
             "subquestion": "a",
             "is_subquestion" : true,
@@ -650,7 +650,7 @@ var questionnaireData = {
         },
         {
             "index": 46,
-            "title": "Within the past 3 months, have you used cocaine more than you meant to, or felt like you needed to cut down on cocaine? 46",
+            "title": "Within the past 3 months, have you used cocaine more than you meant to, or felt like you needed to cut down on cocaine?",
             "type": "radio",
             "subquestion": "a",
             "is_subquestion" : true,
@@ -665,7 +665,7 @@ var questionnaireData = {
         },
         {
             "index": 47,
-            "title": "On average, how frequently do you use cocaine? 47",
+            "title": "On average, how frequently do you use cocaine?",
             "type": "radio",
             "subquestion": "a",
             "is_subquestion" : true,
@@ -683,7 +683,7 @@ var questionnaireData = {
             "title": "The combination of cocaine with oral medications for ED can cause serious life and health threatening emergencies. " +
             "Some of the emergencies that can occur when cocaine and ED medications are combined include the following: " +
             "priapism (an erection that doesn't go away and can cause permanent damage to your penis), stroke (which can cause permanent disability), " +
-            "cardiac arrest (your heart stops beating), muscle rigidity, very high fever, death. 48",
+            "cardiac arrest (your heart stops beating), muscle rigidity, very high fever, death.",
             "type": "checkbox",
             "subquestion": "b",
             "is_subquestion" : true,
@@ -697,7 +697,7 @@ var questionnaireData = {
         },
         {
             "index": 49,
-            "title": "Within the past 3 months, have you used methamphetamine (crystal meth) more than you meant to, or felt like you needed to cut down on? 49",
+            "title": "Within the past 3 months, have you used methamphetamine (crystal meth) more than you meant to, or felt like you needed to cut down on?",
             "type": "radio",
             "subquestion": "a",
             "is_subquestion" : true,
@@ -712,7 +712,7 @@ var questionnaireData = {
         },
         {
             "index": 50,
-            "title": "Please explain your choice of \"other,\" and detail any other recreational drugs you use (how frequently, and when was the last time?). 50",
+            "title": "Please explain your choice of \"other,\" and detail any other recreational drugs you use (how frequently, and when was the last time?).",
             "type": "textarea",
             "subquestion": "a",
             "is_subquestion" : true,
@@ -725,7 +725,7 @@ var questionnaireData = {
         {
             "index": 51,
             "title": "Here's your first message to your clinician. Please introduce yourself and ask the clinician any questions you have about the treatment. " +
-            "Feel free to include anything else you want them to know about your condition 51",
+            "Feel free to include anything else you want them to know about your condition",
             "type": "textarea",
             "subquestion": "a",
             "answers": [],
