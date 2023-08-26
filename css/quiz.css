@@ -2129,7 +2129,7 @@ form .inputs-wrapper input {
     background-position: 0 80%;
     background-repeat: repeat-x;
     background-image: url("../img/icons/dotted.svg");
-    background-size: 100%;
+    background-size: 440px;
 }
 
 .subscriptions-section .payments-options li span {
