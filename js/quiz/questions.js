@@ -729,7 +729,7 @@ var questionnaireData = {
             "type": "textarea",
             "subquestion": "a",
             "answers": [],
-            "next_questions": [ 52 ], //what next question
+            "next_questions": [ 'final' ], //what next question
             "attention_required": [],
             "hint": ""
         }
