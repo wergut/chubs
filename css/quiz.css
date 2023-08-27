@@ -2225,6 +2225,8 @@ form .inputs-wrapper input {
     padding: 24px 25px 15px;
     transition: 0.3s;
     margin-left: auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .pay-card-section .payment-inner .card-block input:focus::placeholder {
@@ -2238,7 +2240,7 @@ form .inputs-wrapper input {
     padding-top: 89px;
 }
 
-.pay-card-section .payment-inner .card-block-reverse:before {
+.pay-card-section .payment-inner .card-block-reverse .input-wrapper:before {
     content: "";
     display: block;
     position: absolute;
@@ -2247,6 +2249,25 @@ form .inputs-wrapper input {
     background-color: #141414;
     top: 24px;
     left: 0;
+    z-index: 1;
+}
+
+.pay-card-section .payment-inner .card-block:after,
+.pay-card-section .payment-inner .card-block:before {
+    content: "";
+    position: absolute;
+    height: 160%;
+    width: 100%;
+    border-radius: 0 50% 50% 0;
+    background: #FFFFFF0F;
+    top: -60px;
+}
+.pay-card-section .payment-inner .card-block:before {
+    left: -90px;
+}
+
+.pay-card-section .payment-inner .card-block:after {
+    left: -75px;
 }
 
 .pay-card-section .payment-inner .card-block-reverse .secret-code {
