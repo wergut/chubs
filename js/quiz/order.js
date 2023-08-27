@@ -1,4 +1,9 @@
-var selectorx = $('.select_states').select2();
+
+if (typeof $.fn.select2 === 'function') {
+    var selectorx = $('.select_states').select2();
+} else {
+    console.log("select2 is not available");
+}
 
 var stateSelect = document.getElementById("state");
 

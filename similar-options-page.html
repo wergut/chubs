@@ -17,7 +17,6 @@
 </head>
 <body>
 
-
     <section class="banner question-logo banner-order">
         <div class="container">
             <div class="row">
@@ -40,7 +39,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="options-section">
         <div class="container">
@@ -228,6 +226,29 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const optionCards = document.querySelectorAll('.option-card');
+
+            optionCards.forEach(function (card) {
+                const button = card.querySelector('.btn-green');
+                const productTitle = card.querySelector('h3').textContent;
+                const productDescription = card.querySelector('.product-description').textContent;
+                const productPrice = parseFloat(button.textContent.match(/\$([\d.]+)/)[1]);
+
+                button.addEventListener('click', function () {
+                    const productInfo = {
+                        title: productTitle,
+                        description: productDescription,
+                        price: productPrice
+                    };
+
+                    localStorage.setItem('selectedProduct', JSON.stringify(productInfo));
+                });
+            });
+        });
+    </script>
 
     <footer class="footer">
         <div class="container">
