@@ -17,8 +17,6 @@
 </head>
 <body>
 
-
-
     <section class="banner question-logo banner-order">
         <div class="container">
             <div class="row">
@@ -68,9 +66,6 @@
         </div>
     </section>
 
-
-
-
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -115,6 +110,8 @@
                     } else {
                         nextButton.setAttribute('disabled', 'disabled');
                     }
+
+                    localStorage.setItem('document', input.value);
                 });
             });
         });

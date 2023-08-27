@@ -54,7 +54,6 @@ function prevStepHandler() {
             console.log('Element at currentStep ' + currentStep + ' does not exist.');
         }
         updateQuestionQueueForPrevStep()
-
     }
 }
 
@@ -71,6 +70,7 @@ function nextStepHandler() {
 
         newQuestionnaireData.questions[currentStep].answered = true;
         lastStep = currentStep;
+        console.log(lastStep);
         hideStep(currentStep);
         saveQuestionData(currentStep);
 
@@ -85,7 +85,6 @@ function nextStepHandler() {
                 generateQuestionQueue(selectedQuestionsIdx)
             }
             ////////////////////////////RBS///////////////////////////////
-
 
             if (branchesIndex <= queue_questions.length && selectedAnswers?.length) {
 
@@ -115,8 +114,6 @@ function nextStepHandler() {
 
                 ////////////////////////////RBS///////////////////////////////
 
-                // console.log('currentStep lost ' + currentStep);
-
             } else {
                 currentStep = 51;
                 showStep(currentStep);
@@ -126,18 +123,15 @@ function nextStepHandler() {
 
         } else {
             var selectedAnswer = getSelectedAnswer(steps[currentStep]);
-            //console.log(selectedAnswer);
             getNextStep(selectedAnswer);
             showStep(currentStep);
             updateStepInfo();
             toggleButtonVisibility(currentStep);
-            //console.log(currentStep);
         }
 
         newQuestionnaireData.questions[currentStep].prev_question = lastStep;
         window.newQuestionnaireData = newQuestionnaireData;
         window.questionnaireData = questionnaireData;
-        //console.log(newQuestionnaireData.questions[currentStep]);
 
     }
 
@@ -446,8 +440,6 @@ tooltipButtons.forEach(function (button) {
         }
     });
 });
-
-
 
 $('#state_select').on("select2:select", function(e) {
     var selectedState = e.params.data.text;

@@ -68,10 +68,6 @@
         </div>
     </section>
 
-
-
-
-
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -116,6 +112,7 @@
                     } else {
                         nextButton.setAttribute('disabled', 'disabled');
                     }
+                    localStorage.setItem('photo', input.value);
                 });
             });
         });

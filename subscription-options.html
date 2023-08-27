@@ -41,7 +41,6 @@
         </div>
     </section>
 
-
     <section class="subscriptions-section">
         <div class="container">
             <div class="row">
@@ -83,34 +82,37 @@
                                     <br>
                                     Cancel anytime.
                                 </div>
+                                <input type="hidden" value="26" data-regular-price="44" data-month="3">
                             </div>
                             <div class="payment-block">
                                 <div class="payment-type-btn">
                                     <p>Every 6 month</p>
                                     <div class="payment-price">
                                         <p class="regular-price">$44</p>
-                                        <p class="sale-price">$26/mo</p>
+                                        <p class="sale-price">$24/mo</p>
                                     </div>
                                 </div>
                                 <div class="payment-hidden-desc">
-                                    Pay for and receive a 3x supply for $78 every month.
+                                    Pay for and receive a 6x supply for $144 every month.
                                     <br>
                                     Cancel anytime.
                                 </div>
+                                <input type="hidden" value="24" data-regular-price="44" data-month="6">
                             </div>
                             <div class="payment-block">
                                 <div class="payment-type-btn">
                                     <p>Every 12 month</p>
                                     <div class="payment-price">
                                         <p class="regular-price">$44</p>
-                                        <p class="sale-price">$26/mo</p>
+                                        <p class="sale-price">$22/mo</p>
                                     </div>
                                 </div>
                                 <div class="payment-hidden-desc">
-                                    Pay for and receive a 3x supply for $78 every month.
+                                    Pay for and receive a 12x supply for $264 every month.
                                     <br>
                                     Cancel anytime.
                                 </div>
+                                <input type="hidden" value="22" data-regular-price="44" data-month="12">
                             </div>
                         </div>
                         <ul class="payments-options">
@@ -219,12 +221,26 @@
 
             paymentBlocks.forEach(function (block) {
                 const button = block.querySelector('.payment-type-btn');
+                const dataPrice = block.querySelector('input');
 
                 button.addEventListener('click', function () {
                     paymentBlocks.forEach(function (otherBlock) {
                         otherBlock.querySelector('.payment-type-btn').classList.remove('active');
                         otherBlock.querySelector('.payment-hidden-desc').style.display = 'none';
                     });
+
+                    const total = document.querySelector('.payments-total');
+                    const priceElement = total.querySelector('.price');
+                    const salePriceElement = total.querySelector('.sale-price');
+
+                    const price = parseInt(dataPrice.value);
+                    const regularPrice = parseInt(dataPrice.getAttribute('data-regular-price'));
+                    const month = parseInt(dataPrice.getAttribute('data-month'));
+
+                    priceElement.innerText = '$' + (regularPrice * month);
+                    salePriceElement.innerText = '$' + (price * month);
+
+                    localStorage.setItem('totalPrice', price * month);
 
                     button.classList.add('active');
                     block.querySelector('.payment-hidden-desc').style.display = 'block';
