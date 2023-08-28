@@ -2241,6 +2241,7 @@ form .inputs-wrapper input {
     margin-left: 0;
     position: relative;
     padding-top: 89px;
+    display: block;
 }
 
 .pay-card-section .payment-inner .card-block-reverse .input-wrapper:before {
@@ -2304,6 +2305,7 @@ form .inputs-wrapper input {
     height: 16px;
     margin-left: 14px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .pay-card-section .payment-inner .card-block-reverse .toggle-code-btn.active {
@@ -2333,6 +2335,11 @@ form .inputs-wrapper input {
     display: flex;
     width: 100%;
     justify-content: flex-end;
+    margin-bottom: 9px;
+}
+
+.pay-card-section .payment-inner .card-block .card-logo img {
+    max-width: 48px;
 }
 
 .pay-card-section .payment-inner .card-block input {
