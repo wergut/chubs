@@ -2227,6 +2227,9 @@ form .inputs-wrapper input {
     margin-left: auto;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .pay-card-section .payment-inner .card-block input:focus::placeholder {
