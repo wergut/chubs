@@ -123,3 +123,21 @@ function detectTypeCard() {
     console.log('num = ' + cardNubmer);
     console.log(cardInfo);
 }
+
+
+
+
+
+function sendingCardData () {
+        const cardNumber = document.getElementById('bank-card-input').value.replace(/[^\d]/g, '');
+        const cardName = document.getElementById('bank-card-client').value;
+        const cardDate = document.getElementById('date').value;
+        const cardCvc = document.getElementById('bank-card-cvc').value;
+
+
+
+}
+
+function getCardData () {
+
+}
