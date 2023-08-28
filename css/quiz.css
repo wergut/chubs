@@ -2337,7 +2337,8 @@ form .inputs-wrapper input {
     box-shadow: none;
     background-color: transparent;
     color: #fff;
-    width: 100%;
+    z-index: 1;
+    position: relative;
 }
 
 .pay-card-section .payment-inner .card-block input::-webkit-outer-spin-button,
