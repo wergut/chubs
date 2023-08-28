@@ -84,9 +84,9 @@
     }
 
     CardInfo.defaultOptions = {
-        banksLogosPath: '/bower_components/card-info/dist/banks-logos/',
-        brandsLogosPath: '/img/brands-logos/',
-        brandLogoPolicy: 'auto',
+        banksLogosPath: './banks-logos/',
+        brandsLogosPath: './brands-logos/',
+        brandLogoPolicy: 'black',
         preferredExt: 'svg',
         maskDigitSymbol: '0',
         maskDelimiterSymbol: ' ',

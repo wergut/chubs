@@ -114,7 +114,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function detectTypeCard() {
     const card = document.getElementById('bank-card-input');
-    const cardNubmer = card.value;
+    const cardNubmer = card.value.replace(/[^\d]/g, '');
+    const logoType = document.getElementById('card-logo');
     var cardInfo = new CardInfo(cardNubmer);
+    if (cardInfo.brandLogoSvg) {
+        logoType.setAttribute('src', cardInfo.brandLogoSvg);
+    }
+    console.log('num = ' + cardNubmer);
     console.log(cardInfo);
 }
