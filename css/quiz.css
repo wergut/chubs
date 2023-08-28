@@ -2682,7 +2682,108 @@ select.error~.select2-container--default .select2-selection--single {
     display: none;
 }
 
+.section-404 {
+    background-color: #111111;
+    background-repeat: no-repeat;
+    background-position: 30% 50%;
+    background-size: auto;
+    background-image: url("../img/chub-404-img.png");
+    height: calc(100vh - 184px);
+    position: relative;
+}
 
+.stars-background .star {
+    position: absolute;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.stars-background .star:nth-of-type(1) {
+    background-image: url("../img/icons/star1.svg");
+    width: 22px;
+    height: 22px;
+    top: 104px;
+    left: 50%;
+}
+
+.stars-background .star:nth-of-type(2) {
+    background-image: url("../img/icons/star2.svg");
+    width: 62px;
+    height: 62px;
+    right: 147px;
+    top: 200px;
+}
+
+.stars-background .star:nth-of-type(3) {
+    background-image: url("../img/icons/star3.svg");
+    width: 34px;
+    height: 34px;
+    bottom: 194px;
+    right: 325px;
+}
+
+.stars-background .star:nth-of-type(4) {
+    background-image: url("../img/icons/star4.svg");
+    width: 22px;
+    height: 22px;
+    bottom: 97px;
+    left: 259px;
+}
+
+.stars-background .star:nth-of-type(5) {
+    background-image: url("../img/icons/star5.svg");
+    width: 34px;
+    height: 34px;
+    top: 315px;
+    left: 132px;
+}
+
+.section-404 .container {
+    height: inherit;
+    justify-content: flex-end;
+}
+
+.section-404 .description {
+    max-width: 50%;
+    width: 100%;
+}
+
+.section-404 .description .title {
+    color: #A35499;
+    font-family: Inter;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    margin-bottom: 17px;
+}
+
+.section-404 .description p {
+    color: #B7B7B7;
+    font-family: Inter;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 109px;
+    max-width: 50%;
+}
+
+.section-404 .description a {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: 0.3s;
+}
+
+.section-404 .description a:hover {
+    color: #B7B7B7;
+}
 
 @media (min-width: 1780px) {
     .chubs-label-for-range {
@@ -2995,6 +3096,38 @@ select.error~.select2-container--default .select2-selection--single {
     }
     .chub-similar-options-tablet-mobile {
         display: block;
+    }
+    .stars-background .star:nth-of-type(1) {
+        top: 90px;
+        left: 347px;
+    }
+
+    .stars-background .star:nth-of-type(2) {
+        right: 57px;
+        top: 43px;
+    }
+
+    .stars-background .star:nth-of-type(3) {
+        bottom: 29px;
+        right: 76px;
+    }
+
+    .stars-background .star:nth-of-type(4) {
+        bottom: 97px;
+        left: 29px;
+        top: unset;
+    }
+    .stars-background .star:nth-of-type(5) {
+        display: none;
+    }
+    .section-404 .description > * {
+        margin-left: 60px;
+    }
+    .section-404 .description p {
+        max-width: 80%;
+    }
+    .section-404 {
+        background-position: 10% 50%;
     }
 }
 
@@ -3619,6 +3752,45 @@ select.error~.select2-container--default .select2-selection--single {
     .subscriptions-section .btn-green {
         max-width: 100%;
         margin: 0;
+    }
+    .section-404 .description {
+        max-width: 100%;
+    }
+    .section-404 .container {
+        align-items: flex-start;
+        padding-top: 120px;
+    }
+    .section-404 .description > * {
+        margin-left: 0;
+    }
+    .stars-background .star:nth-of-type(1) {
+        top: 50px;
+        left: 42px;
+    }
+    .stars-background .star:nth-of-type(2) {
+        background-image: url(../img/icons/star3.svg);
+        left: 20px;
+        bottom: 119px;
+        top: unset;
+    }
+    .stars-background .star:nth-of-type(3) {
+        top: 61px;
+        right: 29px;
+        bottom: unset;
+    }
+    .stars-background .star:nth-of-type(4) {
+        bottom: 12px;
+        right: 21px;
+        left: unset;
+        background-image: url(../img/icons/star1.svg);
+    }
+    .section-404 {
+        background-position: 90% 85%;
+        background-size: 153px;
+    }
+    .section-404 .description p {
+        margin-bottom: 40px;
+        max-width: 80%;
     }
 }
 
