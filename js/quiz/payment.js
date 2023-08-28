@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const expiryInput = document.querySelector('.expiry-input');
 
     expiryInput.addEventListener('input', function () {
-        let inputValue = expiryInput.value.replace(/\D/g, ''); // Оставляем только цифры
+        let inputValue = expiryInput.value.replace(/\D/g, '');
 
         if (inputValue.length > 2) {
             inputValue = inputValue.slice(0, 2) + '/' + inputValue.slice(2);
@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var cc = document.getElementById("bank-card-input");
     for (var i in ['input', 'change', 'blur', 'keyup']) {
         cc.addEventListener('input', formatCardCode, false);
+        cc.addEventListener('input', detectTypeCard, false);
     }
     function formatCardCode() {
         var cardCode = this.value.replace(/[^\d]/g, '').substring(0,16);
@@ -110,3 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
+function detectTypeCard() {
+    const card = document.getElementById('bank-card-input');
+    const cardNubmer = card.value;
+    var cardInfo = new CardInfo(cardNubmer);
+    console.log(cardInfo);
+}
