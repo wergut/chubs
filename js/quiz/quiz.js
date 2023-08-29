@@ -437,6 +437,7 @@ answerBtns.forEach(function (btn) {
     });
 });
 
+
 var answerBtnsConsert = document.querySelectorAll('.answer-btn-consert');
 answerBtnsConsert.forEach(function (btn) {
     btn.addEventListener('click', function () {
