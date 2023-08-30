@@ -432,6 +432,9 @@ answerBtns.forEach(function (btn) {
             this.querySelector('input').checked = true;
             this.classList.add('active');
         }
+        this.querySelector('input').dispatchEvent(new Event('input'));
+        this.querySelector('input').dispatchEvent(new Event('change'));
+        updateNextButtonState();
     });
 });
 
@@ -475,7 +478,6 @@ $('#state_select').on("select2:select", function(e) {
     var isActualState = checkStateInActualStates(selectedState);
     updateNextButtonState();
     if (isActualState && isAttention) {}
-    console.log(isActualState);
 });
 
 function checkStateInActualStates(selectedState) {
@@ -502,7 +504,7 @@ window.onload = function () {
         });
     });
 
-    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
+    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn', '.chubs-quiz-answers-type-number .answer-btn');
     answerBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
             handleRadioClick(this);
@@ -531,6 +533,17 @@ function updateNextButtonState() {
     const nextButton = document.getElementById('nextStep');
     const fieldsFilled = validateCurrentStep(steps[currentStep]);
     const selectElement = steps[currentStep].querySelector('select');
+    const remember = steps[currentStep].querySelector('#remember');
+
+    if (remember) {
+        console.log(remember);
+        if (remember.checked) {
+            console.log(remember.checked);
+            nextButton.removeAttribute('disabled');
+        } else {
+            nextButton.setAttribute('disabled', 'disabled');
+        }
+    }
 
     if (selectElement) {
         const selectedValue = selectElement.value;

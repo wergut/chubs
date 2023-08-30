@@ -289,6 +289,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         var rememberInput = document.createElement('input');
         rememberInput.type = 'radio';
         rememberInput.name = 'remember_' + index;
+        rememberInput.id = 'remember';
         rememberInput.value = 'I don`t remember';
 
         var rememberLabel = document.createElement('div');
