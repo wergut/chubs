@@ -2793,6 +2793,70 @@ select.error~.select2-container--default .select2-selection--single {
     color: #B7B7B7;
 }
 
+.modal-dialog-exit {
+    z-index: 99999999;
+}
+
+.modal-dialog-exit .modal-content {
+    height: 458px;
+    max-width: 678px;
+}
+
+.modal-dialog-exit .modal-content .modal-body {
+    padding: 130px 160px;
+}
+
+.modal-dialog-exit .title {
+    font-size: 23px;
+    margin-bottom: 11px;
+}
+
+.modal-dialog-exit p {
+    margin-bottom: 35px;
+    color: #858585;
+}
+
+.modal-dialog-exit .btn-green {
+    max-width: 356px;
+    margin-bottom: 18px;
+    background: #a6cd46;
+    color: #fff;
+}
+
+.modal-dialog-exit .btn-green:hover {
+    background: #688b13;
+}
+
+.modal-dialog-exit .modal-close {
+    position: static;
+}
+
+.modal-dialog-exit .link-black {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.modal-dialog-exit .modal-close span:hover {
+    color:  #858585;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label.active p {
+    color: #141414;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label.active p {
+    color: #B7B7B7;
+}
+
+.chubs-step .chubs-quiz-answers-type-number .chubs-quiz-answer-label.active p:nth-of-type(1) {
+    color: #141414;
+}
+
+.question .inner .answer-btn textarea:focus::placeholder {
+    color: transparent;
+}
+
 @media (min-width: 1780px) {
     .chubs-label-for-range {
         width: 1000px;
