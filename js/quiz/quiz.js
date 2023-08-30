@@ -433,7 +433,7 @@ answerBtns.forEach(function (btn) {
             this.classList.add('active');
         }
         this.querySelector('input').dispatchEvent(new Event('input'));
-        this.querySelector('input').dispatchEvent(new Event('change'));
+        this.querySelector('input').dispatchEvent(new Event('change'));  
         updateNextButtonState();
     });
 });
