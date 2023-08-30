@@ -943,6 +943,14 @@ form .inputs-wrapper input {
     display: block;
 }
 
+.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-8 .answer-btn:has(.tooltip):nth-of-type(1) .tooltip-text {
+    top: -95px;
+}
+
+.chubs-step .chubs-quiz-answers-type-checkbox.chubs-quiz-answers-8 .answer-btn:has(.tooltip):nth-of-type(3) .tooltip-text {
+    top: -105px;
+}
+
 .chubs-quiz-link {
     color: #858585;
     font-size: 14px;
@@ -3791,6 +3799,9 @@ select.error~.select2-container--default .select2-selection--single {
     .section-404 .description p {
         margin-bottom: 40px;
         max-width: 80%;
+    }
+    .chubs-step .chubs-quiz-answers-type-checkbox .chubs-quiz-answer-label:nth-child(even) {
+        margin-left: 0;
     }
 }
 
