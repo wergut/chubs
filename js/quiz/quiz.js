@@ -437,7 +437,6 @@ answerBtns.forEach(function (btn) {
     });
 });
 
-
 var answerBtnsConsert = document.querySelectorAll('.answer-btn-consert');
 answerBtnsConsert.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -486,6 +485,34 @@ function checkStateInActualStates(selectedState) {
     return ActualStates.includes(selectedState);
 }
 
+/*
+
+window.onload = function () {
+    updateNextButtonState();
+
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            //updateNextButtonState();
+        });
+        input.addEventListener('change', function() {
+            updateNextButtonState();
+        });
+    });
+};
+
+function updateNextButtonState() {
+    const nextButton = document.getElementById('nextStep');
+
+    console.log('second time');
+    const fieldsFilled = validateCurrentStep(steps[currentStep]);
+    if (fieldsFilled) {
+        nextButton.removeAttribute('disabled');
+    } else {
+        nextButton.setAttribute('disabled', 'disabled');
+    }
+}*/
+
 
 window.onload = function () {
     updateNextButtonState();
@@ -524,7 +551,6 @@ function handleRadioClick(selectedRadioBtn) {
 
     selectedRadioBtn.querySelector('input').dispatchEvent(new Event('input'));
     selectedRadioBtn.querySelector('input').dispatchEvent(new Event('change'));
-    selectedRadioBtn.querySelector('select').dispatchEvent(new Event('change'));
 }
 
 function updateNextButtonState() {
