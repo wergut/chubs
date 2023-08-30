@@ -350,9 +350,6 @@ function getUniqueSortedSteps(selectedAnswers) {
 }
 
 function validateCurrentStep(currentStep) {
-    /* why response 6 or 7 step but not 1 or 0*/
-    console.log( checkFieldsFilled(currentStep), checkFieldsValid(currentStep), checkAttentionRequired(currentStep) );
-    console.log( 'checkFieldsFilled()', 'checkFieldsValid()', 'checkAttentionRequired()', currentStep );
     if (checkFieldsFilled(currentStep) && checkFieldsValid(currentStep) && checkAttentionRequired(currentStep)) {
         return true;
     } else {
@@ -396,9 +393,10 @@ answerBtns.forEach(function (btn) {
         this.classList.add('active');
         this.querySelector('input').checked = true;
 
-
         this.querySelector('input').dispatchEvent(new Event('input'));
         this.querySelector('input').dispatchEvent(new Event('change'));
+
+        updateNextButtonState();
     });
 });
 
@@ -450,6 +448,8 @@ answerBtnsConsert.forEach(function (btn) {
             this.classList.add('active');
             checkbox.classList.remove('error');
         }
+
+        updateNextButtonState();
     });
 });
 
@@ -473,45 +473,14 @@ $('#state_select').on("select2:select", function(e) {
     var currentQuestion = steps[currentStep];
     var isAttention = checkAttentionRequired(currentQuestion);
     var isActualState = checkStateInActualStates(selectedState);
-
-    if (isActualState && isAttention) {
-
-    }
-    console.log(isAttention);
+    updateNextButtonState();
+    if (isActualState && isAttention) {}
     console.log(isActualState);
 });
 
 function checkStateInActualStates(selectedState) {
     return ActualStates.includes(selectedState);
 }
-
-/*
-
-window.onload = function () {
-    updateNextButtonState();
-
-    const inputs = document.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-        input.addEventListener('input', function() {
-            //updateNextButtonState();
-        });
-        input.addEventListener('change', function() {
-            updateNextButtonState();
-        });
-    });
-};
-
-function updateNextButtonState() {
-    const nextButton = document.getElementById('nextStep');
-
-    console.log('second time');
-    const fieldsFilled = validateCurrentStep(steps[currentStep]);
-    if (fieldsFilled) {
-        nextButton.removeAttribute('disabled');
-    } else {
-        nextButton.setAttribute('disabled', 'disabled');
-    }
-}*/
 
 
 window.onload = function () {
@@ -524,6 +493,10 @@ window.onload = function () {
             updateNextButtonState();
         });
         input.addEventListener('change', function() {
+            console.log('change event triggered');
+            updateNextButtonState();
+        });
+        input.addEventListener('keyup', function() {
             console.log('change event triggered');
             updateNextButtonState();
         });
@@ -551,16 +524,29 @@ function handleRadioClick(selectedRadioBtn) {
 
     selectedRadioBtn.querySelector('input').dispatchEvent(new Event('input'));
     selectedRadioBtn.querySelector('input').dispatchEvent(new Event('change'));
+    selectedRadioBtn.querySelector('input').dispatchEvent(new Event('keyup'));
 }
 
 function updateNextButtonState() {
     const nextButton = document.getElementById('nextStep');
     const fieldsFilled = validateCurrentStep(steps[currentStep]);
+    const selectElement = steps[currentStep].querySelector('select');
 
-    console.log(fieldsFilled);
-    if (fieldsFilled) {
-        nextButton.removeAttribute('disabled');
+    if (selectElement) {
+        const selectedValue = selectElement.value;
+        const isSelectValid = selectedValue !== '';
+        const isButtonEnabled = isSelectValid && fieldsFilled;
+        if (isButtonEnabled) {
+            nextButton.removeAttribute('disabled');
+        } else {
+            nextButton.setAttribute('disabled', 'disabled');
+        }
     } else {
-        nextButton.setAttribute('disabled', 'disabled');
+        if (fieldsFilled) {
+            nextButton.removeAttribute('disabled');
+        } else {
+            nextButton.setAttribute('disabled', 'disabled');
+        }
     }
+
 }

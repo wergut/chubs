@@ -97,19 +97,19 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         textarea.cols = '30';
         textarea.rows = '10';
         textarea.placeholder = 'Type something';
-        textarea.value = 'Type something';
+        textarea.value = '';
 
         answerLabel.appendChild(textarea);
         answersDiv.appendChild(answerLabel);
 
     } else if (question.type === 'slider') {
 
+
         var labelList = document.createElement('ul');
         labelList.classList.add('chubs-label-for-range');
         question.answers.forEach(function(answer) {
             for (var key in answer) {
                 var text = answer[key];
-
                 var li = document.createElement('li');
                 li.textContent = text;
                 labelList.appendChild(li);
@@ -127,7 +127,10 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answerLabel.appendChild(labelList);
         answerLabel.appendChild(sliderDiv);
         answerLabel.appendChild(hiddenInput);
-        answersDiv.appendChild(answerLabel);
+
+       // if (window.innerWidth > 768) {
+            answersDiv.appendChild(answerLabel);
+       // }
 
         question.answers.forEach(function(answer, i) {
             var radio = document.createElement('input');
@@ -145,7 +148,9 @@ newQuestionnaireData.questions.forEach(function(question, index) {
             answerContainer.classList.add('answer-btn-hidden-pc');
             answerContainer.appendChild(radio);
             answerContainer.appendChild(label);
-            answersDiv.appendChild(answerContainer);
+         //   if (window.innerWidth < 768) {
+                answersDiv.appendChild(answerContainer);
+         //   }
         });
 
     } else if (question.type === 'select') {
@@ -184,14 +189,13 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answersDiv.appendChild(ContactsUsLink);
 
 
-
     } else if (question.type === 'birth') {
 
         var input = document.createElement('input');
         input.type = 'text';
         input.name = 'date_' + index;
         input.placeholder = 'MM/DD/YY';
-        input.value = '01/01/2023';
+        input.value = '';
         input.inputmode = 'text';
         input.classList.add('date');
 
@@ -206,7 +210,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 
         var emailInput = document.createElement('input');
         emailInput.type = 'email';
-        emailInput.value = 'email@gmail.com';
+        emailInput.value = '';
         emailInput.name = 'email_' + index;
         emailInput.placeholder = 'Email';
         emailInput.classList.add('email');
@@ -307,19 +311,18 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         }
     }
 
-
     fieldset.appendChild(legend);
     fieldset.appendChild(p);
     fieldset.appendChild(answersDiv);
     questionHtml.appendChild(fieldset);
     questionnaireContainer.appendChild(questionHtml);
 
-    if (question.type === 'slider') {
-        activateSlider('slider_' + index, index);
-    }
+   // if (window.innerWidth > 768) {
+        if (question.type === 'slider') {
+            activateSlider('slider_' + index, index);
+        }
+  //  }
 });
-
-
 
 function activateSlider(id,index) {
     var slider = document.getElementById(id);
@@ -420,12 +423,10 @@ function externalStep() {
         newButton.textContent = 'Send';
         pagiContainer.appendChild(newButton);
 
-
         var emailContainer = document.createElement('div');
         emailContainer.classList.add('chubs-quiz-answer-label');
         emailContainer.classList.add('answer-btn');
         emailContainer.classList.add('chubs-quiz-external-answers');
-
 
         var emailInput = document.createElement('input');
         emailInput.type = 'email';
@@ -439,7 +440,6 @@ function externalStep() {
         $(emailInput).inputmask({
             alias: 'email',
         });
-
 
         var inputEvent = new Event('input', { bubbles: true });
         emailInput.dispatchEvent(inputEvent);

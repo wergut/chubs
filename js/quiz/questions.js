@@ -885,11 +885,6 @@ function saveQuestionData(questionIndex) {
 }
 
 
-
-document.getElementById('saveButton').addEventListener('click', function () {
-    sendDataToServer(savedData);
-});
-
 function sendDataToServer(data) {
     console.log(data);
     /*
