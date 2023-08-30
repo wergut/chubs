@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-12 d-flex quiz-header">
 
-                    <a href="/" class="logo">
+                    <a href="/" class="logo open-modal-dialog" data-src="modal-dialog-exit">
                         <img src="./img/logo.svg" alt=""/>
                     </a>
                     <div class="quiz-progress">
@@ -69,10 +69,10 @@
                                 <span class="total-step"> 20 </span>
                             </span>
                     </div>
-                    <a href="/" class="back-to-main">Back to main page</a>
+                    <a href="#" class="back-to-main open-modal-dialog" data-src="modal-dialog-exit">Back to main page</a>
 
-                    <a href="/" class="quiz-button quiz-button-close"></a>
-                    <a href="/" class="logo logo-mobile">
+                    <a href="/" class="quiz-button quiz-button-close open-modal-dialog" data-src="modal-dialog-exit"></a>
+                    <a href="/" class="logo logo-mobile open-modal-dialog" data-src="modal-dialog-exit">
                         <img src="./img/logo.svg" alt=""/>
                     </a>
                     <div id="prevBtnMobile" class="quiz-button quiz-button-back"></div>
@@ -148,6 +148,23 @@
     </div>
 </div>
 
+<div class="modal-dialog modal-dialog-centered modal-dialog-exit" style="display: none">
+    <div class="modal-content">
+        <div class="modal-body container-fluid">
+            <div>
+                <div class="title">Are you sure?</div>
+                <p>
+                    Please note that quiz results won't be saved if you proceed with closure.
+                </p>
+                <button type="button" class="modal-close btn-green" data-dismiss="modal" aria-label="Close">
+                    No, continue with quiz
+                </button>
+                <a href="#" class="link-black">Yes, close the quiz</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -157,5 +174,6 @@
 <script src="js/quiz/vendor.js"></script>
 <script src="js/quiz/validation.js"></script>
 <script src="js/quiz/quiz.js"></script>
+<script src="js/quiz/modal.js"></script>
 </body>
 </html>

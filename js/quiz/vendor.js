@@ -225,7 +225,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         var phoneInput = document.createElement('input');
         phoneInput.type = 'tel';
         phoneInput.name = 'phone_' + index;
-        phoneInput.placeholder = '(_ _ _) _ _ _ - _ _ - _ _ ';
+        phoneInput.placeholder = '+1 (___) ___-__-__';
         phoneInput.classList.add('phone');
 
         phoneContainer.appendChild(phoneInput);
