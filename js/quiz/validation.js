@@ -1,3 +1,11 @@
+function validateCurrentStep(currentStep) {
+    if (checkFieldsFilled(currentStep) && checkFieldsValid(currentStep) && checkAttentionRequired(currentStep)) {
+        return true;
+    } else {
+        console.log('Validation failed');
+        return false;
+    }
+}
 
 function checkFieldsFilled(currentStep) {
     var inputs = currentStep.querySelectorAll('input, textarea, select');
@@ -27,7 +35,6 @@ function checkFieldsFilled(currentStep) {
     return check;
 }
 
-
 function checkFieldsValid(currentStep) {
     var inputs = currentStep.querySelectorAll('input, textarea, select');
     var isValid = true;
@@ -56,6 +63,8 @@ function checkFieldsValid(currentStep) {
             input.classList.add('error');
 
         } else if (input.type === 'number') {
+
+
             var minValue = input.getAttribute('min');
             var maxValue = input.getAttribute('max');
             var inputValue = input.value;
@@ -74,6 +83,8 @@ function checkFieldsValid(currentStep) {
                 input.classList.remove('error');
                 input.classList.add('success');
             }
+
+
         } else {
             input.classList.remove('error');
             input.classList.add('success');
@@ -82,7 +93,6 @@ function checkFieldsValid(currentStep) {
 
     return isValid;
 }
-
 
 function hidePreloader() {
     var preloader = document.getElementById('preloader');
@@ -109,7 +119,6 @@ function validateDate(date) {
     var datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(20)\d{2}$/;
     return datePattern.test(date);
 }
-
 
 function checkAttentionRequired(currentQuestion) {
 

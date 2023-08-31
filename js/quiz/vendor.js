@@ -128,9 +128,9 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answerLabel.appendChild(sliderDiv);
         answerLabel.appendChild(hiddenInput);
 
-       // if (window.innerWidth > 768) {
+        if (window.innerWidth > 768) {
             answersDiv.appendChild(answerLabel);
-       // }
+        }
 
         question.answers.forEach(function(answer, i) {
             var radio = document.createElement('input');
@@ -148,9 +148,9 @@ newQuestionnaireData.questions.forEach(function(question, index) {
             answerContainer.classList.add('answer-btn-hidden-pc');
             answerContainer.appendChild(radio);
             answerContainer.appendChild(label);
-         //   if (window.innerWidth < 768) {
+            if (window.innerWidth < 768) {
                 answersDiv.appendChild(answerContainer);
-         //   }
+            }
         });
 
     } else if (question.type === 'select') {
@@ -318,11 +318,11 @@ newQuestionnaireData.questions.forEach(function(question, index) {
     questionHtml.appendChild(fieldset);
     questionnaireContainer.appendChild(questionHtml);
 
-   // if (window.innerWidth > 768) {
+    if (window.innerWidth > 768) {
         if (question.type === 'slider') {
             activateSlider('slider_' + index, index);
         }
-  //  }
+    }
 });
 
 function activateSlider(id,index) {

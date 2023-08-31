@@ -349,15 +349,6 @@ function getUniqueSortedSteps(selectedAnswers) {
     return uniqueSortedSteps;
 }
 
-function validateCurrentStep(currentStep) {
-    if (checkFieldsFilled(currentStep) && checkFieldsValid(currentStep) && checkAttentionRequired(currentStep)) {
-        return true;
-    } else {
-        console.log('Validation failed');
-        return false;
-    }
-}
-
 var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
 answerBtns.forEach(function (btn, index) {
     if (index > 0) {
@@ -372,6 +363,11 @@ answerBtns.forEach(function (btn, index) {
 
             this.classList.add('active');
             this.querySelector('input').checked = true;
+
+
+            btn.querySelector('input').dispatchEvent(new Event('input'));
+            btn.querySelector('input').dispatchEvent(new Event('change'));
+            updateNextButtonState();
         });
     }
 });
@@ -433,7 +429,7 @@ answerBtns.forEach(function (btn) {
             this.classList.add('active');
         }
         this.querySelector('input').dispatchEvent(new Event('input'));
-        this.querySelector('input').dispatchEvent(new Event('change'));  
+        this.querySelector('input').dispatchEvent(new Event('change'));
         updateNextButtonState();
     });
 });
@@ -451,7 +447,6 @@ answerBtnsConsert.forEach(function (btn) {
             this.classList.add('active');
             checkbox.classList.remove('error');
         }
-
         updateNextButtonState();
     });
 });
@@ -507,6 +502,7 @@ window.onload = function () {
     var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn', '.chubs-quiz-answers-type-number .answer-btn');
     answerBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
+            updateNextButtonState();
             handleRadioClick(this);
         });
     });
@@ -535,10 +531,21 @@ function updateNextButtonState() {
     const selectElement = steps[currentStep].querySelector('select');
     const remember = steps[currentStep].querySelector('#remember');
 
+    const numberStep = steps[currentStep].querySelector('chubs-quiz-answers-type-number');
+
+    if (numberStep) {
+        const numInput1 = numberStep.querySelector('.topnumber');
+        const numInput2 = numberStep.querySelector('.bottomnumber');
+
+        if (numInput1.value !== '' && numInput12.value !== '') {
+            nextButton.removeAttribute('disabled');
+        } else {
+            nextButton.setAttribute('disabled', 'disabled');
+        }
+    }
+
     if (remember) {
-        console.log(remember);
         if (remember.checked) {
-            console.log(remember.checked);
             nextButton.removeAttribute('disabled');
         } else {
             nextButton.setAttribute('disabled', 'disabled');
