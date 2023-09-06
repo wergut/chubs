@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="robots" content="nofollow,noindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"/>
+    <link type="image/x-icon" href="img/icons/favicon.svg" rel="shortcut icon">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.bundle.css"/>
+    <link rel="stylesheet" href="css/quiz.css"/>
+    <link rel="stylesheet" href="css/personal.css"/>
+    <title>Chubs - Don’t put your love life on hold</title>
+</head>
+<body>
+
+
+<section class="banner question-logo banner-order">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex quiz-header align-end">
+                <a href="/" class="logo">
+                    <img src="./img/logo.svg" alt=""/>
+                </a>
+                
+                <div class="person-ico">
+                    <img src="./img/icons/person-ico.svg" alt="">
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="personal-menu">
+    <div class="container">
+        <div class="title">Personal account</div>
+        <ul class="personal-navbar">
+            <li>
+                <a href="#">Help</a>
+            </li>
+            <li>
+                <a href="#">Change password</a>
+            </li>
+            <li>
+                <a href="#">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="personal-card">
+    <div class="container">
+        <div class="personal-card-wrapper">
+            <div class="personal-sidebar">
+                <div class="personal-avatar">
+                    <img src="./img/avatar-example.png" alt="">
+                </div>
+                <div class="personal-info">
+                    <div class="personal-name">
+                        Alex Garan
+                        <div class="status">
+                            <img src="./img/icons/done.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="personal-options">
+                        <div class="subscriptions">
+                            <span>2</span> active subscription
+                        </div>
+                        <div class="personal-city">New York</div>
+                        <div class="personal-notifications">
+                            <img src="./img/icons/notification.svg" alt="">
+                            <span>1</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn-green" href="#">Contact Dr. Dolittle</a>
+            </div>
+            <div class="tabs">
+                <div class="tabs__nav">
+                    <button class="tabs__btn">Profile</button>
+                    <button class="tabs__btn tabs__btn_active">Subscriptions</button>
+                    <button class="tabs__btn">Orders</button>
+                    <button class="tabs__btn">Messages</button>
+                    <button class="tabs__btn">Appointments</button>
+                    <button class="tabs__btn">Support</button>
+                </div>
+                <div class="tabs__content">
+                    <div class="tabs__pane">
+
+                    </div>
+                    <div class="tabs__pane tabs__pane_show">
+                        <div class="subscriptions-block">
+                            <h4>Active Subscriptions</h4>
+                        </div>
+                    </div>
+                    <div class="tabs__pane">
+
+                    </div>
+                    <div class="tabs__pane">
+
+                    </div>
+                    <div class="tabs__pane">
+
+                    </div>
+                    <div class="tabs__pane">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    class ItcTabs {
+        constructor(target, config) {
+            const defaultConfig = {};
+            this._config = Object.assign(defaultConfig, config);
+            this._elTabs = typeof target === 'string' ? document.querySelector(target) : target;
+            this._elButtons = this._elTabs.querySelectorAll('.tabs__btn');
+            this._elPanes = this._elTabs.querySelectorAll('.tabs__pane');
+            this._eventShow = new Event('tab.itc.change');
+            this._init();
+            this._events();
+        }
+        _init() {
+            this._elTabs.setAttribute('role', 'tablist');
+            this._elButtons.forEach((el, index) => {
+                el.dataset.index = index;
+                el.setAttribute('role', 'tab');
+                this._elPanes[index].setAttribute('role', 'tabpanel');
+            });
+        }
+        show(elLinkTarget) {
+            const elPaneTarget = this._elPanes[elLinkTarget.dataset.index];
+            const elLinkActive = this._elTabs.querySelector('.tabs__btn_active');
+            const elPaneShow = this._elTabs.querySelector('.tabs__pane_show');
+            if (elLinkTarget === elLinkActive) {
+                return;
+            }
+            elLinkActive ? elLinkActive.classList.remove('tabs__btn_active') : null;
+            elPaneShow ? elPaneShow.classList.remove('tabs__pane_show') : null;
+            elLinkTarget.classList.add('tabs__btn_active');
+            elPaneTarget.classList.add('tabs__pane_show');
+            this._elTabs.dispatchEvent(this._eventShow);
+            elLinkTarget.focus();
+        }
+        showByIndex(index) {
+            const elLinkTarget = this._elButtons[index];
+            elLinkTarget ? this.show(elLinkTarget) : null;
+        };
+        _events() {
+            this._elTabs.addEventListener('click', (e) => {
+                const target = e.target.closest('.tabs__btn');
+                if (target) {
+                    e.preventDefault();
+                    this.show(target);
+                }
+            });
+        }
+    }
+
+    const tabs = document.querySelectorAll('.tabs');
+    for (let i = 0, length = tabs.length; i < length; i++) {
+        new ItcTabs(tabs[i]);
+    }
+</script>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-m-6">
+                <a href="/" class="footer-logo">
+                    <img src="./img/footer-logo.svg" alt="">
+                </a>
+            </div>
+            <div class="col-4 col-m-6">
+                <div class="footer-socials">
+                    <a class="ico" href="#"></a>
+                    <a class="ico" href="#"></a>
+                    <a class="ico" href="#"></a>
+                    <a class="ico" href="#"></a>
+                </div>
+            </div>
+            <div class="col-4 col-m-12">
+                <div class="footer-contacts">
+                    <a href="mailto:info@vitalityhrt.com" class="contact-link mail">info@vitalityhrt.com</a>
+                    <a href="tel:(866) 926-3821" class="contact-link phone">(866) 926-3821</a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="footer-info">
+                    <div class="footer-policy"><a href="#">PRIVACY POLICY</a> | <a href="#">TERMS OF SERVICE</a></div>
+                    <div class="footer-copy">COPYRIGHT © 2022</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+</body>
+</html>
