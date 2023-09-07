@@ -24,9 +24,20 @@
 
 .personal-card {
     margin-bottom: 40px;
+    display: flex;
+    width: 100%;
 }
 
 .personal-card .personal-card-wrapper {
+    width: 100%;
+    overflow: hidden;
+    max-width: 60%;
+    margin-right: 15px;
+}
+
+.personal-card .right-sidebar {
+    max-width: 40%;
+    margin-left: 15px;
     width: 100%;
 }
 
@@ -151,36 +162,11 @@
     background: #fff;
 }
 
-.personal-card:has(.right-sidebar) .personal-card-wrapper .personal-avatar {
-    width: 129px;
-}
-
-.personal-card:has(.right-sidebar) .personal-card-wrapper .personal-info {
-    width: calc(100% - 159px);
-}
-
-.personal-card:has(.right-sidebar) .personal-card-wrapper .personal-info .personal-notifications {
-    margin-left: auto;
-}
-
 .personal-card .right-sidebar {
     border-radius: 20px;
     background: #FBFBFB;
     padding: 40px 30px 44px;
     height: 100%;
-}
-
-.personal-card:has(.right-sidebar) [class*="col"] {
-    padding: 0 15px;
-}
-
-.personal-card:has(.right-sidebar) .row {
-    width: calc(100% + 30px);
-    margin: 0 -15px;
-}
-
-.personal-card:has(.right-sidebar) .tabs .tabs__btn:not(:first-of-type) {
-    margin-left: 15px;
 }
 
 .personal-card .right-sidebar form {
@@ -410,6 +396,7 @@
 
 .medications-taken-slider {
     position: relative;
+    padding-bottom: 20px;
 }
 
 .medications-taken-slider:after {
