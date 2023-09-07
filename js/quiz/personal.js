@@ -4,6 +4,15 @@ var swiper = new Swiper(".sidebar-slider", {
     },
 });
 
+var swiper1 = new Swiper(".medications-taken-slider", {
+    spaceBetween: 30,
+    slidesPerView: 1.75,
+    pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+    },
+});
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -112,27 +121,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardContent = document.querySelector('.card-content');
     const cardNumber = cardContent.textContent;
 
-    // Скрываем элемент .card-content изначально
     cardContent.style.visibility = 'hidden';
 
-    // Проверка, что карта имеет хотя бы 16 символов
     if (cardNumber.replace(/\s+/g, '').length >= 16) {
         const visibleDigits = 4;
         const maskedChars = '●';
         const cardNumberWithoutSpaces = cardNumber.replace(/\s+/g, '');
 
         const maskedPart = cardNumberWithoutSpaces
-            .slice(0, -visibleDigits) // Получаем все символы, кроме последних 4
-            .replace(/\d/g, maskedChars); // Заменяем все цифры символами "●"
+            .slice(0, -visibleDigits)
+            .replace(/\d/g, maskedChars);
 
-        const visiblePart = cardNumberWithoutSpaces.slice(-visibleDigits); // Получаем последние 4 символа
+        const visiblePart = cardNumberWithoutSpaces.slice(-visibleDigits);
 
-        const maskedCardNumber = maskedPart + visiblePart; // Соединяем маскированную и видимую части
-        const formattedCardNumber = maskedCardNumber.replace(/(.{4})/g, '$1 '); // Добавляем пробелы каждые 4 символа
+        const maskedCardNumber = maskedPart + visiblePart;
+        const formattedCardNumber = maskedCardNumber.replace(/(.{4})/g, '$1 ');
 
         cardContent.textContent = formattedCardNumber;
 
-        // Делаем элемент .card-content видимым
         cardContent.style.visibility = 'visible';
     }
 });

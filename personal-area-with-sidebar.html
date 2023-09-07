@@ -15,6 +15,7 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/rateit.min.css">
     <link rel="stylesheet" href="css/style.bundle.css"/>
     <link rel="stylesheet" href="css/quiz.css"/>
     <link rel="stylesheet" href="css/personal.css"/>
@@ -97,7 +98,40 @@
                         </div>
                         <div class="tabs__content">
                             <div class="tabs__pane tabs__pane_show">
-
+                                <div class="medications-taken">
+                                    <h4>Medications taken</h4>
+                                    <div class="medications-taken-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="option-card">
+                                                    <div class="rating">
+                                                        <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                        </div>
+                                                    </div>
+                                                    <div class="option-card-content">
+                                                        <p>Tadalafil</p>
+                                                        <h3>Generic Cialis</h3>
+                                                        <a href="#" class="btn-green">Manual</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="option-card">
+                                                    <div class="rating">
+                                                        <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                        </div>
+                                                    </div>
+                                                    <div class="option-card-content">
+                                                        <p>Tadalafil</p>
+                                                        <h3>Generic Cialis</h3>
+                                                        <a href="#" class="btn-green">Manual</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tabs__pane">
                                 <div class="subscriptions-block">
@@ -135,7 +169,7 @@
                                                     <p class="input-text">email@mail.com</p>
                                                     <div class="edit-button"></div>
                                                     <div class="edit-form" style="display: none;">
-                                                        <input id="email" type="text" class="edited-text" name="firstname" placeholder="Email">
+                                                        <input id="email1" type="text" class="edited-text" name="firstname" placeholder="Email">
                                                     </div>
                                                 </div>
                                             </div>
@@ -145,7 +179,7 @@
                                                     <p class="input-text">+1 234 567 89 01</p>
                                                     <div class="edit-button"></div>
                                                     <div class="edit-form" style="display: none;">
-                                                        <input id="phone" type="text" class="edited-text" name="phone" placeholder="+1 234 567 89 01">
+                                                        <input id="phone1" type="text" class="edited-text" name="phone" placeholder="+1 234 567 89 01">
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,7 +189,7 @@
                                                     <p class="input-text">email@mail.com</p>
                                                     <div class="edit-button"></div>
                                                     <div class="edit-form" style="display: none;">
-                                                        <input id="first-name" type="text" class="edited-text" name="firstname" placeholder="Junuary 11, 2001">
+                                                        <input id="first-name1" type="text" class="edited-text" name="firstname" placeholder="Junuary 11, 2001">
                                                     </div>
                                                 </div>
                                             </div>
@@ -242,6 +276,9 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
+            <div class="col-12">
+                <p class="personal-footer-description">You agreed to the <a href="#">Telehealth Consent & Open Payments</a> notice on 05/17/2023.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -279,6 +316,8 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/jquery.rateit.min.js"></script>
 <script src="js/quiz/personal.js"></script>
 
 </body>

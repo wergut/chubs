@@ -15,6 +15,7 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/rateit.min.css">
     <link rel="stylesheet" href="css/style.bundle.css"/>
     <link rel="stylesheet" href="css/quiz.css"/>
     <link rel="stylesheet" href="css/personal.css"/>
@@ -95,86 +96,629 @@
                     <button class="tabs__btn">Support</button>
                 </div>
                 <div class="tabs__content">
-                    <div class="tabs__pane">
+                    <div class="tabs__pane tab-profile">
 
                     </div>
-                    <div class="tabs__pane tabs__pane_show">
-                        <div class="subscriptions-block">
-                            <h4>Active Subscriptions</h4>
+                    <div class="tabs__pane tabs__pane_show subscriptions-block">
+                        <div class="active-options">
+                            <div class="row">
+                                <div class="col-12"><h4>Active Subscriptions</h4></div>
+                                <div class="col-6">
+                                    <div class="option-card">
+                                        <div class="rating">
+                                            <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                            </div>
+                                        </div>
+                                        <div class="option-card-content">
+                                            <p>Tadalafil</p>
+                                            <h3>Generic Viagra</h3>
+                                            <p class="option-weight">
+                                                <span>50 mg</span>
+                                                <span>12 dose</span>
+                                                <a href="#" class="link-card">How to Use</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="option-card option-card-order">
+                                        <div class="card-order-column">
+                                            <div class="subtitle">Next order date</div>
+                                            <div class="title">23 December 2023</div>
+                                            <div class="title">Details</div>
+                                            <p>Start subscription</p>
+                                            <p class="date">2 September 2021</p>
+                                            <a class="change-delivery" href="#">Change delivery</a>
+                                        </div>
+                                        <div class="card-order-column">
+                                            <div class="subtitle">Dosage</div>
+                                            <div class="title">50 mg / 12 use</div>
+                                            <a href="#" class="link-card">More about order</a>
+                                            <p>Payment card</p>
+                                            <div class="card-wrapper">
+                                                <div class="card-content">
+                                                    1234 1234 1234 1234
+                                                </div>
+                                                <div class="card-logo">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="9" viewBox="0 0 25 9" fill="none">
+                                                        <path d="M12.3784 0.641307L10.7082 8.37853H8.68792L10.3583 0.641307H12.3784ZM20.8773 5.63733L21.9406 2.73184L22.5525 5.63733H20.8773ZM23.132 8.37853H25L23.3681 0.641307H21.645C21.2567 0.641307 20.9293 0.864403 20.7844 1.20845L17.7533 8.37853H19.8748L20.296 7.22302H22.8874L23.132 8.37853ZM17.8585 5.85259C17.8673 3.81061 15.0096 3.69749 15.0288 2.78509C15.0349 2.50787 15.3019 2.21256 15.8853 2.13703C16.1746 2.10014 16.9728 2.07021 17.8776 2.48334L18.2315 0.841955C17.7455 0.667758 17.1201 0.5 16.3419 0.5C14.3449 0.5 12.94 1.5511 12.9288 3.05744C12.916 4.17136 13.9323 4.79245 14.6965 5.16346C15.4843 5.54266 15.7483 5.78577 15.7444 6.12459C15.739 6.6437 15.1162 6.87358 14.5363 6.88228C13.5201 6.89795 12.9311 6.61011 12.4616 6.39328L12.0949 8.08948C12.5677 8.30388 13.4388 8.49043 14.3408 8.5C16.464 8.5 17.8521 7.46126 17.8585 5.85259ZM9.49177 0.641307L6.21861 8.37853H4.08351L2.47266 2.20368C2.37501 1.82397 2.28983 1.6844 1.99284 1.52395C1.50706 1.26257 0.705143 1.01807 0 0.86597L0.0477711 0.641307H3.48515C3.92298 0.641307 4.31692 0.93001 4.4172 1.4298L5.26811 5.90741L7.36949 0.641307H9.49177Z" fill="#B7B7B7"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="reactivate-link">Reactivate subscription</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="option-request">
+                                        <p>Did <b>Generic Viagra</b> suit you?</p>
+                                        <a class="request-btn btn-like" href="#"></a>
+                                        <a class="request-btn btn-dislike" href="#"></a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="option-card">
+                                        <div class="rating">
+                                            <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                            </div>
+                                        </div>
+                                        <div class="option-card-content">
+                                            <p>Tadalafil</p>
+                                            <h3>Generic Viagra</h3>
+                                            <p class="option-weight">
+                                                <span>50 mg</span>
+                                                <span>12 dose</span>
+                                                <a href="#" class="link-card">How to Use</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="option-card option-card-order">
+                                        <div class="card-order-column">
+                                            <div class="subtitle">Next order date</div>
+                                            <div class="title">23 December 2023</div>
+                                            <div class="title">Details</div>
+                                            <p>Start subscription</p>
+                                            <p class="date">2 September 2021</p>
+                                            <a class="change-delivery" href="#">Change delivery</a>
+                                        </div>
+                                        <div class="card-order-column">
+                                            <div class="subtitle">Dosage</div>
+                                            <div class="title">50 mg / 12 use</div>
+                                            <a href="#" class="link-card">More about order</a>
+                                            <p>Payment card</p>
+                                            <div class="card-wrapper">
+                                                <div class="card-content">
+                                                    1234 1234 1234 1234
+                                                </div>
+                                                <div class="card-logo">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="9" viewBox="0 0 25 9" fill="none">
+                                                        <path d="M12.3784 0.641307L10.7082 8.37853H8.68792L10.3583 0.641307H12.3784ZM20.8773 5.63733L21.9406 2.73184L22.5525 5.63733H20.8773ZM23.132 8.37853H25L23.3681 0.641307H21.645C21.2567 0.641307 20.9293 0.864403 20.7844 1.20845L17.7533 8.37853H19.8748L20.296 7.22302H22.8874L23.132 8.37853ZM17.8585 5.85259C17.8673 3.81061 15.0096 3.69749 15.0288 2.78509C15.0349 2.50787 15.3019 2.21256 15.8853 2.13703C16.1746 2.10014 16.9728 2.07021 17.8776 2.48334L18.2315 0.841955C17.7455 0.667758 17.1201 0.5 16.3419 0.5C14.3449 0.5 12.94 1.5511 12.9288 3.05744C12.916 4.17136 13.9323 4.79245 14.6965 5.16346C15.4843 5.54266 15.7483 5.78577 15.7444 6.12459C15.739 6.6437 15.1162 6.87358 14.5363 6.88228C13.5201 6.89795 12.9311 6.61011 12.4616 6.39328L12.0949 8.08948C12.5677 8.30388 13.4388 8.49043 14.3408 8.5C16.464 8.5 17.8521 7.46126 17.8585 5.85259ZM9.49177 0.641307L6.21861 8.37853H4.08351L2.47266 2.20368C2.37501 1.82397 2.28983 1.6844 1.99284 1.52395C1.50706 1.26257 0.705143 1.01807 0 0.86597L0.0477711 0.641307H3.48515C3.92298 0.641307 4.31692 0.93001 4.4172 1.4298L5.26811 5.90741L7.36949 0.641307H9.49177Z" fill="#B7B7B7"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="reactivate-link">Reactivate subscription</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chub-similar-options">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="title-block">
+                                        <h4>Another Treatments options</h4>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-m-12">
+                                    <div class="option-card">
+                                        <div class="rating">
+                                            <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                            </div>
+                                        </div>
+                                        <div class="option-card-content">
+                                            <p>Tadalafil</p>
+                                            <h3>Generic Cialis</h3>
+                                            <a href="chub-shipping.html" class="btn-green">From $7.25/use</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-m-12">
+                                    <div class="option-card">
+                                        <div class="rating">
+                                            <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                            </div>
+                                        </div>
+                                        <div class="option-card-content">
+                                            <p>Tadalafil</p>
+                                            <h3>Generic Cialis</h3>
+                                            <a href="chub-shipping.html" class="btn-green">From $7.25/use</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-m-12">
+                                    <div class="option-card">
+                                        <div class="rating">
+                                            <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                            </div>
+                                        </div>
+                                        <div class="option-card-content">
+                                            <p>Tadalafil</p>
+                                            <h3>Generic Cialis</h3>
+                                            <a href="chub-shipping.html" class="btn-green">From $7.25/use</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="completed-subscriptions">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4>Completed subscriptions</h4>
+                                </div>
+                                <div class="col-6">
+                                    <div class="option-card">
+                                        <div class="rating">
+                                            <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                            </div>
+                                        </div>
+                                        <div class="option-card-content">
+                                            <p>Tadalafil</p>
+                                            <h3>Generic Viagra</h3>
+                                            <p class="option-weight">
+                                                <span>50 mg</span>
+                                                <span>12 dose</span>
+                                                <a href="#" class="link-card">Repeat order</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="option-card">
+                                        <div class="rating">
+                                            <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                            </div>
+                                        </div>
+                                        <div class="option-card-content">
+                                            <p>Tadalafil</p>
+                                            <h3>Generic Viagra</h3>
+                                            <p class="option-weight">
+                                                <span>50 mg</span>
+                                                <span>12 dose</span>
+                                                <a href="#" class="link-card">Repeat order</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="tabs__pane">
+                    <div class="tabs__pane tab-orders">
+                        <h4>Orders</h4>
+                        <div class="orders-list">
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-title">Generic Viagra</div>
+                                    <div class="order-status">Pending consultation
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.415 16 16 12.415 16 8C16 3.585 12.415 0 8 0C3.585 0 0 3.585 0 8C0 12.415 3.585 16 8 16ZM8.999 5C8.999 5.552 8.551 6 7.999 6C7.447 6 6.999 5.552 6.999 5C6.999 4.448 7.447 4 7.999 4C8.551 4 8.999 4.448 8.999 5ZM8.999 11C8.999 11.552 8.551 12 7.999 12C7.447 12 6.999 11.552 6.999 11V8C6.999 7.448 7.447 7 7.999 7C8.551 7 8.999 7.448 8.999 8V11Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="order-description">
+                                    <div class="address">
+                                        <div class="title-cm">Shipping address</div>
+                                        <div class="subtitle-cm">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <p>Boca Raton, FL, United States, 33432-6104</p>
+                                    </div>
+                                    <div class="tracking">
+                                        <div class="title-cm">Tracking number</div>
+                                        <div class="subtitle-cm">Waiting</div>
+                                    </div>
+                                </div>
+                                <ul class="order-navigation">
+                                   <li>
+                                       <a href="#">Change refill date</a>
+                                   </li>
+                                   <li>
+                                       <a href="#">Change order</a>
+                                   </li>
+                                   <li>
+                                       <a href="#">Change shipping address</a>
+                                   </li>
+                                   <li>
+                                       <a href="#">Leave a comment</a>
+                                   </li>
+                                   <li>
+                                       <a href="#">Cancel the order</a>
+                                   </li>
+                                </ul>
+                                <div class="order-time-info">
+                                    <div class="order-time-item">
+                                        <p>Order created</p>
+                                        <p>Jun 27, 2023</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Order number</p>
+                                        <p>gDyyUtkdOi</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Total price</p>
+                                        <p>$70</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-title">Generic Viagra</div>
+                                    <div class="order-status wait">Awaiting Shippment
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.415 16 16 12.415 16 8C16 3.585 12.415 0 8 0C3.585 0 0 3.585 0 8C0 12.415 3.585 16 8 16ZM8.999 5C8.999 5.552 8.551 6 7.999 6C7.447 6 6.999 5.552 6.999 5C6.999 4.448 7.447 4 7.999 4C8.551 4 8.999 4.448 8.999 5ZM8.999 11C8.999 11.552 8.551 12 7.999 12C7.447 12 6.999 11.552 6.999 11V8C6.999 7.448 7.447 7 7.999 7C8.551 7 8.999 7.448 8.999 8V11Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="order-description">
+                                    <div class="address">
+                                        <div class="title-cm">Shipping address</div>
+                                        <div class="subtitle-cm">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <p>Boca Raton, FL, United States, 33432-6104</p>
+                                    </div>
+                                    <div class="tracking">
+                                        <div class="title-cm">Tracking number</div>
+                                        <div class="subtitle-cm">Waiting</div>
+                                    </div>
+                                </div>
+                                <ul class="order-navigation">
+                                    <li>
+                                        <a href="#">Change refill date</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change order</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change shipping address</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Leave a comment</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cancel the order</a>
+                                    </li>
+                                </ul>
+                                <div class="order-time-info">
+                                    <div class="order-time-item">
+                                        <p>Order created</p>
+                                        <p>Jun 27, 2023</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Order number</p>
+                                        <p>gDyyUtkdOi</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Total price</p>
+                                        <p>$70</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-title">Generic Viagra</div>
+                                    <div class="order-status shipped">Shipped
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.415 16 16 12.415 16 8C16 3.585 12.415 0 8 0C3.585 0 0 3.585 0 8C0 12.415 3.585 16 8 16ZM8.999 5C8.999 5.552 8.551 6 7.999 6C7.447 6 6.999 5.552 6.999 5C6.999 4.448 7.447 4 7.999 4C8.551 4 8.999 4.448 8.999 5ZM8.999 11C8.999 11.552 8.551 12 7.999 12C7.447 12 6.999 11.552 6.999 11V8C6.999 7.448 7.447 7 7.999 7C8.551 7 8.999 7.448 8.999 8V11Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="order-description">
+                                    <div class="address">
+                                        <div class="title-cm">Shipping address</div>
+                                        <div class="subtitle-cm">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <p>Boca Raton, FL, United States, 33432-6104</p>
+                                    </div>
+                                    <div class="tracking">
+                                        <div class="title-cm">Tracking number</div>
+                                        <div class="subtitle-cm">Waiting</div>
+                                    </div>
+                                </div>
+                                <ul class="order-navigation">
+                                    <li>
+                                        <a href="#">Change refill date</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change order</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change shipping address</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Leave a comment</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cancel the order</a>
+                                    </li>
+                                </ul>
+                                <div class="order-time-info">
+                                    <div class="order-time-item">
+                                        <p>Order created</p>
+                                        <p>Jun 27, 2023</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Order number</p>
+                                        <p>gDyyUtkdOi</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Total price</p>
+                                        <p>$70</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-title">Generic Viagra</div>
+                                    <div class="order-status completed">Completed
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.415 16 16 12.415 16 8C16 3.585 12.415 0 8 0C3.585 0 0 3.585 0 8C0 12.415 3.585 16 8 16ZM8.999 5C8.999 5.552 8.551 6 7.999 6C7.447 6 6.999 5.552 6.999 5C6.999 4.448 7.447 4 7.999 4C8.551 4 8.999 4.448 8.999 5ZM8.999 11C8.999 11.552 8.551 12 7.999 12C7.447 12 6.999 11.552 6.999 11V8C6.999 7.448 7.447 7 7.999 7C8.551 7 8.999 7.448 8.999 8V11Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="order-description">
+                                    <div class="address">
+                                        <div class="title-cm">Shipping address</div>
+                                        <div class="subtitle-cm">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <p>Boca Raton, FL, United States, 33432-6104</p>
+                                    </div>
+                                    <div class="tracking">
+                                        <div class="title-cm">Tracking number</div>
+                                        <div class="subtitle-cm">Waiting</div>
+                                    </div>
+                                </div>
+                                <ul class="order-navigation">
+                                    <li>
+                                        <a href="#">Change refill date</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change order</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change shipping address</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Leave a comment</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cancel the order</a>
+                                    </li>
+                                </ul>
+                                <div class="order-time-info">
+                                    <div class="order-time-item">
+                                        <p>Order created</p>
+                                        <p>Jun 27, 2023</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Order number</p>
+                                        <p>gDyyUtkdOi</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Total price</p>
+                                        <p>$70</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-title">Generic Viagra</div>
+                                    <div class="order-status cancelled">Cancelled
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.415 16 16 12.415 16 8C16 3.585 12.415 0 8 0C3.585 0 0 3.585 0 8C0 12.415 3.585 16 8 16ZM8.999 5C8.999 5.552 8.551 6 7.999 6C7.447 6 6.999 5.552 6.999 5C6.999 4.448 7.447 4 7.999 4C8.551 4 8.999 4.448 8.999 5ZM8.999 11C8.999 11.552 8.551 12 7.999 12C7.447 12 6.999 11.552 6.999 11V8C6.999 7.448 7.447 7 7.999 7C8.551 7 8.999 7.448 8.999 8V11Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="order-description">
+                                    <div class="address">
+                                        <div class="title-cm">Shipping address</div>
+                                        <div class="subtitle-cm">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <p>Boca Raton, FL, United States, 33432-6104</p>
+                                    </div>
+                                    <div class="tracking">
+                                        <div class="title-cm">Tracking number</div>
+                                        <div class="subtitle-cm">Waiting</div>
+                                    </div>
+                                </div>
+                                <ul class="order-navigation">
+                                    <li>
+                                        <a href="#">Change refill date</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change order</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change shipping address</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Leave a comment</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cancel the order</a>
+                                    </li>
+                                </ul>
+                                <div class="order-time-info">
+                                    <div class="order-time-item">
+                                        <p>Order created</p>
+                                        <p>Jun 27, 2023</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Order number</p>
+                                        <p>gDyyUtkdOi</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Total price</p>
+                                        <p>$70</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-title">Generic Viagra</div>
+                                    <div class="order-status cancelled">Cancelled and refunded
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.415 16 16 12.415 16 8C16 3.585 12.415 0 8 0C3.585 0 0 3.585 0 8C0 12.415 3.585 16 8 16ZM8.999 5C8.999 5.552 8.551 6 7.999 6C7.447 6 6.999 5.552 6.999 5C6.999 4.448 7.447 4 7.999 4C8.551 4 8.999 4.448 8.999 5ZM8.999 11C8.999 11.552 8.551 12 7.999 12C7.447 12 6.999 11.552 6.999 11V8C6.999 7.448 7.447 7 7.999 7C8.551 7 8.999 7.448 8.999 8V11Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="order-description">
+                                    <div class="address">
+                                        <div class="title-cm">Shipping address</div>
+                                        <div class="subtitle-cm">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <p>Boca Raton, FL, United States, 33432-6104</p>
+                                    </div>
+                                    <div class="tracking">
+                                        <div class="title-cm">Tracking number</div>
+                                        <div class="subtitle-cm">Waiting</div>
+                                    </div>
+                                </div>
+                                <ul class="order-navigation">
+                                    <li>
+                                        <a href="#">Change refill date</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change order</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Change shipping address</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Leave a comment</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cancel the order</a>
+                                    </li>
+                                </ul>
+                                <div class="order-time-info">
+                                    <div class="order-time-item">
+                                        <p>Order created</p>
+                                        <p>Jun 27, 2023</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Order number</p>
+                                        <p>gDyyUtkdOi</p>
+                                    </div>
+                                    <div class="order-time-item">
+                                        <p>Total price</p>
+                                        <p>$70</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__pane tab-messages">
 
                     </div>
-                    <div class="tabs__pane">
+                    <div class="tabs__pane tab-appointments">
 
                     </div>
-                    <div class="tabs__pane">
+                    <div class="tabs__pane tab-support">
+                        <div class="faq">
+                            <div class="row">
+                                <div class="col-6 col-md-12 col-m-12">
+                                    <h3 class="h3">Support</h3>
+                                    <div class="form-wrapper">
+                                        <form action="#">
+                                            <div class="form-title">Ask your question
 
-                    </div>
-                    <div class="tabs__pane">
-
+                                            </div>
+                                            <div class="form-desc">
+                                                <p>
+                                                    We will reply to you soon
+                                                </p>
+                                            </div>
+                                            <div class="inputs-wrapper">
+                                                <input name="subject" type="text" placeholder="Subject of the appeal" />
+                                            </div>
+                                            <div class="textarea-wrapper">
+                                                <textarea name="comment" id="" cols="30" rows="5" placeholder="Write your question" required></textarea>
+                                            </div>
+                                            <div class="send-wrapper">
+                                                <div class="desc">
+                                                    <p>You will receive the answer to your question by the email you provided during registration</p>
+                                                </div>
+                                                <button type="submit" class="btn-green">Send</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-12 col-m-12">
+                                    <h5>FAQ</h5>
+                                    <div id="accordion2" class="accordion">
+                                        <div class="accordion-item show" data-id="1">
+                                            <div class="accordion-item-header">
+                                                What ED treatments are there?
+                                            </div>
+                                            <div class="accordion-item-content">
+                                                <p>
+                                                    Between 63% and 82% of patients reported an improvement in their erections after taking prescribed ED medications. Other PDE5 inhibitors work in a similar way in the body and are also effective. In fact, PDE5 inhibitors are considered one of the mainstays of ED treatment by the American Urological Association.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item" data-id="2">
+                                            <div class="accordion-item-header">
+                                                What are the symptoms of ED?
+                                            </div>
+                                            <div class="accordion-item-content">
+                                                <p>
+                                                    Symptoms of male sexual dysfunction include:
+                                                </p>
+                                                <ul>
+                                                    <li>difficulty getting and/or maintaining an erection</li>
+                                                    <li>loss of interest in sexual activity</li>
+                                                    <li>painful erections (Peyronie's disease)</li>
+                                                </ul>
+                                                <p>
+                                                    Learn more about the <a href="https://www.forhims.com/blog/erectile-dysfunction-symptoms-causes-treatments">symptoms of erectile dysfunction</a> in our guide
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item" data-id="3">
+                                            <div class="accordion-item-header">
+                                                How do ED pills work?
+                                            </div>
+                                            <div class="accordion-item-content">
+                                                <p>
+                                                    Get stimulated and the pills can take it from there.
+                                                    Sexual arousal triggers a response in your body that then triggers nitric oxide production, which relaxes the blood vessels and smooth muscle in the penis. This lets blood rush into the base of the penis, which gets hard as a result. There is an enzyme in the penis called phosphodiesterase that shuts this process off when sex is over. ED pills work by blocking PDE5 and preventing this shut-off. That keeps your erection going longer and stronger.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item" data-id="4">
+                                            <div class="accordion-item-header">
+                                                What is the most effective pill for ED?
+                                            </div>
+                                            <div class="accordion-item-content">
+                                                <p>
+                                                    The most effective pill must work in concert with your body, nervous system, lifestyle and even your mental health. Although all PDE5 inhibitors have all been clinically proven to be effective for treating ED, some may act faster, last longer, work regardless of food intake, etc. With enough information, a qualified medical provider can help you find an ED medication and dosage that is right for you. You may connect with providers and receive ongoing care through our platform.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item" data-id="5">
+                                            <div class="accordion-item-header">
+                                                Can low testosterone cause ED?
+                                            </div>
+                                            <div class="accordion-item-content">
+                                                <p>
+                                                    Yes, <a href="https://www.forhims.com/blog/the-low-down-on-testosterone-and-its-role-in-erectile-dysfunction">low testosterone levels</a> can cause ED in some men. However, the threshold level of testosterone needed to maintain normal erectile function is actually fairly low. Although testosterone deficiency is a common condition, most affected men have symptoms other than erectile dysfunction. You should be evaluated for testosterone deficiency if you have ED and have noticed that you are more fatigued than you would expect, have low desire, and/or trouble maintaining your muscle mass. Testosterone deficiency is not likely to be the cause of ED in men with normal sexual desire, energy and physical strength.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<script>
-    class ItcTabs {
-        constructor(target, config) {
-            const defaultConfig = {};
-            this._config = Object.assign(defaultConfig, config);
-            this._elTabs = typeof target === 'string' ? document.querySelector(target) : target;
-            this._elButtons = this._elTabs.querySelectorAll('.tabs__btn');
-            this._elPanes = this._elTabs.querySelectorAll('.tabs__pane');
-            this._eventShow = new Event('tab.itc.change');
-            this._init();
-            this._events();
-        }
-        _init() {
-            this._elTabs.setAttribute('role', 'tablist');
-            this._elButtons.forEach((el, index) => {
-                el.dataset.index = index;
-                el.setAttribute('role', 'tab');
-                this._elPanes[index].setAttribute('role', 'tabpanel');
-            });
-        }
-        show(elLinkTarget) {
-            const elPaneTarget = this._elPanes[elLinkTarget.dataset.index];
-            const elLinkActive = this._elTabs.querySelector('.tabs__btn_active');
-            const elPaneShow = this._elTabs.querySelector('.tabs__pane_show');
-            if (elLinkTarget === elLinkActive) {
-                return;
-            }
-            elLinkActive ? elLinkActive.classList.remove('tabs__btn_active') : null;
-            elPaneShow ? elPaneShow.classList.remove('tabs__pane_show') : null;
-            elLinkTarget.classList.add('tabs__btn_active');
-            elPaneTarget.classList.add('tabs__pane_show');
-            this._elTabs.dispatchEvent(this._eventShow);
-            elLinkTarget.focus();
-        }
-        showByIndex(index) {
-            const elLinkTarget = this._elButtons[index];
-            elLinkTarget ? this.show(elLinkTarget) : null;
-        };
-        _events() {
-            this._elTabs.addEventListener('click', (e) => {
-                const target = e.target.closest('.tabs__btn');
-                if (target) {
-                    e.preventDefault();
-                    this.show(target);
-                }
-            });
-        }
-    }
-
-    const tabs = document.querySelectorAll('.tabs');
-    for (let i = 0, length = tabs.length; i < length; i++) {
-        new ItcTabs(tabs[i]);
-    }
-</script>
 
 
 <footer class="footer">
@@ -209,8 +753,11 @@
     </div>
 </footer>
 
+<script src="js/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/jquery.rateit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
+<script src="js/quiz/personal.js"></script>
 
 </body>
 </html>
