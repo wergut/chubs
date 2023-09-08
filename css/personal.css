@@ -188,24 +188,9 @@
     flex-wrap: wrap;
 }
 
-.personal-card .right-sidebar .input-js {
-    max-width: initial;
-    width: initial;
-}
-
-.personal-card .right-sidebar .mt-40 {
-    margin-top: 40px;
-}
-
-.personal-card .right-sidebar .input-js .edit-form {
-    position: absolute;
-    left: 0;
-}
-
 .personal-card .right-sidebar .input-js .edit-button {
     background-image: url("../img/icons/edit-btn-grey.svg");
     display: none;
-    right: -20px;
 }
 
 .personal-card .right-sidebar .input-item:hover .edit-button {
@@ -230,6 +215,7 @@
     font-weight: 600;
     line-height: normal;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .tabs__nav {
@@ -973,10 +959,16 @@ b {
 
 .subscriptions-block .subscription-details .inputs-wrapper {
     display: flex;
+    margin-bottom: 0;
+    width: 100%;
 }
 
 .subscriptions-block .subscription-details .inputs-wrapper .inputs-column {
-    width: 50%;
+    width: 55%;
+}
+
+.subscriptions-block .subscription-details .inputs-wrapper .inputs-column:nth-of-type(2) {
+    width: 45%;
 }
 
 .subscriptions-block .subscription-details .input-text {
@@ -988,4 +980,45 @@ b {
     max-width: 340px;
     overflow: hidden;
     max-height: 20px;
+}
+
+.subscriptions-block .subscription-details .btn-black-reactivate {
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 50px;
+    background: #141414;
+    height: 40px;
+    max-width: 370px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscriptions-block .subscription-sidebar {
+    margin-top: 30px;
+    height: initial;
+    margin-bottom: 80px;
+}
+
+.input-js .edit-form {
+    z-index: 1;
+}
+
+.subscriptions-block .subscription-sidebar .sidebar-content-payment {
+    margin-bottom: 50px;
+}
+
+.subscriptions-block .subscription-sidebar .sidebar-content-payment .input-js {
+    position: relative;
+}
+
+.subscriptions-block .subscription-sidebar .sidebar-content-payment .card-logo {
+    position: absolute;
+    top: 5px;
+    right: 47%;
+    z-index: 0;
 }
