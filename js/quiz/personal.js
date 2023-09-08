@@ -16,47 +16,33 @@ var swiper1 = new Swiper(".medications-taken-slider", {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const infoBlocks = document.querySelectorAll('.input-js');
+    const linkSubscriptionMores = document.querySelectorAll('.link-subscription-more');
+    const btnSubscriptionsBacks = document.querySelectorAll('.btn-subscriptions-back');
+    const subscriptionDetails = document.querySelectorAll('.subscription-details');
+    const toggleBlock = document.querySelectorAll('.toggle-block');
 
-    infoBlocks.forEach(function (infoBlock, index, array) {
-        const infoText = infoBlock.querySelector('.input-text');
-        const editButton = infoBlock.querySelector('.edit-button');
-        const editForm = infoBlock.querySelector('.edit-form');
-        const editedText = infoBlock.querySelector('.edited-text');
+    linkSubscriptionMores.forEach(function (link) {
+        link.addEventListener('click', function () {
+            const subscriptionDetailToShow = link.closest('.toggle-block').nextElementSibling;
+            if (subscriptionDetailToShow) {
+                subscriptionDetails.forEach(function (subscriptionDetail) {
+                    subscriptionDetail.style.display = 'none';
+                });
 
-        function saveAndCloseForm() {
-            infoText.textContent = editedText.value;
-            editForm.style.display = 'none';
-
-            if (index < array.length - 1) {
-                const nextInputItem = array[index + 1].closest('.input-item');
-                if (nextInputItem) {
-                    nextInputItem.classList.remove('mt-40');
-                }
-            }
-        }
-
-        editButton.addEventListener('click', function () {
-            if (editForm.style.display === 'none' || editForm.style.display === '') {
-                editForm.style.display = 'block';
-                editedText.value = infoText.textContent;
-                editedText.focus();
-
-                if (index < array.length - 1) {
-                    const nextInputItem = array[index + 1].closest('.input-item');
-                    if (nextInputItem) {
-                        nextInputItem.classList.add('mt-40');
-                    }
-                }
-            } else {
-                saveAndCloseForm();
+                subscriptionDetailToShow.style.display = 'block';
             }
         });
+    });
 
-        editedText.addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                saveAndCloseForm();
-            }
+    btnSubscriptionsBacks.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            subscriptionDetails.forEach(function (subscriptionDetail) {
+                subscriptionDetail.style.display = 'none';
+            });
+
+            toggleBlock.forEach(function (block) {
+                block.style.display = 'block';
+            });
         });
     });
 });
