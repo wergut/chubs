@@ -31,11 +31,11 @@
                 <a href="/" class="logo">
                     <img src="./img/logo.svg" alt=""/>
                 </a>
-                
+
                 <div class="person-ico">
                     <img src="./img/icons/person-ico.svg" alt="">
                 </div>
-                
+
             </div>
 
         </div>
@@ -89,12 +89,12 @@
                 </div>
                 <div class="tabs">
                     <div class="tabs__nav">
-                        <button class="tabs__btn tabs__btn_active">Profile</button>
-                        <button class="tabs__btn">Subscriptions</button>
-                        <button class="tabs__btn">Orders</button>
-                        <button class="tabs__btn">Messages</button>
-                        <button class="tabs__btn">Appointments</button>
-                        <button class="tabs__btn">Support</button>
+                        <button data-side-id="summary-information" class="tabs__btn tabs__btn_active">Profile</button>
+                        <button data-side-id="" class="tabs__btn">Subscriptions</button>
+                        <button data-side-id="" class="tabs__btn">Orders</button>
+                        <button data-side-id="" class="tabs__btn">Messages</button>
+                        <button data-side-id="" class="tabs__btn">Appointments</button>
+                        <button data-side-id="" class="tabs__btn">Support</button>
                     </div>
                     <div class="tabs__content">
                         <div class="tabs__pane tabs__pane_show tab-profile" data-side-id="1">
@@ -868,7 +868,7 @@
                     </div>
                 </div>
             </div>
-            <div class="right-sidebar" style="display:none;">
+            <aside class="right-sidebar sidebars" id="summary-information" style="display:none;">
                 <form action="">
                     <div class="sidebar-content-block">
                         <div class="sidebar-title">Account Details</div>
