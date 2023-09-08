@@ -191,6 +191,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     linkSubscriptionMores.forEach(function (link) {
         link.addEventListener('click', function () {
+            const allSubscriptionDetails = document.querySelectorAll('.subscription-details');
+            allSubscriptionDetails.forEach(function (subscriptionDetails) {
+                subscriptionDetails.style.display = 'none';
+            });
+
+
             const subscriptionDetails = link.closest('.toggle-block').nextElementSibling;
             if (subscriptionDetails) {
                 subscriptionDetails.style.display = 'block';
@@ -201,10 +207,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     btnSubscriptionsBacks.forEach(function (btn) {
         btn.addEventListener('click', function () {
-            const subscriptionDetails = btn.closest('.subscription-details');
-            if (subscriptionDetails) {
+            const allSubscriptionDetails = document.querySelectorAll('.subscription-details');
+            allSubscriptionDetails.forEach(function (subscriptionDetails) {
                 subscriptionDetails.style.display = 'none';
-                subscriptionDetails.previousElementSibling.style.display = 'block';
+            });
+
+            const toggleBlock = btn.closest('.subscription-details').previousElementSibling;
+            if (toggleBlock) {
+                toggleBlock.style.display = 'block';
             }
         });
     });
