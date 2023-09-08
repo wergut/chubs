@@ -186,24 +186,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const linkSubscriptionMore = document.querySelector('.link-subscription-more');
-    const btnSubscriptionsBack = document.querySelector('.btn-subscriptions-back');
-    const subscriptionDetails = document.querySelector('.subscription-details');
-    const toggleBlock = document.querySelector('.toggle-block');
+    const linkSubscriptionMores = document.querySelectorAll('.link-subscription-more');
+    const btnSubscriptionsBacks = document.querySelectorAll('.btn-subscriptions-back');
 
-    linkSubscriptionMore.addEventListener('click', function () {
-        subscriptionDetails.style.display = 'block';
-        toggleBlock.style.display = 'none';
+    linkSubscriptionMores.forEach(function (link) {
+        link.addEventListener('click', function () {
+            const subscriptionDetails = link.closest('.toggle-block').nextElementSibling;
+            if (subscriptionDetails) {
+                subscriptionDetails.style.display = 'block';
+                link.closest('.toggle-block').style.display = 'none';
+            }
+        });
     });
 
-    btnSubscriptionsBack.addEventListener('click', function () {
-        subscriptionDetails.style.display = 'none';
-        toggleBlock.style.display = 'block';
+    btnSubscriptionsBacks.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const subscriptionDetails = btn.closest('.subscription-details');
+            if (subscriptionDetails) {
+                subscriptionDetails.style.display = 'none';
+                subscriptionDetails.previousElementSibling.style.display = 'block';
+            }
+        });
     });
 });
 
 
-/*accordeon */
+document.addEventListener('DOMContentLoaded', function () {
+    const linkSubscriptionMores = document.querySelectorAll('.link-subscription-more');
+    const subscriptionDetails = document.querySelectorAll('.subscription-details');
+
+    linkSubscriptionMores.forEach(function (link) {
+        link.addEventListener('click', function () {
+            const subId = link.getAttribute('data-sub-href');
+            const detailsBlock = document.querySelector(`[data-sub-id="${subId}"]`);
+
+            if (detailsBlock) {
+                subscriptionDetails.forEach(function (detail) {
+                    detail.style.display = 'none';
+                });
+
+                detailsBlock.style.display = 'block';
+            }
+        });
+    });
+});
+
+
+
+
+
+    /*accordeon */
 
 var accordion = (function(element) {
     var _getItem = function(elements, className) {
