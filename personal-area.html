@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="tabs__pane subscriptions-block" data-side-id="2">
-                            <div class="toggle-block" style="display: none;">
+                            <div class="toggle-block">
                                 <div class="active-options">
                                     <div class="row">
                                         <div class="col-12"><h4>Active Subscriptions</h4></div>
@@ -168,7 +168,7 @@
                                                 <div class="card-order-column">
                                                     <div class="subtitle">Dosage</div>
                                                     <div class="title">50 mg / 12 use</div>
-                                                    <a href="#" class="link-card">More about order</a>
+                                                    <div class="link-card link-subscription-more">More about order</div>
                                                     <p>Payment card</p>
                                                     <div class="card-wrapper">
                                                         <div class="card-content">
@@ -221,7 +221,7 @@
                                                 <div class="card-order-column">
                                                     <div class="subtitle">Dosage</div>
                                                     <div class="title">50 mg / 12 use</div>
-                                                    <a href="#" class="link-card">More about order</a>
+                                                    <div class="link-card link-subscription-more">More about order</div>
                                                     <p>Payment card</p>
                                                     <div class="card-wrapper">
                                                         <div class="card-content">
@@ -329,10 +329,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="subscription-details">
+                            <div class="subscription-details" style="display:none;">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12 title-w-btn-back">
                                         <h4>Subscription detalis</h4>
+                                        <div class="btn-subscriptions-back">Back</div>
                                     </div>
                                     <div class="col-6">
                                         <div class="option-card">
@@ -371,75 +372,142 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="right-sidebar">
+                                        <div class="right-sidebar subscription-sidebar">
                                             <form action="">
-                                                <div class="subscription-sidebar">
-                                                    <div class="inputs-wrapper">
-                                                        <div class="inputs-column">
-                                                            <div class="sidebar-title">My treatment</div>
-                                                            <div class="input-item">
-                                                                <label>Medication</label>
-                                                                <div class="input-js">
-                                                                    <p class="input-text">Generic Viagra</p>
-                                                                    <div class="edit-button"></div>
-                                                                    <div class="edit-form" style="display: none;">
-                                                                        <input id="" type="text" class="edited-text" name="firstname">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="input-item">
-                                                                <label>Dosage</label>
-                                                                <p class="input-text">50mg</p>
-                                                            </div>
-                                                            <div class="input-item">
-                                                                <label>Quantity</label>
-                                                                <div class="input-js">
-                                                                    <p class="input-text">4 uses (per month)</p>
-                                                                    <div class="edit-button"></div>
-                                                                    <div class="edit-form" style="display: none;">
-                                                                        <input id="" type="text" class="edited-text" name="firstname" placeholder="Junuary 11, 2001">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="input-item">
-                                                                <label>Shipping frequency</label>
-                                                                <div class="input-js">
-                                                                    <p class="input-text">3 months</p>
-                                                                    <div class="edit-button"></div>
-                                                                    <div class="edit-form" style="display: none;">
-                                                                        <input id="" type="text" class="edited-text" name="firstname" placeholder="Junuary 11, 2001">
-                                                                    </div>
+                                                <div class="inputs-wrapper">
+                                                    <div class="inputs-column">
+                                                        <div class="sidebar-title">My treatment</div>
+                                                        <div class="input-item">
+                                                            <label>Medication</label>
+                                                            <div class="input-js">
+                                                                <p class="input-text">Generic Viagra</p>
+                                                                <div class="edit-button"></div>
+                                                                <div class="edit-form" style="display: none;">
+                                                                    <input id="" type="text" class="edited-text" name="firstname">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="inputs-column">
-                                                            <div class="sidebar-content-block sidebar-content-payment">
-                                                                <div class="sidebar-title">Payment Method</div>
-                                                                <div class="inputs-wrapper">
-                                                                    <label>Default card</label>
-                                                                </div>
-                                                                <div class="card-wrapper">
-                                                                    <div class="card-content">
-                                                                        1234 1234 1234 1234
-                                                                    </div>
-                                                                    <div class="card-logo">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="9" viewBox="0 0 25 9" fill="none">
-                                                                            <path d="M12.3784 0.641307L10.7082 8.37853H8.68792L10.3583 0.641307H12.3784ZM20.8773 5.63733L21.9406 2.73184L22.5525 5.63733H20.8773ZM23.132 8.37853H25L23.3681 0.641307H21.645C21.2567 0.641307 20.9293 0.864403 20.7844 1.20845L17.7533 8.37853H19.8748L20.296 7.22302H22.8874L23.132 8.37853ZM17.8585 5.85259C17.8673 3.81061 15.0096 3.69749 15.0288 2.78509C15.0349 2.50787 15.3019 2.21256 15.8853 2.13703C16.1746 2.10014 16.9728 2.07021 17.8776 2.48334L18.2315 0.841955C17.7455 0.667758 17.1201 0.5 16.3419 0.5C14.3449 0.5 12.94 1.5511 12.9288 3.05744C12.916 4.17136 13.9323 4.79245 14.6965 5.16346C15.4843 5.54266 15.7483 5.78577 15.7444 6.12459C15.739 6.6437 15.1162 6.87358 14.5363 6.88228C13.5201 6.89795 12.9311 6.61011 12.4616 6.39328L12.0949 8.08948C12.5677 8.30388 13.4388 8.49043 14.3408 8.5C16.464 8.5 17.8521 7.46126 17.8585 5.85259ZM9.49177 0.641307L6.21861 8.37853H4.08351L2.47266 2.20368C2.37501 1.82397 2.28983 1.6844 1.99284 1.52395C1.50706 1.26257 0.705143 1.01807 0 0.86597L0.0477711 0.641307H3.48515C3.92298 0.641307 4.31692 0.93001 4.4172 1.4298L5.26811 5.90741L7.36949 0.641307H9.49177Z" fill="#B7B7B7"/>
-                                                                        </svg>
-                                                                    </div>
+                                                        <div class="input-item">
+                                                            <label>Dosage</label>
+                                                            <p class="input-text">50mg</p>
+                                                        </div>
+                                                        <div class="input-item">
+                                                            <label>Quantity</label>
+                                                            <div class="input-js">
+                                                                <p class="input-text">4 uses (per month)</p>
+                                                                <div class="edit-button"></div>
+                                                                <div class="edit-form" style="display: none;">
+                                                                    <input id="" type="text" class="edited-text" name="firstname" placeholder="Junuary 11, 2001">
                                                                 </div>
                                                             </div>
-                                                            <div class="sidebar-content-block sidebar-address">
-                                                                <div class="sidebar-title">Shipping address</div>
-                                                                <div class="addresses-wrapper">
-                                                                    <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
-                                                                    <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                                        </div>
+                                                        <div class="input-item">
+                                                            <label>Shipping frequency</label>
+                                                            <div class="input-js">
+                                                                <p class="input-text">3 months</p>
+                                                                <div class="edit-button"></div>
+                                                                <div class="edit-form" style="display: none;">
+                                                                    <input id="" type="text" class="edited-text" name="firstname" placeholder="Junuary 11, 2001">
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inputs-column">
+                                                        <div class="sidebar-content-block sidebar-content-payment">
+                                                            <div class="sidebar-title">Payment Method</div>
+                                                            <div class="inputs-wrapper">
+                                                                <label>Default card</label>
+                                                            </div>
+                                                            <div class="card-wrapper">
+                                                                <div class="card-content">
+                                                                    1234 1234 1234 1234
+                                                                </div>
+                                                                <div class="card-logo">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="9" viewBox="0 0 25 9" fill="none">
+                                                                        <path d="M12.3784 0.641307L10.7082 8.37853H8.68792L10.3583 0.641307H12.3784ZM20.8773 5.63733L21.9406 2.73184L22.5525 5.63733H20.8773ZM23.132 8.37853H25L23.3681 0.641307H21.645C21.2567 0.641307 20.9293 0.864403 20.7844 1.20845L17.7533 8.37853H19.8748L20.296 7.22302H22.8874L23.132 8.37853ZM17.8585 5.85259C17.8673 3.81061 15.0096 3.69749 15.0288 2.78509C15.0349 2.50787 15.3019 2.21256 15.8853 2.13703C16.1746 2.10014 16.9728 2.07021 17.8776 2.48334L18.2315 0.841955C17.7455 0.667758 17.1201 0.5 16.3419 0.5C14.3449 0.5 12.94 1.5511 12.9288 3.05744C12.916 4.17136 13.9323 4.79245 14.6965 5.16346C15.4843 5.54266 15.7483 5.78577 15.7444 6.12459C15.739 6.6437 15.1162 6.87358 14.5363 6.88228C13.5201 6.89795 12.9311 6.61011 12.4616 6.39328L12.0949 8.08948C12.5677 8.30388 13.4388 8.49043 14.3408 8.5C16.464 8.5 17.8521 7.46126 17.8585 5.85259ZM9.49177 0.641307L6.21861 8.37853H4.08351L2.47266 2.20368C2.37501 1.82397 2.28983 1.6844 1.99284 1.52395C1.50706 1.26257 0.705143 1.01807 0 0.86597L0.0477711 0.641307H3.48515C3.92298 0.641307 4.31692 0.93001 4.4172 1.4298L5.26811 5.90741L7.36949 0.641307H9.49177Z" fill="#B7B7B7"/>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sidebar-content-block sidebar-address">
+                                                            <div class="sidebar-title">Shipping address</div>
+                                                            <div class="addresses-wrapper">
+                                                                <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                                                <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-12 col-m-12">
+                                        <h5>FAQ</h5>
+                                        <div id="accordion3" class="accordion">
+                                            <div class="accordion-item show" data-id="1">
+                                                <div class="accordion-item-header">
+                                                    What ED treatments are there?
+                                                </div>
+                                                <div class="accordion-item-content">
+                                                    <p>
+                                                        Between 63% and 82% of patients reported an improvement in their erections after taking prescribed ED medications. Other PDE5 inhibitors work in a similar way in the body and are also effective. In fact, PDE5 inhibitors are considered one of the mainstays of ED treatment by the American Urological Association.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item" data-id="2">
+                                                <div class="accordion-item-header">
+                                                    What are the symptoms of ED?
+                                                </div>
+                                                <div class="accordion-item-content">
+                                                    <p>
+                                                        Symptoms of male sexual dysfunction include:
+                                                    </p>
+                                                    <ul>
+                                                        <li>difficulty getting and/or maintaining an erection</li>
+                                                        <li>loss of interest in sexual activity</li>
+                                                        <li>painful erections (Peyronie's disease)</li>
+                                                    </ul>
+                                                    <p>
+                                                        Learn more about the <a href="https://www.forhims.com/blog/erectile-dysfunction-symptoms-causes-treatments">symptoms of erectile dysfunction</a> in our guide
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item" data-id="3">
+                                                <div class="accordion-item-header">
+                                                    How do ED pills work?
+                                                </div>
+                                                <div class="accordion-item-content">
+                                                    <p>
+                                                        Get stimulated and the pills can take it from there.
+                                                        Sexual arousal triggers a response in your body that then triggers nitric oxide production, which relaxes the blood vessels and smooth muscle in the penis. This lets blood rush into the base of the penis, which gets hard as a result. There is an enzyme in the penis called phosphodiesterase that shuts this process off when sex is over. ED pills work by blocking PDE5 and preventing this shut-off. That keeps your erection going longer and stronger.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item" data-id="4">
+                                                <div class="accordion-item-header">
+                                                    What is the most effective pill for ED?
+                                                </div>
+                                                <div class="accordion-item-content">
+                                                    <p>
+                                                        The most effective pill must work in concert with your body, nervous system, lifestyle and even your mental health. Although all PDE5 inhibitors have all been clinically proven to be effective for treating ED, some may act faster, last longer, work regardless of food intake, etc. With enough information, a qualified medical provider can help you find an ED medication and dosage that is right for you. You may connect with providers and receive ongoing care through our platform.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item" data-id="5">
+                                                <div class="accordion-item-header">
+                                                    Can low testosterone cause ED?
+                                                </div>
+                                                <div class="accordion-item-content">
+                                                    <p>
+                                                        Yes, <a href="https://www.forhims.com/blog/the-low-down-on-testosterone-and-its-role-in-erectile-dysfunction">low testosterone levels</a> can cause ED in some men. However, the threshold level of testosterone needed to maintain normal erectile function is actually fairly low. Although testosterone deficiency is a common condition, most affected men have symptoms other than erectile dysfunction. You should be evaluated for testosterone deficiency if you have ED and have noticed that you are more fatigued than you would expect, have low desire, and/or trouble maintaining your muscle mass. Testosterone deficiency is not likely to be the cause of ED in men with normal sexual desire, energy and physical strength.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-12 col-m-12">
+                                        <div class="img-wrapper">
+                                            <img src="./img/img-faq1.png" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -909,7 +977,7 @@
                         <div class="sidebar-title sidebar-title-w-plus">Payment Method
                             <div class="add-sidebar-item-btn">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.4 1C8.731 1 9 1.269 9 1.6V7H14.4C14.731 7 15 7.269 15 7.6V8.4C15 8.731 14.731 9 14.4 9H9V14.4C9 14.731 8.731 15 8.4 15H7.6C7.269 15 7 14.731 7 14.4V9H1.6C1.269 9 1 8.731 1 8.4V7.6C1 7.269 1.269 7 1.6 7H7V1.6C7 1.269 7.269 1 7.6 1H8.4V1Z" fill="#333333"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.9751 10.6493L8.5661 4.05825L11.9421 7.43425L7.0391 12.3372L5.3511 14.0252C5.3501 14.0262 4.9731 14.3753 4.2431 14.5123C3.2041 14.7093 2.4491 14.8512 1.7211 14.9893C1.5141 15.0282 1.3061 14.9613 1.1611 14.8393C1.0391 14.6943 0.972102 14.4862 1.0111 14.2792C1.1491 13.5512 1.2911 12.7962 1.4881 11.7572C1.6251 11.0282 1.9731 10.6523 1.9751 10.6493ZM2.9851 11.5652C2.9891 11.5602 2.9941 11.5553 2.9981 11.5512C3.1491 11.4002 3.3941 11.4002 3.5451 11.5512L4.4491 12.4552C4.6001 12.6062 4.6001 12.8502 4.4491 13.0012L4.3901 13.0602C4.3901 13.0602 4.2281 13.2102 3.9141 13.2692C3.4681 13.3542 3.1441 13.4152 2.8311 13.4742C2.7421 13.4913 2.6521 13.4622 2.5901 13.4102C2.5381 13.3482 2.5091 13.2583 2.5261 13.1692C2.5851 12.8562 2.6461 12.5322 2.7311 12.0862C2.7901 11.7722 2.9401 11.6102 2.9401 11.6102L2.9851 11.5652ZM12.7461 1.29325C12.3561 0.90225 11.7221 0.90225 11.3321 1.29325L10.0001 2.62425L13.3761 6.00025L14.7071 4.66825C15.0981 4.27825 15.0981 3.64425 14.7071 3.25425L12.7461 1.29325Z" fill="#141414"/>
                                 </svg>
                             </div>
                         </div>
@@ -941,7 +1009,7 @@
                         </div>
                     </div>
                 </form>
-            </div st >
+            </div>
         </div>
     </div>
 </section>

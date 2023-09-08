@@ -1022,3 +1022,61 @@ b {
     right: 47%;
     z-index: 0;
 }
+
+.subscriptions-block .link-subscription-more {
+    cursor: pointer;
+}
+
+.subscriptions-block .btn-subscriptions-back {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #141414;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: normal;
+}
+
+.subscriptions-block .btn-subscriptions-back:before {
+    content: "";
+    display: inline-flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("../img/icons/back-black.svg");
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+.subscriptions-block .title-w-btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.personal-card.show-sidebar .personal-card-wrapper .btn-green {
+    display: none;
+}
+
+.personal-card.show-sidebar .personal-card-wrapper .personal-info {
+    width: 100%;
+}
+
+.personal-card.show-sidebar .personal-card-wrapper .personal-avatar img {
+    min-width: 129px;
+}
+
+.personal-card.show-sidebar .personal-card-wrapper .personal-info .personal-notifications {
+    margin-left: auto;
+}
+
+.card-content {
+    visibility: hidden;
+}
+
+.add-sidebar-item-btn {
+    cursor: pointer;
+}
