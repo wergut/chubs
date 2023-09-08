@@ -86,7 +86,7 @@ function nextStepHandler() {
 
         if ((newQuestionnaireData.questions[currentStep].parent_question) || (newQuestionnaireData.questions[currentStep].multiply)) {
 
-            var selectedAnswers = grtSeletcedAnswerMulti(steps[currentStep]);
+            var selectedAnswers = getSeletcedAnswerMulti(steps[currentStep]);
             var nextSteps = getNextStepMulti(selectedAnswers); // is true
 
             ////////////////////////////RBS///////////////////////////////
@@ -151,6 +151,7 @@ function nextStepHandler() {
 
 ////////////////////////////RBS///////////////////////////////
 
+/*brahches with subquestion*/
 function generateQuestionQueue(selectedQuestionsIdx) {
     let result = []
     if (selectedQuestionsIdx.length) {
@@ -303,7 +304,7 @@ function getSelectedAnswer(step) {
     return selectedAnswer;
 }
 
-function grtSeletcedAnswerMulti(step) {
+function getSeletcedAnswerMulti(step) {
     var selectedAnswers = [];
     var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
     if (inputs.length === 0) {
