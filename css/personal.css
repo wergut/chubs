@@ -374,10 +374,6 @@
     margin-bottom: 10px;
 }
 
-.sidebar-content-payment .card-content {
-    visibility: hidden;
-}
-
 .medications-taken-slider {
     overflow: hidden;
     max-width: 100%;
@@ -458,13 +454,9 @@
     background-size: 40%;
 }
 
-.active-options .row {
+.row {
     width: calc(100% + 30px);
     margin: 0 -15px;
-}
-
-.active-options .col-6 {
-    padding: 0 15px;
 }
 
 .tabs .subscriptions-block h4 {
@@ -475,31 +467,31 @@
     margin-bottom: 110px;
 }
 
-.active-options .option-card {
+.subscriptions-block .option-card {
     background-image: url(../img/pills.png);
     background-position: right;
 }
 
-.active-options .option-card-order {
+.subscriptions-block .option-card-order {
     background-image: none;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
 }
 
-.active-options .option-card-order .card-order-column {
+.subscriptions-block .option-card-order .card-order-column {
     width: 50%;
 }
 
-.active-options .option-card-order .card-order-column:nth-of-type(1) {
+.subscriptions-block .option-card-order .card-order-column:nth-of-type(1) {
     padding-right: 15px;
 }
 
-.active-options .option-card-order .card-order-column:nth-of-type(2) {
+.subscriptions-block .option-card-order .card-order-column:nth-of-type(2) {
     padding-left: 15px;
 }
 
-.active-options .option-card-order .card-order-column .title {
+.subscriptions-block .option-card-order .card-order-column .title {
     color: #141414;
     font-size: 23px;
     font-style: normal;
@@ -507,15 +499,15 @@
     line-height: normal;
 }
 
-.active-options .option-card-order .card-order-column .title:nth-of-type(2) {
+.subscriptions-block .option-card-order .card-order-column .title:nth-of-type(2) {
     margin-bottom: 40px;
 }
 
-.active-options .option-card-order .card-order-column .title:nth-of-type(3) {
+.subscriptions-block .option-card-order .card-order-column .title:nth-of-type(3) {
     margin-bottom: 20px;
 }
 
-.active-options .option-card-order .card-order-column .subtitle {
+.subscriptions-block .option-card-order .card-order-column .subtitle {
     color: #141414;
     font-size: 16px;
     font-style: normal;
@@ -524,7 +516,7 @@
     margin-bottom: 10px;
 }
 
-.active-options .option-card-order .card-order-column p {
+.subscriptions-block .option-card-order .card-order-column p {
     color: #858585;
     font-size: 16px;
     font-style: normal;
@@ -533,17 +525,17 @@
     margin-bottom: 10px;
 }
 
-.active-options .option-card-order .card-order-column .date {
+.subscriptions-block .option-card-order .card-order-column .date {
     color: #141414;
     margin-bottom: 45px;
 }
 
-.active-options .option-card-order .card-order-column .link-card {
+.subscriptions-block .option-card-order .card-order-column .link-card {
     margin-left: 0;
     margin-bottom: 23px;
 }
 
-.active-options .option-card-order .card-order-column .change-delivery {
+.subscriptions-block .option-card-order .card-order-column .change-delivery {
     color: #141414;
     font-size: 14px;
     font-style: normal;
@@ -553,7 +545,7 @@
     align-items: center;
 }
 
-.active-options .option-card-order .card-order-column .change-delivery:before {
+.subscriptions-block .option-card-order .card-order-column .change-delivery:before {
     content: "";
     display: inline-flex;
     background-repeat: no-repeat;
@@ -565,7 +557,7 @@
     margin-right: 10px;
 }
 
-.active-options .option-card-order .card-order-column .reactivate-link {
+.subscriptions-block .option-card-order .card-order-column .reactivate-link {
     color: #B7B7B7;
     font-size: 14px;
     font-style: normal;
@@ -573,21 +565,21 @@
     line-height: normal;
 }
 
-.active-options .option-card-order .card-order-column:nth-of-type(2) .title:nth-of-type(2) {
+.subscriptions-block .option-card-order .card-order-column:nth-of-type(2) .title:nth-of-type(2) {
     margin-bottom: 48px;
 }
 
-.active-options .option-card-order .card-order-column .card-wrapper {
+.subscriptions-block .option-card-order .card-order-column .card-wrapper {
     display: flex;
     align-items: center;
     margin-bottom: 45px;
 }
 
-.active-options .option-card-order .card-order-column .card-wrapper .card-logo {
+.subscriptions-block .option-card-order .card-order-column .card-wrapper .card-logo {
     margin-left: 5px;
 }
 
-.active-options .option-card-order .card-order-column .card-wrapper .card-content {
+.subscriptions-block .option-card-order .card-order-column .card-wrapper .card-content {
     color: #141414;
     font-size: 16px;
     font-style: normal;
@@ -607,7 +599,7 @@
     margin-left: 30px;
 }
 
-.active-options .link-card:before {
+.subscriptions-block .link-card:before {
     content: "";
     display: inline-flex;
     margin-right: 10px;
@@ -619,7 +611,7 @@
     height: 16px;
 }
 
-.active-options .option-card-content .option-weight {
+.subscriptions-block .option-card-content .option-weight {
     display: flex;
     width: 100%;
 }
@@ -639,7 +631,7 @@ b {
     margin: 30px 0;
 }
 
-.active-options .col-12 {
+.col-12 {
     padding: 0 15px;
 }
 
@@ -685,15 +677,7 @@ b {
     margin: 0;
 }
 
-.chub-similar-options .row {
-    width: calc(100% + 30px);
-    margin: 0 -15px;
-}
-
 .chub-similar-options .col-4 {
-    padding: 0 15px;
-}
-.chub-similar-options .col-12 {
     padding: 0 15px;
 }
 
@@ -704,15 +688,6 @@ b {
 .completed-subscriptions .option-card {
     position: relative;
     z-index: 1;
-}
-
-.completed-subscriptions .row {
-    margin: 0 -15px;
-    width: calc(100% + 30px);
-}
-
-.completed-subscriptions .col-12 {
-    padding: 0 15px;
 }
 
 .completed-subscriptions .option-card:before {
@@ -731,7 +706,7 @@ b {
     height: 100%;
 }
 
-.completed-subscriptions .col-6 {
+.col-6 {
     padding: 0 15px;
 }
 
@@ -952,17 +927,6 @@ b {
     margin-top: 20px;
 }
 
-.tab-support .faq .col-6,
-.tab-support .faq .col-12
-{
-    padding: 0 15px;
-}
-
-.tab-support .faq .row {
-    width: calc(100% + 30px);
-    margin: 0 -15px;
-}
-
 .tab-support .form-wrapper {
     padding-left: 0;
 }
@@ -985,4 +949,43 @@ b {
 
 .accordion .accordion-item .accordion-item-content p {
     margin-bottom: 10px;
+}
+
+
+.subscriptions-block .subscription-details .option-card-order .card-order-column .change-date:before {
+    background-image: url("../img/icons/calendar-month__172.svg");
+}
+
+.subscriptions-block .subscription-details .option-card-order {
+    height: initial;
+    padding: 40px;
+}
+
+.subscriptions-block .subscription-details .option-request {
+    margin-top: 0;
+    padding: 42px 0 39px;
+}
+
+.subscriptions-block .subscription-details .right-sidebar {
+    max-width: 100%;
+    margin-left: 0;
+}
+
+.subscriptions-block .subscription-details .inputs-wrapper {
+    display: flex;
+}
+
+.subscriptions-block .subscription-details .inputs-wrapper .inputs-column {
+    width: 50%;
+}
+
+.subscriptions-block .subscription-details .input-text {
+    color: #141414;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 340px;
+    overflow: hidden;
+    max-height: 20px;
 }
