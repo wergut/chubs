@@ -1121,6 +1121,10 @@ b {
     display: none;
 }
 
+.medications-taken-mobile {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .personal-card {
         flex-wrap: wrap;
@@ -1454,5 +1458,20 @@ b {
     }
     .personal-card .personal-card-wrapper .medications-taken-slider .btn-green {
         max-width: 100%;
+    }
+    .subscriptions-block .medications-taken-mobile .medications-taken-slider .option-card:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(../img/pills.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+        filter: grayscale(1);
+        width: 100%;
+        z-index: 1;
+        height: 82%;
     }
 }
