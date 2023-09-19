@@ -11,8 +11,33 @@ var swiper1 = new Swiper(".medications-taken-slider", {
         el: ".swiper-pagination",
         type: "progressbar",
     },
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        // when window width is >= 480px
+        601: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+        },
+        // when window width is >= 640px
+        1025: {
+            spaceBetween: 30,
+            slidesPerView: 1.75,
+        }
+    }
 });
 
+
+var swiper2 = new Swiper(".address-slider", {
+    spaceBetween: 10,
+    slidesPerView: 1,
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});
 
 
 document.addEventListener('DOMContentLoaded', function () {

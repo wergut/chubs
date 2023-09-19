@@ -372,7 +372,7 @@
     position: relative;
 }
 
-.medications-taken h4 {
+.tabs .tabs__pane .medications-taken h4 {
     margin-bottom: 30px;
 }
 
@@ -1057,7 +1057,7 @@ b {
     justify-content: space-between;
 }
 
-.personal-card.show-sidebar .personal-card-wrapper .btn-green {
+.personal-card.show-sidebar .personal-sidebar .btn-green {
     display: none;
 }
 
@@ -1079,4 +1079,380 @@ b {
 
 .add-sidebar-item-btn {
     cursor: pointer;
+}
+
+.sidebar-address .addresses-wrapper:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.address-slider {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.address-slider .swiper-pagination {
+    bottom: 0;
+}
+
+.address-slider .swiper-pagination-bullet {
+    background: #D9D9D9;
+    opacity: 1;
+}
+
+.address-slider .swiper-pagination-bullet-active {
+    background: #141414;
+}
+
+.personal-card .right-sidebar-adaptive {
+    display: none;
+}
+
+.banner-personal {
+    margin-bottom: 50px;
+    padding-top: 45px;
+}
+.active-options-tablet, .active-options-mobile {
+    display: none;
+}
+
+.chub-similar-options-tablet {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .personal-card {
+        flex-wrap: wrap;
+    }
+    .personal-card .right-sidebar {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .personal-card .personal-card-wrapper {
+        margin-right: 0;
+    }
+    .personal-card .personal-card-wrapper .personal-info .personal-notifications {
+        display: none;
+    }
+    .personal-card .right-sidebar {
+        display: none!important;
+    }
+    .personal-card .right-sidebar-adaptive {
+        display: flex!important;
+        padding-bottom: 0;
+        margin-bottom: 80px;
+    }
+    .sidebar-address .addresses-wrapper {
+        display: flex;
+    }
+    .sidebar-address .address-subtitle {
+        margin-left: 36px;
+        max-width: 30%;
+    }
+    .medications-taken-slider:after {
+        display: none;
+    }
+    .medications-taken {
+        background: transparent;
+        padding: 0;
+    }
+    .tabs .tabs__pane .medications-taken h4 {
+        margin-bottom: 20px;
+    }
+    .sidebar-content-payment {
+        margin-left: 8px;
+    }
+    .active-options {
+        display: none;
+    }
+    .active-options-tablet {
+        display: block;
+    }
+    .subscriptions-block .option-card-order .card-order-column {
+        width: 100%;
+    }
+    .subscriptions-block .option-card-order .card-order-column .title:nth-of-type(2) {
+        margin-bottom: 30px;
+    }
+    .subscriptions-block .option-card-order .card-order-column .link-subscription-more {
+        margin-bottom: 0;
+        margin-top: 60px;
+    }
+    .subscriptions-block .option-card-order .card-order-column:nth-of-type(1) {
+        padding-right: 0;
+    }
+    .subscriptions-block .option-card-order .card-order-column {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .subscriptions-block .option-card-order .card-order-column .subtitle {
+        width: 100%;
+    }
+    .subscriptions-block .card-details {
+        margin-top: 24px;
+        height: initial;
+        padding: 36px 27px 29px;
+    }
+    .col-6 {
+        padding: 0 12px;
+    }
+    .row {
+        width: calc(100% + 24px);
+    }
+    .subscriptions-block .option-card-order .card-order-column .title {
+        width: 100%;
+    }
+    .subscriptions-block .card-details .card-order-column .title {
+        margin-bottom: 20px;
+    }
+    .subscriptions-block .card-details .card-order-column .change-delivery {
+        margin-top: 45px;
+    }
+    .subscriptions-block .card-details .card-order-column p {
+        width: 100%;
+    }
+    .subscriptions-block .card-details .card-order-column:nth-of-type(2) p {
+        margin-top: 44px;
+    }
+    .chub-similar-options-pc {
+        display: none;
+    }
+    .chub-similar-options-tablet {
+        display: block;
+    }
+    .chub-similar-options-tablet .option-card {
+        background-image: url("../img/pills-tablet.svg");
+        background-position: 90% 5%;
+    }
+    .chub-similar-options-tablet .option-card h3 {
+        max-width: 90%;
+    }
+    .chub-similar-options-tablet .title-block {
+        margin-bottom: 30px;
+        display: block;
+    }
+    .completed-subscriptions .option-card .option-weight {
+        flex-wrap: wrap;
+    }
+    .completed-subscriptions .option-card .option-weight .link-card {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    .option-card {
+        padding: 30px 20px;
+    }
+    .completed-subscriptions .option-card {
+        background-image: none;
+    }
+    .completed-subscriptions .option-card:before {
+        background-image: url("../img/pills-tablet-w.png");
+    }
+    .personal-sidebar .btn-green {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .personal-area .tabs__nav {
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+    }
+    .personal-card .personal-card-wrapper .personal-info .personal-options {
+        flex-wrap: wrap;
+    }
+    .personal-card .personal-card-wrapper .personal-info .personal-options .personal-city:before {
+        display: none;
+    }
+    .personal-card .personal-card-wrapper .personal-info .personal-options .subscriptions, .personal-card .personal-card-wrapper .personal-info .personal-options .personal-city {
+        width: 100%;
+    }
+    .personal-card.show-sidebar .personal-card-wrapper .personal-avatar img {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+    }
+    .personal-card .personal-card-wrapper .personal-sidebar {
+        padding: 18px 10px;
+        align-items: flex-start;
+    }
+    .personal-card .personal-card-wrapper .personal-info .personal-name {
+        font-size: 23px;
+        margin-bottom: 4px;
+    }
+    .personal-card .personal-card-wrapper .personal-avatar {
+        margin-right: 20px;
+    }
+    .tabs__nav {
+        margin-bottom: 15px;
+    }
+    .personal-card .right-sidebar-adaptive {
+        padding: 0;
+        background: transparent;
+        margin-bottom: 40px;
+    }
+    .sidebar-content-block {
+        padding: 20px 10px 30px;
+        background: #FAFAFA;
+    }
+    .sidebar-content-block {
+        margin-bottom: 15px;
+    }
+    .sidebar-content-payment {
+        margin-left: 0;
+    }
+    .sidebar-address .addresses-wrapper {
+        flex-wrap: wrap;
+    }
+    .sidebar-address .address-subtitle {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .personal-card .right-sidebar .inputs-wrapper {
+        margin-bottom: 0;
+    }
+    .personal-card .right-sidebar .sidebar-content-account .inputs-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .personal-card .right-sidebar .sidebar-content-account .inputs-wrapper .input-item:nth-of-type(1) {
+        width: 100%;
+    }
+    .personal-card .right-sidebar .sidebar-content-account .inputs-wrapper .input-item:nth-of-type(2),
+    .personal-card .right-sidebar .sidebar-content-account .inputs-wrapper .input-item:nth-of-type(3) {
+        width: 50%;
+        display: block;
+        margin-bottom: 0;
+    }
+    .personal-menu {
+        display: none;
+    }
+    .banner-personal {
+        margin-bottom: 20px;
+        padding-top: 20px;
+    }
+    .active-options-tablet {
+        display: none;
+    }
+    .active-options-mobile {
+        display: block;
+    }
+    .personal-card .personal-card-wrapper .personal-avatar img {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+    }
+    .subscriptions-block .active-options .option-card {
+        background-size: 30%;
+    }
+    .option-card {
+        padding: 25px 15px;
+    }
+    .option-request {
+        flex-wrap: wrap;
+        height: initial;
+        padding: 13px 60px;
+    }
+    .option-request p {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .option-request .btn-dislike {
+        margin-left: 25px;
+    }
+    .option-card-mobile {
+        height: initial;
+    }
+    .subscriptions-block .option-card-mobile .card-order-column .title:nth-of-type(2) {
+        margin-bottom: 20px;
+    }
+    .subscriptions-block .option-card-order .card-order-column .title-w-link {
+        margin-top: 30px;
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .subscriptions-block .option-card-order .card-order-column .title-w-link .link-subscription-more {
+        margin-top: 0;
+        margin-left: auto;
+    }
+    .subscriptions-block .option-card-mobile .card-order-column p {
+        width: 100%;
+    }
+    .subscriptions-block .option-card-mobile .card-order-column .change-delivery {
+        border-radius: 50px;
+        background: #141414;
+        width: 100%;
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .subscriptions-block .option-card-mobile .card-order-column .change-delivery:before {
+        background-image: url("../img/icons/ico-delivery-white.svg");
+    }
+    .subscriptions-block .option-card-mobile .card-order-column .reactivate-link {
+        text-align: center;
+        width: 100%;
+    }
+    .chub-similar-options-tablet {
+        display: none;
+    }
+    .subscriptions-block .medications-taken {
+        display: none;
+    }
+    .subscriptions-block .completed-subscriptions {
+        display: none;
+    }
+   .subscriptions-block .medications-taken-mobile {
+        display: block;
+        margin-top: 60px;
+    }
+    .medications-taken-mobile .medications-taken-slider .option-card .option-card-content h3 {
+        margin-bottom: 10px;
+    }
+    .subscriptions-block .medications-taken-mobile .medications-taken-slider .option-card {
+        position: relative;
+        padding-bottom: 75px;
+        border-radius: 10px;
+        background-image: none;
+    }
+    .subscriptions-block .medications-taken-mobile .medications-taken-slider .option-card-content {
+        background-color: #F5F5F5;
+        position: absolute;
+        bottom: 45px;
+        width: calc(100% - 4px);
+        left: 2px;
+        z-index: 1;
+        border-radius: 10px;
+        padding: 0 16px 25px;
+    }
+    .personal-card .personal-card-wrapper .subscriptions-block .medications-taken-mobile .btn-green {
+        max-width: 100%;
+        border-radius: 0 0 10px 10px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .personal-card .personal-card-wrapper .subscriptions-block .medications-taken-mobile .btn-green:before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/icons/repeat-ico-white.svg");
+        margin-right: 10px;
+    }
+    .personal-card .personal-card-wrapper .medications-taken-slider .btn-green {
+        max-width: 100%;
+    }
 }

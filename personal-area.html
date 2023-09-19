@@ -24,7 +24,7 @@
 <body>
 
 
-<section class="banner question-logo banner-order">
+<section class="banner-personal">
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex quiz-header align-end">
@@ -61,7 +61,7 @@
 
 <section class="personal-area">
     <div class="container">
-        <div class="personal-card">
+        <aside class="personal-card">
             <div class="personal-card-wrapper" style="max-width: 100%;">
                 <div class="personal-sidebar">
                     <div class="personal-avatar">
@@ -98,10 +98,124 @@
                     </div>
                     <div class="tabs__content">
                         <div class="tabs__pane tabs__pane_show tab-profile" data-side-id="1">
+                            <aside class="right-sidebar right-sidebar-adaptive" id="summary-information-adaptive" style="display:none;">
+                                <form action="">
+                                   <div class="row">
+                                       <div class="col-6 col-m-12">
+                                           <div class="sidebar-content-block sidebar-content-account">
+                                               <div class="sidebar-title">Account Details</div>
+                                               <div class="inputs-wrapper">
+                                                   <div class="input-item">
+                                                       <label>Email</label>
+                                                       <div class="input-js">
+                                                           <p class="input-text">email@mail.com</p>
+                                                           <div class="edit-button"></div>
+                                                           <div class="edit-form" style="display: none;">
+                                                               <input id="email1" type="text" class="edited-text" name="firstname" placeholder="Email">
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="input-item">
+                                                       <label>Phone number</label>
+                                                       <div class="input-js">
+                                                           <p class="input-text">+1 234 567 89 01</p>
+                                                           <div class="edit-button"></div>
+                                                           <div class="edit-form" style="display: none;">
+                                                               <input id="phone1" type="text" class="edited-text" name="phone" placeholder="+1 234 567 89 01">
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="input-item">
+                                                       <label>Birthday</label>
+                                                       <div class="input-js">
+                                                           <p class="input-text">email@mail.com</p>
+                                                           <div class="edit-button"></div>
+                                                           <div class="edit-form" style="display: none;">
+                                                               <input id="first-name1" type="text" class="edited-text" name="firstname" placeholder="Junuary 11, 2001">
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="col-6 col-m-12">
+                                           <div class="sidebar-content-block sidebar-content-payment">
+                                               <div class="sidebar-title sidebar-title-w-plus">Payment Method
+                                                   <div class="add-sidebar-item-btn">
+                                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                           <path fill-rule="evenodd" clip-rule="evenodd" d="M1.9751 10.6493L8.5661 4.05825L11.9421 7.43425L7.0391 12.3372L5.3511 14.0252C5.3501 14.0262 4.9731 14.3753 4.2431 14.5123C3.2041 14.7093 2.4491 14.8512 1.7211 14.9893C1.5141 15.0282 1.3061 14.9613 1.1611 14.8393C1.0391 14.6943 0.972102 14.4862 1.0111 14.2792C1.1491 13.5512 1.2911 12.7962 1.4881 11.7572C1.6251 11.0282 1.9731 10.6523 1.9751 10.6493ZM2.9851 11.5652C2.9891 11.5602 2.9941 11.5553 2.9981 11.5512C3.1491 11.4002 3.3941 11.4002 3.5451 11.5512L4.4491 12.4552C4.6001 12.6062 4.6001 12.8502 4.4491 13.0012L4.3901 13.0602C4.3901 13.0602 4.2281 13.2102 3.9141 13.2692C3.4681 13.3542 3.1441 13.4152 2.8311 13.4742C2.7421 13.4913 2.6521 13.4622 2.5901 13.4102C2.5381 13.3482 2.5091 13.2583 2.5261 13.1692C2.5851 12.8562 2.6461 12.5322 2.7311 12.0862C2.7901 11.7722 2.9401 11.6102 2.9401 11.6102L2.9851 11.5652ZM12.7461 1.29325C12.3561 0.90225 11.7221 0.90225 11.3321 1.29325L10.0001 2.62425L13.3761 6.00025L14.7071 4.66825C15.0981 4.27825 15.0981 3.64425 14.7071 3.25425L12.7461 1.29325Z" fill="#141414"/>
+                                                       </svg>
+                                                   </div>
+                                               </div>
+                                               <div class="inputs-wrapper">
+                                                   <label>Default card</label>
+                                               </div>
+                                               <div class="card-wrapper">
+                                                   <div class="card-content">
+                                                       1234 1234 1234 1234
+                                                   </div>
+                                                   <div class="card-logo">
+                                                       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="9" viewBox="0 0 25 9" fill="none">
+                                                           <path d="M12.3784 0.641307L10.7082 8.37853H8.68792L10.3583 0.641307H12.3784ZM20.8773 5.63733L21.9406 2.73184L22.5525 5.63733H20.8773ZM23.132 8.37853H25L23.3681 0.641307H21.645C21.2567 0.641307 20.9293 0.864403 20.7844 1.20845L17.7533 8.37853H19.8748L20.296 7.22302H22.8874L23.132 8.37853ZM17.8585 5.85259C17.8673 3.81061 15.0096 3.69749 15.0288 2.78509C15.0349 2.50787 15.3019 2.21256 15.8853 2.13703C16.1746 2.10014 16.9728 2.07021 17.8776 2.48334L18.2315 0.841955C17.7455 0.667758 17.1201 0.5 16.3419 0.5C14.3449 0.5 12.94 1.5511 12.9288 3.05744C12.916 4.17136 13.9323 4.79245 14.6965 5.16346C15.4843 5.54266 15.7483 5.78577 15.7444 6.12459C15.739 6.6437 15.1162 6.87358 14.5363 6.88228C13.5201 6.89795 12.9311 6.61011 12.4616 6.39328L12.0949 8.08948C12.5677 8.30388 13.4388 8.49043 14.3408 8.5C16.464 8.5 17.8521 7.46126 17.8585 5.85259ZM9.49177 0.641307L6.21861 8.37853H4.08351L2.47266 2.20368C2.37501 1.82397 2.28983 1.6844 1.99284 1.52395C1.50706 1.26257 0.705143 1.01807 0 0.86597L0.0477711 0.641307H3.48515C3.92298 0.641307 4.31692 0.93001 4.4172 1.4298L5.26811 5.90741L7.36949 0.641307H9.49177Z" fill="#B7B7B7"/>
+                                                       </svg>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                                    <div class="sidebar-content-block sidebar-address">
+                                        <div class="sidebar-title sidebar-title-w-plus">Shipping address
+                                            <div class="add-sidebar-item-btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.4 1C8.731 1 9 1.269 9 1.6V7H14.4C14.731 7 15 7.269 15 7.6V8.4C15 8.731 14.731 9 14.4 9H9V14.4C9 14.731 8.731 15 8.4 15H7.6C7.269 15 7 14.731 7 14.4V9H1.6C1.269 9 1 8.731 1 8.4V7.6C1 7.269 1.269 7 1.6 7H7V1.6C7 1.269 7.269 1 7.6 1H8.4V1Z" fill="#333333"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="address-slider">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="addresses-wrapper">
+                                                        <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                                        <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                                    </div>
+                                                    <div class="addresses-wrapper">
+                                                        <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                                        <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="addresses-wrapper">
+                                                        <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                                        <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                                    </div>
+                                                    <div class="addresses-wrapper">
+                                                        <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                                        <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </aside>
                             <div class="medications-taken">
                                 <h4>Medications taken</h4>
                                 <div class="medications-taken-slider">
                                     <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="option-card">
+                                                <div class="rating">
+                                                    <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                    </div>
+                                                </div>
+                                                <div class="option-card-content">
+                                                    <p>Tadalafil</p>
+                                                    <h3>Generic Cialis</h3>
+                                                    <a href="#" class="btn-green">Manual</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="swiper-slide">
                                             <div class="option-card">
                                                 <div class="rating">
@@ -239,7 +353,164 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="chub-similar-options">
+                                <div class="active-options active-options-tablet">
+                                    <div class="row">
+                                        <div class="col-12"><h4>Active Subscriptions</h4></div>
+                                        <div class="col-6">
+                                            <div class="option-card">
+                                                <div class="rating">
+                                                    <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                    </div>
+                                                </div>
+                                                <div class="option-card-content">
+                                                    <h3>Generic Viagra</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="option-card option-card-order">
+                                               <div class="card-order-column">
+                                                   <div class="subtitle">Next order date</div>
+                                                   <div class="title">23 December 2023</div>
+                                                   <div class="subtitle">Dosage</div>
+                                                   <div class="title">50 mg / 12 use</div>
+                                                   <div class="link-card link-subscription-more" data-sub-href="1">More about order</div>
+                                               </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="option-card option-card-order card-details">
+                                                <div class="card-order-column">
+                                                    <div class="title">Details</div>
+                                                    <p>Start subscription</p>
+                                                    <div class="subtitle">2 September 2021</div>
+                                                    <a class="change-delivery" href="#">Change delivery</a>
+                                                </div>
+                                                <div class="card-order-column">
+                                                    <p>Payment card</p>
+                                                    <div class="card-wrapper">
+                                                        <div class="card-content">
+                                                            1234 1234 1234 1234
+                                                        </div>
+                                                        <div class="card-logo">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="9" viewBox="0 0 25 9" fill="none">
+                                                                <path d="M12.3784 0.641307L10.7082 8.37853H8.68792L10.3583 0.641307H12.3784ZM20.8773 5.63733L21.9406 2.73184L22.5525 5.63733H20.8773ZM23.132 8.37853H25L23.3681 0.641307H21.645C21.2567 0.641307 20.9293 0.864403 20.7844 1.20845L17.7533 8.37853H19.8748L20.296 7.22302H22.8874L23.132 8.37853ZM17.8585 5.85259C17.8673 3.81061 15.0096 3.69749 15.0288 2.78509C15.0349 2.50787 15.3019 2.21256 15.8853 2.13703C16.1746 2.10014 16.9728 2.07021 17.8776 2.48334L18.2315 0.841955C17.7455 0.667758 17.1201 0.5 16.3419 0.5C14.3449 0.5 12.94 1.5511 12.9288 3.05744C12.916 4.17136 13.9323 4.79245 14.6965 5.16346C15.4843 5.54266 15.7483 5.78577 15.7444 6.12459C15.739 6.6437 15.1162 6.87358 14.5363 6.88228C13.5201 6.89795 12.9311 6.61011 12.4616 6.39328L12.0949 8.08948C12.5677 8.30388 13.4388 8.49043 14.3408 8.5C16.464 8.5 17.8521 7.46126 17.8585 5.85259ZM9.49177 0.641307L6.21861 8.37853H4.08351L2.47266 2.20368C2.37501 1.82397 2.28983 1.6844 1.99284 1.52395C1.50706 1.26257 0.705143 1.01807 0 0.86597L0.0477711 0.641307H3.48515C3.92298 0.641307 4.31692 0.93001 4.4172 1.4298L5.26811 5.90741L7.36949 0.641307H9.49177Z" fill="#B7B7B7"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="reactivate-link">Reactivate subscription</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="option-request">
+                                                <p>Did <b>Generic Viagra</b> suit you?</p>
+                                                <a class="request-btn btn-like" href="#"></a>
+                                                <a class="request-btn btn-dislike" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="option-card">
+                                                <div class="rating">
+                                                    <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                    </div>
+                                                </div>
+                                                <div class="option-card-content">
+                                                    <h3>Generic Viagra</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="option-card option-card-order">
+                                                <div class="card-order-column">
+                                                    <div class="subtitle">Next order date</div>
+                                                    <div class="title">23 December 2023</div>
+                                                    <div class="subtitle">Dosage</div>
+                                                    <div class="title">50 mg / 12 use</div>
+                                                    <div class="link-card link-subscription-more" data-sub-href="1">More about order</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="option-card option-card-order card-details">
+                                                <div class="card-order-column">
+                                                    <div class="title">Details</div>
+                                                    <p>Start subscription</p>
+                                                    <div class="subtitle">2 September 2021</div>
+                                                    <a class="change-delivery" href="#">Change delivery</a>
+                                                </div>
+                                                <div class="card-order-column">
+                                                    <p>Payment card</p>
+                                                    <div class="card-wrapper">
+                                                        <div class="card-content">
+                                                            1234 1234 1234 1234
+                                                        </div>
+                                                        <div class="card-logo">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="9" viewBox="0 0 25 9" fill="none">
+                                                                <path d="M12.3784 0.641307L10.7082 8.37853H8.68792L10.3583 0.641307H12.3784ZM20.8773 5.63733L21.9406 2.73184L22.5525 5.63733H20.8773ZM23.132 8.37853H25L23.3681 0.641307H21.645C21.2567 0.641307 20.9293 0.864403 20.7844 1.20845L17.7533 8.37853H19.8748L20.296 7.22302H22.8874L23.132 8.37853ZM17.8585 5.85259C17.8673 3.81061 15.0096 3.69749 15.0288 2.78509C15.0349 2.50787 15.3019 2.21256 15.8853 2.13703C16.1746 2.10014 16.9728 2.07021 17.8776 2.48334L18.2315 0.841955C17.7455 0.667758 17.1201 0.5 16.3419 0.5C14.3449 0.5 12.94 1.5511 12.9288 3.05744C12.916 4.17136 13.9323 4.79245 14.6965 5.16346C15.4843 5.54266 15.7483 5.78577 15.7444 6.12459C15.739 6.6437 15.1162 6.87358 14.5363 6.88228C13.5201 6.89795 12.9311 6.61011 12.4616 6.39328L12.0949 8.08948C12.5677 8.30388 13.4388 8.49043 14.3408 8.5C16.464 8.5 17.8521 7.46126 17.8585 5.85259ZM9.49177 0.641307L6.21861 8.37853H4.08351L2.47266 2.20368C2.37501 1.82397 2.28983 1.6844 1.99284 1.52395C1.50706 1.26257 0.705143 1.01807 0 0.86597L0.0477711 0.641307H3.48515C3.92298 0.641307 4.31692 0.93001 4.4172 1.4298L5.26811 5.90741L7.36949 0.641307H9.49177Z" fill="#B7B7B7"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="reactivate-link">Reactivate subscription</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="active-options active-options-mobile">
+                                    <div class="row">
+                                        <div class="col-12"><h4>Active Subscriptions</h4></div>
+                                        <div class="col-12">
+                                            <div class="option-card">
+                                                <div class="rating">
+                                                    <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                    </div>
+                                                </div>
+                                                <div class="option-card-content">
+                                                    <p>Tadalafil</p>
+                                                    <h3>Generic Viagra</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="option-request">
+                                                <p>Did <b>Generic Viagra</b> suit you?</p>
+                                                <a class="request-btn btn-like" href="#"></a>
+                                                <a class="request-btn btn-dislike" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="option-card option-card-order option-card-mobile">
+                                                <div class="card-order-column">
+                                                    <div class="subtitle">Next order date</div>
+                                                    <div class="title">23 December 2023</div>
+                                                    <div class="subtitle">Dosage</div>
+                                                    <div class="title">50 mg / 12 use</div>
+                                                    <div class="title title-w-link">
+                                                        Details
+                                                        <div class="link-card link-subscription-more" data-sub-href="1">More about order</div>
+                                                    </div>
+                                                    <p>Start subscription</p>
+                                                    <div class="subtitle">2 September 2021</div>
+                                                    <p>Payment card</p>
+                                                    <div class="card-wrapper">
+                                                        <div class="card-content">
+                                                            1234 1234 1234 1234
+                                                        </div>
+                                                        <div class="card-logo">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="9" viewBox="0 0 25 9" fill="none">
+                                                                <path d="M12.3784 0.641307L10.7082 8.37853H8.68792L10.3583 0.641307H12.3784ZM20.8773 5.63733L21.9406 2.73184L22.5525 5.63733H20.8773ZM23.132 8.37853H25L23.3681 0.641307H21.645C21.2567 0.641307 20.9293 0.864403 20.7844 1.20845L17.7533 8.37853H19.8748L20.296 7.22302H22.8874L23.132 8.37853ZM17.8585 5.85259C17.8673 3.81061 15.0096 3.69749 15.0288 2.78509C15.0349 2.50787 15.3019 2.21256 15.8853 2.13703C16.1746 2.10014 16.9728 2.07021 17.8776 2.48334L18.2315 0.841955C17.7455 0.667758 17.1201 0.5 16.3419 0.5C14.3449 0.5 12.94 1.5511 12.9288 3.05744C12.916 4.17136 13.9323 4.79245 14.6965 5.16346C15.4843 5.54266 15.7483 5.78577 15.7444 6.12459C15.739 6.6437 15.1162 6.87358 14.5363 6.88228C13.5201 6.89795 12.9311 6.61011 12.4616 6.39328L12.0949 8.08948C12.5677 8.30388 13.4388 8.49043 14.3408 8.5C16.464 8.5 17.8521 7.46126 17.8585 5.85259ZM9.49177 0.641307L6.21861 8.37853H4.08351L2.47266 2.20368C2.37501 1.82397 2.28983 1.6844 1.99284 1.52395C1.50706 1.26257 0.705143 1.01807 0 0.86597L0.0477711 0.641307H3.48515C3.92298 0.641307 4.31692 0.93001 4.4172 1.4298L5.26811 5.90741L7.36949 0.641307H9.49177Z" fill="#B7B7B7"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <a class="change-delivery" href="#">Change delivery</a>
+                                                    <a class="reactivate-link" href="#">Reactivate subscription</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chub-similar-options chub-similar-options-pc">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="title-block">
@@ -287,6 +558,83 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="chub-similar-options chub-similar-options-tablet">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="title-block">
+                                                <h4>Medications taken</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-m-12">
+                                            <div class="option-card">
+                                                <div class="rating">
+                                                    <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                    </div>
+                                                </div>
+                                                <div class="option-card-content">
+                                                    <p>Tadalafil</p>
+                                                    <h3>Generic Cialis</h3>
+                                                    <a href="chub-shipping.html" class="btn-green">From $7.25/use</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-m-12">
+                                            <div class="option-card">
+                                                <div class="rating">
+                                                    <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                    </div>
+                                                </div>
+                                                <div class="option-card-content">
+                                                    <p>Tadalafil</p>
+                                                    <h3>Generic Cialis</h3>
+                                                    <a href="chub-shipping.html" class="btn-green">From $7.25/use</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="medications-taken medications-taken-mobile">
+                                    <h4>Completed subscriptions</h4>
+                                    <div class="medications-taken-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="option-card">
+                                                    <div class="rating">
+                                                        <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                        </div>
+                                                    </div>
+                                                    <div class="option-card-content">
+                                                        <p>Tadalafil</p>
+                                                        <h3>Generic Cialis</h3>
+                                                        <p class="option-weight">
+                                                            <span>50 mg</span>
+                                                            <span>12 dose</span>
+                                                        </p>
+                                                    </div>
+                                                    <a href="#" class="btn-green btn">Repeat order</a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="option-card">
+                                                    <div class="rating">
+                                                        <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                                        </div>
+                                                    </div>
+                                                    <div class="option-card-content">
+                                                        <p>Tadalafil</p>
+                                                        <h3>Generic Cialis</h3>
+                                                        <p class="option-weight">
+                                                            <span>50 mg</span>
+                                                            <span>12 dose</span>
+                                                        </p>
+                                                    </div>
+                                                    <a href="#" class="btn-green btn">Repeat order</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
                                 <div class="completed-subscriptions">
                                     <div class="row">
                                         <div class="col-12">
@@ -299,7 +647,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="option-card-content">
-                                                    <p>Tadalafil</p>
                                                     <h3>Generic Viagra</h3>
                                                     <p class="option-weight">
                                                         <span>50 mg</span>
@@ -316,7 +663,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="option-card-content">
-                                                    <p>Tadalafil</p>
                                                     <h3>Generic Viagra</h3>
                                                     <p class="option-weight">
                                                         <span>50 mg</span>
@@ -1186,14 +1532,35 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="addresses-wrapper">
-                            <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
-                            <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                        <div class="address-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="addresses-wrapper">
+                                        <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                    </div>
+                                    <div class="addresses-wrapper">
+                                        <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="addresses-wrapper">
+                                        <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                    </div>
+                                    <div class="addresses-wrapper">
+                                        <div class="address-title">14 Se 4th Ste 24, Northwest 24th Street</div>
+                                        <div class="address-subtitle">Boca Raton, FL, United States, 33432-6104</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </form>
-            </div>
-        </div>
+            </aside>
+        </aside>
     </div>
 </section>
 
