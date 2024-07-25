@@ -7,14 +7,6 @@ if (typeof $.fn.select2 === 'function') {
 
 var stateSelect = document.getElementById("state");
 
-if (statesData) {
-    statesData.forEach(function(state) {
-        var option = document.createElement("option");
-        option.value = state.abbreviation;
-        option.textContent = state.name;
-        stateSelect.appendChild(option);
-    });
-}
 
 if (stateSelect) {
     statesData.forEach(function(state) {
