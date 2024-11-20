@@ -5,7 +5,7 @@ if (typeof $.fn.select2 === 'function') {
 } else {
     console.log("select2 is not available");
 }
-var steps = document.querySelectorAll('.step');
+var steps = document.querySelectorAll('.chubs-step');
 var nextButton = document.getElementById('nextStep');
 var prevButton = document.getElementById('prevStep');
 var prevButtonMobile = document.getElementById('prevBtnMobile');
@@ -304,35 +304,17 @@ function getSelectedAnswer(step) {
     return selectedAnswer;
 }
 
-function getSelectedAnswerMulti(step) {
+function getSeletcedAnswerMulti(step) {
     var selectedAnswers = [];
     var inputs = step.querySelectorAll('input[type="radio"], input[type="checkbox"]');
     if (inputs.length === 0) {
         return null;
     }
-
     inputs.forEach(function (input, index) {
-        if (input.type === "radio") {
-            input.addEventListener('click', function () {
-                if (input.dataset.checked === "true") {
-                    input.checked = false;
-                    input.dataset.checked = "false";
-                } else {
-                    input.dataset.checked = "true";
-                    inputs.forEach(function (otherInput) {
-                        if (otherInput !== input && otherInput.type === "radio") {
-                            otherInput.dataset.checked = "false";
-                        }
-                    });
-                }
-            });
-        }
-
         if (input.checked) {
             selectedAnswers.push(index);
         }
     });
-
     return selectedAnswers;
 }
 
@@ -368,12 +350,12 @@ function getUniqueSortedSteps(selectedAnswers) {
     return uniqueSortedSteps;
 }
 
-var answerBtns = document.querySelectorAll('.quiz-answers-type-slider .answer-btn');
+var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
 answerBtns.forEach(function (btn, index) {
     if (index > 0) {
         btn.addEventListener('click', function () {
-            var currentStep = this.closest('.step');
-            var allAnswerBtns = currentStep.querySelectorAll('.quiz-answers-type-slider .answer-btn');
+            var currentStep = this.closest('.chubs-step');
+            var allAnswerBtns = currentStep.querySelectorAll('.chubs-quiz-answers-type-slider .answer-btn');
 
             allAnswerBtns.forEach(function (btn) {
                 btn.classList.remove('active');
@@ -391,11 +373,11 @@ answerBtns.forEach(function (btn, index) {
     }
 });
 
-var answerBtns = document.querySelectorAll('.quiz-answers-type-radio .answer-btn');
+var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
 answerBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        var currentStep = this.closest('.step');
-        var allAnswerBtns = currentStep.querySelectorAll('.quiz-answers-type-radio .answer-btn');
+        var currentStep = this.closest('.chubs-step');
+        var allAnswerBtns = currentStep.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
 
         allAnswerBtns.forEach(function (btn) {
             btn.classList.remove('active');
@@ -415,10 +397,10 @@ answerBtns.forEach(function (btn) {
     });
 });
 
-var answerBtns = document.querySelectorAll('.quiz-answers-type-checkbox .answer-btn');
+var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-checkbox .answer-btn');
 answerBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        var currentStep = this.closest('.step');
+        var currentStep = this.closest('.chubs-step');
 
         if (this.querySelector('input').checked) {
             this.querySelector('input').checked = false;
@@ -435,10 +417,10 @@ answerBtns.forEach(function (btn) {
     });
 });
 
-var answerBtns = document.querySelectorAll('.quiz-answers-type-number .answer-btn');
+var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-number .answer-btn');
 answerBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        var currentStep = this.closest('.step');
+        var currentStep = this.closest('.chubs-step');
 
         if (this.querySelector('input').checked) {
             this.querySelector('input').checked = false;
@@ -518,7 +500,7 @@ window.onload = function () {
         });
     });
 
-    var answerBtns = document.querySelectorAll('.quiz-answers-type-radio .answer-btn', '.quiz-answers-type-number .answer-btn');
+    var answerBtns = document.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn', '.chubs-quiz-answers-type-number .answer-btn');
     answerBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
             updateNextButtonState();
@@ -528,8 +510,8 @@ window.onload = function () {
 };
 
 function handleRadioClick(selectedRadioBtn) {
-    var currentStep = selectedRadioBtn.closest('.step');
-    var allAnswerBtns = currentStep.querySelectorAll('.quiz-answers-type-radio .answer-btn');
+    var currentStep = selectedRadioBtn.closest('.chubs-step');
+    var allAnswerBtns = currentStep.querySelectorAll('.chubs-quiz-answers-type-radio .answer-btn');
 
     allAnswerBtns.forEach(function (btn) {
         btn.classList.remove('active');
@@ -550,7 +532,7 @@ function updateNextButtonState() {
     const selectElement = steps[currentStep].querySelector('select');
     const remember = steps[currentStep].querySelector('#remember');
 
-    const numberStep = steps[currentStep].querySelector('quiz-answers-type-number');
+    const numberStep = steps[currentStep].querySelector('chubs-quiz-answers-type-number');
 
     if (numberStep) {
         const numInput1 = numberStep.querySelector('.topnumber');

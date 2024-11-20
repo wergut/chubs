@@ -259,4 +259,34 @@ $(document).ready(function(){
 
 })
 
+$(document).ready(function(){
+   // $('[name="phone"]').inputmask("99-9999999");
+    $('[name="phone"]').inputmask({"mask": "(999) 999-9999"});
+    $('[name="date"]').inputmask({"mask": "99/99/99"});
+    $('[name="email"]').inputmask({ mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]", });
+
+
+    // handle links with @href started with '#' only
+    $(document).on('click', 'a[href^="#"]', function(e) {
+        // target element id
+        var id = $(this).attr('href');
+
+        // target element
+        var $id = $(id);
+        if ($id.length === 0) {
+            return;
+        }
+
+        // prevent standard hash navigation (avoid blinking in IE)
+        e.preventDefault();
+
+        // top position relative to the document
+        var pos = $id.offset().top - parseInt(75);
+
+        // animated top scrolling
+        $('body, html').animate({scrollTop: pos});
+    });
+
+});
+
 

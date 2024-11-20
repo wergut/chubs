@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="robots" content="nofollow,noindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"/>
+    <link type="image/x-icon" href="img/icons/favicon.svg" rel="shortcut icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/rateit.min.css">
+    <link rel="stylesheet" href="css/style.bundle.css"/>
+    <link rel="stylesheet" href="css/quiz.css"/>
+    <title>Chubs - Don’t put your love life on hold</title>
+</head>
+<body>
+
+    <section class="banner question-logo banner-order">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex quiz-header align-end">
+
+                    <a href="/" class="logo">
+                        <img src="./img/logo.svg" alt=""/>
+                    </a>
+                    <div class="quiz-banner-title quiz-banner-title-hidden">Subscription options</div>
+                    <a href="/" class="back-to-main">Back to main page</a>
+
+                    <a href="/" class="quiz-button quiz-button-close"></a>
+                    <a href="/" class="logo logo-mobile">
+                        <img src="./img/logo.svg" alt=""/>
+                    </a>
+                    <div id="prevBtnMobile" class="quiz-button quiz-button-back"></div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="subscriptions-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title-block">
+                        <h5>Almost done!</h5>
+                        <p>Please select the most suitable subscription option</p>
+                    </div>
+                </div>
+                <form class="row" action="">
+                    <div class="col-6 col-m-12">
+                        <div class="option-card">
+                            <div class="rating">
+                                <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                                </div>
+                            </div>
+                            <div class="option-card-content">
+                                <p>Tadalafil</p>
+                                <h3>Generic Viagra</h3>
+                                <p class="option-weight">
+                                    <span>50 mg</span>
+                                    <span>12 dose</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-m-12">
+                        <div class="payments-type">
+                            <div class="payment-block">
+                                <div class="payment-type-btn">
+                                    <p>Every 3 month</p>
+                                    <div class="payment-price">
+                                        <p class="regular-price">$44</p>
+                                        <p class="sale-price">$26/mo</p>
+                                    </div>
+                                </div>
+                                <div class="payment-hidden-desc">
+                                    Pay for and receive a 3x supply for $78 every month.
+                                    <br>
+                                    Cancel anytime.
+                                </div>
+                                <input type="hidden" value="26" data-regular-price="44" data-month="3">
+                            </div>
+                            <div class="payment-block">
+                                <div class="payment-type-btn">
+                                    <p>Every 6 month</p>
+                                    <div class="payment-price">
+                                        <p class="regular-price">$44</p>
+                                        <p class="sale-price">$24/mo</p>
+                                    </div>
+                                </div>
+                                <div class="payment-hidden-desc">
+                                    Pay for and receive a 6x supply for $144 every month.
+                                    <br>
+                                    Cancel anytime.
+                                </div>
+                                <input type="hidden" value="24" data-regular-price="44" data-month="6">
+                            </div>
+                            <div class="payment-block">
+                                <div class="payment-type-btn">
+                                    <p>Every 12 month</p>
+                                    <div class="payment-price">
+                                        <p class="regular-price">$44</p>
+                                        <p class="sale-price">$22/mo</p>
+                                    </div>
+                                </div>
+                                <div class="payment-hidden-desc">
+                                    Pay for and receive a 12x supply for $264 every month.
+                                    <br>
+                                    Cancel anytime.
+                                </div>
+                                <input type="hidden" value="22" data-regular-price="44" data-month="12">
+                            </div>
+                        </div>
+                        <ul class="payments-options">
+                            <li>Provider evaluation
+                                <span>Included</span>
+                            </li>
+                            <li>Medication adjustments
+                                <span>Included</span>
+                            </li>
+                            <li>Ongoing check ins
+                                <span>Included</span>
+                            </li>
+                            <li>Shipping
+                                <span>Included</span>
+                            </li>
+                        </ul>
+                        <div class="payments-total">
+                            <div class="payment-total-title">Total</div>
+                            <div class="payment-price">
+                                <p class="price">$150</p>
+                                <p class="sale-price">$78</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button disabled id="nextButton" class="btn-green btn-quiz-next" type="submit" onClick="location.href='payment-page.html'">pay</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="chub-similar-options chub-similar-options-tablet-mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title-block">
+                        <h3>Similar treatment options</h3>
+                        <p>These options may also work for you.</p>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-6 col-m-12">
+                    <div class="option-card">
+                        <div class="rating">
+                            <div class="rateit" data-rateit-value="4.5" data-rateit-mode="font" data-rateit-readonly="true">
+                            </div>
+                        </div>
+                        <div class="option-card-content">
+                            <p>Tadalafil</p>
+                            <h3>Generic Cialis</h3>
+                            <a href="chub-shipping.html" class="btn-green">From $7.25/use</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-sm-6 col-m-12">
+                    <div class="option-card option-card-big">
+                        <div class="option-card-content">
+                            <h3>Another Treatments options <span class="mobile-span">for you</span></h3>
+                            <a href="similar-options-page.html" class="btn-green btn-mobile">Explore here</a>
+                            <div class="link-description">
+                                for you
+                                <a href="similar-options-page.html">Explore here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-m-6">
+                    <a href="/" class="footer-logo">
+                        <img src="./img/footer-logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="col-4 col-m-6">
+                    <div class="footer-socials">
+                        <a class="ico" href="#"></a>
+                        <a class="ico" href="#"></a>
+                        <a class="ico" href="#"></a>
+                        <a class="ico" href="#"></a>
+                    </div>
+                </div>
+                <div class="col-4 col-m-12">
+                    <div class="footer-contacts">
+                        <a href="mailto:info@vitalityhrt.com" class="contact-link mail">info@vitalityhrt.com</a>
+                        <a href="tel:(866) 926-3821" class="contact-link phone">(866) 926-3821</a>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="footer-info">
+                        <div class="footer-policy"><a href="#">PRIVACY POLICY</a> | <a href="#">TERMS OF SERVICE</a></div>
+                        <div class="footer-copy">COPYRIGHT © 2022</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/jquery.rateit.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const paymentBlocks = document.querySelectorAll('.payment-block');
+            const nextButton = document.getElementById('nextButton');
+
+            paymentBlocks.forEach(function (block) {
+                const button = block.querySelector('.payment-type-btn');
+                const dataPrice = block.querySelector('input');
+
+                button.addEventListener('click', function () {
+                    paymentBlocks.forEach(function (otherBlock) {
+                        otherBlock.querySelector('.payment-type-btn').classList.remove('active');
+                        otherBlock.querySelector('.payment-hidden-desc').style.display = 'none';
+                    });
+
+                    const total = document.querySelector('.payments-total');
+                    const priceElement = total.querySelector('.price');
+                    const salePriceElement = total.querySelector('.sale-price');
+
+                    const price = parseInt(dataPrice.value);
+                    const regularPrice = parseInt(dataPrice.getAttribute('data-regular-price'));
+                    const month = parseInt(dataPrice.getAttribute('data-month'));
+
+                    priceElement.innerText = '$' + (regularPrice * month);
+                    salePriceElement.innerText = '$' + (price * month);
+
+                    localStorage.setItem('totalPrice', price * month);
+
+                    button.classList.add('active');
+                    block.querySelector('.payment-hidden-desc').style.display = 'block';
+
+                    if (button.classList.contains('active')) {
+                        nextButton.removeAttribute('disabled');
+                    } else {
+                        nextButton.setAttribute('disabled', 'disabled');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

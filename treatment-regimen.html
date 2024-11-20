@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="robots" content="nofollow,noindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"/>
+    <link type="image/x-icon" href="img/icons/favicon.svg" rel="shortcut icon">
+    <link rel="stylesheet" href="css/style.bundle.css"/>
+    <link rel="stylesheet" href="css/quiz.css"/>
+    <title>Chubs - Don’t put your love life on hold</title>
+</head>
+<body>
+
+
+    <section class="banner question-logo banner-order">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex quiz-header align-end">
+
+                    <a href="/" class="logo">
+                        <img src="./img/logo.svg" alt=""/>
+                    </a>
+                    <div class="quiz-banner-title quiz-banner-title-hidden">Treatment options</div>
+                    <a href="/" class="back-to-main">Back to main page</a>
+
+                    <a href="/" class="quiz-button quiz-button-close"></a>
+                    <a href="/" class="logo logo-mobile">
+                        <img src="./img/logo.svg" alt=""/>
+                    </a>
+                    <div id="prevBtnMobile" class="quiz-button quiz-button-back"></div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="chub-order-section">
+        <div class="container">
+            <div class="chub-title-block">
+                <div class="title">When do you want to take your medication?</div>
+                <p>Please select the preferable medication regimen</p>
+            </div>
+            <div class="chub-quiz-cards">
+                <div class="chub-quiz-card">
+                    <div class="info">
+                        <div class="title">Before sex</div>
+                        <p class="payment-description-pc">Take as needed on your own schedule</p>
+                    </div>
+                    <div class="payment-description">
+                        <p>
+                            from $
+                            <span>4</span>
+                            /use
+                        </p>
+                    </div>
+                    <p class="payment-description-mobile">Take as needed on your own schedule</p>
+                </div>
+                <div class="chub-quiz-card">
+                    <div class="info">
+                        <div class="title">Daily</div>
+                        <p class="payment-description-pc">Take once a day and always be ready</p>
+                    </div>
+                    <div class="payment-description">
+                        <p>
+                            from $
+                            <span>1.33</span>
+                            /use
+                        </p>
+                    </div>
+                    <p class="payment-description-mobile">Take once a day and always be ready</p>
+                </div>
+            </div>
+            <div class="pagination-order">
+                <button disabled id="nextButton" class="btn-green btn-quiz-next" type="submit" onClick="location.href='options-page.html'">Next</button>
+            </div>
+        </div>
+    </section>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-m-6">
+                <a href="/" class="footer-logo">
+                    <img src="./img/footer-logo.svg" alt="">
+                </a>
+            </div>
+            <div class="col-4 col-m-6">
+                <div class="footer-socials">
+                    <a class="ico" href="#"></a>
+                    <a class="ico" href="#"></a>
+                    <a class="ico" href="#"></a>
+                    <a class="ico" href="#"></a>
+                </div>
+            </div>
+            <div class="col-4 col-m-12">
+                <div class="footer-contacts">
+                    <a href="mailto:info@vitalityhrt.com" class="contact-link mail">info@vitalityhrt.com</a>
+                    <a href="tel:(866) 926-3821" class="contact-link phone">(866) 926-3821</a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="footer-info">
+                    <div class="footer-policy"><a href="#">PRIVACY POLICY</a> | <a href="#">TERMS OF SERVICE</a></div>
+                    <div class="footer-copy">COPYRIGHT © 2022</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizCards = document.querySelectorAll('.chub-quiz-card');
+            const nextButton = document.getElementById('nextButton');
+
+            quizCards.forEach(function (quizCard) {
+                quizCard.addEventListener('click', function () {
+                    quizCards.forEach(function (otherCard) {
+                        otherCard.classList.remove('active');
+                    });
+
+                    quizCard.classList.add('active');
+
+                    const selectedCard = document.querySelector('.chub-quiz-card.active');
+                    if (selectedCard) {
+                        nextButton.removeAttribute('disabled');
+                    } else {
+                        nextButton.setAttribute('disabled', 'disabled');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
