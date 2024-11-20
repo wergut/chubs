@@ -28,24 +28,27 @@
     </div>
 
 
-    <section class="chubs-quiz">
-        <form class="question" action="" style="background: #fff;">
-            <div class="quiz-progress">
+    <section class="quiz">
+        <div class="container">
+            <div class="quiz-title">Quiz Form</div>
+            <form class="question" action="" style="background: #fff;">
+                <div class="quiz-progress">
                 <span class="step-info">
                     Step
                     <span class="current-step"> 1 </span>
                     of
-                    <span class="total-step"> 20 </span>
+                    <span class="total-step"> 6 </span>
                 </span>
-            </div>
-            <div class="chubs-steps">
-                <div id="questionnaire-container"></div>
-            </div>
-            <div class="pagination-chubs-quiz">
-                <button id="nextStep" type="button" class="btn-green btn-quiz-next" data-step="1">Next step</button>
-                <button id="prevStep" type="button" class="btn-quiz-prev" data-step="1">Previous question</button>
-            </div>
-        </form>
+                </div>
+                <div class="steps">
+                    <div id="questionnaire-container"></div>
+                </div>
+                <div class="pagination-quiz">
+                    <button id="prevStep" type="button" class="btn-quiz-prev" data-step="1"></button>
+                    <button id="nextStep" type="button" class="btn-quiz-next" data-step="1">Next</button>
+                </div>
+            </form>
+        </div>
     </section>
 </main>
 

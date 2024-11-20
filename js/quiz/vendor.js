@@ -9,9 +9,9 @@ var questionnaireContainer = document.getElementById('questionnaire-container');
 newQuestionnaireData.questions.forEach(function(question, index) {
     var answerCount = question.answers.length;
     var questionHtml = document.createElement('div');
-    questionHtml.classList.add('chubs-step');
-    questionHtml.classList.add('chubs-step-index-' + index);
-    questionHtml.classList.add('chubs-step-step-' + question.step);
+    questionHtml.classList.add('step');
+    questionHtml.classList.add('step-index-' + index);
+    questionHtml.classList.add('step-step-' + question.step);
 
     questionHtml.style.display = 'none';
     var fieldset = document.createElement('fieldset');
@@ -24,12 +24,12 @@ newQuestionnaireData.questions.forEach(function(question, index) {
     p.textContent = question.hint;
 
     var answersDiv = document.createElement('div');
-    answersDiv.classList.add('chubs-quiz-answers');
-    answersDiv.classList.add('chubs-quiz-answers-type-' + question.type);
-    answersDiv.classList.add('chubs-quiz-answers-' + answerCount);
+    answersDiv.classList.add('quiz-answers');
+    answersDiv.classList.add('quiz-answers-type-' + question.type);
+    answersDiv.classList.add('quiz-answers-' + answerCount);
 
     var answerLabel = document.createElement('div');
-    answerLabel.classList.add('chubs-quiz-answer-label');
+    answerLabel.classList.add('quiz-answer-label');
     answerLabel.classList.add('answer-btn');
 
 
@@ -41,12 +41,12 @@ newQuestionnaireData.questions.forEach(function(question, index) {
             radio.name = 'question_' + index;
             radio.value = answer[i];
 
-            var label = document.createElement('div');
-            label.classList.add('chubs-quiz-answer-label-text');
+            var label = document.createElement('label');
+            label.classList.add('quiz-answer-label-text');
             label.textContent = answer[i];
 
             var answerContainer = document.createElement('div');
-            answerContainer.classList.add('chubs-quiz-answer-label');
+            answerContainer.classList.add('quiz-answer-label');
             answerContainer.classList.add('answer-btn');
             answerContainer.appendChild(radio);
             answerContainer.appendChild(label);
@@ -64,11 +64,11 @@ newQuestionnaireData.questions.forEach(function(question, index) {
             radio.value = answer[i];
 
             var label = document.createElement('label');
-            label.classList.add('chubs-quiz-answer-label-text');
+            label.classList.add('quiz-answer-label-text');
             label.textContent = answer[i];
 
             var answerContainer = document.createElement('div');
-            answerContainer.classList.add('chubs-quiz-answer-label');
+            answerContainer.classList.add('quiz-answer-label');
             answerContainer.classList.add('answer-btn');
             answerContainer.appendChild(radio);
             answerContainer.appendChild(label);
@@ -106,7 +106,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 
 
         var labelList = document.createElement('ul');
-        labelList.classList.add('chubs-label-for-range');
+        labelList.classList.add('label-for-range');
         question.answers.forEach(function(answer) {
             for (var key in answer) {
                 var text = answer[key];
@@ -122,7 +122,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         var hiddenInput = document.createElement('input');
         hiddenInput.type = 'hidden';
         hiddenInput.name = 'question_' + index;
-        hiddenInput.classList.add('chubs-value-for-range_'+ index);
+        hiddenInput.classList.add('value-for-range_'+ index);
 
         answerLabel.appendChild(labelList);
         answerLabel.appendChild(sliderDiv);
@@ -139,11 +139,11 @@ newQuestionnaireData.questions.forEach(function(question, index) {
             radio.value = answer[i];
 
             var label = document.createElement('div');
-            label.classList.add('chubs-quiz-answer-label-text');
+            label.classList.add('quiz-answer-label-text');
             label.textContent = answer[i];
 
             var answerContainer = document.createElement('div');
-            answerContainer.classList.add('chubs-quiz-answer-label');
+            answerContainer.classList.add('quiz-answer-label');
             answerContainer.classList.add('answer-btn');
             answerContainer.classList.add('answer-btn-hidden-pc');
             answerContainer.appendChild(radio);
@@ -174,12 +174,12 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         });
 
         var selectContainer = document.createElement('div');
-        selectContainer.classList.add('chubs-quiz-answer-label');
+        selectContainer.classList.add('quiz-answer-label');
         selectContainer.classList.add('answer-btn');
         selectContainer.appendChild(select);
 
         var ContactsUsLink = document.createElement('a');
-        ContactsUsLink.classList.add('chubs-quiz-link');
+        ContactsUsLink.classList.add('quiz-link');
         ContactsUsLink.innerText = 'Contact Us';
         ContactsUsLink.setAttribute('href', '#');
 
@@ -205,7 +205,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
     } else if (question.type === 'contacts') {
 
         var emailContainer = document.createElement('div');
-        emailContainer.classList.add('chubs-quiz-answer-label');
+        emailContainer.classList.add('quiz-answer-label');
         emailContainer.classList.add('answer-btn');
 
         var emailInput = document.createElement('input');
@@ -219,7 +219,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answersDiv.appendChild(emailContainer);
 
         var phoneContainer = document.createElement('div');
-        phoneContainer.classList.add('chubs-quiz-answer-label');
+        phoneContainer.classList.add('quiz-answer-label');
         phoneContainer.classList.add('answer-btn');
 
         var phoneInput = document.createElement('input');
@@ -234,7 +234,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
     } else if (question.type === 'number') {
 
         var topContainerDiv = document.createElement('div');
-        topContainerDiv.classList.add('chubs-quiz-answer-label');
+        topContainerDiv.classList.add('quiz-answer-label');
         topContainerDiv.classList.add('answer-btn');
 
         var topLabel = document.createElement('p');
@@ -259,7 +259,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answersDiv.appendChild(topContainerDiv);
 
         var bottomContainerDiv = document.createElement('div');
-        bottomContainerDiv.classList.add('chubs-quiz-answer-label');
+        bottomContainerDiv.classList.add('quiz-answer-label');
         bottomContainerDiv.classList.add('answer-btn');
 
         var bottomLabel = document.createElement('p');
@@ -283,7 +283,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         answersDiv.appendChild(bottomContainerDiv);
 
         var rememberContainerDiv = document.createElement('div');
-        rememberContainerDiv.classList.add('chubs-quiz-answer-label');
+        rememberContainerDiv.classList.add('quiz-answer-label');
         rememberContainerDiv.classList.add('answer-btn');
 
         var rememberInput = document.createElement('input');
@@ -293,7 +293,7 @@ newQuestionnaireData.questions.forEach(function(question, index) {
         rememberInput.value = 'I don`t remember';
 
         var rememberLabel = document.createElement('div');
-        rememberLabel.classList.add('chubs-quiz-answer-label-text');
+        rememberLabel.classList.add('quiz-answer-label-text');
         rememberLabel.textContent = 'I don`t remember';
 
         rememberContainerDiv.appendChild(rememberInput);
@@ -327,8 +327,8 @@ newQuestionnaireData.questions.forEach(function(question, index) {
 
 function activateSlider(id,index) {
     var slider = document.getElementById(id);
-    var input = document.querySelector('.chubs-value-for-range_'+ index);
-    var labelList = document.querySelectorAll('.chubs-label-for-range li');
+    var input = document.querySelector('.value-for-range_'+ index);
+    var labelList = document.querySelectorAll('.label-for-range li');
 
     var valueLabels = {
         1: "Always",
@@ -357,7 +357,7 @@ function activateSlider(id,index) {
 
 function addConsentCheckboxToQuestion(answersDiv, description) {
     var checkboxContainer = document.createElement('div');
-    checkboxContainer.classList.add('chubs-quiz-answer-label');
+    checkboxContainer.classList.add('quiz-answer-label');
     checkboxContainer.classList.add('answer-btn');
     checkboxContainer.classList.add('answer-btn-consert');
 
@@ -367,7 +367,7 @@ function addConsentCheckboxToQuestion(answersDiv, description) {
     checkboxInput.value = "yes";
 
     var checkboxLabel = document.createElement('label');
-    checkboxLabel.classList.add('chubs-quiz-answer-label-text');
+    checkboxLabel.classList.add('quiz-answer-label-text');
     checkboxLabel.textContent = description;
 
     checkboxContainer.appendChild(checkboxInput);
@@ -392,19 +392,19 @@ function createTooltipText(text, questionIndex) {
 }
 
 function externalStep() {
-    var currentQuestion = document.querySelector('.chubs-step-index-' + currentStep);
+    var currentQuestion = document.querySelector('.step-index-' + currentStep);
     if (currentQuestion) {
         console.log(currentQuestion);
         var fieldset = currentQuestion.querySelector('fieldset');
         var legend = currentQuestion.querySelector('legend');
         var p = currentQuestion.querySelector('p');
-        var pagiContainer = document.querySelector('.pagination-chubs-quiz');
+        var pagiContainer = document.querySelector('.pagination-quiz');
         var prevBtn = document.getElementById('prevStep');
         var nextBtn = document.getElementById('nextStep');
         var select = currentQuestion.querySelector('select + span');
         var consert = currentQuestion.querySelector('.answer-btn-consert');
-        var contactBtn = currentQuestion.querySelector('.chubs-quiz-link');
-        var firstAnswer = currentQuestion.querySelector('.chubs-quiz-answers-0');
+        var contactBtn = currentQuestion.querySelector('.quiz-link');
+        var firstAnswer = currentQuestion.querySelector('.quiz-answers-0');
 
         legend.textContent = 'Sorry...';
         p.textContent = 'Ordering from your state is not available yet. Please enter your mail so we can contact you.';
@@ -425,15 +425,15 @@ function externalStep() {
         pagiContainer.appendChild(newButton);
 
         var emailContainer = document.createElement('div');
-        emailContainer.classList.add('chubs-quiz-answer-label');
+        emailContainer.classList.add('quiz-answer-label');
         emailContainer.classList.add('answer-btn');
-        emailContainer.classList.add('chubs-quiz-external-answers');
+        emailContainer.classList.add('quiz-external-answers');
 
         var emailInput = document.createElement('input');
         emailInput.type = 'email';
         emailInput.placeholder = 'Enter your email';
-        emailInput.classList.add('chubs-quiz-input');
-        emailInput.classList.add('chubs-quiz-input-email-external');
+        emailInput.classList.add('quiz-input');
+        emailInput.classList.add('quiz-input-email-external');
 
         fieldset.appendChild(emailContainer);
         emailContainer.appendChild(emailInput);
@@ -449,8 +449,8 @@ function externalStep() {
 }
 
 function sendBtnHundler() {
-    var currentQuestion = document.querySelector('.chubs-step-index-' + currentStep);
-    var externalEmail = document.querySelector('.chubs-quiz-input-email-external');
+    var currentQuestion = document.querySelector('.step-index-' + currentStep);
+    var externalEmail = document.querySelector('.quiz-input-email-external');
     var externalEmailValue = externalEmail.value;
     savedData = [];
     savedData.push({
